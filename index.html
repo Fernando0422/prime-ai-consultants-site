@@ -2,396 +2,470 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prime AI Consultants | Practical AI for ERP, CRM &amp; MES</title>
-  <meta name="description" content="Practical AI for real operations, not theory. Bridging ERP, CRM, MES enterprise systems with modern AI. Book a free 30-minute discovery call. Serving organizations and individuals nationwide." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" media="all" data-prime-calendly-css="1">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime AI Consultants · Manufacturing AI Infrastructure</title>
+  <meta name="description" content="We connect MES, SAP, and Salesforce into one governed AI intelligence layer. Built inside a real fab by someone who spent 18 years there." />
+  <meta name="theme-color" content="#0A0F1E" />
+  <meta property="og:title" content="Prime AI Consultants · Manufacturing AI Infrastructure" />
+  <meta property="og:description" content="Connect MES, SAP, and Salesforce into one governed AI intelligence layer. Built inside a real fab by someone who spent 18 years there." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 </head>
-<body>
-
+<body class="page-home">
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- ============== ANNOUNCEMENT BAR ============== -->
+  <div class="announce" role="region" aria-label="Site announcement">
+    <div class="announce-inner">
+      <span class="announce-tag">NEW</span>
+      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
+      <button type="button" class="announce-close" aria-label="Dismiss announcement">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============== NAVIGATION ============== -->
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
+        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li><a href="company.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html#schedule" class="btn btn-primary btn-sm">Book Discovery Call</a>
+      </div>
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
   <main id="main" tabindex="-1">
-  <!-- ============== HERO + NAV ============== -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
 
-    <!-- Primary navigation -->
-    <nav class="pill-nav-wrap site-nav" aria-label="Primary navigation">
-      <div class="pill-nav pill-nav-compact">
-        <a href="index.html" class="brand" aria-label="Prime AI Consultants, home">
-          <span class="brand-mark">
-            <svg width="42" height="42" viewBox="-50 -50 100 100" aria-hidden="true">
-              <path d="M0 -46 A 32 32 0 0 1 0 -10 A 32 32 0 0 1 0 -46 Z" fill="#0052CC"/>
-              <path d="M46 0 A 32 32 0 0 1 10 0 A 32 32 0 0 1 46 0 Z" fill="#0052CC"/>
-              <path d="M0 46 A 32 32 0 0 1 0 10 A 32 32 0 0 1 0 46 Z" fill="#0052CC"/>
-              <path d="M-46 0 A 32 32 0 0 1 -10 0 A 32 32 0 0 1 -46 0 Z" fill="#0052CC"/>
-              <g transform="rotate(45)"><path d="M0 -22 L5 -5 L22 0 L5 5 L0 22 L-5 5 L-22 0 L-5 -5 Z" fill="#6366F1"/></g>
-              <circle r="3" fill="#fff"/>
-            </svg>
-          </span>
-          <span class="brand-words">
-            <span class="brand-name">Prime</span>
-            <span class="brand-tag">AI CONSULTANTS</span>
-          </span>
-        </a>
-
-        <div class="nav-sheet" id="site-nav-sheet">
-          <ul class="nav-links nav-links-tiered" role="list">
-            <li><a href="index.html">Home</a></li>
-            <li class="nav-dropdown" data-nav-dropdown>
-              <div class="nav-dropdown-row">
-                <a href="services.html" class="nav-dropdown-primary">Services</a>
-                <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-panel-services" id="btn-nav-services" aria-label="Toggle Services submenu">
-                  <span class="nav-dropdown-chevron" aria-hidden="true"></span>
-                </button>
-              </div>
-              <ul class="nav-dropdown-panel" id="nav-panel-services" role="list">
-                <li><a href="services.html">All services</a></li>
-                <li><a href="ai-mes.html">AI for MES</a></li>
-                <li><a href="ai-erp.html">AI for ERP</a></li>
-                <li><a href="ai-crm.html">AI for CRM</a></li>
-              </ul>
-            </li>
-            <li><a href="ai-individuals.html">Individuals</a></li>
-            <li class="nav-dropdown" data-nav-dropdown>
-              <div class="nav-dropdown-row">
-                <a href="company.html" class="nav-dropdown-primary">Company</a>
-                <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-panel-company" id="btn-nav-company" aria-label="Toggle Company submenu">
-                  <span class="nav-dropdown-chevron" aria-hidden="true"></span>
-                </button>
-              </div>
-              <ul class="nav-dropdown-panel" id="nav-panel-company" role="list">
-                <li><a href="company.html">About us</a></li>
-                <li><a href="index.html#about">Team</a></li>
-                <li><a href="levels-of-ai.html">Three levels of AI</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    <!-- ============== HERO ============== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="container">
+          <span class="eyebrow hero-eyebrow">Manufacturing AI Infrastructure</span>
+          <h1 class="h-hero">Your MES has the answers.<br/>Your engineers shouldn&rsquo;t need SQL to find them.</h1>
+          <p class="hero-sub">We connect MES, SAP, and Salesforce into one governed AI intelligence layer. Built inside a real fab by someone who spent 18 years there.</p>
+          <div class="hero-cta-row">
+            <a href="contact.html#schedule" class="btn btn-primary btn-lg btn-arrow">Book Discovery Call</a>
+            <a href="methodology.html" class="btn btn-secondary btn-lg">See Our Methodology</a>
+          </div>
         </div>
-
-        <div class="nav-cta">
-          <a href="contact.html#schedule" class="btn btn-primary btn-sm nav-cta-primary" data-calendly-popup>Book discovery</a>
-        </div>
-
-        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav-sheet">
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-          <span class="sr-only">Menu</span>
-        </button>
       </div>
-      <div class="nav-overlay" tabindex="-1" aria-hidden="true"></div>
-    </nav>
+      <span class="hero-scroll" aria-hidden="true">Scroll to Explore ↓</span>
+    </section>
 
-    <!-- Hero: value prop + discovery -->
-    <div class="container hero-grid hero-grid-discovery">
-      <div class="hero-discovery-left">
-        <h1 class="hero-h1 hero-h1-discovery">Practical AI for real operations, not just theory</h1>
-        <ul class="hero-kicker-list" role="list">
-          <li><strong>Manufacturing-grade depth:</strong> MES, ERP, and CRM fluency, not generic chatbot overlays.</li>
-          <li><strong>Governed NL access:</strong> conversational answers routed through approvals and lineage you define.</li>
-          <li><strong>Artifacts you keep:</strong> working integrations, prompts, and automation, with minimal lock-in storytelling.</li>
-          <li><strong>Individuals to enterprise:</strong> the same pragmatic posture from fabs to SMB workflows.</li>
-        </ul>
-        <p class="hero-lede-enterprise">
-          We combine long-haul enterprise systems veterans with rigorous AI product instincts so modernization lands in dashboards, integrations, and operator trust, not orphaned slide decks.
-        </p>
-        <div class="hero-split-visual" aria-label="Operating model illustration and industry context">
-          <figure class="hero-diagram-panel">
-            <svg class="hero-sys-diagram" viewBox="0 0 520 244" role="presentation" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <filter id="heroCardSh" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0B1437" flood-opacity="0.08"/>
-                </filter>
-                <linearGradient id="heroHubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#6366F1"/>
-                  <stop offset="100%" stop-color="#4338CA"/>
-                </linearGradient>
-                <linearGradient id="heroFlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0052CC" stop-opacity="0.2"/>
-                  <stop offset="100%" stop-color="#0052CC" stop-opacity="0.55"/>
-                </linearGradient>
-                <marker id="heroArrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-                  <path d="M0 0 L9 4.5 L0 9 Z" fill="#0052CC" opacity="0.78"/>
-                </marker>
-              </defs>
-              <g filter="url(#heroCardSh)">
-                <rect x="10" y="68" width="134" height="104" rx="14" fill="#fff" stroke="rgba(11,20,55,0.12)" stroke-width="1.5"/>
-              </g>
-              <text x="77" y="118" text-anchor="middle" font-size="18" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" fill="#0B1437">MES · ERP · CRM</text>
-              <text x="77" y="144" text-anchor="middle" font-size="14" font-family="system-ui,Segoe UI,sans-serif" fill="#475569">Systems of record</text>
-              <rect x="186" y="34" width="154" height="168" rx="18" fill="rgba(99,102,241,0.07)" stroke="rgba(99,102,241,0.35)" stroke-width="1.5"/>
-              <text x="263" y="86" text-anchor="middle" font-size="16" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" fill="#4338CA">Governed AI layer</text>
-              <text x="263" y="112" text-anchor="middle" font-size="13" font-family="system-ui,Segoe UI,sans-serif" fill="#4338CA">Summaries · NL · workflows</text>
-              <circle cx="263" cy="154" r="40" fill="url(#heroHubGrad)"/>
-              <text x="263" y="162" text-anchor="middle" font-size="18" fill="#fff" font-family="system-ui,Segoe UI,sans-serif" font-weight="800" letter-spacing="0.06em">AI</text>
-              <g filter="url(#heroCardSh)">
-                <rect x="390" y="90" width="118" height="76" rx="14" fill="#fff" stroke="rgba(11,20,55,0.12)" stroke-width="1.5"/>
-              </g>
-              <text x="449" y="136" text-anchor="middle" font-size="16" font-family="system-ui,Segoe UI,sans-serif" font-weight="700" fill="#0B1437">Your teams</text>
-              <path d="M146 132 H182" stroke="url(#heroFlowGrad)" stroke-width="4" marker-end="url(#heroArrow)"/>
-              <path d="M342 132 H386" stroke="url(#heroFlowGrad)" stroke-width="4" marker-end="url(#heroArrow)"/>
-            </svg>
-            <ul class="hero-diagram-steps" aria-label="Diagram described in plain language">
-              <li><strong>Systems of record:</strong> MES · ERP · CRM</li>
-              <li><strong>Governed AI layer:</strong> summaries, natural language, workflows</li>
-              <li><strong>Recipients:</strong> your teams</li>
-            </ul>
-            <figcaption class="hero-diagram-caption">Systems stay authoritative. AI narrows the gap between questions and validated answers.</figcaption>
-          </figure>
-          <figure class="hero-fab-figure">
-            <div class="hero-fab-frame">
-              <img src="assets/hero-wafer.jpg" width="520" height="347" loading="lazy" decoding="async" alt="Hands in gloves handling semiconductor wafers in a fabrication environment." class="hero-fab-img" />
+    <!-- ============== STATS ============== -->
+    <section class="stats-bar">
+      <div class="container reveal">
+        <span class="eyebrow">Proven in Production</span>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">400<span class="stat-num-suffix">+</span></div>
+            <div class="stat-label">MES tables mapped<br/>in a single engagement</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2<span class="stat-num-suffix"> hrs</span></div>
+            <div class="stat-label">Schema reconnaissance<br/>on unknown database</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">18<span class="stat-num-suffix"> yrs</span></div>
+            <div class="stat-label">Inside semiconductor<br/>manufacturing operations</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10<span class="stat-num-suffix"> wks</span></div>
+            <div class="stat-label">Full implementation<br/>timeline</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== THE PROBLEM ============== -->
+    <section class="problem-section section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Problem We Solve</span>
+          <p class="problem-lead"><span class="problem-lead-line">Most manufacturers are sitting on a goldmine of operational data.</span><span class="problem-lead-line">Almost none of them can access it.</span></p>
+        </div>
+        <div class="problem-pain-track">
+          <article class="problem-pain problem-pain--1 reveal">
+            <div class="problem-pain-sheet">
+              <span class="problem-pain-num">01</span>
+              <h3 class="problem-pain-title">Your yield data exists.</h3>
+              <p class="problem-pain-detail">Getting to it requires a SQL developer, a ticket queue, and three days of waiting.</p>
             </div>
-            <figcaption class="hero-fab-cap">Manufacturing realism meets modern models: pilots anchored in how fabs and plants operate.</figcaption>
-          </figure>
+          </article>
+          <article class="problem-pain problem-pain--2 reveal">
+            <div class="problem-pain-sheet">
+              <span class="problem-pain-num">02</span>
+              <h3 class="problem-pain-title">Your MES, SAP, and Salesforce don&rsquo;t talk.</h3>
+              <p class="problem-pain-detail">Every cross-system question is answered manually. Or not at all.</p>
+            </div>
+          </article>
+          <article class="problem-pain problem-pain--3 reveal">
+            <div class="problem-pain-sheet">
+              <span class="problem-pain-num">03</span>
+              <h3 class="problem-pain-title">Your most experienced MES engineer retires in two years.</h3>
+              <p class="problem-pain-detail">Their institutional knowledge retires with them.</p>
+            </div>
+          </article>
+        </div>
+        <blockquote class="problem-statement reveal">
+          We have spent 18 years inside semiconductor manufacturing.<br/>
+          <strong>We know exactly where these problems live.</strong><br/>
+          <strong>And we know how to solve them.</strong>
+          <span class="problem-statement-attr">Antonio Rojas · Founder &amp; Principal</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============== HOW WE ENGAGE / SERVICE CARDS ============== -->
+    <section class="engage-section section" id="engage">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How We Engage</span>
+          <h2 class="h-h2">Three engagements.<br/>One clear path from questions<br/>to governed AI intelligence.</h2>
+        </div>
+
+        <div class="engage-grid">
+          <!-- Card 1 -->
+          <article class="engage-card reveal" id="diagnostics">
+            <header class="engage-card-head">
+              <div class="engage-card-heading-row">
+                <h3 class="engage-card-name">Prime Diagnostics</h3>
+                <div class="engage-card-metrics">
+                  <span class="engage-duration">2 Weeks</span>
+                  <span class="engage-card-price">$20k</span>
+                </div>
+              </div>
+            </header>
+            <div class="engage-card-body">
+              <p>We map your MES schema, build your AI data dictionary, and deliver a clear implementation roadmap. You walk away with documented understanding of your own system, and a precise plan for what AI can do.</p>
+              <p>No documentation required. No ERD required. No prior AI experience required. We have mapped 400+ table MES databases with no documentation and no DBA support. That is what we do.</p>
+            </div>
+            <div class="engage-card-deliverables">
+              <div class="engage-card-deliverables-title">Deliverables</div>
+              <ul class="deliverables-list">
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-mes-functional-map.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">MES Functional Map</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-db-inventory.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Database Inventory &amp; Object Catalog</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-ai-dictionary.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">AI Data Dictionary</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-table-classify.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Table Classification by Business Area</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-roadmap.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Implementation Roadmap</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-discovery-report.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Discovery Call Report</span></li>
+              </ul>
+            </div>
+            <div class="engage-card-cta">
+              <a href="contact.html#schedule" class="btn-link">Start with Diagnostics</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="engage-card reveal" id="build">
+            <header class="engage-card-head">
+              <div class="engage-card-heading-row">
+                <h3 class="engage-card-name">Prime Build</h3>
+                <div class="engage-card-metrics">
+                  <span class="engage-duration">10 Weeks</span>
+                  <span class="engage-card-price">$75k-$150k</span>
+                </div>
+              </div>
+            </header>
+            <div class="engage-card-body">
+              <p>We build your governed AI layer end to end. MCP server. Semantic views. Security model. Validated query catalog. Production dashboards.</p>
+              <p>Your team answers manufacturing questions in plain English, with answers they can trust.</p>
+            </div>
+            <div class="engage-card-deliverables">
+              <div class="engage-card-deliverables-title">Deliverables</div>
+              <ul class="deliverables-list">
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-mcp-layer.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Working MCP/API Integration Layer</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-semantic-views.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">AI-Approved Semantic Views</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-security-matrix.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Security Model &amp; Access Matrix</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-query-catalog.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Validated Query Catalog</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-dashboards.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Production Analytics Dashboards</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-prompt-governance.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Prompt Library &amp; Governance Policy</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-signoff.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">SME Validation Sign-off</span></li>
+              </ul>
+            </div>
+            <div class="engage-card-cta">
+              <a href="contact.html#schedule" class="btn-link">Start with Prime Build</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="engage-card reveal" id="retainer">
+            <header class="engage-card-head">
+              <div class="engage-card-heading-row">
+                <h3 class="engage-card-name">Prime Retainer</h3>
+                <div class="engage-card-metrics">
+                  <span class="engage-duration">Ongoing</span>
+                  <span class="engage-card-price">$5k-$10k/mo</span>
+                </div>
+              </div>
+            </header>
+            <div class="engage-card-body">
+              <p>We maintain and expand your AI layer as your MES evolves. New use cases, new plants, new questions answered. Your intelligence layer grows with you.</p>
+            </div>
+            <div class="engage-card-deliverables">
+              <div class="engage-card-deliverables-title">Deliverables</div>
+              <ul class="deliverables-list">
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-semantic-monthly.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Monthly Semantic Layer Updates</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-expanded-catalog.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Expanded Query Catalog</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-use-case.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">New Use Case Development</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-multiplant.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Multi-Plant Onboarding</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-quarterly-sme.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Quarterly SME Validation Reviews</span></li>
+                <li><span class="deliverables-marker" aria-hidden="true"><img src="assets/deliverable-icons/del-priority-support.svg" alt="" width="18" height="18" decoding="async" loading="lazy" /></span><span class="deliverables-text">Priority Support</span></li>
+              </ul>
+            </div>
+            <div class="engage-card-cta">
+              <a href="contact.html#schedule" class="btn-link">Talk to Us About Retainer</a>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <aside class="discovery-card" id="discovery" aria-labelledby="discovery-title">
-        <h2 class="discovery-title" id="discovery-title">Book your free discovery call</h2>
-        <p class="discovery-sub">30 minutes. No obligation. Walk away with clarity on where AI can reduce real operational friction in your business.</p>
-        <form id="discovery-form" class="discovery-form" action="#" method="post" novalidate>
-          <div class="df-row2">
-            <label class="df-field"><span class="df-lbl">First name<span class="df-req" aria-hidden="true">*</span></span><input name="firstName" type="text" required autocomplete="given-name" /></label>
-            <label class="df-field"><span class="df-lbl">Last name<span class="df-req" aria-hidden="true">*</span></span><input name="lastName" type="text" required autocomplete="family-name" /></label>
-          </div>
-          <label class="df-field"><span class="df-lbl">Email<span class="df-req" aria-hidden="true">*</span></span><input name="email" type="email" required autocomplete="email" /></label>
-          <label class="df-field"><span class="df-lbl">Phone<span class="df-req" aria-hidden="true">*</span></span><input name="phone" type="tel" required autocomplete="tel" /></label>
-          <label class="df-field"><span class="df-lbl">Company name<span class="df-req" aria-hidden="true">*</span></span><input name="company" type="text" required autocomplete="organization" /></label>
-          <label class="df-field"><span class="df-lbl">Message<span class="df-req" aria-hidden="true">*</span></span><textarea name="message" rows="4" required placeholder="What would you like us to know?"></textarea></label>
-          <p class="df-recaptcha-note" role="note">For production, we wire Google reCAPTCHA (or equivalent) alongside a secure CRM/email endpoint instead of relying on mailto alone.</p>
-          <button type="submit" class="btn-discovery-submit">Submit</button>
-        </form>
-        <p class="discovery-reassurance">No sales pressure · No long-term commitment required</p>
-      </aside>
-    </div>
-
-  </section>
-
-<!-- ============== WHY CHOOSE US ============== -->
-  <section class="why-choose" id="trust">
-    <div class="container">
-      <div class="why-head">
-        <div>
-          <span class="pill">Why this matters</span>
-          <h2 class="h2">We design for ownership,<br><span class="headline-lock">not lock-in.</span></h2>
+    <!-- ============== PROOF CARDS ============== -->
+    <section class="proof-section section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proven in Production</span>
+          <h2 class="h-h2">Real results.<br/>Real manufacturing environments.</h2>
+          <p class="lede lede-center">Real data. Not simulated outputs.</p>
         </div>
-        <p class="lede">
-          Three principles guide everything we do:
-        </p>
-      </div>
 
-      <div class="why-cards">
-        <article class="why-card">
-          <header class="why-card-head">
-            <span class="eyebrow">1 · Security</span>
-          </header>
-          <h3 class="why-title">Read-only by default</h3>
-          <p class="why-body">We never write to your systems without explicit permission. Every query is logged and auditable. Your security team can review exactly what we touched and when.</p>
-          <div class="why-vis why-vis-light">
-            <!-- Quatrefoil -->
-            <svg width="88" height="88" viewBox="-50 -50 100 100" aria-hidden="true">
-              <path d="M0 -40 A 28 28 0 0 1 0 -8 A 28 28 0 0 1 0 -40 Z" fill="#6366F1"/>
-              <path d="M40 0 A 28 28 0 0 1 8 0 A 28 28 0 0 1 40 0 Z" fill="#6366F1"/>
-              <path d="M0 40 A 28 28 0 0 1 0 8 A 28 28 0 0 1 0 40 Z" fill="#6366F1"/>
-              <path d="M-40 0 A 28 28 0 0 1 -8 0 A 28 28 0 0 1 -40 0 Z" fill="#6366F1"/>
-              <circle r="5" fill="#fff"/>
-            </svg>
-          </div>
-        </article>
+        <div class="proof-rail">
+          <article class="proof-card reveal">
+            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
+            <p class="proof-card-quote">&ldquo;400+ table MES database. No documentation, no ERD, no DBA support. Fully mapped into a coherent schema in under 2 hours.&rdquo;</p>
+            <p class="proof-card-context">Full methodology documented and validated in production environment.</p>
+          </article>
 
-        <article class="why-card why-card-dark">
-          <header class="why-card-head">
-            <span class="eyebrow">2 · Ownership</span>
-          </header>
-          <h3 class="why-title">You own the code</h3>
-          <p class="why-body">When we're done, the code is yours. The website is yours. The automations are yours. You can edit them, extend them, or hand them off to someone else. No vendor lock-in. No retainer required to keep using what we built.</p>
-          <div class="why-vis why-vis-dark">
-            <!-- Star4 -->
-            <svg width="92" height="92" viewBox="-50 -50 100 100" aria-hidden="true">
-              <path d="M0 -44 L10 -10 L44 0 L10 10 L0 44 L-10 10 L-44 0 L-10 -10 Z" fill="#fff"/>
-              <circle r="4" fill="#0B1437"/>
-            </svg>
-          </div>
-        </article>
+          <article class="proof-card reveal">
+            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
+            <p class="proof-card-quote">&ldquo;Five production analytics dashboards built and deployed in 3 working days. Covering Yield/RCA, Equipment Utilization, Cycle Time/WIP, SPC/Process Drift, and NPI Performance.&rdquo;</p>
+            <p class="proof-card-context">Live MES data. Real fab environment.</p>
+          </article>
 
-        <article class="why-card">
-          <header class="why-card-head">
-            <span class="eyebrow">3 · Delivery</span>
-          </header>
-          <h3 class="why-title">Ship something useful on day one</h3>
-          <p class="why-body">We don't hand you a prototype that needs six months of polish. We deliver a daily brief you'll actually use. A website you can show customers. A script that actually saves time. Then we iterate based on your feedback.</p>
-          <div class="why-vis why-vis-light">
-            <!-- CircledFlower -->
-            <svg width="92" height="92" viewBox="-50 -50 100 100" aria-hidden="true">
-              <circle r="46" fill="#6366F1"/>
-              <circle r="38" fill="#fff"/>
-              <g transform="scale(0.68)">
-                <path d="M0 -40 A 28 28 0 0 1 0 -8 A 28 28 0 0 1 0 -40 Z" fill="#6366F1"/>
-                <path d="M40 0 A 28 28 0 0 1 8 0 A 28 28 0 0 1 40 0 Z" fill="#6366F1"/>
-                <path d="M0 40 A 28 28 0 0 1 0 8 A 28 28 0 0 1 0 40 Z" fill="#6366F1"/>
-                <path d="M-40 0 A 28 28 0 0 1 -8 0 A 28 28 0 0 1 -40 0 Z" fill="#6366F1"/>
-              </g>
-              <circle r="3.5" fill="#6366F1"/>
-            </svg>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+          <article class="proof-card reveal">
+            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
+            <p class="proof-card-quote">&ldquo;20 distinct AI-augmented projects completed across 6 weeks spanning MES, Salesforce, Jira, and Microsoft 365 integrations. All grounded in live production data, not estimated outputs.&rdquo;</p>
+            <p class="proof-card-context">Cross-system delivery at production scale.</p>
+          </article>
 
-  <!-- ============== REAL WORK ============== -->
-  <section class="impact" id="real-work">
-    <div class="container">
-        <div class="impact-head">
-        <span class="pill pill-onDark">Real work</span>
-        <h2 class="h2 h2-light">How we've learned.</h2>
+          <article class="proof-card reveal">
+            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
+            <p class="proof-card-quote">&ldquo;Equipment maintenance history analyzed across 100+ records. 7 recurring failure patterns identified on critical dicing equipment, including vacuum system as #1 recurring issue.&rdquo;</p>
+            <p class="proof-card-context">Actionable maintenance intelligence from existing MES data.</p>
+          </article>
         </div>
-      <div class="real-work-prose">
-        <p class="real-work-p">We've built websites for three local contractors. Each one told us the same thing: invoicing is killing them. We automated it for two of them. One's still deciding. We've learned that what kills your time is often not what you think.</p>
-        <p class="real-work-p">We've mapped four manufacturer MES systems and found patterns: yield data lives in tables nobody understands. When we surface it properly, engineers spend less time hunting and more time fixing.</p>
-        <p class="real-work-p">We're not claiming we've solved everything. We're learning what actually works at different business scales. Every project teaches us something new about how real work actually happens.</p>
-        <p class="real-work-p real-work-last">That learning makes us better at the next project.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============== ABOUT ============== -->
-  <section class="team" id="about">
-    <div class="container">
-      <div class="team-head">
-        <span class="pill">About us</span>
-        <h2 class="h2">We know this work because we've done it.</h2>
+        <p class="proof-footnote">Full case study and session transcripts available under NDA upon request.</p>
       </div>
+    </section>
 
-      <div class="team-grid">
-        <article class="team-card team-card-unified">
-          <div class="team-photo team-photo--real team-photo--round">
-            <img src="assets/founder-antonio.png" alt="Portrait of Antonio Rojas, founder." class="team-photo-img team-photo-img--antonio" width="400" height="400" loading="lazy" decoding="async" />
+    <!-- ============== THE PRIME AI DIFFERENCE ============== -->
+    <section class="differences-section section">
+      <div class="container">
+        <div class="section-head section-head-left reveal">
+          <span class="eyebrow">The Prime AI Difference</span>
+          <h2 class="h-h2">Three reasons we deliver where others demo.</h2>
+        </div>
+
+        <div class="diff-list">
+          <article class="diff-item">
+            <div class="diff-num">01</div>
+            <div class="diff-content">
+              <h3 class="diff-title">Built Inside a Real Fab</h3>
+              <div class="diff-body">
+                <p>Antonio Rojas spent 18 years inside semiconductor manufacturing operations. Not studying manufacturing from the outside.</p>
+                <p>He knows where yield data hides. He knows why reports break under pressure. He knows what operators will actually trust. And he knows what questions a VP of Manufacturing asks at 6am when a line goes down.</p>
+                <p>This methodology was built in a real production environment against real data. Not in a consulting whitepaper.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="diff-item">
+            <div class="diff-num">02</div>
+            <div class="diff-content">
+              <h3 class="diff-title">AI-Native From Day One</h3>
+              <div class="diff-body">
+                <p>Every Prime AI engagement uses Claude with live MCP server connections. We run actual metadata discovery queries against your production systems in real time.</p>
+                <p>What used to take weeks of manual database archaeology takes hours. What used to require a full IT team and a DBA, we do with AI-augmented methodology and direct schema access.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="diff-item">
+            <div class="diff-num">03</div>
+            <div class="diff-content">
+              <h3 class="diff-title">Governed Access. Not Open Queries.</h3>
+              <div class="diff-body">
+                <p>The biggest mistake in MES + AI projects is letting AI query raw manufacturing tables directly. We never do that.</p>
+                <p>Every Prime AI implementation follows a strict architecture: AI assistant connects through our MCP layer to AI-approved semantic views only. Read-only by default. Every query logged and auditable. Raw tables never exposed.</p>
+                <p>Your security team can review exactly what we touched and when.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== METHODOLOGY VISUAL ============== -->
+    <section class="methodology-feature section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Methodology</span>
+          <h2 class="h-h1">A 10-phase implementation framework built and validated inside a real semiconductor fab.</h2>
+        </div>
+
+        <div class="methodology-feature-gateway reveal">
+          <div class="methodology-feature-gateway-inner">
+            <p class="methodology-feature-gateway-lede">The interactive ten-phase MES + AI roadmap, cross-cutting foundations, and outcome framing live on our Methodology page so you get the full narrative in one place.</p>
+            <div class="methodology-feature-gateway-actions">
+              <a href="methodology.html" class="btn btn-primary">View methodology &amp; roadmap</a>
+            </div>
           </div>
-          <h3 class="team-name">Antonio Rojas</h3>
-          <div class="team-role">Founder &amp; principal</div>
-          <div class="team-loc">18 years inside manufacturing systems.</div>
-          <p class="team-bio">Eighteen years at Semtech implementing and debugging semiconductor MES; he knows where yield data hides, why reports break under pressure, and what operators will actually trust.</p>
-        </article>
+        </div>
 
-        <article class="team-card team-card-unified">
-          <div class="team-photo team-photo--real team-photo--round">
-            <img src="assets/founder-fernando.png" alt="Portrait of Fernando Rojas, co-founder." class="team-photo-img team-photo-img--fernando" width="400" height="400" loading="lazy" decoding="async" />
-          </div>
-          <h3 class="team-name">Fernando Rojas</h3>
-          <div class="team-role">Co-founder &amp; product</div>
-          <div class="team-loc">Designing systems for how people actually work.</div>
-          <p class="team-bio">Computer science (Harvard) and product-scale experience at Disney, bridging fluent UX, governance, and pragmatic AI adoption so tooling survives the messy middle after launch.</p>
-        </article>
+        <div class="reveal">
+          <p class="methodology-statement">This is not a theoretical framework. It was built and validated against a 400+ table production MES database at a $1B semiconductor manufacturer, with no documentation, no ERD, and no DBA support.</p>
+          <p class="methodology-statement methodology-statement-small">The result: a repeatable, governed path from unknown database to trusted AI intelligence that any manufacturer can follow.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="about-belief">
-        <h3 class="about-belief-title">The core belief</h3>
-        <p class="about-belief-body">The best systems are the ones your team will actually use on day one. Not the ones that look perfect after six months of polish.</p>
-        <p class="about-belief-body">That's why we ship working artifacts, not plans. That's why we iterate based on feedback, not assumptions. That's why you own the code, not us.</p>
-      </div>
-    </div>
-  </section>
+    <!-- ============== TEAM ============== -->
+    <section class="team-section section" id="team">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Team</span>
+          <h2 class="h-h2">The people who built the methodology.<br/>The people who deliver it.</h2>
+        </div>
 
-  <!-- ============== CTA ============== -->
-  <section class="cta-section" id="contact">
-    <div class="container cta-inner">
-      <span class="pill">Next step</span>
-      <h2 class="h2 h2-xl">Connect with the team</h2>
-      <p class="lede lede-center">
-        Tell us about your systems, your teams, or your personal workflow. We will respond with straightforward next steps, from a discovery workshop to a scoped integration plan.
-      </p>
-      <div class="cta-actions">
-        <a href="contact.html#schedule" class="btn btn-primary" data-calendly-popup>Open scheduler</a>
-        <a href="mailto:hello@prime-ai.com?subject=Introduction%20from%20website" class="btn btn-ghost">Email hello@prime-ai.com</a>
+        <div class="team-list">
+          <article class="team-member">
+            <div class="team-photo">
+              <img src="assets/founder-antonio.png" alt="Antonio Rojas, Founder & Principal" width="400" height="400" loading="lazy" decoding="async" />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Antonio Rojas</h3>
+              <div class="team-role">Founder &amp; Principal · AI Solutions Architect</div>
+              <div class="team-bio">
+                <p>Antonio spent 18 years inside Semtech&rsquo;s semiconductor manufacturing operations. One of the most technically complex MES environments in the world.</p>
+                <p>He has mapped production databases nobody else could document. Built AI integrations against systems with no ERDs and no documentation. Developed the governed AI methodology that powers every Prime AI engagement.</p>
+                <p>Before Prime AI, Antonio served as IT Business Applications PM/BA and Salesforce Technical Lead at Semtech, implementing and debugging semiconductor MES across Colorado, California, and international operations. 18 years of hands-on MES reality.</p>
+                <p class="team-bio-pullquote">When Antonio walks into your facility, he is not learning what a fab looks like. He has been there for 18 years.</p>
+              </div>
+              <div class="team-contact">
+                <a href="tel:8052164651">(805) 216-4651</a> · <a href="mailto:antonio@primeaiconsultants.com">antonio@primeaiconsultants.com</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-member">
+            <div class="team-photo">
+              <img src="assets/founder-fernando.png" alt="Fernando Rojas, Co-Founder & CEO" width="400" height="400" loading="lazy" decoding="async" />
+            </div>
+            <div class="team-info">
+              <h3 class="team-name">Fernando Rojas</h3>
+              <div class="team-role">Co-Founder &amp; CEO</div>
+              <div class="team-bio">
+                <p>Fernando brings the product vision, business infrastructure, and AI-native execution that turns Antonio&rsquo;s manufacturing expertise into a scalable practice.</p>
+                <p>Currently completing Computer Science at Harvard Extension and applying product-scale experience from Disney to build the systems, processes, and platform that will carry Prime AI&rsquo;s methodology to manufacturers globally.</p>
+                <p>Fernando&rsquo;s role is to make sure that what Antonio knows, built over 30 years in manufacturing, does not retire with him. It gets built into products, documented into methodology, and delivered to every client Prime AI serves.</p>
+              </div>
+              <div class="team-contact">
+                <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ============== DUAL CTA ============== -->
+    <section class="dual-cta-section" aria-label="Next steps">
+      <div class="dual-cta reveal">
+        <a href="contact.html#schedule" class="dual-panel dual-panel-light">
+          <span>Book a Discovery Call</span>
+          <span class="dual-panel-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="methodology.html" class="dual-panel dual-panel-dark">
+          <span>See Full Methodology</span>
+          <span class="dual-panel-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
 
   </main>
 
   <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-mark">
-            <svg width="56" height="56" viewBox="-50 -50 100 100" aria-hidden="true">
-              <path d="M0 -46 A 32 32 0 0 1 0 -10 A 32 32 0 0 1 0 -46 Z" fill="#fff"/>
-              <path d="M46 0 A 32 32 0 0 1 10 0 A 32 32 0 0 1 46 0 Z" fill="#fff"/>
-              <path d="M0 46 A 32 32 0 0 1 0 10 A 32 32 0 0 1 0 46 Z" fill="#fff"/>
-              <path d="M-46 0 A 32 32 0 0 1 -10 0 A 32 32 0 0 1 -46 0 Z" fill="#fff"/>
-              <g transform="rotate(45)"><path d="M0 -22 L5 -5 L22 0 L5 5 L0 22 L-5 5 L-22 0 L-5 -5 Z" fill="#6366F1"/></g>
-              <circle r="3" fill="#0B1437"/>
-            </svg>
-            <div class="footer-words">
-              <span class="footer-name">Prime</span>
-              <span class="footer-tag">AI&nbsp;&nbsp;CONSULTANTS</span>
-            </div>
-          </div>
-          <p class="footer-blurb">
-            Practical AI for real operations, bridging ERP, CRM, and MES systems with modern intelligent solutions.
-          </p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
+          <p class="footer-tagline">Practical AI for real manufacturing operations. Not theory. Not demos. Working infrastructure.</p>
         </div>
-
         <div class="footer-col">
-          <h4>Explore</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="services.html">Services</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Methodology</h4>
+          <ul>
+            <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
             <li><a href="ai-erp.html">AI for ERP</a></li>
             <li><a href="ai-crm.html">AI for CRM</a></li>
-            <li><a href="ai-individuals.html">AI for Individuals</a></li>
-            <li><a href="levels-of-ai.html">3 levels of AI</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="company.html">Company</a></li>
-            <li><a href="index.html#about">Team</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-          </ul>
-        </div>
-
         <div class="footer-col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="mailto:hello@prime-ai.com">hello@prime-ai.com</a></li>
-            <li><a href="contact.html#schedule">Schedule a call</a></li>
-            <li><span class="footer-soon" role="note">Privacy policy<span class="footer-soon-marker"> · coming soon</span></span></li>
-            <li><span class="footer-soon" role="note">Terms<span class="footer-soon-marker"> · coming soon</span></span></li>
+            <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
+            <li><a href="tel:8052164651">(805) 216-4651</a></li>
+            <li>Phoenix, AZ · Los Angeles, CA</li>
+            <li><a href="contact.html#schedule">Schedule a Call</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-taglines">
-        <span>Made in Phoenix and Los Angeles</span>
-        <span>18 years inside enterprise systems.</span>
-        <span>Read-only by default.</span>
-        <span>You own the code.</span>
-      </div>
+      <p class="footer-statement">The next AI revolution is in the physical world.<br/>We are building the intelligence layer for it.</p>
 
       <div class="footer-base">
-        <span>© 2026 Prime AI Consultants. All rights reserved.</span>
-        <span class="footer-legal-note">Security posture available on request · Hero photography via <a href="https://unsplash.com/license" rel="noopener noreferrer">Unsplash</a> (commercial use).</span>
+        <span>© 2026 Prime AI Consultants LLC. All rights reserved.</span>
+        <span>
+          <a href="privacy.html">Privacy Policy</a> ·
+          <a href="terms.html">Terms of Service</a> ·
+          Security Posture available on request
+        </span>
       </div>
     </div>
   </footer>
 
-  <a href="contact.html#schedule" class="sticky-cta-bar" id="sticky-cta" data-calendly-popup hidden>
-    <span class="sticky-cta-title">Book discovery</span>
-    <span class="sticky-cta-hint">30 min · no obligation →</span>
-  </a>
-  <script src="assets/calendly.js" defer></script>
+  <a href="contact.html#schedule" class="sticky-cta" aria-label="Book a discovery call">Book Discovery Call</a>
+
   <script src="assets/site.js" defer></script>
 </body>
 </html>

@@ -1,302 +1,55 @@
+/* =================================================================
+   PRIME AI CONSULTANTS — site.js
+   Lightweight client-side: mobile nav, active link, announcement
+   dismiss, sticky CTA, scroll reveal, Formspree contact submit.
+   ================================================================= */
 (function () {
   "use strict";
 
-  function pathnameFile() {
-    var pathname = window.location.pathname.replace(/\\/g, "/");
-    var segments = pathname.split("/").filter(Boolean);
-    var last = segments.length ? segments[segments.length - 1] : "";
-    if (!last || last.toLowerCase() === "index.html") return "index.html";
+  // ---------- Helpers ----------
+  function pageFile() {
+    var p = window.location.pathname.replace(/\\/g, "/");
+    var segs = p.split("/").filter(Boolean);
+    var last = segs.length ? segs[segs.length - 1].toLowerCase() : "";
+    if (!last || last === "") return "index.html";
     return last;
   }
 
-  function parseHrefNav(href) {
-    href = href.trim();
-    var q = href.indexOf("?");
-    if (q >= 0) href = href.slice(0, q);
-    var hashIdx = href.indexOf("#");
-    var hashPart = hashIdx >= 0 ? href.slice(hashIdx).toLowerCase() : "";
-    var pathPart = hashIdx >= 0 ? href.slice(0, hashIdx) : href;
-    var segments = pathPart.split("/").filter(Boolean);
-    var file =
-      segments.length === 0
-        ? ""
-        : segments[segments.length - 1].toLowerCase() || "index.html";
-    if (!file.endsWith(".html") && segments.length === 0) file = "";
-    if (
-      segments.length &&
-      segments[segments.length - 1] === "" &&
-      !file.endsWith(".html")
-    )
-      file = "index.html";
-    return { file: file, hash: hashPart };
-  }
-
-  function closeAllNavDropdowns() {
-    document.querySelectorAll("[data-nav-dropdown].is-open").forEach(function (dd) {
-      dd.classList.remove("is-open");
-      var t = dd.querySelector(".nav-dropdown-toggle");
-      if (t) t.setAttribute("aria-expanded", "false");
-    });
-  }
-
-  function setNavActiveByPathname() {
-    var current = pathnameFile().toLowerCase();
-    var pageHash = (window.location.hash || "").toLowerCase();
-    var onHomePage = current === "index.html" || current === "";
-
-    document.querySelectorAll(".nav-sheet [data-nav-dropdown]").forEach(function (dd) {
-      dd.classList.remove("nav-dropdown-parent-active");
-    });
-
-    document.querySelectorAll(".nav-sheet a").forEach(function (a) {
-      a.classList.remove("active");
-    });
-
-    document.querySelectorAll(".nav-sheet a").forEach(function (a) {
-      var href = a.getAttribute("href") || "";
-      if (
-        !href.trim() ||
-        href.startsWith("mailto:") ||
-        href.startsWith("javascript:")
-      ) {
-        return;
-      }
-
-      var parsed = parseHrefNav(href);
-      var hrefFile = parsed.file.toLowerCase();
-      if (!hrefFile && !parsed.hash) return;
-
-      var active = false;
-
-      if (hrefFile === "index.html" && parsed.hash === "") {
-        active = onHomePage;
-      } else if (hrefFile) {
-        var fileMatches =
-          hrefFile === current || (hrefFile === "index.html" && onHomePage);
-        if (parsed.hash) active = fileMatches && pageHash === parsed.hash;
-        else active = hrefFile === current;
-      } else if (parsed.hash && onHomePage) {
-        active = pageHash === parsed.hash;
-      }
-
-      if (active) {
+  // ---------- Active nav link ----------
+  function setActiveNav() {
+    var current = pageFile();
+    var aiPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html"];
+    document.querySelectorAll(".nav-links a[href]").forEach(function (a) {
+      var href = (a.getAttribute("href") || "").trim().toLowerCase();
+      if (!href || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+      var hrefFile = href.split("/").pop().split("#")[0] || "index.html";
+      if (hrefFile === current) {
+        a.classList.add("active");
+      } else if (a.dataset.parent === "services" && aiPages.indexOf(current) !== -1) {
         a.classList.add("active");
       }
     });
-
-    document.querySelectorAll("[data-nav-dropdown]").forEach(function (dd) {
-      if (
-        dd.querySelector(".nav-dropdown-panel a.active") ||
-        dd.querySelector("a.nav-dropdown-primary.active")
-      ) {
-        dd.classList.add("nav-dropdown-parent-active");
-      }
-    });
   }
 
-  function initDiscoveryForm() {
-    var discoveryForm = document.getElementById("discovery-form");
-    if (!discoveryForm) return;
-    discoveryForm.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      if (!discoveryForm.reportValidity()) return;
-
-      var fd = new FormData(discoveryForm);
-      var msg = fd.get("message");
-      msg = typeof msg === "string" ? msg : "";
-      if (msg.length > 1200) {
-        msg = msg.slice(0, 1170) + "\n…(message truncated)";
-      }
-
-      var bodyLines = [
-        "Discovery call: website form",
-        "",
-        "First: " + (fd.get("firstName") || ""),
-        "Last: " + (fd.get("lastName") || ""),
-        "Email: " + (fd.get("email") || ""),
-        "Phone: " + (fd.get("phone") || ""),
-        "Company: " + (fd.get("company") || ""),
-        "",
-        "Message:",
-        msg,
-      ];
-      var subject = encodeURIComponent(
-        "Discovery call: " + String(fd.get("company") || "website inquiry")
-      );
-      var mailtoUrl =
-        "mailto:hello@prime-ai.com?subject=" +
-        subject +
-        "&body=" +
-        encodeURIComponent(bodyLines.join("\n"));
-
-      if (mailtoUrl.length > 1850) {
-        window.location.href =
-          "mailto:hello@prime-ai.com?subject=" +
-          subject +
-          "&body=" +
-          encodeURIComponent(
-            "(Message was long - please reply with details.)\n\nCompany: " +
-              String(fd.get("company") || "") +
-              "\nEmail: " +
-              String(fd.get("email") || "")
-          );
-        return;
-      }
-      window.location.href = mailtoUrl;
-    });
-  }
-
-  function initContactFormAlias() {
-    var form = document.getElementById("contact-main-form");
-    if (!form) return;
-    form.addEventListener("submit", function (ev) {
-      ev.preventDefault();
-      if (!form.reportValidity()) return;
-      var fd = new FormData(form);
-      var subject = encodeURIComponent(
-        String(fd.get("subject") || "Website contact | Prime AI Consultants")
-      );
-      var msg = fd.get("message");
-      msg = typeof msg === "string" ? msg : "";
-      if (msg.length > 1500) msg = msg.slice(0, 1470) + "\n…(truncated)";
-
-      var lines = [
-        "Name: " + (fd.get("name") || ""),
-        "Email: " + (fd.get("email") || ""),
-        "Phone: " + (fd.get("phone") || ""),
-        "",
-        msg,
-      ];
-      window.location.href =
-        "mailto:hello@prime-ai.com?subject=" +
-        subject +
-        "&body=" +
-        encodeURIComponent(lines.join("\n"));
-    });
-  }
-
-  function initNavDropdowns(mqMobile) {
-    document.querySelectorAll("[data-nav-dropdown]").forEach(function (dd) {
-      var toggle = dd.querySelector(".nav-dropdown-toggle");
-      if (!toggle) return;
-
-      toggle.addEventListener("click", function (e) {
-        if (!mqMobile.matches) return;
-        e.preventDefault();
-        e.stopPropagation();
-        var willOpen = !dd.classList.contains("is-open");
-        document.querySelectorAll("[data-nav-dropdown].is-open").forEach(
-          function (other) {
-            if (other !== dd) {
-              other.classList.remove("is-open");
-              var tb = other.querySelector(".nav-dropdown-toggle");
-              if (tb) tb.setAttribute("aria-expanded", "false");
-            }
-          }
-        );
-        dd.classList.toggle("is-open", willOpen);
-        toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
-      });
-    });
-
-    window.addEventListener("resize", function () {
-      if (!mqMobile.matches) closeAllNavDropdowns();
-    });
-  }
-
-  function initStickyCta() {
-    var el = document.getElementById("sticky-cta");
-    if (!el) return;
-
-    var cur = pathnameFile().toLowerCase();
-    if (cur === "contact.html") {
-      el.setAttribute("hidden", "");
-      return;
-    }
-
-    var showAfter = 340;
-    var ticking = false;
-
-    function update() {
-      ticking = false;
-      var y = window.scrollY || window.pageYOffset;
-      var docH = document.documentElement.scrollHeight;
-      var winH = window.innerHeight;
-      var nearBottom = y + winH > docH - 100;
-
-      if (y > showAfter && !nearBottom) el.removeAttribute("hidden");
-      else el.setAttribute("hidden", "");
-    }
-
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        window.requestAnimationFrame(update);
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update, { passive: true });
-    update();
-  }
-
+  // ---------- Mobile nav ----------
   function initMobileNav() {
-    var wrap = document.querySelector(".pill-nav-wrap");
     var toggle = document.querySelector(".nav-toggle");
-    var sheet = document.getElementById("site-nav-sheet");
-    var overlay = document.querySelector(".nav-overlay");
-    if (!wrap || !toggle || !sheet) return;
-
-    var mqMobile = window.matchMedia("(max-width: 860px)");
-
-    function syncSheetAria() {
-      var mobile = mqMobile.matches;
-      var open = wrap.classList.contains("is-nav-open");
-      if (!mobile) {
-        sheet.removeAttribute("aria-hidden");
-        sheet.removeAttribute("inert");
-        if (overlay) overlay.setAttribute("aria-hidden", "true");
-        return;
-      }
-      sheet.setAttribute("aria-hidden", open ? "false" : "true");
-      if (overlay) overlay.setAttribute("aria-hidden", open ? "false" : "true");
-      if (open) sheet.removeAttribute("inert");
-      else sheet.setAttribute("inert", "");
-    }
+    var wrap = document.querySelector(".site-nav");
+    if (!toggle || !wrap) return;
 
     function setOpen(open) {
-      var mobile = mqMobile.matches;
-      if (!mobile) {
-        wrap.classList.remove("is-nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.documentElement.style.overflow = "";
-        closeAllNavDropdowns();
-        syncSheetAria();
-        return;
-      }
       wrap.classList.toggle("is-nav-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.documentElement.style.overflow = open ? "hidden" : "";
-      if (!open) closeAllNavDropdowns();
-      syncSheetAria();
     }
 
-    initNavDropdowns(mqMobile);
-
     toggle.addEventListener("click", function () {
-      if (!mqMobile.matches) return;
       setOpen(!wrap.classList.contains("is-nav-open"));
     });
 
-    if (overlay) {
-      overlay.addEventListener("click", function () {
-        setOpen(false);
-      });
-    }
-
-    sheet.querySelectorAll("a").forEach(function (a) {
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
       a.addEventListener("click", function () {
-        if (mqMobile.matches) setOpen(false);
+        if (window.matchMedia("(max-width: 920px)").matches) setOpen(false);
       });
     });
 
@@ -308,43 +61,248 @@
     });
 
     window.addEventListener("resize", function () {
-      syncSheetAria();
-      if (!mqMobile.matches) {
-        wrap.classList.remove("is-nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.documentElement.style.overflow = "";
+      if (!window.matchMedia("(max-width: 920px)").matches) {
+        setOpen(false);
       }
     });
-
-    syncSheetAria();
   }
 
-  function initAll() {
-    setNavActiveByPathname();
-    initMobileNav();
-    initStickyCta();
-    initDiscoveryForm();
-    initContactFormAlias();
+  // ---------- Announcement bar dismiss ----------
+  function initAnnounce() {
+    var el = document.querySelector(".announce");
+    if (!el) return;
+    var key = "prime_announce_dismissed_v1";
+    try {
+      if (localStorage.getItem(key) === "1") {
+        el.setAttribute("hidden", "");
+        return;
+      }
+    } catch (e) { /* storage blocked */ }
 
-    window.addEventListener("load", function () {
-      setNavActiveByPathname();
+    var btn = el.querySelector(".announce-close");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      el.setAttribute("hidden", "");
+      try { localStorage.setItem(key, "1"); } catch (e) { /* ignore */ }
+    });
+  }
+
+  // ---------- Sticky CTA ----------
+  function initStickyCta() {
+    var el = document.querySelector(".sticky-cta");
+    if (!el) return;
+    if (pageFile() === "contact.html") {
+      el.style.display = "none";
+      return;
+    }
+
+    var threshold = 480;
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var y = window.scrollY || window.pageYOffset || 0;
+      var docH = document.documentElement.scrollHeight;
+      var winH = window.innerHeight;
+      var nearBottom = y + winH > docH - 240;
+      if (y > threshold && !nearBottom) {
+        el.classList.add("is-visible");
+      } else {
+        el.classList.remove("is-visible");
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
+  // ---------- Scroll reveal ----------
+  function initReveal() {
+    var els = document.querySelectorAll(".reveal");
+    if (!els.length || !("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.05 });
+    els.forEach(function (el) { obs.observe(el); });
+  }
+
+  // ---------- Contact form (Formspree) ----------
+  function initContactForm() {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+
+    var status = form.querySelector(".form-status");
+    var submit = form.querySelector('button[type="submit"]');
+
+    function setStatus(message, kind) {
+      if (!status) return;
+      status.textContent = message;
+      status.classList.remove("is-success", "is-error");
+      status.classList.add("is-visible");
+      status.classList.add(kind === "error" ? "is-error" : "is-success");
+    }
+
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var endpoint = form.getAttribute("action") || "";
+      var fd = new FormData(form);
+
+      // Block submission if Formspree endpoint is still the placeholder.
+      if (endpoint.indexOf("YOUR_FORM_ID") !== -1 || !endpoint) {
+        setStatus(
+          "Form endpoint not yet configured. Please email hello@primeaiconsultants.com directly.",
+          "error"
+        );
+        return;
+      }
+
+      if (submit) {
+        submit.disabled = true;
+        submit.dataset.label = submit.textContent;
+        submit.textContent = "Sending…";
+      }
+
+      fetch(endpoint, {
+        method: "POST",
+        body: fd,
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            setStatus(
+              "Thanks. Your message reached us. We will respond within one business day.",
+              "success"
+            );
+          } else {
+            return res.json().then(function (data) {
+              var msg = data && data.errors && data.errors.length
+                ? data.errors.map(function (e) { return e.message; }).join(", ")
+                : "Submission failed. Please email hello@primeaiconsultants.com directly.";
+              setStatus(msg, "error");
+            });
+          }
+        })
+        .catch(function () {
+          setStatus(
+            "Network error. Please email hello@primeaiconsultants.com directly.",
+            "error"
+          );
+        })
+        .finally(function () {
+          if (submit) {
+            submit.disabled = false;
+            if (submit.dataset.label) submit.textContent = submit.dataset.label;
+          }
+        });
+    });
+  }
+
+  // ---------- Phase detail accordions (methodology, exclusive panels) ----------
+  function initPhaseDetailAccordions() {
+    var root = document.querySelector('.phase-detail-list--accordion');
+    if (!root) return;
+
+    var articles = root.querySelectorAll('.phase-detail--accordion');
+    function closeAllPanels() {
+      articles.forEach(function (other) {
+        var p = other.querySelector('.phase-detail-panel');
+        var b = other.querySelector('.phase-detail-trigger');
+        if (p) p.hidden = true;
+        if (b) b.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function openPanel(article) {
+      var b = article.querySelector('.phase-detail-trigger');
+      var p = article.querySelector('.phase-detail-panel');
+      closeAllPanels();
+      if (p) p.hidden = false;
+      if (b) b.setAttribute('aria-expanded', 'true');
+    }
+
+    articles.forEach(function (article, idx) {
+      var btn = article.querySelector('.phase-detail-trigger');
+      var panel = article.querySelector('.phase-detail-panel');
+      if (!btn || !panel) return;
+
+      if (idx === 0) {
+        panel.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        panel.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', function () {
+        var openClicked = panel.hasAttribute('hidden');
+        closeAllPanels();
+        if (openClicked) {
+          panel.hidden = false;
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
     });
 
-    window.addEventListener(
-      "popstate",
-      function () {
-        setNavActiveByPathname();
-      },
-      false
-    );
+    var hash = window.location.hash;
+    var match = hash && hash.match(/^#phase-(\d{2})$/);
+    if (match) {
+      var targetId = 'phase-' + match[1];
+      var targetArticle = document.getElementById(targetId);
+      if (
+        targetArticle &&
+        targetArticle.classList.contains('phase-detail--accordion') &&
+        root.contains(targetArticle)
+      ) {
+        openPanel(targetArticle);
+      }
+    }
+  }
 
-    window.addEventListener(
-      "hashchange",
-      function () {
-        setNavActiveByPathname();
-      },
-      false
-    );
+  // ---------- Smooth scroll for in-page anchors ----------
+  function initAnchorScroll() {
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var hash = a.getAttribute("href");
+      if (!hash || hash === "#") return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: top, behavior: "smooth" });
+      history.pushState(null, "", hash);
+    });
+  }
+
+  // ---------- Init ----------
+  function initAll() {
+    setActiveNav();
+    initMobileNav();
+    initAnnounce();
+    initStickyCta();
+    initReveal();
+    initContactForm();
+    initAnchorScroll();
+    initPhaseDetailAccordions();
   }
 
   if (document.readyState === "loading") {
