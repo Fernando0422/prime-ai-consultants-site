@@ -1727,24 +1727,26 @@ select:focus-visible {
   border-left-color: var(--color-teal-dark);
 }
 .proof-card-tag {
-  font-family: var(--font-serif-accent);
-  font-size: clamp(14px, 1.85vw, 16px);
-  font-weight: 500;
-  font-style: italic;
-  font-variation-settings: 'opsz' 72;
+  display: block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
   letter-spacing: 0.02em;
   text-transform: none;
-  color: var(--color-navy);
+  color: var(--color-teal-text-on-light);
   line-height: 1.35;
-  max-width: 26ch;
+  margin-bottom: 0;
+  max-width: none;
 }
 .proof-card-quote {
   font-family: var(--font-display);
-  font-size: clamp(16px, 1.95vw, 18px);
-  line-height: 1.52;
-  color: var(--color-dark);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--color-text-dark);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  font-style: italic;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 .proof-card-context {
@@ -3598,6 +3600,43 @@ select:focus-visible {
   position: relative;
   margin-bottom: 12px;
 }
+.contact-info-process {
+  background: var(--color-off-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-teal);
+}
+
+.contact-process-list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0;
+  counter-reset: none;
+}
+
+.contact-process-list li {
+  margin-bottom: 1rem;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  padding-left: 0;
+  position: static;
+}
+
+.contact-process-list li::before {
+  content: none;
+  display: none;
+}
+
+.contact-process-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-process-list strong {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
 .contact-info-list ol li::before {
   content: counter(step-counter);
   position: absolute;
@@ -3723,6 +3762,102 @@ select:focus-visible {
     transform: none;
     transition: none;
   }
+}
+
+/* ---------- Why This Works Section ---------- */
+.why-this-works {
+  background: var(--color-off-white);
+}
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.why-card {
+  background: white;
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  padding-top: 3.5rem;
+  transition: opacity var(--transition);
+}
+
+.why-card:hover {
+  opacity: 0.92;
+}
+
+.why-card-num {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-teal);
+  opacity: 0.28;
+  line-height: 1;
+}
+
+.why-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--color-text-dark);
+}
+
+.why-card-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text-body);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .why-card {
+    padding: 1.5rem;
+    padding-top: 3rem;
+  }
+
+  .why-card-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .why-card-body {
+    font-size: 14px;
+  }
+
+  .form-select {
+    font-size: 16px;
+  }
+}
+
+/* Antonio's Testimony Blockquote */
+.antonio-testimony {
+  border-left: 5px solid var(--color-teal);
+  padding-left: 2rem;
+  margin: 0 0 2rem;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  font-style: normal;
+}
+
+.antonio-testimony p {
+  margin: 0 0 1.5rem;
+}
+
+.antonio-testimony p:last-child {
+  margin-bottom: 0;
+}
+
+.antonio-testimony strong {
+  font-weight: 600;
+  color: var(--color-text-dark);
 }
 
 /* ---------- Utility ---------- */

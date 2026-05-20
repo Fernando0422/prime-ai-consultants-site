@@ -6,6 +6,10 @@
 (function () {
   "use strict";
 
+  // Set your Formspree form ID from https://formspree.io (e.g. "xrgvabcd").
+  // Leave empty to show a clear error and direct visitors to email instead.
+  var FORMSPREE_FORM_ID = "xgoqorke";
+
   // ---------- Helpers ----------
   function pageFile() {
     var p = window.location.pathname.replace(/\\/g, "/");
@@ -147,6 +151,10 @@
     var form = document.getElementById("contact-form");
     if (!form) return;
 
+    if (FORMSPREE_FORM_ID) {
+      form.setAttribute("action", "https://formspree.io/f/" + FORMSPREE_FORM_ID);
+    }
+
     var status = form.querySelector(".form-status");
     var submit = form.querySelector('button[type="submit"]');
 
@@ -163,10 +171,14 @@
       if (!form.reportValidity()) return;
 
       var endpoint = form.getAttribute("action") || "";
+      if (!endpoint && FORMSPREE_FORM_ID) {
+        endpoint = "https://formspree.io/f/" + FORMSPREE_FORM_ID;
+        form.setAttribute("action", endpoint);
+      }
       var fd = new FormData(form);
 
       // Block submission if Formspree endpoint is still the placeholder.
-      if (endpoint.indexOf("YOUR_FORM_ID") !== -1 || !endpoint) {
+      if (!FORMSPREE_FORM_ID || endpoint.indexOf("YOUR_FORM_ID") !== -1 || !endpoint) {
         setStatus(
           "Form endpoint not yet configured. Please email hello@primeaiconsultants.com directly.",
           "error"

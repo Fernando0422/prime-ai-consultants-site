@@ -26,17 +26,17 @@ The contact form posts to a placeholder Formspree endpoint. To activate it:
 1. Sign up at [formspree.io](https://formspree.io) (free tier: 50 submissions/month).
 2. Create a new form. Set the destination email to `hello@primeaiconsultants.com`.
 3. Copy your form ID (looks like `xrgvabcd`).
-4. In `contact.html`, find this line:
+4. In `assets/site.js`, set `FORMSPREE_FORM_ID` to your form ID:
 
-   ```html
-   action="https://formspree.io/f/YOUR_FORM_ID"
+   ```javascript
+   var FORMSPREE_FORM_ID = "xrgvabcd";
    ```
 
-   and replace `YOUR_FORM_ID` with your actual ID.
+   The contact form action is updated on page load. You do not need to edit `contact.html`.
 
 5. Test by submitting the form. The first submission requires email confirmation.
 
-If `YOUR_FORM_ID` is left in place, the form shows an inline error directing visitors to email `hello@primeaiconsultants.com` directly — so the site never silently drops a lead.
+If `FORMSPREE_FORM_ID` is empty (or `YOUR_FORM_ID` remains in `contact.html`), the form shows an inline error directing visitors to email `hello@primeaiconsultants.com` directly — so the site never silently drops a lead.
 
 ### 2. Methodology roadmap (native widget)
 
