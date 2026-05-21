@@ -4184,6 +4184,11 @@ main,
     margin-bottom: 18px;
   }
 
+  .page-home .hero .eyebrow::before,
+  .page-home .hero .eyebrow::after {
+    content: none;
+  }
+
   .page-hero {
     padding-top: clamp(52px, 12vw, 80px);
     padding-bottom: clamp(40px, 9vw, 60px);
