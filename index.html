@@ -78,19 +78,27 @@
         <div class="stats-grid">
           <div class="stat">
             <div class="stat-num">400<span class="stat-num-suffix">+</span></div>
-            <div class="stat-label">MES tables mapped<br/>in a single engagement</div>
+            <div class="stat-label">MES tables mapped<br/>in a single engagement
+              <span class="stat-caveat">(with no documentation, no ERD, no DBA support)</span>
+            </div>
           </div>
           <div class="stat">
             <div class="stat-num">2<span class="stat-num-suffix"> hrs</span></div>
-            <div class="stat-label">Schema reconnaissance<br/>on unknown database</div>
+            <div class="stat-label">Typical schema reconnaissance<br/>on unknown database
+              <span class="stat-caveat">(Semtech case, 2024)</span>
+            </div>
           </div>
           <div class="stat">
             <div class="stat-num">18<span class="stat-num-suffix"> yrs</span></div>
-            <div class="stat-label">Inside semiconductor<br/>manufacturing operations</div>
+            <div class="stat-label">Inside semiconductor<br/>manufacturing operations
+              <span class="stat-caveat">(Semtech, building production systems)</span>
+            </div>
           </div>
           <div class="stat">
             <div class="stat-num">10<span class="stat-num-suffix"> wks</span></div>
-            <div class="stat-label">Full implementation<br/>timeline</div>
+            <div class="stat-label">Typical implementation<br/>timeline
+              <span class="stat-caveat">(depends on schema complexity &amp; SME availability)</span>
+            </div>
           </div>
         </div>
       </div>
@@ -107,27 +115,27 @@
           <article class="problem-pain problem-pain--1 reveal">
             <div class="problem-pain-sheet">
               <span class="problem-pain-num">01</span>
-              <h3 class="problem-pain-title">Your yield data exists.</h3>
-              <p class="problem-pain-detail">Getting to it requires a SQL developer, a ticket queue, and three days of waiting.</p>
+              <h3 class="problem-pain-title">Yield Intelligence Stuck Behind SQL Tickets</h3>
+              <p class="problem-pain-detail">Your yield data exists. But getting to it requires a SQL developer, a ticket queue, and three days of waiting. By the time you have the answer, the decision window is closed.</p>
             </div>
           </article>
           <article class="problem-pain problem-pain--2 reveal">
             <div class="problem-pain-sheet">
               <span class="problem-pain-num">02</span>
-              <h3 class="problem-pain-title">Your MES, SAP, and Salesforce don&rsquo;t talk.</h3>
-              <p class="problem-pain-detail">Every cross-system question is answered manually. Or not at all.</p>
+              <h3 class="problem-pain-title">Siloed Systems, Manual Answers</h3>
+              <p class="problem-pain-detail">Your MES, SAP, and Salesforce don&rsquo;t talk to each other. Every cross-system question is answered manually. Or not answered at all. The intelligence is trapped.</p>
             </div>
           </article>
           <article class="problem-pain problem-pain--3 reveal">
             <div class="problem-pain-sheet">
               <span class="problem-pain-num">03</span>
-              <h3 class="problem-pain-title">Your most experienced MES engineer retires in two years.</h3>
-              <p class="problem-pain-detail">Their institutional knowledge retires with them.</p>
+              <h3 class="problem-pain-title">Institutional Knowledge Walking Out the Door</h3>
+              <p class="problem-pain-detail">Your most experienced MES engineer retires in two years. Their 20 years of understanding how the system actually works? That knowledge walks out with them. It&rsquo;s not documented. It&rsquo;s not in the database. It&rsquo;s gone.</p>
             </div>
           </article>
         </div>
         <blockquote class="problem-statement reveal">
-          <span class="problem-statement-lead">We have spent 18 years inside semiconductor manufacturing.</span>
+          <span class="problem-statement-lead">We spent 18 years inside Semtech&rsquo;s semiconductor manufacturing operations.</span>
           <strong class="problem-statement-nowrap">We know exactly where these problems live.</strong>
           <strong>And we know how to solve them.</strong>
           <span class="problem-statement-attr">Antonio Rojas · Founder &amp; CEO</span>
@@ -147,19 +155,19 @@
           <article class="why-card reveal">
             <div class="why-card-num">01</div>
             <h3 class="why-card-title">Built Inside a Real Fab</h3>
-            <p class="why-card-body">Antonio Rojas spent 18 years inside semiconductor manufacturing operations. Not studying manufacturing. Living it. He knows where yield data hides, why reports break under pressure, and what your engineers will actually trust. This methodology was built in a real production environment against real data. Not in a consulting whitepaper.</p>
+            <p class="why-card-body">Antonio Rojas spent 18 years inside Semtech&rsquo;s semiconductor manufacturing operations. Not as a consultant. As someone who built, debugged, and improved the systems that ran production every day. He knows where yield data actually hides. Why reports fail under pressure. What your engineers will trust because it matches how they know the system actually works. This methodology was built in a real production environment against real data. Not a consulting whitepaper.</p>
           </article>
 
           <article class="why-card reveal">
             <div class="why-card-num">02</div>
-            <h3 class="why-card-title">Read-Only by Default</h3>
-            <p class="why-card-body">The biggest mistake in MES and AI projects is connecting AI directly to raw manufacturing tables. We never do this. Every Prime AI engagement uses a governed semantic layer: AI-approved views only. Read-only. Every query logged and auditable. Your security team reviews exactly what we touched and when.</p>
+            <h3 class="why-card-title">Governed Access by Default</h3>
+            <p class="why-card-body">The biggest mistake in AI projects is connecting AI directly to raw MES tables. We never do this. Every engagement uses a governed semantic layer: AI connects only to approved, read-only views. Every query is logged and auditable. Your security team sees exactly what we touched, when, and why. AI identifies patterns. Your SMEs validate business meaning. Answers are traceable to their source.</p>
           </article>
 
           <article class="why-card reveal">
             <div class="why-card-num">03</div>
-            <h3 class="why-card-title">You Own the Output</h3>
-            <p class="why-card-body">When the engagement ends, the code, documentation, data dictionary, and semantic layer belong to you. There is no vendor lock-in. No platform you must subscribe to in order to keep using what we built. No dependency that requires us to stay involved. We document everything so your team maintains it.</p>
+            <h3 class="why-card-title">You Own Everything We Build</h3>
+            <p class="why-card-body">When the engagement ends, it all belongs to you. Code. Documentation. Data dictionary. Semantic layer. Your team maintains it forever. No vendor lock-in. No platform you must subscribe to. No dependency on us staying involved. This is why clients bring us back&mdash;because we&rsquo;ve actually left them better off.</p>
           </article>
         </div>
       </div>
@@ -181,20 +189,22 @@
                 <h3 class="engage-card-name">Prime Diagnostics</h3>
                 <div class="engage-card-metrics">
                   <span class="engage-duration">2 Weeks</span>
+                  <span class="engage-card-price">$20,000</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
-              <p>We map your MES schema, build your AI data dictionary, and deliver a clear implementation roadmap. You walk away with documented understanding of your own system, and a precise plan for what AI delivers in production.</p>
-              <p>No documentation required. No ERD required. No prior AI experience required. We have mapped 400+ table MES databases with no documentation and no DBA support. That is what we do.</p>
+              <p>Your database has answers. But first, you need to understand what&rsquo;s actually there. Prime Diagnostics maps your schema, classifies tables by business area, and delivers a clear picture of what your data contains.</p>
+              <p>No documentation required. No ERD required. No DBA support needed. We&rsquo;ve mapped 400+ table databases with nothing but access to the system and your SMEs.</p>
+              <p><strong>Timeline:</strong> Typical 2-week engagement. Depends on schema complexity and SME availability.</p>
             </div>
             <div class="engage-card-deliverables">
               <div class="engage-card-deliverables-title">Deliverables</div>
               <ul class="deliverables-list">
-                <li>MES Functional Map</li>
+                <li>MES Functional Map (how data flows through manufacturing)</li>
                 <li>Database Inventory &amp; Object Catalog</li>
-                <li>AI Data Dictionary</li>
-                <li>Table Classification by Business Area</li>
+                <li>AI Data Dictionary (what each object means to your business)</li>
+                <li>Table Classification by Business Area (WIP, Yield, Equipment, Maintenance, etc.)</li>
                 <li>Implementation Roadmap</li>
                 <li>Discovery Call Report</li>
               </ul>
@@ -211,18 +221,21 @@
                 <h3 class="engage-card-name">Prime Build</h3>
                 <div class="engage-card-metrics">
                   <span class="engage-duration">10 Weeks</span>
+                  <span class="engage-card-price">$75k&ndash;$150k</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
-              <p>We build your governed AI layer end to end. MCP server. Semantic views. Security model. Validated query catalog. Production dashboards.</p>
-              <p>Your team answers manufacturing questions in plain English, with answers they trust.</p>
+              <p>We create a complete governed AI system: semantic layer, security model, validated queries, production dashboards. Your team answers manufacturing questions in plain English. Answers come back fast, and your engineers trust them because the logic is transparent and validated.</p>
+              <p>AI does pattern identification. Your SMEs validate business meaning. That&rsquo;s the architecture that works.</p>
+              <p><strong>Timeline:</strong> Typical 10-week engagement. Depends on schema complexity, SME availability, and organizational readiness. We scope exact timeline after Prime Diagnostics.</p>
+              <p><strong>Pricing:</strong> Ranges $75k&ndash;$150k based on database complexity and integration scope.</p>
             </div>
             <div class="engage-card-deliverables">
               <div class="engage-card-deliverables-title">Deliverables</div>
               <ul class="deliverables-list">
-                <li>Working MCP/API Integration Layer</li>
-                <li>AI-Approved Semantic Views</li>
+                <li>Working MCP/API Integration Layer (AI connects through approved views only)</li>
+                <li>AI-Approved Semantic Views (read-only, governed access)</li>
                 <li>Security Model &amp; Access Matrix</li>
                 <li>Validated Query Catalog</li>
                 <li>Production Analytics Dashboards</li>
@@ -242,21 +255,23 @@
                 <h3 class="engage-card-name">Prime Retainer</h3>
                 <div class="engage-card-metrics">
                   <span class="engage-duration">Ongoing</span>
+                  <span class="engage-card-price">$5k&ndash;$10k/mo</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
-              <p>We maintain and expand your AI layer as your MES evolves. New use cases, new plants, new questions answered. Your intelligence layer grows with you.</p>
+              <p>Don&rsquo;t let your intelligence layer stagnate. Prime Retainer keeps your semantic layer growing as your MES evolves, new plants come online, and new questions emerge.</p>
+              <p><strong>Pricing:</strong> $5k&ndash;$10k/month based on scope and update frequency.</p>
             </div>
             <div class="engage-card-deliverables">
-              <div class="engage-card-deliverables-title">Deliverables</div>
+              <div class="engage-card-deliverables-title">What&rsquo;s Included</div>
               <ul class="deliverables-list">
                 <li>Monthly Semantic Layer Updates</li>
                 <li>Expanded Query Catalog</li>
                 <li>New Use Case Development</li>
                 <li>Multi-Plant Onboarding</li>
                 <li>Quarterly SME Validation Reviews</li>
-                <li>Priority Support</li>
+                <li>Priority Support (questions answered within 24 hours)</li>
               </ul>
             </div>
             <div class="engage-card-cta">
@@ -278,31 +293,36 @@
 
         <div class="proof-rail">
           <article class="proof-card reveal">
-            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
-            <p class="proof-card-quote">&ldquo;400+ table MES database. No documentation, no ERD, no DBA support. Fully mapped and functional in under 2 hours.&rdquo;</p>
-            <p class="proof-card-context">Full methodology documented and validated in production environment.</p>
+            <span class="proof-card-tag">Case Study: $1B Semiconductor Manufacturer (Semtech)</span>
+            <p class="proof-card-quote"><strong>Result 1: Schema Mapping at Production Scale</strong><br/>&ldquo;400+ table MES database with no documentation, no ERD, and no DBA support. Fully mapped and functionally validated in under 2 hours.&rdquo;</p>
+            <p class="proof-card-context">Methodology documented and tested against live production environment.</p>
           </article>
 
           <article class="proof-card reveal">
-            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
-            <p class="proof-card-quote">&ldquo;Five production analytics dashboards built and deployed in 3 working days. Covering Yield/RCA, Equipment Utilization, Cycle Time/WIP, SPC/Process Drift, and NPI Performance.&rdquo;</p>
-            <p class="proof-card-context">Live MES data. Real fab environment.</p>
+            <span class="proof-card-tag">Case Study: $1B Semiconductor Manufacturer (Semtech)</span>
+            <p class="proof-card-quote"><strong>Result 2: Production Analytics Dashboards</strong><br/>&ldquo;Five analytics dashboards built, tested, and deployed in 3 working days. Covered: Yield/RCA, Equipment Utilization, Cycle Time/WIP, SPC/Process Drift, NPI Performance.&rdquo;</p>
+            <p class="proof-card-context">All dashboards grounded in live MES data. Validated against engineer workflows.</p>
           </article>
 
           <article class="proof-card reveal">
-            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
-            <p class="proof-card-quote">&ldquo;20 distinct AI-augmented projects completed across 6 weeks spanning MES, Salesforce, Jira, and Microsoft 365 integrations. All grounded in live production data, not estimated outputs.&rdquo;</p>
-            <p class="proof-card-context">Cross-system delivery at production scale.</p>
+            <span class="proof-card-tag">Case Study: $1B Semiconductor Manufacturer (Semtech)</span>
+            <p class="proof-card-quote"><strong>Result 3: Cross-System AI Integration</strong><br/>&ldquo;20 distinct AI-augmented analytics projects across 6 weeks. Integrated MES, Salesforce, Jira, and Microsoft 365 data flows. All grounded in live production data and validated with SME teams before delivery.&rdquo;</p>
+            <p class="proof-card-context">Demonstrates methodology scalability across multiple data systems.</p>
           </article>
 
           <article class="proof-card reveal">
-            <span class="proof-card-tag">A $1B Semiconductor Manufacturer</span>
-            <p class="proof-card-quote">&ldquo;Equipment maintenance history analyzed across 100+ records. 7 recurring failure patterns identified on critical dicing equipment, including vacuum system as #1 recurring issue.&rdquo;</p>
-            <p class="proof-card-context">Actionable maintenance intelligence from existing MES data.</p>
+            <span class="proof-card-tag">Case Study: $1B Semiconductor Manufacturer (Semtech)</span>
+            <p class="proof-card-quote"><strong>Result 4: Actionable Maintenance Intelligence</strong><br/>&ldquo;Equipment maintenance history analyzed across 100+ records. Identified 7 recurring failure patterns on critical dicing equipment, with vacuum system failures as #1 cause.&rdquo;</p>
+            <p class="proof-card-context">Intelligence drawn from existing MES data. Patterns not visible through traditional reporting.</p>
           </article>
         </div>
 
-        <p class="proof-footnote">Full case study and session transcripts available under NDA upon request.</p>
+        <aside class="compliance-disclaimer reveal" aria-label="Case study disclaimer">
+          <h3>Important Note</h3>
+          <p>All results described reflect this client&rsquo;s specific situation, data architecture, and implementation approach. Results depend on database complexity, SME availability, organizational readiness, and adoption of recommendations. Results may not be typical or transferable to all manufacturing environments.</p>
+        </aside>
+
+        <p class="proof-footnote">Full case study details and session transcripts available under NDA upon request.</p>
       </div>
     </section>
 

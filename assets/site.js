@@ -102,6 +102,7 @@
 
     var threshold = 480;
     var ticking = false;
+    var visible = false;
 
     function update() {
       ticking = false;
@@ -109,11 +110,10 @@
       var docH = document.documentElement.scrollHeight;
       var winH = window.innerHeight;
       var nearBottom = y + winH > docH - 240;
-      if (y > threshold && !nearBottom) {
-        el.classList.add("is-visible");
-      } else {
-        el.classList.remove("is-visible");
-      }
+      var shouldShow = y > threshold && !nearBottom;
+      if (shouldShow === visible) return;
+      visible = shouldShow;
+      el.classList.toggle("is-visible", shouldShow);
     }
 
     function onScroll() {
@@ -124,17 +124,23 @@
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update);
+    window.addEventListener("resize", update, { passive: true });
     update();
   }
 
   // ---------- Scroll reveal ----------
   function initReveal() {
     var els = document.querySelectorAll(".reveal");
-    if (!els.length || !("IntersectionObserver" in window)) {
+    if (!els.length) return;
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       els.forEach(function (el) { el.classList.add("is-visible"); });
       return;
     }
+
     var obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -142,7 +148,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.05 });
+    }, { rootMargin: "0px 0px -4% 0px", threshold: 0.12 });
     els.forEach(function (el) { obs.observe(el); });
   }
 
