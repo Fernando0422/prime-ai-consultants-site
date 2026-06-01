@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" role="img" aria-labelledby="workflowTitle">
+  <title id="workflowTitle">Before and after workflow: from hours of spreadsheet data pulls to minutes via semantic layer</title>
+  <!-- BEFORE -->
+  <rect x="8" y="8" width="280" height="184" rx="12" fill="#FEE2E2" fill-opacity="0.15" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="148" y="36" text-anchor="middle" fill="#991B1B" font-family="system-ui,sans-serif" font-size="12" font-weight="700">BEFORE</text>
+  <text x="148" y="56" text-anchor="middle" fill="#5a5a6e" font-family="system-ui,sans-serif" font-size="11">68 hrs/week per engineer</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#4A4A5A">
+    <rect x="28" y="72" width="240" height="28" rx="4" fill="#fff" stroke="#E0E0E8"/>
+    <text x="148" y="90" text-anchor="middle">Manual SQL + spreadsheet pulls</text>
+    <rect x="28" y="108" width="240" height="28" rx="4" fill="#fff" stroke="#E0E0E8"/>
+    <text x="148" y="126" text-anchor="middle">Reconcile conflicting numbers</text>
+    <rect x="28" y="144" width="240" height="28" rx="4" fill="#fff" stroke="#E0E0E8"/>
+    <text x="148" y="162" text-anchor="middle">Answer same question again</text>
+  </g>
+  <!-- arrow -->
+  <path d="M300 100 L340 100" stroke="#00D4B8" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="320" y="88" text-anchor="middle" fill="#0d7d72" font-family="system-ui,sans-serif" font-size="10" font-weight="700">Prime AI</text>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#00D4B8"/></marker></defs>
+  <!-- AFTER -->
+  <rect x="352" y="8" width="280" height="184" rx="12" fill="#D1FAE5" fill-opacity="0.2" stroke="#00D4B8" stroke-width="1"/>
+  <text x="492" y="36" text-anchor="middle" fill="#0d7d72" font-family="system-ui,sans-serif" font-size="12" font-weight="700">AFTER</text>
+  <text x="492" y="56" text-anchor="middle" fill="#5a5a6e" font-family="system-ui,sans-serif" font-size="11">Minutes per query</text>
+  <g font-family="system-ui,sans-serif" font-size="10" fill="#4A4A5A">
+    <rect x="372" y="72" width="240" height="28" rx="4" fill="#0A0F1E"/>
+    <text x="492" y="90" text-anchor="middle" fill="#00D4B8">Semantic layer (5 views)</text>
+    <rect x="372" y="108" width="240" height="28" rx="4" fill="#fff" stroke="#E0E0E8"/>
+    <text x="492" y="126" text-anchor="middle">Governed, logged queries</text>
+    <rect x="372" y="144" width="240" height="28" rx="4" fill="#fff" stroke="#E0E0E8"/>
+    <text x="492" y="162" text-anchor="middle">Consistent answers org-wide</text>
+  </g>
+</svg>

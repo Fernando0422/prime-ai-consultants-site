@@ -8,32 +8,47 @@
   <meta name="theme-color" content="#0A0F1E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-route">
+<body class="page-route page-site">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -61,22 +76,24 @@
       </div>
     </section>
 
-    <section class="reality-statement section reality-statement--prose-left">
+    <section class="reality-statement section reality-statement--prose-left home-section">
       <div class="container container-text">
+        <div class="home-shell home-shell--pad">
         <p>ERP environments accumulate two decades of customizations, batch jobs, integrations, and policy. <strong>Finance trusts the numbers in the ERP. Almost no one asks the ERP a question.</strong></p>
         <p>Reports are scheduled. Custom queries are gatekept. Cross-module questions like &ldquo;why did margin compress on this product family last quarter?&rdquo; sit in a backlog waiting for a consultant.</p>
         <p>We close that gap without touching your master data, your close process, or your audit trail.</p>
+        </div>
       </div>
     </section>
 
-    <section class="before-after before-after--prominent section">
+    <section class="before-after before-after--prominent section home-section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Before / After</span>
           <h2 class="h-h2">Today vs. with Prime AI.</h2>
         </div>
 
-        <div class="before-after-grid">
+        <div class="home-shell home-shell--pad before-after-grid">
           <div class="before-after-head">Today</div>
           <div></div>
           <div class="before-after-head before-after-head-r">With Prime AI</div>
@@ -214,13 +231,29 @@
       </div>
     </section>
 
+    <section class="methodology-bridge section home-section" aria-labelledby="erp-methodology-bridge-heading">
+      <div class="container">
+        <div class="home-shell home-shell--pad methodology-bridge-panel reveal">
+          <div class="methodology-bridge-copy">
+            <span class="eyebrow">Shared framework</span>
+            <h2 class="h-h2" id="erp-methodology-bridge-heading">Same 10 phases — applied to ERP &amp; finance operations</h2>
+            <p>Inventory the schema, map relationships and batch logic, build approved views, validate against close and FP&amp;A reports. The methodology page walks through the sequence with a manufacturing reference; your deliverables follow the same governed path.</p>
+          </div>
+          <div class="methodology-bridge-actions">
+            <a href="methodology.html#framework" class="btn btn-primary btn-arrow">See the full roadmap</a>
+            <a href="services.html#diagnostics" class="btn btn-secondary">Start with Diagnostics</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="dual-cta-section" aria-label="Next steps">
       <div class="dual-cta">
         <a href="contact.html#schedule" class="dual-panel dual-panel-light">
           <span>Book a Discovery Call</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="methodology.html" class="dual-panel dual-panel-dark">
+        <a href="methodology.html#framework" class="dual-panel dual-panel-dark">
           <span>See Full Methodology</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
@@ -233,11 +266,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -246,7 +279,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -255,7 +288,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>

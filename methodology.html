@@ -4,36 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Methodology · The Prime AI 10-Phase Framework</title>
-  <meta name="description" content="MES + AI integration framework built on real manufacturing operations. 10 phases. 10 weeks. One trusted AI intelligence layer." />
+  <meta name="description" content="10-phase governed AI framework for operational data — MES, ERP, CRM, and custom apps. Map the database, build the semantic layer, deploy AI your team trusts. Meet us at Ai4 Las Vegas." />
   <meta name="theme-color" content="#0A0F1E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-methodology">
+<body class="page-methodology page-site">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -53,143 +68,216 @@
     <section class="page-hero">
       <div class="container page-hero-inner">
         <span class="eyebrow hero-eyebrow">Our Methodology</span>
-        <h1 class="h-h1">The MES + AI integration framework built on real manufacturing operations.</h1>
-        <p class="lede lede-text">10 phases. 10 weeks. One trusted AI intelligence layer.</p>
+        <h1 class="h-h1">The 10-phase framework for governed <span class="text-keep">AI on operational data.</span></h1>
+        <p class="lede lede-text">Map legacy databases, build a semantic layer your SMEs validate, deploy AI on read-only approved views. Ten weeks from discovery through pilot.</p>
+        <div class="method-hero-applies" aria-label="Systems this framework applies to">
+          <span class="method-hero-applies-label">Same playbook for</span>
+          <ul class="method-hero-systems" role="list">
+            <li>MES</li>
+            <li>ERP</li>
+            <li>CRM</li>
+            <li>Custom databases</li>
+          </ul>
+        </div>
         <div class="cta-row">
           <a href="contact.html#schedule" class="btn btn-primary btn-arrow">Book Discovery Call</a>
-          <a href="#phases" class="btn btn-secondary">Jump to Phases <span aria-hidden="true">→</span></a>
+          <a href="#framework" class="btn btn-secondary">See the roadmap <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
     <!-- ============== METHODOLOGY INTRO STATEMENT ============== -->
-    <section class="method-intro section">
+    <section class="method-intro section home-section" aria-labelledby="method-intro-heading">
       <div class="container">
-        <div class="method-intro-inner reveal">
-          <p class="method-intro-top">Why This Methodology Exists</p>
-          <p class="method-intro-impact">The biggest mistake in AI + MES projects is assuming AI will automatically understand your manufacturing database and business logic.</p>
-          <p class="method-intro-impact">It will not.</p>
-          <div class="method-intro-statements">
-            <p class="method-intro-statement">Here&rsquo;s what usually happens: consultants connect AI to raw MES tables. AI returns answers based on table names and column patterns. Answers don&rsquo;t match how your engineers know the system actually works. Engineers stop trusting the system. The project dies.</p>
-            <p class="method-intro-statement">Manufacturing databases were not built for AI. They were built for MES applications, with business logic hidden in stored procedures and years of undocumented customizations. Raw tables contain the data. They don&rsquo;t contain context.</p>
-            <p class="method-intro-statement">Before AI answers manufacturing questions correctly, it needs to understand your database semantically: what each table represents, which joins are valid, what business logic is hidden in procedures, and which answers matter.</p>
+        <div class="home-shell home-shell--pad method-intro-panel reveal">
+          <header class="method-intro-head">
+            <span class="eyebrow">Why This Methodology Exists</span>
+            <h2 class="h-h2 method-intro-title" id="method-intro-heading">The biggest mistake in <span class="text-keep">AI + ops data</span> projects</h2>
+            <p class="method-intro-lede">Assuming AI will automatically understand your operational database and business logic — whether that&rsquo;s MES, ERP, CRM, or a custom system of record.</p>
+            <p class="method-intro-punch">It will not.</p>
+          </header>
+
+          <div class="method-intro-grid">
+            <article class="method-intro-card method-intro-card--warn">
+              <span class="method-intro-card-num" aria-hidden="true">01</span>
+              <h3 class="method-intro-card-title">What usually happens</h3>
+              <ul class="method-intro-card-list">
+                <li>Consultants connect AI to raw operational tables</li>
+                <li>Answers follow table names and column patterns</li>
+                <li>Results don&rsquo;t match how SMEs know the system works</li>
+                <li>Trust collapses — the project stalls</li>
+              </ul>
+            </article>
+
+            <article class="method-intro-card">
+              <span class="method-intro-card-num" aria-hidden="true">02</span>
+              <h3 class="method-intro-card-title">Why raw tables fail</h3>
+              <p class="method-intro-card-body">Operational databases were built for transactions and workflows — not for AI. Business logic lives in stored procedures, integrations, and years of undocumented customization.</p>
+              <p class="method-intro-card-callout">Tables hold data. They don&rsquo;t hold context.</p>
+            </article>
+
+            <article class="method-intro-card method-intro-card--solve">
+              <span class="method-intro-card-num" aria-hidden="true">03</span>
+              <h3 class="method-intro-card-title">What has to exist first</h3>
+              <ul class="method-intro-card-list">
+                <li>What each table represents</li>
+                <li>Which joins are valid</li>
+                <li>Logic hidden in procedures</li>
+                <li>Which answers actually matter to operations</li>
+              </ul>
+            </article>
           </div>
-          <p class="method-intro-closing">This methodology builds that understanding. Here&rsquo;s how:</p>
+
+          <footer class="method-intro-foot">
+            <p class="method-intro-foot-text">This methodology builds that semantic layer <em>before</em> AI goes live.</p>
+            <a href="#framework" class="btn btn-primary btn-arrow">See the 10 phases</a>
+          </footer>
         </div>
       </div>
     </section>
 
+  <!-- ============== WHERE FRAMEWORK APPLIES ============== -->
+  <section class="framework-applies section home-section" id="framework-applies" aria-labelledby="framework-applies-heading">
+    <div class="container">
+      <div class="home-shell home-shell--pad framework-applies-panel reveal">
+        <h2 class="framework-applies-title" id="framework-applies-heading">One framework. MES, ERP, and CRM.</h2>
+        <p class="framework-applies-lede">The phase structure is identical. Examples and SME language change by system — not the sequence.</p>
+        <div class="framework-applies-links" role="list">
+          <a href="ai-mes.html" class="framework-applies-card" role="listitem">
+            <span class="framework-applies-card-label">Manufacturing</span>
+            <span class="framework-applies-card-title">AI for MES</span>
+            <span class="framework-applies-card-desc">Yield, WIP, equipment — richest documented examples</span>
+          </a>
+          <a href="ai-erp.html" class="framework-applies-card" role="listitem">
+            <span class="framework-applies-card-label">Finance &amp; ops</span>
+            <span class="framework-applies-card-title">AI for ERP</span>
+            <span class="framework-applies-card-desc">Close, margin, cross-module questions on governed views</span>
+          </a>
+          <a href="ai-crm.html" class="framework-applies-card" role="listitem">
+            <span class="framework-applies-card-label">Revenue</span>
+            <span class="framework-applies-card-title">AI for CRM</span>
+            <span class="framework-applies-card-desc">Pipeline, account health, customer 360 with audit trail</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
     <!-- ============== ROADMAP DIAGRAM + PHASE OVERVIEW ============== -->
-    <section class="phase-overview section">
+    <section class="phase-overview section home-section" id="framework">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">The 10-Phase Framework</span>
           <h2 class="h-h2">From unknown database to trusted intelligence layer.</h2>
         </div>
 
-        <p class="roadmap-native-kicker reveal">Building a trusted AI foundation for MES using SQL Server and Application Server. Ten phased weeks from discovery through pilot rollout.</p>
+        <p class="roadmap-native-kicker reveal">Ten phased weeks from discovery through pilot rollout. Same sequence for MES, ERP, CRM, and custom operational databases — <a href="#framework-applies">see vertical entry points</a>.</p>
 
-        <div class="roadmap-native roadmap-native--light reveal" role="region" aria-label="MES plus AI Integration roadmap, ten phases">
-          <div class="roadmap-native-intro">
-            <p class="roadmap-native-title">MES + AI Integration Roadmap</p>
-          </div>
-          <p class="roadmap-native-hint"><span class="roadmap-native-hint-arrow" aria-hidden="true">←</span> Scroll horizontally · all ten phases <span class="roadmap-native-hint-arrow" aria-hidden="true">→</span></p>
+        <div class="home-shell home-shell--flush reveal">
+        <div class="roadmap-native roadmap-native--light" role="region" aria-label="Ten-phase governed AI roadmap">
+          <header class="roadmap-native-intro">
+            <div class="roadmap-native-intro-row">
+              <p class="roadmap-native-title">Governed AI Roadmap</p>
+              <span class="roadmap-example-pill">Example · MES · SQL Server</span>
+            </div>
+          </header>
+          <p class="roadmap-native-hint" aria-hidden="false"><span class="roadmap-native-hint-arrow" aria-hidden="true">←</span> Scroll horizontally · all ten phases <span class="roadmap-native-hint-arrow" aria-hidden="true">→</span></p>
           <div class="roadmap-native-scroll-wrap">
-            <div class="roadmap-native-track" role="list">
-              <article class="roadmap-phase-card" data-accent="phase-01" role="listitem">
+            <div class="roadmap-native-track">
+              <article class="roadmap-phase-card" data-accent="phase-01">
                 <span class="roadmap-phase-visid" aria-hidden="true">01</span>
                 <span class="roadmap-phase-num">Phase 1</span>
-                <h4 class="roadmap-phase-name">Discovery &amp; Planning</h4>
+                <h3 class="roadmap-phase-name">Discovery &amp; Planning</h3>
                 <span class="roadmap-phase-week">Week 1</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
-                <ul class="roadmap-phase-ul"><li>Business objectives</li><li>MES functional areas</li><li>Stakeholders mapped</li><li>Discovery approach planned</li></ul>
+                <ul class="roadmap-phase-ul"><li>Business objectives</li><li>Operational domains mapped</li><li>Stakeholders mapped</li><li>Discovery approach planned</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
-                <ul class="roadmap-phase-ul"><li>MES Functional Map</li><li>Stakeholder List</li><li>Discovery Plan</li><li>Project Charter</li></ul>
+                <ul class="roadmap-phase-ul"><li>Domain &amp; data map</li><li>Stakeholder List</li><li>Discovery Plan</li><li>Project Charter</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-02" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-02">
                 <span class="roadmap-phase-visid" aria-hidden="true">02</span>
                 <span class="roadmap-phase-num">Phase 2</span>
-                <h4 class="roadmap-phase-name">Stakeholder Discovery</h4>
+                <h3 class="roadmap-phase-name">Stakeholder Discovery</h3>
                 <span class="roadmap-phase-week">Weeks 1-2</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>SMEs, developers, DBAs</li><li>Key reports &amp; KPIs</li><li>Business rules documented</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Interview Notes</li><li>Process flows</li><li>KPI Catalog</li><li>Business Rules List</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-03" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-03">
                 <span class="roadmap-phase-visid" aria-hidden="true">03</span>
                 <span class="roadmap-phase-num">Phase 3</span>
-                <h4 class="roadmap-phase-name">Database Inventory</h4>
+                <h3 class="roadmap-phase-name">Database Inventory</h3>
                 <span class="roadmap-phase-week">Weeks 2-3</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>Tables, views, procedures</li><li>Triggers, jobs, indexes</li><li>Classification by role</li><li>Identify key databases</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Database Inventory</li><li>Object Catalog</li><li>Table Classification</li><li>Data Sources List</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-04" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-04">
                 <span class="roadmap-phase-visid" aria-hidden="true">04</span>
                 <span class="roadmap-phase-num">Phase 4</span>
-                <h4 class="roadmap-phase-name">Data Model &amp; Relationships</h4>
+                <h3 class="roadmap-phase-name">Data Model &amp; Relationships</h3>
                 <span class="roadmap-phase-week">Weeks 3-4</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
-                <ul class="roadmap-phase-ul"><li>Keys &amp; relationships</li><li>Documented vs inferred links</li><li>ER diagrams &amp; genealogy</li></ul>
+                <ul class="roadmap-phase-ul"><li>Keys &amp; relationships</li><li>Documented vs inferred links</li><li>ER diagrams &amp; entity flow</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>ER Diagram</li><li>Relationship Matrix</li><li>Key Tables</li><li>Model documentation</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-05" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-05">
                 <span class="roadmap-phase-visid" aria-hidden="true">05</span>
                 <span class="roadmap-phase-num">Phase 5</span>
-                <h4 class="roadmap-phase-name">Application Server Analysis</h4>
+                <h3 class="roadmap-phase-name">Application Server Analysis</h3>
                 <span class="roadmap-phase-week">Weeks 4-5</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>App architecture review</li><li>APIs &amp; services</li><li>Jobs, logs, configuration</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Architecture diagram</li><li>Job &amp; Process List</li><li>Hidden logic doc</li><li>API inventory</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-06" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-06">
                 <span class="roadmap-phase-visid" aria-hidden="true">06</span>
                 <span class="roadmap-phase-num">Phase 6</span>
-                <h4 class="roadmap-phase-name">AI Knowledge Preparation</h4>
+                <h3 class="roadmap-phase-name">AI Knowledge Preparation</h3>
                 <span class="roadmap-phase-week">Weeks 5-6</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>Data dictionary</li><li>Columns, values, definitions</li><li>Joins, filters, rules</li><li>Sensitive data flagged</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Data Dictionary</li><li>Business Definitions</li><li>Join &amp; Filter Guide</li><li>Valid Values Catalog</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-07" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-07">
                 <span class="roadmap-phase-visid" aria-hidden="true">07</span>
                 <span class="roadmap-phase-num">Phase 7</span>
-                <h4 class="roadmap-phase-name">Trusted Data &amp; Semantic Layer</h4>
+                <h3 class="roadmap-phase-name">Trusted Data &amp; Semantic Layer</h3>
                 <span class="roadmap-phase-week">Weeks 6-7</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>AI-approved views only</li><li>Trusted query definitions</li><li>Performance tuned</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Approved views</li><li>Semantic layer spec</li><li>Query catalog</li><li>Performance notes</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-08" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-08">
                 <span class="roadmap-phase-visid" aria-hidden="true">08</span>
                 <span class="roadmap-phase-num">Phase 8</span>
-                <h4 class="roadmap-phase-name">Security &amp; Governance</h4>
+                <h3 class="roadmap-phase-name">Security &amp; Governance</h3>
                 <span class="roadmap-phase-week">Weeks 7-8</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>Read-only access model</li><li>Roles &amp; permissions</li><li>Privacy &amp; audit logging</li><li>Approval workflow</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Security model</li><li>Access matrix</li><li>Audit plan</li><li>Governance policy</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-09" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-09">
                 <span class="roadmap-phase-visid" aria-hidden="true">09</span>
                 <span class="roadmap-phase-num">Phase 9</span>
-                <h4 class="roadmap-phase-name">AI Integration &amp; Pilot Build</h4>
+                <h3 class="roadmap-phase-name">AI Integration &amp; Pilot Build</h3>
                 <span class="roadmap-phase-week">Weeks 8-9</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>MCP / API bridge</li><li>Semantic layer wired</li><li>Approved data only</li><li>Pilot use cases live</li></ul>
                 <p class="roadmap-phase-list-label">Deliverables</p>
                 <ul class="roadmap-phase-ul"><li>Integration architecture</li><li>MCP / API setup</li><li>Pilot configuration</li><li>Prompt library</li></ul>
               </article>
-              <article class="roadmap-phase-card" data-accent="phase-10" role="listitem">
+              <article class="roadmap-phase-card" data-accent="phase-10">
                 <span class="roadmap-phase-visid" aria-hidden="true">10</span>
                 <span class="roadmap-phase-num">Phase 10</span>
-                <h4 class="roadmap-phase-name">Validation &amp; Pilot Rollout</h4>
+                <h3 class="roadmap-phase-name">Validation &amp; Pilot Rollout</h3>
                 <span class="roadmap-phase-week">Weeks 9-10</span>
                 <p class="roadmap-phase-list-label">Key activities</p>
                 <ul class="roadmap-phase-ul"><li>Test question library</li><li>Answers vs trusted reports</li><li>SME sign-off gates</li></ul>
@@ -248,11 +336,13 @@
           <div class="roadmap-native-outcome outcome-milestone">
             <div class="outcome-milestone-inner">
               <p class="outcome-milestone-eyebrow">Outcome</p>
-              <p class="outcome-milestone-lead"><strong>A trusted AI foundation for MES.</strong></p>
+              <p class="outcome-milestone-lead"><strong>A trusted AI foundation for your operational data.</strong></p>
+            <p class="outcome-milestone-context">Same governed intelligence layer whether your system is MES, ERP, CRM, or custom.</p>
               <p class="outcome-milestone-detail">Semantic understanding of business meaning, structure, relationships, and logic.</p>
               <p class="outcome-milestone-tail">Ready for accurate, reliable insights.</p>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -264,6 +354,7 @@
           <span class="eyebrow">Phase Detail</span>
           <h2 class="h-h2">Inside every phase.</h2>
           <p class="lede lede-center phases-section-lede">What we do. Why it matters. What you walk away with.</p>
+          <p class="phases-context-note">System-agnostic by design — MES, ERP, CRM, or custom operational databases. <a href="#framework-applies">Pick your vertical</a> for domain-specific examples.</p>
         </div>
 
         <div class="phase-detail-list phase-detail-list--accordion reveal">
@@ -281,7 +372,7 @@
             <div class="phase-detail-grid">
               <div class="phase-block">
                 <div class="phase-block-label">What we do</div>
-                <p>Before a single database query, we map business problems you need solved (yield visibility, equipment downtime, cycle time), which MES functional areas matter most, who the stakeholders are, and how discovery will run.</p>
+                <p>Before a single database query, we map the business problems you need solved, which operational domains and data areas matter most, who the stakeholders are, and how discovery will run.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
@@ -290,7 +381,7 @@
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
                 <ul>
-                  <li>MES Functional Map</li>
+                  <li>Domain &amp; data map</li>
                   <li>Stakeholder List</li>
                   <li>Discovery Plan</li>
                   <li>Project Charter</li>
@@ -317,7 +408,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>The most important information about your MES is not in the database. It is in the people who use it every day. We find them and document them.</p>
+                <p>The most important information about your operational system is not in the database. It is in the people who use it every day. We find them and document them.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -349,7 +440,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>Most MES databases have 400+ tables with no documentation. On typical engagements we fully inventory schemas in weeks, not months. This phase replaces slow manual discovery with a systematic, governed process.</p>
+                <p>Large operational schemas often have hundreds of tables with little documentation. On typical engagements we fully inventory schemas in weeks, not months. This phase replaces slow manual discovery with a systematic, governed process.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -377,7 +468,7 @@
             <div class="phase-detail-grid">
               <div class="phase-block">
                 <div class="phase-block-label">What we do</div>
-                <p>We identify primary and foreign keys, detect documented and undocumented relationships, build ER diagrams, and map lot genealogy and WIP flow. Many MES databases have no formal foreign keys, so hidden relationships must be inferred from stored procedures, naming conventions, and application traces.</p>
+                <p>We identify primary and foreign keys, detect documented and undocumented relationships, build ER diagrams, and map how entities flow through your business (orders, lots, accounts, inventory — whatever your domain uses). Legacy systems often lack formal foreign keys, so hidden relationships must be inferred from stored procedures, naming conventions, and application traces.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
@@ -413,7 +504,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>MES logic does not live entirely in the database. Nightly jobs transform data. Middleware recalculates values. If AI does not know this, it will answer questions about stale or transformed data incorrectly.</p>
+                <p>Critical business logic does not live entirely in the database. Scheduled jobs transform data. Middleware and app services recalculate values. If AI does not know this, it will answer questions about stale or transformed data incorrectly.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -445,7 +536,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>This is the semantic layer between raw data and AI understanding. Without it, AI answers are unreliable. With it, AI consistently answers manufacturing questions correctly.</p>
+                <p>This is the semantic layer between raw data and AI understanding. Without it, AI answers are unreliable. With it, AI consistently answers operational questions the way your SMEs expect.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -473,7 +564,7 @@
             <div class="phase-detail-grid">
               <div class="phase-block">
                 <div class="phase-block-label">What we do</div>
-                <p>We design AI-approved views, create the semantic layer, define trusted queries, build the query catalog, and optimize for performance. No AI query ever touches raw MES tables directly.</p>
+                <p>We design AI-approved views, create the semantic layer, define trusted queries, build the query catalog, and optimize for performance. No AI query ever touches raw operational tables directly.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
@@ -482,7 +573,7 @@
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
                 <ul>
-                  <li>Approved Views (vw_AI_WIP_STATUS, vw_AI_YIELD_SUMMARY, etc.)</li>
+                  <li>Approved views (governed vw_AI_* per domain)</li>
                   <li>Semantic Layer Definition</li>
                   <li>Query Catalog</li>
                   <li>Performance Notes</li>
@@ -509,7 +600,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>Manufacturing data is sensitive. Yield data, equipment performance, and production schedules are competitive intelligence. Governance is not an afterthought. It is built from day one.</p>
+                <p>Operational data is sensitive — production metrics, financial figures, pipeline and customer data. Governance is not an afterthought. It is built from day one.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -541,7 +632,7 @@
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>This is where the methodology becomes a working product. Engineers ask questions in plain English. They get answers they trust, with full lineage back to the source data.</p>
+                <p>This is where the methodology becomes a working product. Your team asks questions in plain language and gets answers they trust, with lineage back to the source data.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -569,11 +660,11 @@
             <div class="phase-detail-grid">
               <div class="phase-block">
                 <div class="phase-block-label">What we do</div>
-                <p>We create test questions, validate AI answers against known reports, measure accuracy, refine views and rules, and get SME sign-off. No AI goes to manufacturing users without human expert validation.</p>
+                <p>We create test questions, validate AI answers against known reports, measure accuracy, refine views and rules, and get SME sign-off. No AI reaches end users without human expert validation.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Why it matters</div>
-                <p>One wrong yield number causes a bad production decision. Trust, once lost in manufacturing, is almost impossible to rebuild. Validation is not optional.</p>
+                <p>One wrong number on a trusted KPI drives a bad decision. Trust, once lost, is hard to rebuild. Validation is not optional.</p>
               </div>
               <div class="phase-block">
                 <div class="phase-block-label">Deliverables</div>
@@ -593,7 +684,8 @@
         <div class="phase-outcome outcome-milestone reveal">
           <div class="outcome-milestone-inner">
             <p class="outcome-milestone-eyebrow">Outcome</p>
-            <p class="outcome-milestone-lead"><strong>A trusted AI foundation for MES.</strong></p>
+            <p class="outcome-milestone-lead"><strong>A trusted AI foundation for your operational data.</strong></p>
+            <p class="outcome-milestone-context">Same governed intelligence layer whether your system is MES, ERP, CRM, or custom.</p>
             <p class="outcome-milestone-detail">Semantic understanding of business meaning, structure, relationships, and logic.</p>
             <p class="outcome-milestone-tail">Ready for accurate, reliable insights.</p>
           </div>
@@ -607,13 +699,13 @@
     </section>
 
     <section class="dual-cta-section" aria-label="Next steps">
-      <div class="dual-cta reveal">
+      <div class="dual-cta">
         <a href="contact.html#schedule" class="dual-panel dual-panel-light">
           <span>Book Free Discovery Call</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="services.html" class="dual-panel dual-panel-dark">
-          <span>Explore Services</span>
+        <a href="index.html#ai4" class="dual-panel dual-panel-dark">
+          <span>Meet us at Ai4</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -625,11 +717,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -638,7 +730,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -647,12 +739,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>
             <li>Phoenix, AZ · Los Angeles, CA</li>
             <li><a href="contact.html#schedule">Schedule a Call</a></li>
+            <li><a href="index.html#ai4">Ai4 2026 · Las Vegas</a></li>
           </ul>
         </div>
       </div>

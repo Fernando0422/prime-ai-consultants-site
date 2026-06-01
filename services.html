@@ -4,36 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services · Prime AI Consultants</title>
-  <meta name="description" content="Three engagements: Prime Diagnostics (2 weeks), Prime Build (10 weeks), Prime Retainer (ongoing). You own everything we build. No lock-in. No retainer surprise." />
+  <meta name="description" content="Prime Diagnostics (2 weeks), Prime Build (~10 weeks), Prime Retainer. Governed AI on MES, ERP, and operational data. Most clients start with the diagnostic." />
   <meta name="theme-color" content="#0A0F1E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-route page-services">
+<body class="page-route page-site page-services">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -54,35 +69,36 @@
       <div class="container page-hero-inner">
         <span class="eyebrow hero-eyebrow">How We Engage</span>
         <h1 class="h-h1">Prime Diagnostics, Prime Build, Prime Retainer.</h1>
-        <p class="lede lede-text">Governed AI infrastructure for manufacturing. Map your database first. Build the semantic layer. Deploy AI your engineers trust.</p>
+        <p class="lede lede-text">Governed AI on operational data you already run — MES, ERP, custom apps. Map the database first. Build the semantic layer. Deploy AI your team trusts.</p>
+        <p class="commercial-note" style="margin-top:1rem;text-align:center;">Most engagements start with <strong>Prime Diagnostics</strong> — fixed scope, deliverables you keep, low risk before a full build. Deepest in manufacturing; same model for ERP, finance ops, and custom apps. <a href="index.html#who-its-for">See fit criteria</a>.</p>
         <div class="cta-row">
           <a href="#diagnostics" class="btn btn-primary btn-arrow">Start with Diagnostics</a>
-          <a href="methodology.html" class="btn btn-secondary">See Methodology</a>
+          <a href="methodology.html#framework" class="btn btn-secondary">See the 10 phases</a>
         </div>
       </div>
     </section>
 
-    <section class="method-intro section">
+    <section class="method-intro section home-section">
       <div class="container">
-        <div class="method-intro-inner reveal">
+        <div class="home-shell home-shell--pad method-intro-inner reveal">
           <p class="method-intro-statement">Prime Diagnostics maps what you have. Prime Build puts governed AI in production. Prime Retainer keeps the layer current as your operations change.</p>
-          <p class="method-intro-closing">Typical timelines and pricing below. Exact scope confirmed after discovery.</p>
+          <p class="method-intro-closing">Typical timelines below. Exact scope confirmed after discovery.</p>
         </div>
       </div>
     </section>
 
     <!-- ============== ENGAGEMENT CARDS ============== -->
-    <section class="engage-section section">
+    <section class="engage-section section home-section" aria-labelledby="services-engage-heading">
       <div class="container">
-        <div class="engage-grid">
+        <h2 id="services-engage-heading" class="sr-only">Engagement options</h2>
+        <div class="home-shell home-shell--stack engage-grid">
 
           <article class="engage-card" id="diagnostics">
             <header class="engage-card-head">
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Diagnostics</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">2 Weeks</span>
-                  <span class="engage-card-price">From $20,000</span>
+                  <span class="engage-duration engage-duration--sans">2 weeks</span>
                 </div>
               </div>
             </header>
@@ -110,8 +126,7 @@
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Build</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">10 Weeks</span>
-                  <span class="engage-card-price">$75k&ndash;$150k</span>
+                  <span class="engage-duration engage-duration--sans">~10 weeks</span>
                 </div>
               </div>
             </header>
@@ -126,7 +141,7 @@
                 <li>Team training (4&ndash;6 hours)</li>
                 <li>30-day post-launch support</li>
               </ul>
-              <p><strong>Timeline:</strong> typical 10-week engagement. Actual timeline depends on schema complexity, SME availability, and organizational readiness. Exact pricing discussed after Prime Diagnostics assessment.</p>
+              <p><strong>Timeline:</strong> typical 10-week engagement. Actual timeline depends on schema complexity, SME availability, and organizational readiness. Scope confirmed after Prime Diagnostics assessment.</p>
             </div>
             <div class="engage-card-cta">
               <a href="methodology.html" class="btn-link">Learn More</a>
@@ -138,8 +153,7 @@
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Retainer</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">Ongoing</span>
-                  <span class="engage-card-price">$5k&ndash;$10k/mo</span>
+                  <span class="engage-duration engage-duration--sans">Ongoing</span>
                 </div>
               </div>
             </header>
@@ -258,10 +272,6 @@
           <p><strong>Data Access:</strong> Prime AI connects AI to read-only, approved views of your data only. All queries are logged and auditable. Prime AI does not connect AI to raw production tables. Clients are responsible for ensuring Prime AI has appropriate data access permissions and that all data handling complies with internal policies, regulatory requirements, and applicable data privacy laws (GDPR, CCPA, state privacy laws, etc.).</p>
           <p><strong>Timeline Qualification:</strong> Prime AI&rsquo;s typical engagement timelines (2 weeks for Diagnostics, 10 weeks for Build, ongoing for Retainer) are based on consulting practice experience. Actual timelines depend on schema complexity, available SME time, organizational readiness, and scope definitions. Timeline estimates will be clarified in the formal engagement proposal.</p>
         </aside>
-        <aside class="compliance-disclaimer reveal" style="margin-top: 24px;" aria-label="Pricing note">
-          <h3>Pricing Note</h3>
-          <p>Pricing reflects typical engagements for mid-market manufacturers ($100M&ndash;$2B revenue) with 300&ndash;600 table MES schemas. Pricing varies based on database complexity and schema size, number of systems requiring integration, required security and governance complexity, and scope of post-implementation support. Final pricing will be provided in the formal engagement proposal following Prime Diagnostics or initial discovery call.</p>
-        </aside>
       </div>
     </section>
 
@@ -272,7 +282,7 @@
           <span>Book a Discovery Call</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="methodology.html" class="dual-panel dual-panel-dark">
+        <a href="methodology.html#framework" class="dual-panel dual-panel-dark">
           <span>See Full Methodology</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
@@ -285,11 +295,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -298,7 +308,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -307,11 +317,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>
             <li>Phoenix, AZ · Los Angeles, CA</li>
+            <li><a href="index.html#ai4">Ai4 2026 · Las Vegas</a></li>
+            <li><a href="index.html#who-its-for">Who we&rsquo;re for</a></li>
             <li><a href="contact.html#schedule">Schedule a Call</a></li>
           </ul>
         </div>

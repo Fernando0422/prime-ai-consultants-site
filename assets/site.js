@@ -20,15 +20,28 @@
   }
 
   // ---------- Active nav link ----------
+  function parseNavHref(href) {
+    var raw = (href || "").trim().toLowerCase();
+    if (!raw || raw.startsWith("mailto:") || raw.startsWith("tel:")) return null;
+    var parts = raw.split("#");
+    var file = parts[0].split("/").pop() || "index.html";
+    var hash = parts.length > 1 ? "#" + parts[1] : "";
+    return { file: file, hash: hash };
+  }
+
   function setActiveNav() {
     var current = pageFile();
+    var currentHash = (window.location.hash || "").toLowerCase();
     var aiPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html"];
-    document.querySelectorAll(".nav-links a[href]").forEach(function (a) {
-      var href = (a.getAttribute("href") || "").trim().toLowerCase();
-      if (!href || href.startsWith("mailto:") || href.startsWith("tel:")) return;
-      var hrefFile = href.split("/").pop().split("#")[0] || "index.html";
-      if (hrefFile === current) {
-        a.classList.add("active");
+    document.querySelectorAll(".nav-links a[href], .nav-parent-link[href]").forEach(function (a) {
+      var parsed = parseNavHref(a.getAttribute("href"));
+      if (!parsed) return;
+      if (parsed.file === current) {
+        if (parsed.hash === currentHash) {
+          a.classList.add("active");
+        } else if (!parsed.hash && !currentHash) {
+          a.classList.add("active");
+        }
       } else if (a.dataset.parent === "services" && aiPages.indexOf(current) !== -1) {
         a.classList.add("active");
       }
@@ -39,12 +52,62 @@
   function initMobileNav() {
     var toggle = document.querySelector(".nav-toggle");
     var wrap = document.querySelector(".site-nav");
+    var navLinks = document.querySelector(".nav-links");
     if (!toggle || !wrap) return;
+
+    if (navLinks && !navLinks.id) {
+      navLinks.id = "nav-links";
+    }
+
+    var focusTrapHandler = null;
+
+    function mobileMenuFocusables() {
+      var list = [toggle];
+      if (navLinks) {
+        navLinks.querySelectorAll('a[href], button:not([disabled])').forEach(function (el) {
+          list.push(el);
+        });
+      }
+      return list.filter(function (el) {
+        return el && !el.disabled && el.offsetParent !== null;
+      });
+    }
+
+    function trapMenuFocus(e) {
+      if (e.key !== "Tab" || !wrap.classList.contains("is-nav-open")) return;
+      var items = mobileMenuFocusables();
+      if (items.length < 2) return;
+      var first = items[0];
+      var last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
 
     function setOpen(open) {
       wrap.classList.toggle("is-nav-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.documentElement.style.overflow = open ? "hidden" : "";
+
+      if (open) {
+        if (!focusTrapHandler) {
+          focusTrapHandler = trapMenuFocus;
+          document.addEventListener("keydown", focusTrapHandler);
+        }
+        var items = mobileMenuFocusables();
+        var firstLink = navLinks ? navLinks.querySelector("a[href]") : null;
+        window.requestAnimationFrame(function () {
+          if (firstLink) firstLink.focus();
+          else if (items[0]) items[0].focus();
+        });
+      } else if (focusTrapHandler) {
+        document.removeEventListener("keydown", focusTrapHandler);
+        focusTrapHandler = null;
+      }
     }
 
     toggle.addEventListener("click", function () {
@@ -71,24 +134,65 @@
     });
   }
 
-  // ---------- Announcement bar dismiss ----------
-  function initAnnounce() {
-    var el = document.querySelector(".announce");
+  // ---------- Ai4 bottom toast (conference window only) ----------
+  function initAi4Toast() {
+    var el = document.querySelector(".ai4-toast");
     if (!el) return;
-    var key = "prime_announce_dismissed_v1";
+
+    var end = new Date("2026-08-07T00:00:00");
+    if (Date.now() >= end.getTime()) {
+      el.setAttribute("hidden", "");
+      return;
+    }
+
+    var storageKey = "prime_ai4_toast_dismissed_v2";
     try {
-      if (localStorage.getItem(key) === "1") {
+      if (localStorage.getItem(storageKey) === "1") {
         el.setAttribute("hidden", "");
         return;
       }
     } catch (e) { /* storage blocked */ }
 
-    var btn = el.querySelector(".announce-close");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
+    var hero =
+      document.querySelector(".hero") ||
+      document.querySelector(".page-hero");
+    var dismissedScroll = false;
+
+    function hideToast(persist) {
       el.setAttribute("hidden", "");
-      try { localStorage.setItem(key, "1"); } catch (e) { /* ignore */ }
-    });
+      el.classList.remove("is-visible");
+      document.body.classList.remove("has-ai4-toast");
+      if (persist) {
+        try { localStorage.setItem(storageKey, "1"); } catch (err) { /* ignore */ }
+      }
+    }
+
+    function showToast() {
+      el.removeAttribute("hidden");
+      el.classList.add("is-visible");
+      document.body.classList.add("has-ai4-toast");
+    }
+
+    showToast();
+
+    var closeBtn = el.querySelector(".ai4-toast-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        hideToast(true);
+      });
+    }
+
+    function onScroll() {
+      if (dismissedScroll || !hero) return;
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        dismissedScroll = true;
+        hideToast(false);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   }
 
   // ---------- Sticky CTA ----------
@@ -114,6 +218,7 @@
       if (shouldShow === visible) return;
       visible = shouldShow;
       el.classList.toggle("is-visible", shouldShow);
+      document.body.classList.toggle("has-sticky-cta", shouldShow);
     }
 
     function onScroll() {
@@ -295,8 +400,100 @@
     }
   }
 
+  // ---------- Stat counter animation ----------
+  function initStatCounters() {
+    var counters = document.querySelectorAll("[data-count]");
+    if (!counters.length) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      counters.forEach(function (el) {
+        el.textContent = el.getAttribute("data-count") || el.textContent;
+      });
+      return;
+    }
+
+    function animateCount(el, target, duration) {
+      var start = 0;
+      var startTime = null;
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(start + (target - start) * eased);
+        if (progress < 1) window.requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute("data-count"), 10);
+        if (isNaN(target)) return;
+        animateCount(el, target, 1200);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { obs.observe(el); });
+  }
+
+  // ---------- Proof card expand/collapse ----------
+  function initProofToggle() {
+    document.querySelectorAll(".proof-card-toggle").forEach(function (btn) {
+      var panelId = btn.getAttribute("aria-controls");
+      var panel = panelId ? document.getElementById(panelId) : null;
+      if (!panel) return;
+      btn.addEventListener("click", function () {
+        var open = panel.hasAttribute("hidden");
+        panel.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        var textNode = Array.prototype.find.call(btn.childNodes, function (n) {
+          return n.nodeType === 3;
+        });
+        if (textNode) {
+          textNode.textContent = open ? "Hide full story " : "Read full story ";
+        }
+      });
+    });
+  }
+
+  // ---------- Path selector → engage card highlight ----------
+  function initPathSelector() {
+    var cards = document.querySelectorAll(".path-card[data-engage-target]");
+    var engageCards = document.querySelectorAll(".engage-card[id]");
+    if (!cards.length) return;
+
+    function highlight(id) {
+      engageCards.forEach(function (c) {
+        c.classList.toggle("is-highlight", c.id === id);
+      });
+      cards.forEach(function (p) {
+        p.classList.toggle("is-active", p.getAttribute("data-engage-target") === id);
+      });
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener("mouseenter", function () {
+        highlight(card.getAttribute("data-engage-target"));
+      });
+      card.addEventListener("focus", function () {
+        highlight(card.getAttribute("data-engage-target"));
+      });
+    });
+
+    if (window.location.hash) {
+      var id = window.location.hash.replace("#", "");
+      if (document.getElementById(id)) highlight(id);
+    } else {
+      highlight("diagnostics");
+    }
+  }
+
   // ---------- Smooth scroll for in-page anchors ----------
   function initAnchorScroll() {
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.addEventListener("click", function (e) {
       var a = e.target && e.target.closest && e.target.closest('a[href^="#"]');
       if (!a) return;
@@ -306,8 +503,85 @@
       if (!target) return;
       e.preventDefault();
       var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo({ top: top, behavior: "smooth" });
+      window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
       history.pushState(null, "", hash);
+    });
+  }
+
+  // ---------- Hero / pitch background videos (optional assets/hero/*) ----------
+  function initOptionalVideo(video, onReady) {
+    if (!video) return;
+
+    function markReady() {
+      video.classList.add("is-ready");
+      if (onReady) onReady();
+    }
+
+    video.addEventListener("loadeddata", markReady);
+    video.addEventListener("canplay", markReady);
+
+    if (video.readyState >= 2) {
+      markReady();
+    } else {
+      video.addEventListener("error", function () {
+        if (video.classList.contains("hero-bg-video")) {
+          video.remove();
+        }
+      });
+    }
+  }
+
+  function initHeroVideo() {
+    initOptionalVideo(document.querySelector(".hero-bg-video"));
+    initOptionalVideo(document.querySelector(".pitch-video-el"));
+  }
+
+  // ---------- Industry explorer (Where this applies) ----------
+  function initIndustryExplorer() {
+    var tablist = document.querySelector(".industries-browser-nav[role='tablist']");
+    if (!tablist) return;
+
+    var tabs = tablist.querySelectorAll("[role='tab']");
+
+    function activate(tab) {
+      var panelId = tab.getAttribute("aria-controls");
+      tabs.forEach(function (t) {
+        var selected = t === tab;
+        t.setAttribute("aria-selected", selected ? "true" : "false");
+        t.tabIndex = selected ? 0 : -1;
+      });
+      document.querySelectorAll(".industry-panel").forEach(function (panel) {
+        var isActive = panel.id === panelId;
+        panel.classList.toggle("is-active", isActive);
+        panel.hidden = !isActive;
+      });
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.tabIndex = tab.getAttribute("aria-selected") === "true" ? 0 : -1;
+      tab.addEventListener("click", function () {
+        activate(tab);
+        if (window.matchMedia("(max-width: 820px)").matches) {
+          tab.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
+      });
+      tab.addEventListener("keydown", function (e) {
+        var next = -1;
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+          next = (index + 1) % tabs.length;
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          next = (index - 1 + tabs.length) % tabs.length;
+        } else if (e.key === "Home") {
+          next = 0;
+        } else if (e.key === "End") {
+          next = tabs.length - 1;
+        }
+        if (next >= 0) {
+          e.preventDefault();
+          activate(tabs[next]);
+          tabs[next].focus();
+        }
+      });
     });
   }
 
@@ -315,12 +589,17 @@
   function initAll() {
     setActiveNav();
     initMobileNav();
-    initAnnounce();
+    initAi4Toast();
     initStickyCta();
+    initHeroVideo();
+    initIndustryExplorer();
     initReveal();
     initContactForm();
     initAnchorScroll();
     initPhaseDetailAccordions();
+    initStatCounters();
+    initProofToggle();
+    initPathSelector();
   }
 
   if (document.readyState === "loading") {

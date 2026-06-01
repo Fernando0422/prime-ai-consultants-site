@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="dictTitle">
+  <title id="dictTitle">AI data dictionary mockup showing table business meaning and governance status</title>
+  <rect width="480" height="300" rx="12" fill="#0A0F1E"/>
+  <!-- window chrome -->
+  <rect x="0" y="0" width="480" height="36" rx="12" fill="#0D1428"/>
+  <circle cx="20" cy="18" r="5" fill="#FF5F57"/><circle cx="38" cy="18" r="5" fill="#FFBD2E"/><circle cx="56" cy="18" r="5" fill="#28CA41"/>
+  <text x="240" y="22" text-anchor="middle" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="11">Prime Diagnostics · AI Data Dictionary</text>
+  <!-- sidebar -->
+  <rect x="0" y="36" width="120" height="264" fill="#0D1B3E"/>
+  <text x="16" y="60" fill="#00D4B8" font-family="system-ui,sans-serif" font-size="9" font-weight="700">BUSINESS AREAS</text>
+  <text x="16" y="82" fill="#fff" font-family="system-ui,sans-serif" font-size="10" opacity="0.9">Production WIP</text>
+  <text x="16" y="100" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="10">Equipment</text>
+  <text x="16" y="118" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="10">Quality / Yield</text>
+  <text x="16" y="136" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="10">Lot traceability</text>
+  <!-- table header -->
+  <rect x="120" y="36" width="360" height="32" fill="#0D1428"/>
+  <text x="136" y="56" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="9" font-weight="600">TABLE</text>
+  <text x="240" y="56" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="9" font-weight="600">BUSINESS MEANING</text>
+  <text x="400" y="56" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="9" font-weight="600">STATUS</text>
+  <!-- rows -->
+  <g font-family="system-ui,sans-serif" font-size="10">
+    <rect x="120" y="68" width="360" height="36" fill="#0A0F1E"/>
+    <text x="136" y="90" fill="#00D4B8" font-weight="600">WIP_LOT_STATUS</text>
+    <text x="240" y="90" fill="#fff" opacity="0.85">Current work-in-progress by lot</text>
+    <rect x="388" y="78" width="72" height="18" rx="9" fill="#00D4B8" fill-opacity="0.2"/>
+    <text x="424" y="90" text-anchor="middle" fill="#00D4B8" font-size="9">Approved</text>
+
+    <rect x="120" y="104" width="360" height="36" fill="#0D1428" fill-opacity="0.5"/>
+    <text x="136" y="126" fill="#00D4B8" font-weight="600">EQP_UTIL_HOUR</text>
+    <text x="240" y="126" fill="#fff" opacity="0.85">Equipment utilization by hour</text>
+    <rect x="388" y="114" width="72" height="18" rx="9" fill="#00D4B8" fill-opacity="0.2"/>
+    <text x="424" y="126" text-anchor="middle" fill="#00D4B8" font-size="9">Approved</text>
+
+    <rect x="120" y="140" width="360" height="36" fill="#0A0F1E"/>
+    <text x="136" y="162" fill="#8A8A9A">DEFECT_TREND_V</text>
+    <text x="240" y="162" fill="#fff" opacity="0.7">Defect rate trends by product</text>
+    <rect x="388" y="150" width="72" height="18" rx="9" fill="#F59E0B" fill-opacity="0.2"/>
+    <text x="424" y="162" text-anchor="middle" fill="#F59E0B" font-size="9">In review</text>
+
+    <rect x="120" y="176" width="360" height="36" fill="#0D1428" fill-opacity="0.5"/>
+    <text x="136" y="198" fill="#8A8A9A">SP_CALC_YIELD</text>
+    <text x="240" y="198" fill="#fff" opacity="0.7">Hidden logic in stored proc</text>
+    <rect x="388" y="186" width="72" height="18" rx="9" fill="#DC2626" fill-opacity="0.15"/>
+    <text x="424" y="198" text-anchor="middle" fill="#FCA5A5" font-size="9">Flagged</text>
+  </g>
+  <!-- footer stats -->
+  <rect x="120" y="228" width="360" height="72" fill="#0D1428"/>
+  <text x="136" y="252" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="9">412 tables mapped</text>
+  <text x="136" y="268" fill="#8A8A9A" font-family="system-ui,sans-serif" font-size="9">12 core objects · 90% of queries</text>
+  <text x="136" y="284" fill="#00D4B8" font-family="system-ui,sans-serif" font-size="9" font-weight="600">Read-only views · Full audit log</text>
+  <rect x="320" y="244" width="140" height="36" rx="6" fill="#00D4B8" fill-opacity="0.15" stroke="#00D4B8" stroke-opacity="0.4"/>
+  <text x="390" y="266" text-anchor="middle" fill="#00D4B8" font-family="system-ui,sans-serif" font-size="10" font-weight="600">Export dictionary</text>
+</svg>

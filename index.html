@@ -3,42 +3,56 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prime AI Consultants · Manufacturing AI Infrastructure</title>
-  <meta name="description" content="Governed AI infrastructure for manufacturing operations. Map your MES database, build a semantic layer, and deploy AI your engineers trust." />
+  <title>Prime AI Consultants · Governed AI on Operational Data</title>
+  <meta name="description" content="Governed AI on legacy operational databases — MES, ERP, and custom apps. Meet Prime AI at Ai4 Las Vegas Aug 4–6. Start with a 2-week diagnostic." />
   <meta name="theme-color" content="#0A0F1E" />
-  <meta property="og:title" content="Prime AI Consultants · Manufacturing AI Infrastructure" />
-  <meta property="og:description" content="Governed AI infrastructure for manufacturing. Built on real operations experience, not a whitepaper." />
+  <meta property="og:title" content="Prime AI Consultants · Governed AI on Operational Data" />
+  <meta property="og:description" content="Map your operational database, build a governed semantic layer, deploy AI your team trusts. Meet us at Ai4, Aug 4–6, Las Vegas." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-home">
+<body class="page-home page-site">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ============== ANNOUNCEMENT BAR ============== -->
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <a href="#ai4" class="ai4-toast-details">Details</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
-  <!-- ============== NAVIGATION ============== -->
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -56,119 +70,684 @@
 
     <!-- ============== HERO ============== -->
     <section class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true">
+        <!-- Drop hero-loop.mp4 + hero-loop.webm in assets/hero/ to enable (see assets/hero/README.txt) -->
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" poster="">
+          <source src="assets/hero/hero-loop.webm" type="video/webm" />
+          <source src="assets/hero/hero-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-bg-mesh"></div>
+      </div>
       <div class="hero-inner">
         <div class="container">
-          <span class="eyebrow hero-eyebrow">Manufacturing AI Infrastructure</span>
-          <h1 class="h-hero">Your Manufacturing Database Has the Answers.<br/>Your Engineers Need a Better Way to Find Them.</h1>
-          <p class="hero-sub">AI + governance built inside real manufacturing operations. Not a whitepaper. A working system your team deploys in weeks.</p>
+          <span class="eyebrow hero-eyebrow">
+            <span class="hero-eyebrow-desktop">Governed AI on Operational Data</span>
+            <span class="hero-eyebrow-stacked">
+              <span class="hero-eyebrow-line">Governed AI on</span>
+              <span class="hero-eyebrow-line">Operational Data</span>
+            </span>
+          </span>
+          <h1 class="h-hero">Your Operations Data<br class="hero-h1-br" />Has the Answers.<br class="hero-h1-br" />Your Team Needs<br class="hero-h1-br" /><em class="hero-h1-accent">a Way to Trust AI on It.</em></h1>
+          <p class="hero-sub">We map legacy databases, build a governed semantic layer, and deploy AI your engineers validate — without replacing your MES, ERP, or core systems. Weeks, not an 18-month transformation program.</p>
+          <p class="hero-proof-line"><strong>Governed AI on MES, ERP, and custom operational databases.</strong> Deepest experience in manufacturing — same playbook for healthcare ops, financial operations, and enterprise IT.</p>
           <div class="hero-cta-row">
-            <a href="contact.html#schedule" class="btn btn-primary btn-lg btn-arrow">Book Discovery Call</a>
-            <a href="methodology.html" class="btn btn-secondary btn-lg">See Our Methodology</a>
+            <a href="contact.html#schedule" class="btn btn-primary btn-lg btn-arrow">Book Free Discovery Call</a>
+            <a href="services.html#diagnostics" class="btn btn-secondary btn-lg">Start with 2-Week Diagnostic</a>
           </div>
         </div>
       </div>
-      <span class="hero-scroll" aria-hidden="true">Scroll to Explore ↓</span>
+      <a href="#stats" class="hero-scroll" aria-label="Scroll to typical results">Scroll to Explore ↓</a>
     </section>
 
-    <!-- ============== STATS ============== -->
-    <section class="stats-bar">
-      <div class="container reveal">
-        <span class="eyebrow">Typical Results</span>
-        <div class="stats-grid">
-          <div class="stat">
-            <div class="stat-num">400<span class="stat-num-suffix">+</span></div>
-            <div class="stat-label">MES tables fully mapped<br/>in weeks, not months
-              <span class="stat-caveat">(typical for similar-complexity engagements)</span>
-            </div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">3<span class="stat-num-suffix">-5</span></div>
-            <div class="stat-label">Working days to build<br/>semantic layer from scratch
-              <span class="stat-caveat">(after database inventory is complete)</span>
-            </div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">5</div>
-            <div class="stat-label">Production dashboards<br/>deployed within 10 days
-              <span class="stat-caveat">(validated by engineers before use)</span>
-            </div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">10<span class="stat-num-suffix"> wks</span></div>
-            <div class="stat-label">Typical implementation<br/>timeline
-              <span class="stat-caveat">(depends on schema complexity &amp; team availability)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== THE PROBLEM ============== -->
-    <section class="problem-section section">
+    <!-- ============== PITCH VIDEO (drop pitch-90s.mp4 + .webm in assets/hero/) ============== -->
+    <section class="pitch-video section section-mist home-section" id="pitch-video" aria-labelledby="pitch-video-heading">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">The Real Problem</span>
-          <p class="problem-lead"><span class="problem-lead-line">Raw MES databases are not built for AI.</span></p>
+        <div class="home-shell home-shell--pad home-shell--split pitch-video-layout reveal">
+        <div class="pitch-video-copy">
+          <span class="eyebrow">Overview</span>
+          <h2 class="h-h2" id="pitch-video-heading">Governed AI on operational data — in 90 seconds</h2>
+          <p>How we map legacy databases, build a semantic layer your SMEs validate, and deploy AI on read-only approved views — without replacing MES, ERP, or core systems.</p>
+          <p class="pitch-video-note">Prefer to read? See the <a href="#ai4">elevator pitch</a> in our Ai4 section.</p>
         </div>
-        <div class="problem-narrative reveal">
-          <p>They&rsquo;re built for applications, with business logic buried in stored procedures, years of customizations, undocumented schemas, and tribal knowledge only a few people understand.</p>
-          <p>Connect AI directly to those tables and you get unreliable answers. Engineers stop trusting the system. The project dies.</p>
+        <div class="pitch-video-media">
+          <video class="pitch-video-el" controls playsinline preload="metadata" width="960" height="540">
+            <source src="assets/hero/pitch-90s.webm" type="video/webm" />
+            <source src="assets/hero/pitch-90s.mp4" type="video/mp4" />
+          </video>
+          <p class="pitch-video-fallback" hidden>Video plays when <code>assets/hero/pitch-90s.mp4</code> is added.</p>
         </div>
-        <blockquote class="problem-statement reveal">
-          <span class="problem-statement-lead">The issue isn&rsquo;t the technology.</span>
-          <strong class="problem-statement-nowrap">The issue is that nobody mapped the database</strong>
-          <strong>before plugging in the AI.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== TRUST STRIP ============== -->
+    <section class="trust-strip" aria-label="Trust indicators">
+      <div class="trust-strip-inner reveal-stagger">
+        <div class="trust-badge reveal">
+          <span class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <span>Founder-led · 30+ yrs enterprise</span>
+        </div>
+        <div class="trust-badge reveal">
+          <span class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></span>
+          <span>Read-only access only</span>
+        </div>
+        <div class="trust-badge reveal">
+          <span class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span>
+          <span>Full audit trail</span>
+        </div>
+        <div class="trust-badge reveal">
+          <span class="trust-badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></span>
+          <span>You own everything we build</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== AI4 ============== -->
+    <section class="ai4-strip" id="ai4" aria-labelledby="ai4-heading">
+      <div class="container reveal">
+        <div class="ai4-strip-inner">
+          <div>
+            <div class="ai4-strip-badge">Ai4 2026 · Las Vegas</div>
+            <h2 class="ai4-strip-title" id="ai4-heading">Meet Prime AI at America&rsquo;s largest AI conference</h2>
+            <p class="ai4-strip-text">Antonio and Fernando will be at Ai4 Aug 4–6 at The Venetian. If your AI pilot stalled because teams don&rsquo;t trust answers from raw operational data, let&rsquo;s compare notes.</p>
+            <div class="ai4-strip-meta">
+              <span>Aug 4–6, 2026</span>
+              <span>The Venetian, Las Vegas</span>
+              <span>VIP · Speaker lounge access</span>
+            </div>
+          </div>
+          <div class="ai4-strip-actions">
+            <a href="contact.html#schedule" class="btn btn-primary">Book time at Ai4</a>
+            <a href="contact.html#schedule" class="btn btn-secondary">Schedule discovery call</a>
+          </div>
+        </div>
+        <blockquote class="ai4-pitch">
+          <p class="ai4-pitch-label">Elevator pitch</p>
+          <p class="ai4-pitch-text">We map legacy operational databases, build a governed semantic layer your SMEs validate, and deploy AI on read-only approved views — without replacing MES, ERP, or core systems. Start with a 2-week diagnostic.</p>
         </blockquote>
       </div>
     </section>
 
+    <!-- ============== CREDIBILITY ============== -->
+    <section class="credibility-bar home-section" aria-label="Why teams work with us">
+      <div class="container">
+        <div class="home-shell home-shell--pad credibility-grid reveal-stagger">
+          <div class="reveal">
+            <div class="credibility-num">30+</div>
+            <p class="credibility-label">Years enterprise systems experience on the founding team</p>
+          </div>
+          <div class="reveal">
+            <div class="credibility-num">2 wk</div>
+            <p class="credibility-label">Prime Diagnostics — low-risk entry before any major build</p>
+          </div>
+          <div class="reveal">
+            <div class="credibility-num">100%</div>
+            <p class="credibility-label">Read-only database access with full query audit trail</p>
+          </div>
+          <div class="reveal">
+            <div class="credibility-num">You own it</div>
+            <p class="credibility-label">Code, dictionary, and semantic layer stay with you — no lock-in</p>
+          </div>
+        </div>
+        <p class="credibility-note">We&rsquo;re a focused boutique. Founder credibility and a productized diagnostic de-risk your first engagement.</p>
+      </div>
+    </section>
+
+    <!-- ============== INDUSTRIES ============== -->
+    <section class="industries-section section section-light home-section" id="industries" aria-labelledby="industries-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" id="industries-heading">Where this applies</span>
+          <h2 class="h-h2">Same governed playbook.<br/>Different operational systems.</h2>
+          <p class="lede">Pick your industry — see how we map legacy data, govern access, and deploy AI your teams can defend.</p>
+        </div>
+
+        <div class="home-shell home-shell--flush industries-browser reveal">
+          <div class="industries-browser-nav" role="tablist" aria-label="Industries">
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-mes" aria-controls="industry-panel-mes" aria-selected="true" data-industry="mes">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7-5-7 5v12z"/><path d="M12 3v9M8 10h8"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Manufacturing</span>
+                <span class="industry-nav-meta">MES &amp; shop floor</span>
+              </span>
+            </button>
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-healthcare" aria-controls="industry-panel-healthcare" aria-selected="false" data-industry="healthcare">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Healthcare</span>
+                <span class="industry-nav-meta">Life sciences</span>
+              </span>
+            </button>
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-financial" aria-controls="industry-panel-financial" aria-selected="false" data-industry="financial">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Financial</span>
+                <span class="industry-nav-meta">ERP &amp; reconciliation</span>
+              </span>
+            </button>
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-energy" aria-controls="industry-panel-energy" aria-selected="false" data-industry="energy">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Energy</span>
+                <span class="industry-nav-meta">Utilities &amp; assets</span>
+              </span>
+            </button>
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-retail" aria-controls="industry-panel-retail" aria-selected="false" data-industry="retail">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 01-8 0"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Retail</span>
+                <span class="industry-nav-meta">Supply chain</span>
+              </span>
+            </button>
+            <button type="button" class="industry-nav-item" role="tab" id="industry-tab-enterprise" aria-controls="industry-panel-enterprise" aria-selected="false" data-industry="enterprise">
+              <span class="industry-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span>
+              <span class="industry-nav-text">
+                <span class="industry-nav-label">Enterprise</span>
+                <span class="industry-nav-meta">ERP &amp; custom apps</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="industries-browser-panels">
+            <article class="industry-panel is-active" id="industry-panel-mes" role="tabpanel" aria-labelledby="industry-tab-mes" tabindex="0">
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Manufacturing &amp; MES</h3>
+                <span class="industry-panel-badge">Deepest track record</span>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Yield, WIP, and equipment logic across hundreds of tables — often undocumented</li>
+                <li>Governed views and read-only AI access your engineers validate</li>
+                <li>Platform-agnostic: Camstar, SAP ME, Opcenter, FactoryTalk, custom MES</li>
+              </ul>
+              <p class="industry-panel-note">Typical entry: <a href="services.html#diagnostics">Prime Diagnostics</a> on your MES in two weeks.</p>
+              <footer class="industry-panel-foot">
+                <a href="ai-mes.html" class="btn btn-primary btn-sm btn-arrow">Explore AI for MES</a>
+              </footer>
+            </article>
+            <article class="industry-panel" id="industry-panel-healthcare" role="tabpanel" aria-labelledby="industry-tab-healthcare" tabindex="0" hidden>
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Healthcare &amp; life sciences</h3>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Clinical and operational datasets with strict governance requirements</li>
+                <li>AI routed through approved views — traceable, SME-validated, audit-ready</li>
+                <li>Map schema and tribal knowledge before any model touches production</li>
+              </ul>
+              <p class="industry-panel-note">Same playbook as manufacturing: inventory, govern, then deploy.</p>
+              <footer class="industry-panel-foot">
+                <a href="contact.html#schedule" class="btn btn-primary btn-sm btn-arrow">Talk about your environment</a>
+              </footer>
+            </article>
+            <article class="industry-panel" id="industry-panel-financial" role="tabpanel" aria-labelledby="industry-tab-financial" tabindex="0" hidden>
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Financial services</h3>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Reconciliation rules and custom ERP fields AI cannot infer from schema alone</li>
+                <li>Documented semantics before models query operational or finance data</li>
+                <li>Trustworthy daily views for finance and ops — without replacing your ERP</li>
+              </ul>
+              <p class="industry-panel-note">Built for teams that need defensible numbers, not another dashboard experiment.</p>
+              <footer class="industry-panel-foot">
+                <a href="ai-erp.html" class="btn btn-primary btn-sm btn-arrow">Explore AI for ERP</a>
+              </footer>
+            </article>
+            <article class="industry-panel" id="industry-panel-energy" role="tabpanel" aria-labelledby="industry-tab-energy" tabindex="0" hidden>
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Energy &amp; utilities</h3>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Asset, grid, and operations data across SCADA exports, historians, and ERP</li>
+                <li>Unified operational picture under governed read-only access</li>
+                <li>No AI on raw operational tables until views are approved</li>
+              </ul>
+              <p class="industry-panel-note">For environments where safety and auditability come first.</p>
+              <footer class="industry-panel-foot">
+                <a href="contact.html#schedule" class="btn btn-primary btn-sm btn-arrow">Talk about your environment</a>
+              </footer>
+            </article>
+            <article class="industry-panel" id="industry-panel-retail" role="tabpanel" aria-labelledby="industry-tab-retail" tabindex="0" hidden>
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Retail &amp; supply chain</h3>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Inventory, fulfillment, and order data split across ERP, WMS, and custom apps</li>
+                <li>Relationship mapping and approved views for AI and analytics</li>
+                <li>Faster answers on stock, orders, and exceptions — with signed-off logic</li>
+              </ul>
+              <p class="industry-panel-note">Reduce admin bottlenecks without ripping out systems of record.</p>
+              <footer class="industry-panel-foot">
+                <a href="contact.html#schedule" class="btn btn-primary btn-sm btn-arrow">Talk about your environment</a>
+              </footer>
+            </article>
+            <article class="industry-panel" id="industry-panel-enterprise" role="tabpanel" aria-labelledby="industry-tab-enterprise" tabindex="0" hidden>
+              <header class="industry-panel-head">
+                <h3 class="industry-panel-title">Enterprise ERP &amp; custom apps</h3>
+              </header>
+              <ul class="industry-panel-points">
+                <li>Operational apps and warehouses nobody fully documented</li>
+                <li>Table inventory plus tribal knowledge captured in a semantic layer</li>
+                <li>Your stack stays — we add the governed intelligence layer on top</li>
+              </ul>
+              <p class="industry-panel-note">When &ldquo;we have an ERP&rdquo; still means hundreds of undocumented tables.</p>
+              <footer class="industry-panel-foot">
+                <a href="services.html" class="btn btn-primary btn-sm btn-arrow">See how we engage</a>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== OUTCOMES ============== -->
+    <section class="section section-light home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How We Help</span>
+          <h2 class="h-h2">Outcomes your AI initiative actually needs.</h2>
+          <p class="lede lede-center">Not another chatbot on raw tables. Infrastructure your operators and data teams can defend.</p>
+        </div>
+        <div class="home-shell home-shell--pad outcome-cards reveal-stagger">
+          <article class="outcome-card reveal">
+            <div class="outcome-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="outcome-card-title">Trustworthy AI answers</h3>
+            <p class="outcome-card-text">Governed semantic layer between your LLM and approved read-only views — traceable, SME-validated, explainable.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <div class="outcome-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <h3 class="outcome-card-title">Faster operational decisions</h3>
+            <p class="outcome-card-text">Engineers and analysts get answers in minutes instead of hours of SQL pulls and spreadsheet reconciliation.</p>
+          </article>
+          <article class="outcome-card reveal">
+            <div class="outcome-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+            <h3 class="outcome-card-title">You own what we build</h3>
+            <p class="outcome-card-text">Data dictionary, views, governance docs, and code — no subscription required to keep using your layer.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GOVERNED LAYER TOOLS ============== -->
+    <section class="section section-mist home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What We Build</span>
+          <h2 class="h-h2">Governed infrastructure — not a chatbot on raw tables.</h2>
+          <p class="lede lede-center">Whether you&rsquo;re evaluating agents, RAG, or governance, this is the data trust layer underneath.</p>
+        </div>
+        <div class="home-shell home-shell--pad capability-grid reveal-stagger">
+          <article class="capability-card reveal">
+            <div class="capability-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+            <h3 class="capability-card-title">AI data dictionary</h3>
+            <p>Business meaning for tables, views, and calculations — the context LLMs cannot infer from schema alone.</p>
+          </article>
+          <article class="capability-card reveal">
+            <div class="capability-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+            <h3 class="capability-card-title">Governed semantic layer</h3>
+            <p>Approved read-only views with business logic baked in — your RAG surface and agent query boundary.</p>
+          </article>
+          <article class="capability-card reveal">
+            <div class="capability-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg></div>
+            <h3 class="capability-card-title">Query audit trail</h3>
+            <p>Every AI question logged — traceable to views, calculations, and the SME who validated them.</p>
+          </article>
+          <article class="capability-card reveal">
+            <div class="capability-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="capability-card-title">SME validation gates</h3>
+            <p>Engineers sign off before production use — so stalled pilots become trusted daily workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== GOVERNED ARCHITECTURE ============== -->
+    <section class="architecture-showcase section section-light home-section" id="governed-architecture" aria-labelledby="architecture-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Prime Build</span>
+          <h2 class="h-h2" id="architecture-heading">Governed access — or no access.</h2>
+          <p class="lede lede-center">AI never touches raw operational tables. Every query routes through a semantic layer and read-only approved views your SMEs validate.</p>
+        </div>
+        <div class="home-shell home-shell--pad reveal">
+          <figure class="architecture-showcase-figure">
+            <img src="assets/visuals/architecture-diagram.svg" alt="Architecture diagram: AI layer connects to semantic layer and approved read-only views; no direct access to raw operational database" width="720" height="320" loading="lazy" decoding="async" />
+          </figure>
+          <ul class="architecture-legend">
+            <li><span class="architecture-legend-dot architecture-legend-dot--block" aria-hidden="true"></span> No direct AI access to raw tables</li>
+            <li><span class="architecture-legend-dot architecture-legend-dot--allow" aria-hidden="true"></span> Governed reads only through approved views</li>
+            <li><span class="architecture-legend-dot architecture-legend-dot--layer" aria-hidden="true"></span> Business logic lives in the semantic layer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ENGAGEMENT LIFECYCLE ============== -->
+    <section class="section section-mist lifecycle-section home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">How We Work</span>
+          <h2 class="h-h2">The governed AI path on operational data.</h2>
+          <p class="lede lede-center">Four phases — from first conversation to infrastructure your team owns. Most teams enter at Prime Diagnostics.</p>
+        </div>
+        <div class="home-shell home-shell--pad">
+        <ol class="lifecycle-track reveal-stagger">
+          <li class="lifecycle-step reveal">
+            <a href="contact.html#schedule" class="lifecycle-step-link">
+              <span class="lifecycle-step-marker">
+                <span class="lifecycle-step-num">01</span>
+              </span>
+              <span class="lifecycle-step-content">
+                <span class="lifecycle-step-title">Discovery call</span>
+                <span class="lifecycle-step-desc">Free 30 minutes — systems, pain points, and whether Diagnostics fits.</span>
+              </span>
+            </a>
+          </li>
+          <li class="lifecycle-step lifecycle-step--entry reveal">
+            <a href="services.html#diagnostics" class="lifecycle-step-link">
+              <span class="lifecycle-step-marker">
+                <span class="lifecycle-step-num">02</span>
+              </span>
+              <span class="lifecycle-step-content">
+                <span class="lifecycle-step-title">Prime Diagnostics</span>
+                <span class="lifecycle-step-desc">2 weeks — inventory, data dictionary, and roadmap you keep.</span>
+                <span class="lifecycle-step-badge">Typical entry point</span>
+              </span>
+            </a>
+          </li>
+          <li class="lifecycle-step reveal">
+            <a href="services.html#build" class="lifecycle-step-link">
+              <span class="lifecycle-step-marker">
+                <span class="lifecycle-step-num">03</span>
+              </span>
+              <span class="lifecycle-step-content">
+                <span class="lifecycle-step-title">Prime Build</span>
+                <span class="lifecycle-step-desc">~10 weeks — governed semantic layer in production.</span>
+              </span>
+            </a>
+          </li>
+          <li class="lifecycle-step reveal">
+            <a href="services.html#retainer" class="lifecycle-step-link">
+              <span class="lifecycle-step-marker">
+                <span class="lifecycle-step-num">04</span>
+              </span>
+              <span class="lifecycle-step-content">
+                <span class="lifecycle-step-title">Handoff &amp; retainer</span>
+                <span class="lifecycle-step-desc">Training, docs, and optional ongoing support.</span>
+              </span>
+            </a>
+          </li>
+        </ol>
+        <p class="lifecycle-tagline reveal"><strong>While enterprise programs spend 18 months in planning,</strong> most engagements ship governed infrastructure in weeks. You own every deliverable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== STATS ============== -->
+    <section class="stats-bar home-section section section-light" id="stats">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Typical Results</span>
+          <h2 class="h-h2">Representative outcomes from governed engagements.</h2>
+        </div>
+        <div class="home-shell home-shell--pad stats-grid reveal-stagger">
+          <div class="stat reveal">
+            <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+            <div class="stat-num" data-count="400" data-suffix="+">0</div>
+            <p class="stat-label">Operational tables mapped in weeks, not months</p>
+            <p class="stat-caveat">Typical for MES-scale schemas (400+ tables). Timeline varies by system.</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+            <div class="stat-num"><span data-count="3">0</span><span class="stat-num-suffix">-5</span></div>
+            <p class="stat-label">Working days to build semantic layer from scratch</p>
+            <p class="stat-caveat">After database inventory is complete.</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 5-6"/></svg></div>
+            <div class="stat-num" data-count="5">0</div>
+            <p class="stat-label">Production dashboards deployed within 10 days</p>
+            <p class="stat-caveat">Validated by engineers before use.</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div class="stat-num"><span data-count="10">0</span><span class="stat-num-suffix"> wks</span></div>
+            <p class="stat-label">Typical implementation timeline</p>
+            <p class="stat-caveat">Depends on schema complexity and team availability.</p>
+          </div>
+        </div>
+        <p class="stats-footnote">Based on representative engagements. Your timeline may vary.</p>
+      </div>
+    </section>
+
+    <!-- ============== THE PROBLEM ============== -->
+    <section class="problem-section section section-mist home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Real Problem</span>
+          <h2 class="h-h2"><span class="problem-lead-line">Legacy operational databases were not built for AI.</span></h2>
+        </div>
+        <div class="home-shell home-shell--pad problem-story reveal">
+          <div class="problem-story-copy">
+            <p>MES, ERP, and custom apps were built for transactions — with business logic buried in stored procedures, years of customizations, undocumented schemas, and tribal knowledge only a few people understand.</p>
+            <p>Connect AI directly to those tables and you get unreliable answers. Operators and engineers stop trusting the system. The pilot stalls.</p>
+          </div>
+          <div class="problem-spectrum reveal-stagger" role="list" aria-label="Where this shows up">
+            <article class="problem-spectrum-item reveal" role="listitem">
+              <span class="problem-spectrum-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a2 2 0 002 2h16a2 2 0 002-2V8l-7-5-7 5v12z"/></svg></span>
+              <div class="problem-spectrum-text">
+                <strong>Manufacturing / MES</strong>
+                <span>Yield, WIP, equipment — logic hidden across 400+ tables</span>
+              </div>
+            </article>
+            <article class="problem-spectrum-item reveal" role="listitem">
+              <span class="problem-spectrum-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              <div class="problem-spectrum-text">
+                <strong>Healthcare ops</strong>
+                <span>Clinical and operational data with strict governance requirements</span>
+              </div>
+            </article>
+            <article class="problem-spectrum-item reveal" role="listitem">
+              <span class="problem-spectrum-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>
+              <div class="problem-spectrum-text">
+                <strong>Financial / ERP</strong>
+                <span>Reconciliation rules AI can&rsquo;t infer from schema alone</span>
+              </div>
+            </article>
+            <article class="problem-spectrum-item reveal" role="listitem">
+              <span class="problem-spectrum-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/></svg></span>
+              <div class="problem-spectrum-text">
+                <strong>Enterprise IT</strong>
+                <span>Custom apps and warehouses nobody fully documented</span>
+              </div>
+            </article>
+          </div>
+          <div class="problem-punchline">
+            <p class="problem-punchline-kicker">The issue isn&rsquo;t the technology.</p>
+            <p class="problem-punchline-main">The issue is that nobody mapped the database <span class="text-keep">before plugging in the AI.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== OPERATOR MINDSET ============== -->
+    <section class="section section-light home-section">
+      <div class="container">
+        <div class="home-shell home-shell--pad home-shell--split feature-split feature-split--reverse reveal">
+          <div class="feature-split-visual">
+            <div class="feature-split-frame feature-split-frame--notch">
+              <img src="assets/founder-antonio.png" alt="Antonio Rojas, founder, in manufacturing operations context" width="768" height="1024" loading="lazy" decoding="async" />
+            </div>
+          </div>
+          <div class="feature-split-copy">
+            <span class="eyebrow">The Operator&rsquo;s Mindset</span>
+            <h2 class="h-h2">Built by operators who&rsquo;ve run the systems — not adapted from a generic AI playbook.</h2>
+            <p>Prime AI exists because Antonio spent 18 years inside semiconductor and discrete manufacturing running MES and production systems. He knows where operational logic hides, why teams don&rsquo;t trust raw-table answers, and what &ldquo;governed&rdquo; has to mean before AI goes live.</p>
+            <p>We don&rsquo;t sell demos. We map your database, build the layer, and leave you with infrastructure your SMEs can defend — whether you&rsquo;re in manufacturing, ERP-heavy finance, or enterprise IT.</p>
+            <a href="company.html" class="btn btn-primary btn-arrow">Meet the team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============== WHY THIS WORKS ============== -->
-    <section class="why-this-works section">
+    <section class="why-this-works section section-mist home-section">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Three Differences</span>
           <h2 class="h-h2">Why Prime AI delivers where others demo.</h2>
         </div>
 
-        <div class="why-cards">
+        <div class="home-shell home-shell--pad why-cards why-cards--row">
           <article class="why-card reveal">
-            <div class="why-card-num">01</div>
-            <h3 class="why-card-title">Governed Access or No Access</h3>
-            <p class="why-card-body">We don&rsquo;t connect AI to raw MES tables. Every Prime AI engagement follows a strict architecture:</p>
-            <code class="why-card-arch">AI &rarr; Governed Semantic Layer &rarr; Approved Views Only (Read-Only)</code>
-            <p class="why-card-body">Every query is traceable. Every answer is validated. Every engineer knows where the data comes from. It&rsquo;s the difference between your team trusting the system or ignoring it.</p>
+            <header class="why-card-head">
+              <span class="why-card-num" aria-hidden="true">01</span>
+              <h3 class="why-card-title">Governed access, or none</h3>
+            </header>
+            <div class="why-card-main">
+              <p class="why-card-body">We don&rsquo;t connect <span class="text-keep">AI</span> to raw operational tables. Every engagement routes through a semantic layer and read-only approved views&mdash;traceable, validated, and trusted by your SMEs.</p>
+            </div>
+            <p class="why-card-foot"><a href="#governed-architecture" class="btn-link">See the architecture diagram ↓</a></p>
           </article>
 
           <article class="why-card reveal">
-            <div class="why-card-num">02</div>
-            <h3 class="why-card-title">Built on Real Manufacturing Knowledge</h3>
-            <p class="why-card-body">The methodology is proven. Not theoretical. Developed inside enterprise manufacturing environments with real production data, real constraints, and real pressure.</p>
-            <ul class="why-card-list">
-              <li>400+ table MES database fully mapped in weeks (not months)</li>
-              <li>Semantic layer built from scratch in 3&ndash;5 working days</li>
-              <li>Five production dashboards deployed and in use within 10 days</li>
-              <li>AI answers validated by your engineers before anyone sees them</li>
-            </ul>
-            <p class="why-card-body">These timelines reflect how we&rsquo;ve delivered on other engagements in different manufacturing sectors. Your actual timeline depends on your specific schema complexity and team availability.</p>
+            <header class="why-card-head">
+              <span class="why-card-num" aria-hidden="true">02</span>
+              <h3 class="why-card-title">Built by Operators, Not Slide Decks</h3>
+            </header>
+            <div class="why-card-main">
+              <p class="why-card-body">30+ years enterprise systems on the founding team; deepest track record in manufacturing and MES. The same governed playbook applies to ERP, healthcare operations, financial ops, and custom enterprise apps.</p>
+              <ul class="why-card-list">
+                <li>Large operational schemas mapped in weeks, not months</li>
+                <li>Semantic layer built in 3&ndash;5 working days</li>
+                <li>Five production dashboards live within 10 days</li>
+                <li><span class="text-keep">AI answers</span> validated by your engineers before rollout</li>
+              </ul>
+            </div>
+            <p class="why-card-foot why-card-foot--muted">Timelines vary by schema complexity and team availability.</p>
           </article>
 
           <article class="why-card reveal">
-            <div class="why-card-num">03</div>
-            <h3 class="why-card-title">You Own Everything We Build</h3>
-            <p class="why-card-body">When the engagement ends, the code is yours. The documentation is yours. The data dictionary is yours. The semantic layer is yours. No vendor lock-in. No subscription required to keep using what we built. No dependency on us to stay involved.</p>
-            <p class="why-card-body">This is deliberately different from how most AI consultancies work. We prefer clients who can function without us, because those clients trust us enough to bring us back.</p>
+            <header class="why-card-head">
+              <span class="why-card-num" aria-hidden="true">03</span>
+              <h3 class="why-card-title">You Own Everything We Build</h3>
+            </header>
+            <div class="why-card-main">
+              <p class="why-card-body">When the engagement ends, the code, documentation, data dictionary, and semantic layer are yours. No vendor lock-in, no subscription to keep using what we built.</p>
+            </div>
+            <p class="why-card-foot">We prefer clients who can run without us&mdash;because those clients trust us enough to bring us back.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ============== WHY PRIME VS ALTERNATIVES ============== -->
+    <section class="section section-light home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Prime AI</span>
+          <h2 class="h-h2">How we compare to the usual options.</h2>
+          <p class="lede lede-center">You don&rsquo;t need another horizontal &ldquo;AI for any business&rdquo; vendor. You need governed infrastructure on the data you already run.</p>
+        </div>
+        <div class="home-shell home-shell--flush compare-matrix reveal" tabindex="0" aria-label="Comparison of Prime AI to alternatives">
+          <table class="compare-matrix-table">
+            <thead>
+              <tr>
+                <th scope="col" class="compare-matrix-label-col"></th>
+                <th scope="col" class="compare-matrix-prime-col">
+                  <span class="compare-matrix-prime-badge">Recommended</span>
+                  Prime AI
+                </th>
+                <th scope="col">Big 4 / SI</th>
+                <th scope="col">Horizontal AI</th>
+                <th scope="col">DIY + LLM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Time to first value</th>
+                <td class="compare-matrix-prime-col">2-week diagnostic; ~10-week build</td>
+                <td>Often 12–18+ months</td>
+                <td>Fast demo, slow trust</td>
+                <td>Fast start, stalls on data</td>
+              </tr>
+              <tr>
+                <th scope="row">Operational data depth</th>
+                <td class="compare-matrix-prime-col">MES, ERP, legacy apps — core specialty</td>
+                <td>Broad, variable bench</td>
+                <td>Generic connectors</td>
+                <td>Depends on internal team</td>
+              </tr>
+              <tr>
+                <th scope="row">Governance built in</th>
+                <td class="compare-matrix-prime-col">Read-only views, audit trail, SME gates</td>
+                <td>Process-heavy</td>
+                <td>Often bolt-on</td>
+                <td>Rarely systematic</td>
+              </tr>
+              <tr>
+                <th scope="row">You own deliverables</th>
+                <td class="compare-matrix-prime-col">Yes — code, dictionary, layer</td>
+                <td>Often license-dependent</td>
+                <td>Platform lock-in</td>
+                <td>Yes, if you finish</td>
+              </tr>
+              <tr>
+                <th scope="row">Founder in the room</th>
+                <td class="compare-matrix-prime-col">Antonio on every engagement</td>
+                <td>Junior team common</td>
+                <td>Account manager</td>
+                <td>Your problem</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="commercial-note reveal">Most clients start with <a href="services.html#diagnostics">Prime Diagnostics</a> — fixed scope, clear deliverables, low risk before a full build.</p>
+      </div>
+    </section>
+
     <!-- ============== HOW WE ENGAGE / SERVICE CARDS ============== -->
-    <section class="engage-section section" id="engage">
+    <section class="engage-section section section-mist home-section" id="engage">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">What We Offer</span>
-          <h2 class="h-h2">Three engagements.<br/>One path from unknown database<br/>to trusted AI intelligence.</h2>
+          <h2 class="h-h2">Three engagements.<br/>One path from unknown database<br/>to trusted <span class="text-keep">AI intelligence.</span></h2>
+        </div>
+
+        <div class="home-shell home-shell--pad engage-picker reveal">
+          <p class="engage-picker-label">Where should you start?</p>
+          <div class="engage-picker-grid engage-path-cards" role="list">
+            <a href="#diagnostics" class="engage-picker-card path-card is-active" data-engage-target="diagnostics" role="listitem">
+              <span class="engage-picker-step" aria-hidden="true">01</span>
+              <span class="path-card-condition">If you don&rsquo;t know your schema yet</span>
+              <span class="path-card-name">Prime Diagnostics</span>
+              <p class="path-card-desc">2-week database inventory and data dictionary before any AI work.</p>
+              <dl class="engage-picker-facts">
+                <div><dt>Duration</dt><dd>2 weeks</dd></div>
+                <div><dt>Outcome</dt><dd>Inventory + roadmap</dd></div>
+              </dl>
+            </a>
+            <a href="#build" class="engage-picker-card path-card" data-engage-target="build" role="listitem">
+              <span class="engage-picker-step" aria-hidden="true">02</span>
+              <span class="path-card-condition">If inventory exists, need production <span class="text-keep">AI</span></span>
+              <span class="path-card-name">Prime Build</span>
+              <p class="path-card-desc">~10-week semantic layer design, build, and governed deployment.</p>
+              <dl class="engage-picker-facts">
+                <div><dt>Duration</dt><dd>~10 weeks</dd></div>
+                <div><dt>Outcome</dt><dd>Production views + governance</dd></div>
+              </dl>
+            </a>
+            <a href="#retainer" class="engage-picker-card path-card" data-engage-target="retainer" role="listitem">
+              <span class="engage-picker-step" aria-hidden="true">03</span>
+              <span class="path-card-condition">If you&rsquo;re already live</span>
+              <span class="path-card-name">Prime Retainer</span>
+              <p class="path-card-desc">Ongoing optimization, new views, and strategic guidance.</p>
+              <dl class="engage-picker-facts">
+                <div><dt>Duration</dt><dd>Ongoing</dd></div>
+                <div><dt>Outcome</dt><dd>Continuous optimization</dd></div>
+              </dl>
+            </a>
+          </div>
+          <p class="engage-picker-foot">Most teams start with <a href="#diagnostics">Prime Diagnostics</a> — fixed scope, clear deliverables, low risk before a full build.</p>
         </div>
 
         <div class="engage-grid">
@@ -178,27 +757,24 @@
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Diagnostics</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">2 Weeks</span>
-                  <span class="engage-card-price">From $20,000</span>
+                  <span class="engage-duration engage-duration--sans">2 weeks</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
               <p class="engage-card-subtitle">The Foundation</p>
-              <p>Understand your complete MES database landscape before touching AI.</p>
-              <p><strong>What happens:</strong> inventory every table, view, column, stored procedure, and relationship; classify tables into business areas; identify top objects for reporting; map hidden relationships; create a first-draft data dictionary; flag sensitive data; define what &ldquo;trusted source&rdquo; means in your organization.</p>
-              <p><strong>Result:</strong> a data dictionary and semantic understanding that becomes the foundation for all AI work. You&rsquo;ll know exactly what your data is, how it connects, and what it can answer.</p>
-              <p><strong>Pricing:</strong> starting at $20,000 for typical engagements (adjusted for unusual complexity or data access constraints).</p>
-            </div>
-            <div class="engage-card-deliverables">
-              <div class="engage-card-deliverables-title">Typical Deliverables</div>
-              <ul class="deliverables-list">
-                <li>Database inventory &amp; object catalog</li>
-                <li>Table classification by business area</li>
-                <li>AI data dictionary with business meaning</li>
-                <li>Relationship map &amp; sensitive data flags</li>
-                <li>Governance foundation &amp; implementation roadmap</li>
+              <p>Map your operational database before touching <span class="text-keep">AI</span> — MES, ERP, or custom apps.</p>
+              <p><strong>What happens:</strong></p>
+              <ul class="engage-steps">
+                <li>Inventory tables, views, procedures, and relationships</li>
+                <li>Classify by business area and flag sensitive data</li>
+                <li>Build a first-draft AI data dictionary with business meaning</li>
+                <li>Define what &ldquo;trusted source&rdquo; means in your org</li>
               </ul>
+              <figure class="visual-block visual-block--dark">
+                <img src="assets/visuals/data-dictionary-mockup.svg" alt="Mockup of Prime Diagnostics AI data dictionary showing table business meaning and governance status" width="480" height="300" loading="lazy" decoding="async" />
+              </figure>
+              <p class="engage-result"><strong>Result:</strong> A data dictionary and semantic foundation for all AI work.</p>
             </div>
             <div class="engage-card-cta">
               <a href="contact.html#schedule" class="btn-link">Start with Diagnostics</a>
@@ -211,27 +787,20 @@
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Build</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">10 Weeks</span>
-                  <span class="engage-card-price">$75k&ndash;$150k</span>
+                  <span class="engage-duration engage-duration--sans">~10 weeks</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
               <p class="engage-card-subtitle">The Implementation</p>
-              <p>Design, build, and deploy AI-approved semantic views and a governed access framework.</p>
-              <p><strong>What happens:</strong> design semantic views for priority analytics; build the semantic layer; define read-only access and query limits; create the governed query catalog; implement audit logging; train your team; deploy with full documentation.</p>
-              <p><strong>Result:</strong> a working semantic layer engineers use every day. AI queries with confidence. All answers traceable. Governance built in.</p>
-              <p><strong>Pricing:</strong> $75,000&ndash;$150,000 depending on schema size, join complexity, and integrations. Exact pricing discussed after Prime Diagnostics.</p>
-            </div>
-            <div class="engage-card-deliverables">
-              <div class="engage-card-deliverables-title">Typical Services Included</div>
-              <ul class="deliverables-list">
-                <li>5&ndash;7 core semantic views in production</li>
-                <li>Complete data dictionary &amp; governance policy</li>
-                <li>Query audit framework &amp; access controls</li>
-                <li>Team training (4&ndash;6 hours)</li>
-                <li>30-day post-launch support</li>
+              <p>Design, build, and deploy governed semantic views and access controls.</p>
+              <p><strong>What happens:</strong></p>
+              <ul class="engage-steps">
+                <li>Design semantic views for priority analytics questions</li>
+                <li>Build read-only semantic layer with audit logging</li>
+                <li>Train your team and deploy with full documentation</li>
               </ul>
+              <p class="engage-result"><strong>Result:</strong> A working semantic layer engineers use daily&mdash;traceable and governed.</p>
             </div>
             <div class="engage-card-cta">
               <a href="contact.html#schedule" class="btn-link">Start with Prime Build</a>
@@ -244,27 +813,20 @@
               <div class="engage-card-heading-row">
                 <h3 class="engage-card-name">Prime Retainer</h3>
                 <div class="engage-card-metrics">
-                  <span class="engage-duration">Ongoing</span>
-                  <span class="engage-card-price">$5k&ndash;$10k/mo</span>
+                  <span class="engage-duration engage-duration--sans">Ongoing</span>
                 </div>
               </div>
             </header>
             <div class="engage-card-body">
               <p class="engage-card-subtitle">The Partnership</p>
-              <p>Continuous optimization, strategic guidance, and capability expansion as your operations evolve.</p>
-              <p><strong>What happens:</strong> quarterly semantic layer reviews; new views for emerging questions; query optimization; governance updates; team training; AI expansion roadmap; on-call technical support.</p>
-              <p><strong>Result:</strong> your semantic layer and AI capabilities evolve with your business.</p>
-              <p><strong>Pricing:</strong> $5,000&ndash;$10,000 per month depending on scope, custom work, and strategic guidance required.</p>
-            </div>
-            <div class="engage-card-deliverables">
-              <div class="engage-card-deliverables-title">Typical Engagement</div>
-              <ul class="deliverables-list">
-                <li>Quarterly business reviews (4 per year)</li>
+              <p>Continuous optimization and capability expansion as operations evolve.</p>
+              <p><strong>What happens:</strong></p>
+              <ul class="engage-steps">
+                <li>Quarterly semantic layer and governance reviews</li>
                 <li>1&ndash;2 new semantic views per quarter</li>
-                <li>Performance optimization</li>
-                <li>Slack channel for quick technical questions</li>
-                <li>Monthly capacity hours for custom work</li>
+                <li>On-call support via dedicated Slack channel</li>
               </ul>
+              <p class="engage-result"><strong>Result:</strong> Your semantic layer and AI capabilities evolve with the business.</p>
             </div>
             <div class="engage-card-cta">
               <a href="contact.html#schedule" class="btn-link">Get Started</a>
@@ -275,74 +837,252 @@
     </section>
 
     <!-- ============== PROOF CARDS ============== -->
-    <section class="proof-section section">
+    <section class="proof-section section section-light home-section">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Case Studies</span>
-          <h2 class="h-h2">Results from similar<br/>manufacturing environments.</h2>
-          <p class="lede lede-center">Representative outcomes. Not attributed to a single client.</p>
+          <h2 class="h-h2 proof-section-title">Representative outcomes from governed operational data work.</h2>
+          <p class="lede lede-center proof-section-lede"><span class="proof-section-lede-line">Composite case patterns — not attributed to a named public client.</span></p>
         </div>
 
-        <div class="proof-rail">
-          <article class="proof-card reveal">
+        <div class="home-shell home-shell--flush proof-layout reveal">
+          <div class="proof-trust-strip">
+            <h3 class="proof-trust-title">Why trust us without a logo wall?</h3>
+            <p class="proof-trust-text">We&rsquo;re a boutique. Antonio&rsquo;s 18 years on the shop floor grounds our manufacturing work; the same governance model applies wherever legacy operational data blocks trusted AI. Prime Diagnostics lets you validate the approach in two weeks — with deliverables you keep regardless.</p>
+          </div>
+          <div class="proof-rail proof-rail--in-shell">
+          <article class="proof-card proof-card--collapsible reveal">
             <span class="proof-card-tag">Discrete Manufacturing</span>
-            <p class="proof-card-quote"><strong>Reducing Engineer Time Spent on Data Pulls</strong></p>
-            <p class="proof-card-context"><strong>The situation:</strong> A mid-market discrete manufacturer. Engineers spent 6&ndash;8 hours per week pulling MES data, reconciling spreadsheets, and answering questions that should have had simple answers.</p>
-            <p class="proof-card-context"><strong>The problem:</strong> 400+ tables, no documentation, no formal relationships. Engineers did not trust the data they were pulling.</p>
-            <p class="proof-card-context"><strong>What we did:</strong> Mapped the schema and created a data dictionary; identified 12 core tables covering 90% of common questions; built five semantic views (Current WIP, Equipment Utilization, Yield by Product, Defect Trends, Lot History); implemented read-only access with query logging; trained the team on governance.</p>
-            <p class="proof-card-context"><strong>The result:</strong> Engineers answer most questions in minutes instead of hours. Data is consistent across the organization. No more spreadsheet reconciliation. <strong>Time to implementation:</strong> 14 weeks from first meeting to production. Outcome typical for similar-complexity engagements in the discrete manufacturing sector.</p>
+            <p class="proof-card-metric">6&ndash;8 hrs/week &rarr; minutes per query</p>
+            <p class="proof-card-quote">Reducing Engineer Time Spent on Data Pulls</p>
+            <p class="proof-card-summary">Engineers answer operational questions in minutes instead of hours. Data is consistent org-wide.</p>
+            <figure class="proof-card-visual">
+              <img src="assets/visuals/case-study-workflow.svg" alt="Before and after workflow: from hours of spreadsheet data pulls to minutes via semantic layer" width="640" height="200" loading="lazy" decoding="async" />
+            </figure>
+            <button type="button" class="proof-card-toggle" aria-expanded="false" aria-controls="proof-details-1">
+              Read full story <span class="proof-card-toggle-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="proof-card-details" id="proof-details-1" hidden>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The situation</p>
+                <p class="proof-card-text">Mid-market discrete manufacturer. Engineers spent 6&ndash;8 hours weekly pulling MES data and reconciling spreadsheets.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The problem</p>
+                <p class="proof-card-text">400+ tables, no documentation, no trusted relationships. Engineers didn&rsquo;t trust the data.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">What we did</p>
+                <ul class="proof-card-list">
+                  <li>Mapped schema and built a data dictionary</li>
+                  <li>Identified 12 core tables covering 90% of questions</li>
+                  <li>Built five semantic views with read-only access and query logging</li>
+                  <li>Trained the team on governance</li>
+                </ul>
+              </div>
+              <div class="proof-card-block proof-card-block--result">
+                <p class="proof-card-label">The result</p>
+                <p class="proof-card-text">Questions answered in minutes. Consistent data org-wide. No spreadsheet reconciliation.</p>
+                <p class="proof-card-meta"><strong>Time to implementation:</strong> 14 weeks from first meeting to production.</p>
+              </div>
+            </div>
           </article>
 
-          <article class="proof-card reveal">
+          <article class="proof-card proof-card--collapsible reveal">
             <span class="proof-card-tag">Process Manufacturing</span>
-            <p class="proof-card-quote"><strong>Building Trust in AI-Generated Insights</strong></p>
-            <p class="proof-card-context"><strong>The situation:</strong> A food manufacturer wanted AI for yield and defect analysis. Previous attempts with generic AI tools produced answers engineers did not trust.</p>
-            <p class="proof-card-context"><strong>The problem:</strong> AI connected directly to production tables. Answers sometimes contradicted engineer ground truth. The project stalled.</p>
-            <p class="proof-card-context"><strong>What we did:</strong> Audited the setup and found hidden business logic in stored procedures; rebuilt the semantic layer with explicit calculation rules; created a governed query framework with a validation gate for every AI question; showed engineers how answers were calculated; documented the semantic layer for anyone to understand the logic.</p>
-            <p class="proof-card-context"><strong>The result:</strong> Engineers trust AI-generated insights because they understand how answers are calculated. The system is used for root cause analysis and process optimization. Outcome demonstrated across similar process manufacturing environments.</p>
+            <p class="proof-card-metric">Stalled AI project &rarr; trusted daily use</p>
+            <p class="proof-card-quote">Building Trust in AI-Generated Insights</p>
+            <p class="proof-card-summary">Engineers trust AI insights because they understand how answers are calculated.</p>
+            <button type="button" class="proof-card-toggle" aria-expanded="false" aria-controls="proof-details-2">
+              Read full story <span class="proof-card-toggle-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="proof-card-details" id="proof-details-2" hidden>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The situation</p>
+                <p class="proof-card-text">Food manufacturer wanted AI for yield and defect analysis. Generic tools produced answers engineers didn&rsquo;t trust.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The problem</p>
+                <p class="proof-card-text">AI connected directly to production tables. Answers contradicted engineer ground truth. The project stalled.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">What we did</p>
+                <ul class="proof-card-list">
+                  <li>Audited setup and surfaced hidden logic in stored procedures</li>
+                  <li>Rebuilt semantic layer with explicit calculation rules</li>
+                  <li>Added validation gate for every AI question</li>
+                  <li>Documented the layer so anyone can follow the logic</li>
+                </ul>
+              </div>
+              <div class="proof-card-block proof-card-block--result">
+                <p class="proof-card-label">The result</p>
+                <p class="proof-card-text">Trusted insights for root cause analysis and process optimization.</p>
+                <p class="proof-card-meta">Outcome demonstrated across similar process manufacturing environments.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="proof-card proof-card--collapsible reveal">
+            <span class="proof-card-tag">Financial Services / ERP</span>
+            <p class="proof-card-metric">Days of reconciliation &rarr; governed daily views</p>
+            <p class="proof-card-quote">Trustworthy Numbers Without Replacing ERP</p>
+            <p class="proof-card-summary">Finance and ops teams query approved semantic views instead of rebuilding spreadsheets from raw extracts.</p>
+            <button type="button" class="proof-card-toggle" aria-expanded="false" aria-controls="proof-details-3">
+              Read full story <span class="proof-card-toggle-icon" aria-hidden="true">▼</span>
+            </button>
+            <div class="proof-card-details" id="proof-details-3" hidden>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The situation</p>
+                <p class="proof-card-text">Regional financial operator on a heavily customized ERP. Month-end and ops reporting required manual pulls, pivot tables, and email chains.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">The problem</p>
+                <p class="proof-card-text">Leadership wanted AI-assisted analysis, but calculation rules lived in reports, macros, and tribal knowledge — not in a model the LLM could safely use.</p>
+              </div>
+              <div class="proof-card-block">
+                <p class="proof-card-label">What we did</p>
+                <ul class="proof-card-list">
+                  <li>Inventory and dictionary for core finance and ops tables</li>
+                  <li>Semantic views with documented reconciliation logic</li>
+                  <li>Read-only access and query audit for every AI request</li>
+                  <li>SME sign-off on definitions before production use</li>
+                </ul>
+              </div>
+              <div class="proof-card-block proof-card-block--result">
+                <p class="proof-card-label">The result</p>
+                <p class="proof-card-text">Trusted daily and weekly views; AI answers trace back to approved calculations — without an ERP replacement project.</p>
+                <p class="proof-card-meta">Composite pattern from similar ERP-heavy operational environments.</p>
+              </div>
+            </div>
           </article>
         </div>
+        </div>
 
-        <aside class="compliance-disclaimer reveal" aria-label="Case study disclaimer">
-          <h3>Important Note</h3>
-          <p>Case studies describe representative outcomes from engagements in similar manufacturing sectors. They are not attributed to a single client. Results depend on database complexity, SME availability, organizational readiness, and adoption. Results may not be typical or transferable to all environments.</p>
+        <aside class="compliance-disclaimer compliance-disclaimer--proof reveal" aria-label="Case study disclaimer">
+          <details class="compliance-disclaimer-more">
+            <summary>Case study disclaimer</summary>
+            <p>Composite patterns from similar operational environments — not attributed to a named client. Results depend on schema complexity, SME availability, and adoption.</p>
+          </details>
         </aside>
       </div>
     </section>
 
+    <!-- ============== VISIBILITY / DELIVERABLE ============== -->
+    <section class="section section-mist home-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">What You See</span>
+          <h2 class="h-h2">Visibility into every table, relationship, and governance decision.</h2>
+          <p class="lede lede-center">Prime Diagnostics produces a living data dictionary — not a slide deck. Prime Build turns that into semantic views your team queries daily.</p>
+        </div>
+        <div class="home-shell home-shell--pad home-shell--split feature-split reveal">
+          <div class="feature-split-copy">
+            <p>You see what exists, what it means, what&rsquo;s sensitive, and what to build next — with full audit logging and SME sign-off before production.</p>
+            <a href="methodology.html" class="btn btn-secondary btn-arrow">View 10-phase methodology</a>
+          </div>
+          <div class="feature-split-visual">
+            <figure class="feature-split-frame">
+              <img src="assets/visuals/data-dictionary-mockup.svg" alt="Prime Diagnostics data dictionary showing table business meaning and governance status" width="480" height="300" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============== METHODOLOGY VISUAL ============== -->
-    <section class="methodology-feature section">
+    <section class="methodology-feature section section-light home-section">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Our Methodology</span>
           <h2 class="h-h1">How we work: a typical 10-week implementation.</h2>
         </div>
 
-        <div class="methodology-feature-gateway reveal">
+        <div class="home-shell home-shell--pad home-shell--stack methodology-feature-gateway reveal">
           <div class="methodology-feature-gateway-inner">
-            <p class="methodology-feature-gateway-lede">Week 1: discovery and planning. Weeks 2&ndash;3: database inventory. Weeks 4&ndash;5: application analysis. Weeks 6&ndash;7: semantic layer design. Weeks 8&ndash;9: build and deploy. Week 10: validation and handoff.</p>
+            <figure class="methodology-timeline-visual">
+              <img src="assets/visuals/timeline-10-week.svg" alt="Typical 10-week implementation timeline from discovery through handoff" width="900" height="140" loading="lazy" decoding="async" />
+            </figure>
             <div class="methodology-feature-gateway-actions">
               <a href="methodology.html" class="btn btn-primary">View full 10-phase roadmap</a>
             </div>
           </div>
         </div>
 
-        <div class="reveal">
-          <p class="methodology-statement">This timeline is typical for 400&ndash;800 table schemas with moderate complexity. Actual timeline depends on schema size, data access constraints, and SME availability.</p>
-          <p class="methodology-statement methodology-statement-small">The interactive ten-phase roadmap, cross-cutting foundations, and phase-level detail live on our Methodology page.</p>
+        <div>
+          <p class="methodology-statement">Typical for 400&ndash;800 table schemas. Actual timeline depends on schema size, data access, and SME availability.</p>
+          <p class="methodology-statement methodology-statement-small">Phase-level detail and cross-cutting foundations live on our Methodology page.</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== PLATFORMS ============== -->
+    <section class="platform-wall section section-mist home-section" aria-labelledby="platform-wall-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Systems We Map</span>
+          <h2 class="h-h2" id="platform-wall-heading">The intelligence is in the methodology — not the logo.</h2>
+          <p class="lede lede-center">We&rsquo;ve modeled and deployed against major MES, ERP, and AI platforms. Your stack stays yours; we build the governed layer on top.</p>
+        </div>
+        <div class="home-shell home-shell--pad platform-wall-inner reveal">
+        <div class="platform-wall-grid" aria-label="Example platforms">
+          <div class="platform-wall-cell"><img src="assets/platform-icons/mes-cell.svg" alt="Camstar" width="80" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell"><img src="assets/platform-icons/sap.svg" alt="SAP" width="56" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell"><img src="assets/platform-icons/oracle.svg" alt="Oracle" width="72" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell"><img src="assets/platform-icons/siemens.svg" alt="Siemens Opcenter" width="80" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell"><img src="assets/platform-icons/microsoft.svg" alt="Microsoft" width="80" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell"><img src="assets/platform-icons/anthropic.svg" alt="Claude" width="72" height="28" loading="lazy" decoding="async" /></div>
+          <div class="platform-wall-cell platform-wall-cell--text">Custom <span class="text-keep">MES / ERP</span></div>
+          <div class="platform-wall-cell platform-wall-cell--text">Private LLMs</div>
+          <div class="platform-wall-cell platform-wall-cell--text">+ your stack</div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SOLUTIONS ============== -->
+    <section class="solutions-strip section section-light home-section" id="solutions">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Where We Plug In</span>
+          <h2 class="h-h2">Governed AI across your operations stack.</h2>
+          <p class="lede lede-center">Same methodology — applied where your operational truth lives.</p>
+        </div>
+        <div class="home-shell home-shell--pad sector-tiles reveal-stagger">
+          <a href="ai-mes.html" class="sector-tile sector-tile--mes reveal">
+            <span class="sector-tile-bg" aria-hidden="true"></span>
+            <span class="sector-tile-foot">
+              <span class="sector-tile-label">AI for MES<span class="sector-tile-desc">Shop-floor &amp; manufacturing execution</span></span>
+              <span class="sector-tile-arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+          <a href="ai-erp.html" class="sector-tile sector-tile--erp reveal">
+            <span class="sector-tile-bg" aria-hidden="true"></span>
+            <span class="sector-tile-foot">
+              <span class="sector-tile-label">AI for ERP<span class="sector-tile-desc">Finance, supply chain &amp; reconciliation</span></span>
+              <span class="sector-tile-arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
+          <a href="ai-crm.html" class="sector-tile sector-tile--crm reveal">
+            <span class="sector-tile-bg" aria-hidden="true"></span>
+            <span class="sector-tile-foot">
+              <span class="sector-tile-label">AI for CRM<span class="sector-tile-desc">Revenue &amp; customer intelligence</span></span>
+              <span class="sector-tile-arrow" aria-hidden="true">→</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ============== TEAM ============== -->
-    <section class="team-section section" id="team">
+    <section class="team-section section section-mist home-section" id="team">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">The Team</span>
           <h2 class="h-h2">The people who built the methodology.<br/>The people who deliver it.</h2>
         </div>
 
-        <div class="team-list">
+        <div class="home-shell home-shell--pad home-shell--stack team-list">
           <article class="team-member">
             <div class="team-photo">
               <img src="assets/founder-antonio.png" alt="Antonio Rojas, Founder &amp; CEO" width="768" height="1024" loading="lazy" decoding="async" />
@@ -351,10 +1091,8 @@
               <h3 class="team-name">Antonio Rojas</h3>
               <div class="team-role">Founder &amp; CEO · AI Solutions Architect</div>
               <div class="team-bio">
-                <p>30 years of enterprise systems experience, including 18 years inside semiconductor and discrete manufacturing operations. Not as a consultant visiting facilities. As someone who built, debugged, and improved the systems that ran production.</p>
-                <p>He knows why MES databases are structured the way they are, where business logic hides in stored procedures, and what &ldquo;trusted source&rdquo; means on a shop floor.</p>
-                <p>Before Prime AI, he led applications development and SAP implementations across North America and Latin America in enterprise manufacturing environments.</p>
-                <p>The Prime AI methodology is built on a simple rule: manufacturing databases need context before they can serve AI. Every engagement starts with your specific system, constraints, and definition of truth.</p>
+                <p>30 years of enterprise systems experience, including 18 years inside semiconductor and discrete manufacturing&mdash;building, debugging, and improving the systems that ran production. He knows why MES databases are structured the way they are and where business logic hides.</p>
+                <p>The Prime AI rule: operational databases need context before they can serve AI. Every engagement starts with your systems, constraints, and definition of truth.</p>
               </div>
               <div class="team-contact">
                 <a href="tel:8052164651">(805) 216-4651</a> · <a href="mailto:antonio@primeaiconsultants.com">antonio@primeaiconsultants.com</a>
@@ -370,10 +1108,8 @@
               <h3 class="team-name">Fernando Rojas</h3>
               <div class="team-role">Co-Founder · Product &amp; Operations</div>
               <div class="team-bio">
-                <p>Fernando builds the infrastructure that turns manufacturing expertise into a scalable business. His background spans product, engineering, and how those two things should actually talk to each other.</p>
-                <p>Most recently, he built enterprise career platforms at Disney&mdash;the systems and candidate experiences that run global talent acquisition for one of the world&rsquo;s largest companies. Before that: product-scale work at La Mer (Est&eacute;e Lauder), technical implementation at Santa Clara University, AR experiences at Snap, and co-founding Dorothy&rsquo;s Calculator (an edtech platform that reached 22,000+ students and won the T-Mobile Changemaker Award).</p>
-                <p>Right now, he&rsquo;s pursuing a Master&rsquo;s in Computer Science at Harvard Extension School, focusing on AI, systems design, and how to build platforms that scale. His role at Prime AI is to make sure what Antonio knows&mdash;built over 30 years in operations&mdash;becomes a product every manufacturer can access.</p>
-                <p>He&rsquo;s comfortable in three domains: building technical systems that work, understanding product-market fit, and doing the unglamorous work of turning expertise into scalable processes.</p>
+                <p>Fernando builds the infrastructure that turns manufacturing expertise into a scalable business&mdash;spanning product, engineering, and how those two should talk to each other. He holds a Bachelor of Science in Web Design and Engineering from Santa Clara University and is pursuing a Master&rsquo;s in Computer Science through Harvard Extension School.</p>
+                <p>Background includes enterprise platforms at Disney and product-scale work at La Mer (Est&eacute;e Lauder). At Prime AI, he turns deep operations expertise into repeatable, governed delivery.</p>
               </div>
               <div class="team-contact">
                 <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a>
@@ -384,15 +1120,131 @@
       </div>
     </section>
 
+    <!-- ============== WHO IT'S FOR ============== -->
+    <section class="icp-fit section section-mist home-section" id="who-its-for" aria-labelledby="icp-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Who it&rsquo;s for</span>
+          <h2 class="h-h2" id="icp-heading">Operational data trust — not every <span class="text-keep">AI project.</span></h2>
+          <p class="lede lede-center">We&rsquo;d rather be clear on fit than chase the wrong conversation.</p>
+        </div>
+        <div class="home-shell home-shell--pad icp-spectrum icp-grid reveal-stagger">
+          <article class="icp-card icp-card--fit reveal">
+            <span class="icp-card-badge icp-card-badge--fit">Best fit</span>
+            <h3 class="icp-card-title">Strong fit</h3>
+            <ul class="icp-card-list">
+              <li>VP Ops, plant IT, data engineering, or enterprise architecture</li>
+              <li>Legacy MES, ERP, or custom ops database (often 100+ tables)</li>
+              <li>AI pilot stalled because SMEs don&rsquo;t trust raw-table answers</li>
+              <li>Need read-only governance, audit trail, and deliverables you own</li>
+              <li>Ops-heavy startups (logistics, hardware, bio, fintech cores) with real production data</li>
+            </ul>
+          </article>
+          <article class="icp-card icp-card--maybe reveal">
+            <span class="icp-card-badge icp-card-badge--maybe">Let&rsquo;s talk</span>
+            <h3 class="icp-card-title">Maybe — worth a call</h3>
+            <ul class="icp-card-list">
+              <li>Modern cloud warehouse only — no operational system of record yet</li>
+              <li>Early-stage team exploring AI but no database to govern</li>
+              <li>Want us to build a customer-facing chatbot on your marketing site</li>
+            </ul>
+            <p class="icp-card-note">We&rsquo;ll tell you honestly if Prime Diagnostics is the right first step.</p>
+          </article>
+          <article class="icp-card icp-card--skip reveal">
+            <span class="icp-card-badge icp-card-badge--skip">Not our lane</span>
+            <h3 class="icp-card-title">We&rsquo;ll point you elsewhere</h3>
+            <ul class="icp-card-list">
+              <li>Generic &ldquo;automate my business with ChatGPT&rdquo; with no ops database</li>
+              <li>Horizontal workflow tools with no legacy data problem</li>
+              <li>18-month transformation RFPs without a defined schema to map</li>
+            </ul>
+            <p class="icp-card-note">Horizontal AI vendors and Big 4 programs may be a better match.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FAQ ============== -->
+    <section class="faq-section section section-light home-section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="h-h2">Questions we hear in discovery calls.</h2>
+        </div>
+        <div class="home-shell home-shell--pad faq-list reveal">
+          <details class="faq-item">
+            <summary>Do you only work with manufacturers?</summary>
+            <p>Manufacturing is our deepest credibility — especially MES. The same governed playbook applies to ERP, healthcare operations, financial ops, and custom enterprise apps. If your AI initiative depends on messy legacy operational data, we can help.</p>
+          </details>
+          <details class="faq-item">
+            <summary>We&rsquo;re a startup — is this too enterprise for us?</summary>
+            <p>If you have a real operational database (production, logistics, finance ops) and need governed AI on it, we can help. If you only need a product copilot or doc RAG on SaaS tools, we&rsquo;re usually not the right fit — and we&rsquo;ll say so on the discovery call.</p>
+          </details>
+          <details class="faq-item">
+            <summary>We already have Copilot / a data platform. Why Prime?</summary>
+            <p>Platforms give you access. They don&rsquo;t map your stored procedures, custom fields, or tribal knowledge. We build the semantic layer and governance your team needs to trust answers — on top of what you already own.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What do we get from the 2-week diagnostic?</summary>
+            <p>Table inventory, relationship map, first-draft AI data dictionary, sensitive-data flags, and a prioritized roadmap. You keep everything — it&rsquo;s yours even if you don&rsquo;t continue to Prime Build.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do you handle security and access?</summary>
+            <p>Read-only database access, approved views only, query logging, and SME validation gates before production use. We align with your IT and compliance team — not around them.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can we meet at Ai4?</summary>
+            <p>Yes. Antonio and Fernando attend Aug 4–6, 2026 at The Venetian, Las Vegas. <a href="contact.html#schedule">Book time</a> or mention Ai4 in your message.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== LEAD MAGNET ============== -->
+    <section class="lead-magnet section" id="readiness">
+      <div class="container lead-magnet-inner reveal">
+        <div>
+          <span class="eyebrow">Free resource</span>
+          <h2 class="h-h2">AI Readiness Checklist for Operational Data</h2>
+          <p class="lead-magnet-text">Eight questions to ask before connecting an LLM to MES, ERP, or custom databases — plus what &ldquo;governed&rdquo; actually means in practice.</p>
+          <ul class="lead-magnet-list">
+            <li>Schema inventory vs. business meaning</li>
+            <li>Where calculation logic actually lives</li>
+            <li>SME validation before production</li>
+            <li>Read-only access and audit requirements</li>
+          </ul>
+        </div>
+        <div class="lead-magnet-card">
+          <p>Request the checklist on your discovery call — we&rsquo;ll walk through it together.</p>
+          <a href="contact.html#schedule" class="btn btn-primary">Get the checklist</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== DARK CTA BAND ============== -->
+    <section class="feature-band-dark" aria-labelledby="feature-band-heading">
+      <div class="container feature-band-dark-inner reveal">
+        <div>
+          <span class="eyebrow">Start Low-Risk</span>
+          <h2 class="h-h2" id="feature-band-heading">Map your database in two weeks. Then decide.</h2>
+          <p>Prime Diagnostics gives you a data dictionary, relationship map, and roadmap — deliverables you keep even if you don&rsquo;t continue. No 18-month program. No platform lock-in.</p>
+          <a href="contact.html#schedule" class="btn btn-primary btn-lg btn-arrow">Book free discovery call</a>
+        </div>
+        <figure class="feature-band-dark-visual">
+          <img src="assets/visuals/data-dictionary-mockup.svg" alt="Sample data dictionary deliverable from Prime Diagnostics" width="640" height="400" loading="lazy" decoding="async" />
+        </figure>
+      </div>
+    </section>
+
     <!-- ============== DUAL CTA ============== -->
     <section class="dual-cta-section" aria-label="Next steps">
-      <div class="dual-cta reveal">
+      <div class="dual-cta">
         <a href="contact.html#schedule" class="dual-panel dual-panel-light">
           <span>Book a Discovery Call</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
-        <a href="methodology.html" class="dual-panel dual-panel-dark">
-          <span>See Full Methodology</span>
+        <a href="services.html#diagnostics" class="dual-panel dual-panel-dark">
+          <span>Start 2-Week Diagnostic</span>
           <span class="dual-panel-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -405,11 +1257,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run — MES, ERP, and custom apps. Manufacturing is our deepest proof; the playbook applies wherever legacy data blocks trusted AI.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -418,7 +1270,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -427,11 +1279,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>
             <li>Phoenix, AZ · Los Angeles, CA</li>
+            <li><a href="index.html#ai4">Ai4 2026 · Las Vegas</a></li>
+            <li><a href="index.html#who-its-for">Who we&rsquo;re for</a></li>
             <li><a href="contact.html#schedule">Schedule a Call</a></li>
           </ul>
         </div>

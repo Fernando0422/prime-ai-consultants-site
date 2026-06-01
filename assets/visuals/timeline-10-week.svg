@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" role="img" aria-labelledby="timelineTitle">
+  <title id="timelineTitle">Typical 10-week Prime AI implementation timeline</title>
+  <defs>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4B8"/>
+      <stop offset="100%" stop-color="#0d7d72"/>
+    </linearGradient>
+  </defs>
+  <line x1="40" y1="56" x2="860" y2="56" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round"/>
+  <!-- phases: W1, W2-3, W4-5, W6-7, W8-9, W10 -->
+  <g font-family="system-ui,sans-serif">
+    <circle cx="40" cy="56" r="8" fill="#00D4B8"/>
+    <text x="40" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W1</text>
+    <text x="40" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Discovery</text>
+
+    <circle cx="180" cy="56" r="8" fill="#00D4B8"/>
+    <text x="180" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W23</text>
+    <text x="180" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Inventory</text>
+
+    <circle cx="340" cy="56" r="8" fill="#00D4B8"/>
+    <text x="340" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W45</text>
+    <text x="340" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">App analysis</text>
+
+    <circle cx="500" cy="56" r="8" fill="#00D4B8"/>
+    <text x="500" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W67</text>
+    <text x="500" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Semantic design</text>
+
+    <circle cx="660" cy="56" r="8" fill="#00D4B8"/>
+    <text x="660" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W89</text>
+    <text x="660" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Build &amp; deploy</text>
+
+    <circle cx="860" cy="56" r="10" fill="#0A0F1E" stroke="#00D4B8" stroke-width="2"/>
+    <text x="860" y="32" text-anchor="middle" fill="#00D4B8" font-size="11" font-weight="700">W10</text>
+    <text x="860" y="88" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Handoff</text>
+  </g>
+  <text x="450" y="128" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="system-ui,sans-serif" font-size="10">Typical for 400800 table schemas · Timeline varies by complexity</text>
+</svg>

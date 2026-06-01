@@ -50,7 +50,7 @@ Legacy file `assets/MES___AI_Integration_roadmap_-_Phase_Diagram.png`, if presen
 
 ### 4. Logos
 
-Primary navigation loads `assets/prime-ai-logo-dark-bg.svg` with height `48px` and auto width (`assets/styles.css` `.brand-logo`). `prime-ai-logo-light-bg.svg` ships in `/assets/` for light backgrounds (deck templates, alternate headers).
+Primary navigation loads `assets/prime-ai-logo-nav.svg` (Aperture mark + secondary horizontal lockup: Prime AI / CONSULTANTS) with height capped by `--nav-logo-height` in `assets/styles.css`. Footer uses stacked `assets/prime-ai-logo-footer.svg`. Full SVG set lives in `assets/logo/` (primary, secondary, simplified, marks, favicon, app icon). `prime-ai-logo-light-bg.svg` is the light-background simplified lockup.
 
 ### 5. (Optional) Alternate hero visuals
 
@@ -123,9 +123,11 @@ Loaded from Google Fonts.
 ├── assets/
 │   ├── styles.css      # Full design system
 │   ├── site.js         # Nav, mobile, form, sticky CTA, reveal
-│   ├── favicon.svg
-│   ├── prime-ai-logo-dark-bg.svg  # Navbar logo (preferred on dark chrome)
-│   ├── prime-ai-logo-light-bg.svg  # For light backgrounds (optional)
+│   ├── favicon.svg                 # Aperture mark (16px-safe)
+│   ├── logo/                       # Full brand SVG kit from style guide
+│   ├── prime-ai-logo-nav.svg       # Navbar (secondary lockup, dark chrome)
+│   ├── prime-ai-logo-footer.svg    # Footer (primary stacked lockup)
+│   ├── prime-ai-logo-light-bg.svg  # Simplified lockup on light backgrounds
 │   ├── founder-antonio.png
 │   ├── founder-fernando.png
 │   ├── MES___AI_Integration_roadmap_-_Phase_Diagram.png  # Optional reference only

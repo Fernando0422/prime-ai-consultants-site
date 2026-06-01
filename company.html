@@ -4,36 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About · Prime AI Consultants</title>
-  <meta name="description" content="Prime AI Consultants builds the AI intelligence layer that manufacturers can trust. Methodology developed inside real manufacturing operations, not a consulting whitepaper." />
+  <meta name="description" content="Founder-led boutique: governed AI on operational data. 30+ years enterprise systems, deepest in manufacturing — same playbook for ERP and custom apps." />
   <meta name="theme-color" content="#0A0F1E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-route page-company">
+<body class="page-route page-site page-company">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -53,14 +68,15 @@
     <section class="page-hero">
       <div class="container page-hero-inner">
         <span class="eyebrow hero-eyebrow">About Prime AI</span>
-        <h1 class="h-h1">Prime AI Consultants builds the AI intelligence layer that manufacturers can trust.</h1>
-        <p class="lede lede-text">We&rsquo;re different because the methodology wasn&rsquo;t developed in a consulting office. It was developed inside real manufacturing operations, against real production data, under real pressure.</p>
+        <h1 class="h-h1">Governed AI on operational data — built by people who&rsquo;ve run the systems.</h1>
+        <p class="lede lede-text">The methodology wasn&rsquo;t developed in a consulting office. It was developed inside real manufacturing operations — and applies wherever legacy databases block trusted AI.</p>
       </div>
     </section>
 
     <!-- ============== ORIGIN STATEMENT ============== -->
-    <section class="reality-statement section reality-statement--align-left">
+    <section class="reality-statement section reality-statement--align-left home-section">
       <div class="container container-about-origin">
+        <div class="home-shell home-shell--pad reveal">
         <blockquote class="antonio-testimony">
           <p><strong>The Founder</strong></p>
           <p>The company was founded by someone with 30 years of enterprise systems experience and 18 years specifically inside semiconductor and discrete manufacturing operations.</p>
@@ -73,32 +89,33 @@
             <li>We don&rsquo;t theorize about manufacturing&mdash;we&rsquo;ve lived it</li>
           </ul>
         </blockquote>
+        </div>
       </div>
     </section>
 
     <!-- ============== MISSION ============== -->
-    <section class="mission-section section">
+    <section class="mission-section section home-section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">What We Believe</span>
         </div>
-        <div class="mission-body">
-          <p><strong>Manufacturing AI projects fail not because of technology. They fail because people implementing them have never been inside a factory.</strong></p>
-          <p>We were. For 18 years in manufacturing operations. Which is why we don&rsquo;t sell demos. We sell working infrastructure that your team uses every day.</p>
+        <div class="home-shell home-shell--pad mission-body">
+          <p><strong>Operational AI projects fail not because of the model. They fail because nobody mapped the database before plugging in AI.</strong></p>
+          <p>Antonio spent 18 years inside manufacturing operations. That&rsquo;s our deepest credibility — and the same governed playbook works for ERP, healthcare ops, and financial data.</p>
         </div>
         <p class="mission-tail">Our mission: build the AI intelligence layer that manufacturing has been waiting for. Governed by design. Trusted by operations teams. Built to stay in production.</p>
       </div>
     </section>
 
     <!-- ============== HOW WE WORK / PRINCIPLES ============== -->
-    <section class="principles-section section">
+    <section class="principles-section section home-section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">How We Work</span>
           <h2 class="h-h2">Four operating principles<br/>we never bend on.</h2>
         </div>
 
-        <div class="principles-list">
+        <div class="home-shell home-shell--pad principles-list">
           <article class="principle-card">
             <div class="principle-title">01 · Governed Access or No Access</div>
             <p class="principle-body">We never connect AI directly to raw MES tables. Every AI connection goes through a governed semantic layer. Read-only. Logged. Auditable.</p>
@@ -119,13 +136,13 @@
       </div>
     </section>
 
-    <section class="mission-section section">
+    <section class="mission-section section home-section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Why Choose Prime AI</span>
           <h2 class="h-h2">You&rsquo;ve been burned before.<br/>We&rsquo;re different.</h2>
         </div>
-        <div class="mission-body">
+        <div class="home-shell home-shell--pad mission-body">
           <p>You&rsquo;ve probably worked with consultants who connected AI to your MES and produced answers nobody trusted. Or who understood AI but not manufacturing. Or who built something that required them to stay involved forever.</p>
           <ul class="mission-list">
             <li>30 years of enterprise systems experience</li>
@@ -139,14 +156,14 @@
     </section>
 
     <!-- ============== TEAM ============== -->
-    <section class="team-section section" id="team">
+    <section class="team-section section home-section" id="team">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">The Team</span>
           <h2 class="h-h2">The people who built the methodology.<br/>The people who deliver it.</h2>
         </div>
 
-        <div class="team-list">
+        <div class="home-shell home-shell--pad home-shell--stack team-list">
           <article class="team-member">
             <div class="team-photo">
               <img src="assets/founder-antonio.png" alt="Antonio Rojas, Founder &amp; CEO" width="768" height="1024" loading="lazy" decoding="async" />
@@ -174,9 +191,9 @@
               <h3 class="team-name">Fernando Rojas</h3>
               <div class="team-role">Co-Founder · Product &amp; Operations</div>
               <div class="team-bio">
-                <p>Fernando builds the infrastructure that turns manufacturing expertise into a scalable business. His background spans product, engineering, and how those two things should actually talk to each other.</p>
-                <p>Most recently, he built enterprise career platforms at Disney&mdash;the systems and candidate experiences that run global talent acquisition for one of the world&rsquo;s largest companies. Before that: product-scale work at La Mer (Est&eacute;e Lauder), technical implementation at Santa Clara University, AR experiences at Snap, and co-founding Dorothy&rsquo;s Calculator (an edtech platform that reached 22,000+ students and won the T-Mobile Changemaker Award).</p>
-                <p>Right now, he&rsquo;s pursuing a Master&rsquo;s in Computer Science at Harvard Extension School, focusing on AI, systems design, and how to build platforms that scale. His role at Prime AI is to make sure what Antonio knows&mdash;built over 30 years in operations&mdash;becomes a product every manufacturer can access.</p>
+                <p>Fernando builds the infrastructure that turns manufacturing expertise into a scalable business. His background spans product, engineering, and how those two things should actually talk to each other. He earned a Bachelor of Science in Web Design and Engineering from Santa Clara University and is pursuing a Master&rsquo;s in Computer Science through Harvard Extension School.</p>
+                <p>Most recently, he built enterprise career platforms at Disney&mdash;the systems and candidate experiences that run global talent acquisition for one of the world&rsquo;s largest companies. Before that: product-scale work at La Mer (Est&eacute;e Lauder), technical implementation at Santa Clara University, and AR experiences at Snap.</p>
+                <p>At Prime AI, he turns deep operations expertise into repeatable, governed delivery&mdash;so what Antonio knows from 30 years in the field becomes infrastructure teams can actually use.</p>
                 <p>He&rsquo;s comfortable in three domains: building technical systems that work, understanding product-market fit, and doing the unglamorous work of turning expertise into scalable processes.</p>
               </div>
               <div class="team-contact">
@@ -213,11 +230,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -226,7 +243,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -235,11 +252,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>
             <li>Phoenix, AZ · Los Angeles, CA</li>
+            <li><a href="index.html#ai4">Ai4 2026 · Las Vegas</a></li>
+            <li><a href="index.html#who-its-for">Who we&rsquo;re for</a></li>
             <li><a href="contact.html#schedule">Schedule a Call</a></li>
           </ul>
         </div>

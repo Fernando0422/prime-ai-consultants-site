@@ -4,36 +4,51 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact · Book Your Free Discovery Call</title>
-  <meta name="description" content="Book a 30-minute discovery call. Get an honest assessment of your MES database, what AI can deliver, and a realistic timeline. No sales pressure. No commitment required." />
+  <meta name="description" content="Book a free 30-minute discovery call. Honest assessment of your operational data, AI readiness, and timeline. Meeting at Ai4 Aug 4–6, Las Vegas." />
   <meta name="theme-color" content="#0A0F1E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/enhancements.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
-<body class="page-route">
+<body class="page-route page-site">
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <div class="announce" role="region" aria-label="Site announcement">
-    <div class="announce-inner">
-      <span class="announce-tag">NEW</span>
-      <span class="announce-text">Prime Diagnostics now available. Map your MES schema and build your AI data dictionary in 2 weeks. <a href="services.html">Learn more →</a></span>
-      <button type="button" class="announce-close" aria-label="Dismiss announcement">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3L3 13"/></svg>
+  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
+    <div class="ai4-toast-inner">
+      <span class="ai4-toast-tag">Ai4 2026</span>
+      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
+      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
+      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
       </button>
     </div>
-  </div>
+  </aside>
 
   <nav class="site-nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="" width="320" height="80" decoding="async" />
+        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
       </a>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="services.html" data-parent="services">Services</a></li>
+        <li class="nav-item-has-sub">
+          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
+          <ul class="nav-sub" id="nav-sub-services" role="list">
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
+            <li><a href="services.html#build">Prime Build</a></li>
+            <li><a href="services.html#retainer">Prime Retainer</a></li>
+            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
+            <li><a href="ai-mes.html">AI for MES</a></li>
+            <li><a href="ai-erp.html">AI for ERP</a></li>
+            <li><a href="ai-crm.html">AI for CRM</a></li>
+          </ul>
+        </li>
         <li><a href="company.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
@@ -54,14 +69,17 @@
       <div class="container page-hero-inner">
         <span class="eyebrow hero-eyebrow">Contact</span>
         <h1 class="h-h1">Ready to build AI infrastructure your team trusts?</h1>
-        <p class="lede lede-text">Most manufacturers can&rsquo;t answer basic operational questions without data pull requests and spreadsheet reconciliation. Prime AI maps your database, builds the semantic layer, and puts AI in the hands of your engineers with governance built in from day one.</p>
+        <p class="lede lede-text">If your AI pilot stalled on messy operational data — MES, ERP, or custom apps — start with a conversation. We map what you have, build governed access, and deliver infrastructure your SMEs can defend.</p>
+        <p class="commercial-note" style="margin-top:1rem;text-align:center;">Attending <strong>Ai4</strong> Aug 4–6? Mention it below. Request our <strong>AI Readiness for Operational Data</strong> checklist on the call.</p>
+        <p class="commercial-note" style="margin-top:0.75rem;text-align:center;max-width:42rem;margin-left:auto;margin-right:auto;"><a href="index.html#who-its-for">See who we&rsquo;re built for</a> before you book — we&rsquo;ll tell you honestly if we&rsquo;re not the right fit.</p>
       </div>
     </section>
 
     <!-- ============== CONTACT FORM + INFO ============== -->
-    <section class="section section-mist" id="schedule">
+    <section class="section section-mist home-section" id="schedule">
       <div class="container">
-        <div class="contact-grid">
+        <h2 class="sr-only">Schedule a discovery call</h2>
+        <div class="home-shell home-shell--pad contact-grid">
 
           <!-- Form -->
           <form
@@ -105,33 +123,37 @@
             </div>
 
             <label class="form-field">
-              <span class="form-label">Your MES or ERP platform</span>
+              <span class="form-label">Primary operational system</span>
               <select class="form-select" name="platform">
-                <option value="">Select platform (optional)</option>
-                <option value="camstar">Camstar</option>
-                <option value="sap-me">SAP ME / MII</option>
-                <option value="siemens">Siemens Opcenter</option>
-                <option value="sap-ecc">SAP ECC</option>
-                <option value="factorytalk">FactoryTalk</option>
-                <option value="oracle">Oracle ERP / Oracle MES</option>
-                <option value="custom">Custom platform</option>
-                <option value="not-sure">Not sure yet</option>
-                <option value="other">Other</option>
+                <option value="">Select system (optional)</option>
+                <optgroup label="Manufacturing / MES">
+                  <option value="camstar">Camstar</option>
+                  <option value="sap-me">SAP ME / MII</option>
+                  <option value="siemens">Siemens Opcenter</option>
+                  <option value="factorytalk">FactoryTalk</option>
+                  <option value="oracle-mes">Oracle MES</option>
+                </optgroup>
+                <optgroup label="ERP / finance / ops">
+                  <option value="sap-ecc">SAP ECC / S/4</option>
+                  <option value="oracle-erp">Oracle ERP</option>
+                  <option value="dynamics">Microsoft Dynamics</option>
+                  <option value="netsuite">NetSuite</option>
+                </optgroup>
+                <optgroup label="Other">
+                  <option value="custom">Custom operational database</option>
+                  <option value="crm">CRM / revenue ops (Salesforce, etc.)</option>
+                  <option value="multiple">Multiple systems</option>
+                  <option value="not-sure">Not sure yet</option>
+                </optgroup>
               </select>
             </label>
 
+            <label class="form-field form-field--checkbox">
+              <input class="form-checkbox" type="checkbox" name="attendingAi4" value="yes" />
+              <span>I&rsquo;ll be at <strong>Ai4</strong> (Aug 4&ndash;6, Las Vegas) and would like to meet there</span>
+            </label>
+
             <div class="form-row">
-              <label class="form-field">
-                <span class="form-label">Company Revenue Range (Optional)</span>
-                <select class="form-select" name="revenue-range">
-                  <option value="">Select range</option>
-                  <option value="100m-300m">$100M – $300M</option>
-                  <option value="300m-1b">$300M – $1B</option>
-                  <option value="1b-2b">$1B – $2B</option>
-                  <option value="2b-plus">$2B+</option>
-                  <option value="not-sure">Not sure</option>
-                </select>
-              </label>
               <label class="form-field">
                 <span class="form-label">Timeline (Optional)</span>
                 <select class="form-select" name="timeline">
@@ -151,7 +173,7 @@
                 name="message"
                 required
                 rows="5"
-                placeholder="Tell us about your MES environment and what you are trying to solve."
+                placeholder="Tell us about your systems (MES, ERP, etc.), data challenges, and whether you are attending Ai4."
               ></textarea>
             </label>
 
@@ -160,15 +182,15 @@
             <div class="form-status" role="status" aria-live="polite"></div>
 
             <p class="form-reassurance">
-              We&rsquo;ll ask about your manufacturing environment, MES platform, and data challenges. No sales pitch. No pressure.<br/>
-              No commitment required. Just clarity.
+              We&rsquo;ll ask about your operational systems, data challenges, and what success looks like. No sales pitch. No pressure.<br/>
+              No commitment required. Optional: request the AI Readiness checklist for operational data.
             </p>
           </form>
 
           <!-- Info -->
           <aside class="contact-info" aria-label="Contact information">
             <div class="contact-info-block contact-info-process">
-              <div class="contact-info-label">The Typical Engagement</div>
+              <h3 class="contact-info-label">The Typical Engagement</h3>
               <ol class="contact-process-list">
                 <li><strong>Weeks 1&ndash;2 (Prime Diagnostics):</strong> You understand what your data is and how it works. Decision point: move forward with Prime Build or pause.</li>
                 <li><strong>Weeks 3&ndash;12 (Prime Build):</strong> Semantic layer in production, team trained, governance operational.</li>
@@ -176,16 +198,35 @@
             </div>
 
             <div class="contact-info-block">
-              <div class="contact-info-label">Next Steps</div>
+              <h3 class="contact-info-label">Next Steps</h3>
               <ol class="contact-process-list">
-                <li><strong>Schedule a 30-minute discovery call.</strong> We ask about your MES, data challenges, and what success looks like. No sales pitch.</li>
+                <li><strong>Schedule a 30-minute discovery call.</strong> We ask about your operational systems, data challenges, and what success looks like. No sales pitch.</li>
                 <li><strong>If it makes sense, we propose Prime Diagnostics.</strong> A 2-week deep dive to validate whether the approach works for your situation.</li>
                 <li><strong>Then you decide.</strong> After Diagnostics, you own the data dictionary and know exactly what we&rsquo;d build. Move forward, pause, or take the insights elsewhere.</li>
               </ol>
             </div>
 
+            <div class="contact-info-block contact-info-icp">
+              <h3 class="contact-info-label">Are we a fit?</h3>
+              <p><strong>Yes</strong> if you have legacy operational data (MES, ERP, custom apps) and AI trust is the blocker.</p>
+              <p><strong>Maybe</strong> if you&rsquo;re early-stage but already running production or finance ops on a real database.</p>
+              <p><strong>Probably not</strong> if you only need a marketing chatbot or doc RAG — <a href="index.html#who-its-for">full criteria</a>.</p>
+            </div>
+
+            <div class="contact-social-proof">
+              <span class="contact-social-proof-label">Systems we map often</span>
+              <ul class="contact-social-proof-tags">
+                <li>MES / Camstar</li>
+                <li>SAP ME / ERP</li>
+                <li>Oracle</li>
+                <li>Siemens Opcenter</li>
+                <li>Custom ops DBs</li>
+              </ul>
+              <p class="contact-social-proof-tail">Shop floors, finance ops, healthcare operations, revenue intelligence.</p>
+            </div>
+
             <div class="contact-info-block">
-              <div class="contact-info-label">Contact</div>
+              <h3 class="contact-info-label">Contact</h3>
               <ul class="contact-info-list">
                 <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
                 <li><a href="tel:8052164651">(805) 216-4651</a></li>
@@ -205,11 +246,11 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-dark-bg.svg" alt="Prime AI Consultants" width="280" height="70" decoding="async" /></a>
-          <p class="footer-tagline">Practical AI for real operations. Built for manufacturers who want AI infrastructure that works, not demos that don&rsquo;t.</p>
+          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
+          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h2 class="footer-col-title">Services</h2>
           <ul>
             <li><a href="services.html">All Services</a></li>
             <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
@@ -218,7 +259,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Methodology</h4>
+          <h2 class="footer-col-title">Methodology</h2>
           <ul>
             <li><a href="methodology.html">10-Phase Roadmap</a></li>
             <li><a href="ai-mes.html">AI for MES</a></li>
@@ -227,11 +268,13 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Connect</h4>
+          <h2 class="footer-col-title">Connect</h2>
           <ul>
             <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
             <li><a href="tel:8052164651">(805) 216-4651</a></li>
             <li>Phoenix, AZ</li>
+            <li><a href="index.html#ai4">Ai4 2026 · Las Vegas</a></li>
+            <li><a href="index.html#who-its-for">Who we&rsquo;re for</a></li>
             <li><a href="contact.html#schedule">Schedule a Call</a></li>
           </ul>
         </div>
