@@ -4341,7 +4341,7 @@ body.page-site main .home-shell.method-intro-panel {
   padding-right: clamp(1.25rem, 4.5vw, 4.5rem);
 }
 .page-flow .flow-founders.container {
-  max-width: 42rem !important;
+  max-width: 56rem !important;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -4428,7 +4428,7 @@ body.page-site main .home-shell.method-intro-panel {
   grid-template-columns: 1fr;
   gap: clamp(4.5rem, 12vh, 8rem);
   margin: 0 auto;
-  max-width: 40rem !important;
+  max-width: 56rem !important;
   width: 100%;
   justify-items: center;
 }
@@ -4452,7 +4452,7 @@ body.page-site main .home-shell.method-intro-panel {
   margin: 0;
 }
 .page-flow .flow-founder-copy {
-  max-width: 36rem;
+  max-width: 52rem;
   margin: 0 auto;
 }
 .page-flow .flow-founder-name {
@@ -8281,7 +8281,7 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
 .page-about .about-team-bio {
   display: grid;
   gap: 0.85rem;
-  max-width: 48rem;
+  max-width: 56rem;
 }
 .page-about .about-team-bio p {
   margin: 0;
