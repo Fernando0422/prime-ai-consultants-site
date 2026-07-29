@@ -2386,7 +2386,7 @@ button.industry-nav-item[aria-selected="true"] .industry-nav-label {
 }
 .lifecycle-tile--build .lifecycle-tile-bg {
   background:
-    url("visuals/architecture-diagram.svg") center 40% / 90% auto no-repeat,
+    url("visuals/architecture-diagram-light.svg") center 40% / 90% auto no-repeat,
     linear-gradient(200deg, #0A0F1E 0%, #132238 100%);
 }
 .lifecycle-tile--handoff .lifecycle-tile-bg {
@@ -2759,7 +2759,7 @@ body.page-site .home-shell.platform-wall-inner .platform-wall-grid {
 }
 .engage-tile--build .lifecycle-tile-bg {
   background:
-    url("visuals/architecture-diagram.svg") center 40% / 92% auto no-repeat,
+    url("visuals/architecture-diagram-light.svg") center 40% / 92% auto no-repeat,
     linear-gradient(200deg, #0A0F1E 0%, #132238 100%);
 }
 .engage-tile--retainer .lifecycle-tile-bg {

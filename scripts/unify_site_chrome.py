@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CSS_VERSION = "nav2"
+CSS_VERSION = "light1"
 
 FOOTER = """  <footer class="footer footer--prime">
     <div class="container footer-inner">
