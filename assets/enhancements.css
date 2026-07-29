@@ -1110,7 +1110,7 @@ button.industry-nav-item[aria-selected="true"] .industry-nav-label {
 .nav-sub-expand {
   display: none;
 }
-@media (min-width: 921px) {
+@media (min-width: 1180px) {
   .site-nav,
   .nav-inner {
     overflow: visible;
@@ -1211,7 +1211,7 @@ button.industry-nav-item[aria-selected="true"] .industry-nav-label {
     color: var(--color-teal-text-on-light, #1F6B62);
   }
 }
-@media (max-width: 920px) {
+@media (max-width: 1179px) {
   .nav-item-has-sub {
     flex-direction: column;
     align-items: stretch;
@@ -4922,12 +4922,12 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
   color: var(--color-dark);
   border-bottom: 1px solid rgba(10, 15, 30, 0.08);
 }
-@media (min-width: 921px) {
+@media (min-width: 1180px) {
   .page-flow .site-nav--light {
     --nav-height: clamp(120px, 14vh, 156px);
     --nav-pad-block: clamp(20px, 2.4vh, 28px);
     --nav-logo-height: clamp(72px, 8vh, 92px);
-    --nav-link-size: 19px;
+    --nav-link-size: 17px;
   }
 }
 .page-flow .site-nav--light .brand-logo {
@@ -4960,7 +4960,7 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
 .page-flow .site-nav--light .nav-toggle .bars::after {
   background: var(--color-dark);
 }
-@media (max-width: 920px) {
+@media (max-width: 1179px) {
   .page-flow .site-nav--light .nav-links {
     background: #F1F1F1;
     border-bottom-color: rgba(10, 15, 30, 0.08);
@@ -5128,9 +5128,11 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
     padding-left: clamp(48px, 5vw, 70px);
     padding-right: clamp(48px, 5vw, 70px);
   }
+}
+@media (min-width: 1180px) {
   .page-flow .site-nav--light .nav-inner {
-    padding-left: clamp(48px, 5vw, 70px);
-    padding-right: clamp(48px, 5vw, 70px);
+    padding-left: clamp(24px, 3.5vw, 70px);
+    padding-right: clamp(24px, 3.5vw, 70px);
   }
 }
 
@@ -5870,25 +5872,25 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   color: var(--color-dark);
   border-bottom: 1px solid rgba(10, 15, 30, 0.08);
 }
-@media (min-width: 921px) {
+@media (min-width: 1180px) {
   .site-nav--light {
     --nav-height: clamp(112px, 12vh, 148px);
     --nav-pad-block: clamp(18px, 2.2vh, 26px);
     --nav-logo-height: clamp(64px, 7vh, 84px);
-    --nav-link-size: 17px;
+    --nav-link-size: 16px;
   }
   .site-nav--light .nav-links > li.nav-home-item {
     display: flex;
   }
   .site-nav--light .nav-links {
-    gap: 2px;
+    gap: 0;
   }
   .site-nav--light .nav-links a {
-    padding: 0 clamp(10px, 1vw, 14px);
-    letter-spacing: 0.05em;
+    padding: 0 clamp(8px, 0.85vw, 14px);
+    letter-spacing: 0.04em;
   }
   .site-nav--light .brand-logo {
-    max-width: min(300px, 28vw);
+    max-width: min(280px, 22vw);
   }
 }
 .site-nav--light .brand-logo {
@@ -5920,7 +5922,7 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   color: var(--color-teal-text-on-light, #1F6B62);
   background: rgba(59, 168, 154, 0.2);
 }
-@media (min-width: 921px) {
+@media (min-width: 1180px) {
   .site-nav--light .nav-links a.active {
     background: rgba(59, 168, 154, 0.14);
   }
@@ -5960,7 +5962,7 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   content: none !important;
   display: none !important;
 }
-@media (min-width: 921px) {
+@media (min-width: 1180px) {
   .site-nav--light .nav-links a,
   .page-flow .site-nav--light .nav-links a,
   .page-methodology .site-nav--light .nav-links a {
@@ -5981,6 +5983,60 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   .page-methodology .site-nav--light .nav-links a:hover:not(.active) {
     color: var(--color-dark) !important;
     background: rgba(10, 15, 30, 0.06) !important;
+  }
+}
+
+/* Mid desktop: compress chrome so the full row fits (~1180–1399) */
+@media (min-width: 1180px) and (max-width: 1399px) {
+  .site-nav--light {
+    --nav-height: clamp(96px, 10vh, 120px);
+    --nav-pad-block: clamp(12px, 1.5vh, 18px);
+    --nav-logo-height: clamp(48px, 5.2vh, 64px);
+    --nav-link-size: 14px;
+  }
+  .page-flow .site-nav--light {
+    --nav-height: clamp(100px, 10.5vh, 124px);
+    --nav-pad-block: clamp(14px, 1.6vh, 20px);
+    --nav-logo-height: clamp(52px, 5.5vh, 68px);
+    --nav-link-size: 14px;
+  }
+  .site-nav--light .brand-logo,
+  .page-flow .site-nav--light .brand-logo {
+    max-width: min(200px, 18vw);
+  }
+  .nav-inner,
+  .page-flow .site-nav--light .nav-inner {
+    gap: clamp(10px, 1.2vw, 20px);
+    padding-left: clamp(16px, 2.2vw, 36px);
+    padding-right: clamp(16px, 2.2vw, 36px);
+  }
+  .site-nav--light .nav-links a,
+  .page-flow .site-nav--light .nav-links a {
+    padding: 0 clamp(5px, 0.55vw, 9px);
+    letter-spacing: 0.025em;
+    min-height: 42px;
+  }
+  /* Contact link remains; CTA returns at 1400px+ */
+  .site-nav--light .nav-cta,
+  .page-flow .site-nav--light .nav-cta {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .page-flow .site-nav--light {
+    --nav-link-size: 17px;
+  }
+  .site-nav--light .nav-links a,
+  .page-flow .site-nav--light .nav-links a {
+    padding: 0 clamp(10px, 0.95vw, 14px);
+    letter-spacing: 0.04em;
+  }
+  .site-nav--light .brand-logo {
+    max-width: min(300px, 24vw);
+  }
+  .page-flow .site-nav--light .brand-logo {
+    max-width: min(320px, 26vw);
   }
 }
 

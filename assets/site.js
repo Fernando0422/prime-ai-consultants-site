@@ -57,7 +57,7 @@
     var items = document.querySelectorAll(".nav-item-has-sub");
     if (!items.length) return;
 
-    var desktopMq = window.matchMedia("(min-width: 921px)");
+    var desktopMq = window.matchMedia("(min-width: 1180px)");
 
     items.forEach(function (item) {
       var trigger = item.querySelector(".nav-parent-link");
@@ -177,7 +177,7 @@
       document.documentElement.style.overflow = open ? "hidden" : "";
 
       // Nested Services list is visible whenever the mobile drawer is open
-      if (window.matchMedia("(max-width: 920px)").matches) {
+      if (window.matchMedia("(max-width: 1179px)").matches) {
         document.querySelectorAll(".nav-item-has-sub > .nav-parent-link").forEach(function (trigger) {
           trigger.setAttribute("aria-expanded", open ? "true" : "false");
         });
@@ -206,7 +206,7 @@
 
     document.querySelectorAll(".nav-links a").forEach(function (a) {
       a.addEventListener("click", function () {
-        if (window.matchMedia("(max-width: 920px)").matches) setOpen(false);
+        if (window.matchMedia("(max-width: 1179px)").matches) setOpen(false);
       });
     });
 
@@ -218,7 +218,7 @@
     });
 
     window.addEventListener("resize", function () {
-      if (!window.matchMedia("(max-width: 920px)").matches) {
+      if (!window.matchMedia("(max-width: 1179px)").matches) {
         setOpen(false);
       }
     });

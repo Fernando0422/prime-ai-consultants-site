@@ -60,7 +60,7 @@ def nav(active=""):
       </a>
       <ul class="nav-links" id="nav-links" role="list">
         <li class="nav-home-item"><a href="index.html"{cls("home")}>Home</a></li>
-        <li><a href="diagnostics.html"{cls("diagnostics")}>Prime Diagnostics</a></li>
+        <li><a href="diagnostics.html"{cls("diagnostics")} aria-label="Prime Diagnostics">Diagnostics</a></li>
         <li><a href="methodology.html"{cls("methodology")}>Methodology</a></li>
         <li><a href="company.html"{cls("company")}>Company</a></li>
         <li><a href="contact.html"{cls("contact")}>Contact</a></li>

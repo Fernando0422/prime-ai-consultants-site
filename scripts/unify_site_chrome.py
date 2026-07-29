@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CSS_VERSION = "nav1"
+CSS_VERSION = "nav2"
 
 FOOTER = """  <footer class="footer footer--prime">
     <div class="container footer-inner">
@@ -96,7 +96,7 @@ def nav_html(active: str) -> str:
       </a>
       <ul class="nav-links" id="nav-links" role="list">
         <li class="nav-home-item"><a href="index.html"{cls("home")}>Home</a></li>
-        <li><a href="diagnostics.html"{cls("diagnostics")}>Prime Diagnostics</a></li>
+        <li><a href="diagnostics.html"{cls("diagnostics")} aria-label="Prime Diagnostics">Diagnostics</a></li>
         <li><a href="methodology.html"{cls("methodology")}>Methodology</a></li>
         <li class="nav-item-has-sub">
           <a href="services.html"{parent_cls} data-parent="services" aria-haspopup="true" aria-expanded="false" aria-controls="nav-sub-services">Services</a>
