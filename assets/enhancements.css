@@ -8118,8 +8118,7 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   text-align: center;
 }
 @media (min-width: 900px) {
-  .page-about #principles-co,
-  .page-about #stage-heading {
+  .page-about #principles-co {
     white-space: nowrap;
   }
 }
@@ -8393,28 +8392,6 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   font-size: 0.98rem;
   line-height: 1.5;
   color: rgba(10, 15, 30, 0.75);
-}
-
-/* Stage */
-.page-about .about-stage-panel {
-  max-width: 62rem;
-  margin: 0 auto;
-  padding: clamp(1.75rem, 3vw, 2.25rem);
-  background: #fff;
-  border: 1px solid rgba(10, 15, 30, 0.1);
-  text-align: center;
-}
-.page-about .about-stage-panel .h-h2 {
-  margin: 0 0 1rem;
-  max-width: none;
-}
-.page-about .about-stage-panel p:last-child {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.65;
-  color: rgba(10, 15, 30, 0.8);
-  text-wrap: pretty;
 }
 
 /* Final CTA */
