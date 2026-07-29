@@ -6072,11 +6072,13 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
 .page-interior .page-hero .h-h1 {
   color: var(--color-dark);
   max-width: 22ch;
+  text-wrap: pretty;
 }
 .page-interior .page-hero .lede,
 .page-interior .page-hero .lede-text {
   color: rgba(10, 15, 30, 0.78);
   max-width: 42rem;
+  text-wrap: pretty;
 }
 /* Secondary buttons: navy on light surfaces (default .btn-secondary is white-for-dark) */
 .section-mist .btn-secondary,
@@ -6322,7 +6324,8 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-diagnostics .diag-hero-copy .h-h1 {
-  max-width: 14ch;
+  max-width: 16ch;
+  text-wrap: pretty;
 }
 .page-diagnostics .diag-hero-copy .lede {
   max-width: 38rem;
@@ -6853,10 +6856,12 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-methodology .meth-hero-copy .h-h1 {
-  max-width: 16ch;
+  max-width: 18ch;
+  text-wrap: pretty;
 }
 .page-methodology .meth-hero-copy .lede {
-  max-width: 38rem;
+  max-width: 40rem;
+  text-wrap: pretty;
 }
 .page-methodology .meth-hero-visual img,
 .page-methodology .meth-final-visual img {
@@ -7466,8 +7471,8 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   }
 }
-.page-mes .mes-hero-copy .h-h1 { max-width: 18ch; }
-.page-mes .mes-hero-copy .lede { max-width: 40rem; }
+.page-mes .mes-hero-copy .h-h1 { max-width: 20ch; text-wrap: pretty; }
+.page-mes .mes-hero-copy .lede { max-width: 42rem; text-wrap: pretty; }
 .page-mes .mes-hero-visual img,
 .page-mes .mes-arch-visual img,
 .page-mes .mes-final-visual img {
@@ -7761,8 +7766,9 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-mes .mes-final-copy .h-h2 {
-  max-width: 20ch;
+  max-width: 24ch;
   color: var(--color-dark, #0A0F1E);
+  text-wrap: pretty;
 }
 .page-mes .mes-final-copy .lede {
   max-width: 40rem;
@@ -7864,8 +7870,8 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   }
 }
-.page-ai-svc .aisvc-hero-copy .h-h1 { max-width: 18ch; }
-.page-ai-svc .aisvc-hero-copy .lede { max-width: 40rem; }
+.page-ai-svc .aisvc-hero-copy .h-h1 { max-width: 20ch; text-wrap: pretty; }
+.page-ai-svc .aisvc-hero-copy .lede { max-width: 42rem; text-wrap: pretty; }
 .page-ai-svc .aisvc-hero-visual img,
 .page-ai-svc .aisvc-final-visual img {
   display: block;
@@ -7883,7 +7889,7 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
     grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   }
 }
-.page-ai-svc .aisvc-problem-grid .h-h2 { max-width: 16ch; margin: 0; }
+.page-ai-svc .aisvc-problem-grid .h-h2 { max-width: 18ch; margin: 0; text-wrap: pretty; }
 .page-ai-svc .aisvc-problem-copy p {
   margin: 0 0 1rem;
   font-size: clamp(1.05rem, 1.35vw, 1.2rem);
@@ -7997,8 +8003,9 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-ai-svc .aisvc-final-copy .h-h2 {
-  max-width: 22ch;
+  max-width: 26ch;
   color: var(--color-dark, #0A0F1E);
+  text-wrap: pretty;
 }
 .page-ai-svc .aisvc-final-copy .lede {
   max-width: 40rem;
@@ -8138,10 +8145,12 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-about .about-hero-copy .h-h1 {
-  max-width: 14ch;
+  max-width: 18ch;
+  text-wrap: pretty;
 }
 .page-about .about-hero-copy .lede {
-  max-width: 38rem;
+  max-width: 40rem;
+  text-wrap: pretty;
 }
 .page-about .about-hero-visual img,
 .page-about .about-final-visual img {
@@ -8686,10 +8695,12 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
   }
 }
 .page-contact .contact-hero-copy .h-h1 {
-  max-width: 14ch;
+  max-width: 16ch;
+  text-wrap: pretty;
 }
 .page-contact .contact-hero-copy .lede {
-  max-width: 38rem;
+  max-width: 40rem;
+  text-wrap: pretty;
 }
 .page-contact .contact-hero-visual img,
 .page-contact .contact-final-visual img {
