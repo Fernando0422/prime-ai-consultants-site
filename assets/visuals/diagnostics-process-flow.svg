@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 180" fill="none">
+  <!-- Five steps evenly spaced and centered -->
+  <g>
+    <circle cx="120" cy="52" r="26" fill="#3BA89A"/>
+    <text x="120" y="58" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">01</text>
+    <text x="120" y="100" text-anchor="middle" fill="#0A0F1E" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Align</text>
+    <line x1="154" y1="52" x2="250" y2="52" stroke="#3BA89A" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <circle cx="284" cy="52" r="26" fill="#3BA89A"/>
+    <text x="284" y="58" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">02</text>
+    <text x="284" y="100" text-anchor="middle" fill="#0A0F1E" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Examine</text>
+    <line x1="318" y1="52" x2="414" y2="52" stroke="#3BA89A" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <circle cx="448" cy="52" r="26" fill="#3BA89A"/>
+    <text x="448" y="58" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">03</text>
+    <text x="448" y="100" text-anchor="middle" fill="#0A0F1E" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Interpret</text>
+    <line x1="482" y1="52" x2="578" y2="52" stroke="#3BA89A" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <circle cx="612" cy="52" r="26" fill="#3BA89A"/>
+    <text x="612" y="58" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">04</text>
+    <text x="612" y="100" text-anchor="middle" fill="#0A0F1E" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Assess</text>
+    <line x1="646" y1="52" x2="742" y2="52" stroke="#3BA89A" stroke-width="2" stroke-dasharray="4 6"/>
+
+    <circle cx="776" cy="52" r="26" fill="#0A0F1E"/>
+    <text x="776" y="58" text-anchor="middle" fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">05</text>
+    <text x="776" y="100" text-anchor="middle" fill="#0A0F1E" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700">Recommend</text>
+  </g>
+
+  <rect x="180" y="128" width="600" height="32" rx="16" fill="#E7F3F1" stroke="#1F6B62" stroke-opacity="0.25"/>
+  <text x="480" y="149" text-anchor="middle" fill="#1F6B62" font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600">Scoped in writing after the first conversation</text>
+</svg>

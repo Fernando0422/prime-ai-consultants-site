@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none" aria-hidden="true">
+  <rect width="640" height="400" fill="#0B1220"/>
+  <rect x="56" y="52" width="240" height="296" rx="18" fill="#141B2E" stroke="#2A9B8C" stroke-opacity="0.45" stroke-width="1.5"/>
+  <rect x="84" y="84" width="112" height="12" rx="6" fill="#3BA89A"/>
+  <rect x="84" y="118" width="184" height="10" rx="5" fill="#fff" fill-opacity="0.2"/>
+  <rect x="84" y="142" width="152" height="10" rx="5" fill="#fff" fill-opacity="0.12"/>
+  <rect x="84" y="180" width="184" height="56" rx="12" fill="#3BA89A" fill-opacity="0.14" stroke="#3BA89A" stroke-opacity="0.4"/>
+  <rect x="84" y="252" width="184" height="40" rx="12" fill="#fff" fill-opacity="0.04" stroke="#fff" stroke-opacity="0.12"/>
+  <rect x="84" y="308" width="184" height="20" rx="10" fill="#fff" fill-opacity="0.04" stroke="#fff" stroke-opacity="0.1"/>
+  <rect x="348" y="88" width="220" height="72" rx="16" fill="#151C30" stroke="#fff" stroke-opacity="0.12"/>
+  <circle cx="384" cy="124" r="14" fill="#3BA89A"/>
+  <rect x="414" y="112" width="120" height="10" rx="5" fill="#fff" fill-opacity="0.45"/>
+  <rect x="414" y="132" width="88" height="8" rx="4" fill="#fff" fill-opacity="0.18"/>
+  <rect x="348" y="184" width="220" height="72" rx="16" fill="#151C30" stroke="#fff" stroke-opacity="0.12"/>
+  <circle cx="384" cy="220" r="14" fill="#3BA89A" fill-opacity="0.55"/>
+  <rect x="414" y="208" width="132" height="10" rx="5" fill="#fff" fill-opacity="0.38"/>
+  <rect x="414" y="228" width="76" height="8" rx="4" fill="#fff" fill-opacity="0.16"/>
+  <rect x="348" y="280" width="220" height="72" rx="16" fill="#151C30" stroke="#fff" stroke-opacity="0.12"/>
+  <circle cx="384" cy="316" r="14" fill="none" stroke="#3BA89A" stroke-width="2.5"/>
+  <rect x="414" y="304" width="108" height="10" rx="5" fill="#fff" fill-opacity="0.3"/>
+  <rect x="414" y="324" width="96" height="8" rx="4" fill="#fff" fill-opacity="0.14"/>
+  <path d="M296 124h52M296 220h52M296 316h52" stroke="#3BA89A" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

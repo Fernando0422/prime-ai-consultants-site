@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" fill="none" aria-hidden="true">
+  <rect width="720" height="480" fill="#F1F1F1"/>
+
+  <!-- Left: ERP modules -->
+  <rect x="36" y="40" width="280" height="400" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="60" y="68" width="96" height="10" rx="5" fill="#1F6B62"/>
+  <rect x="60" y="100" width="200" height="12" rx="4" fill="rgba(10,15,30,0.12)"/>
+  <rect x="60" y="128" width="160" height="10" rx="4" fill="rgba(10,15,30,0.08)"/>
+
+  <rect x="60" y="168" width="232" height="52" rx="8" fill="rgba(59,168,154,0.1)" stroke="#3BA89A" stroke-opacity="0.45"/>
+  <rect x="76" y="186" width="100" height="8" rx="4" fill="#1F6B62"/>
+  <rect x="76" y="202" width="148" height="8" rx="4" fill="rgba(10,15,30,0.12)"/>
+
+  <rect x="60" y="236" width="232" height="52" rx="8" fill="rgba(10,15,30,0.03)" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="76" y="254" width="88" height="8" rx="4" fill="rgba(10,15,30,0.4)"/>
+  <rect x="76" y="270" width="132" height="8" rx="4" fill="rgba(10,15,30,0.12)"/>
+
+  <rect x="60" y="304" width="232" height="52" rx="8" fill="rgba(10,15,30,0.03)" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="76" y="322" width="112" height="8" rx="4" fill="rgba(10,15,30,0.4)"/>
+  <rect x="76" y="338" width="120" height="8" rx="4" fill="rgba(10,15,30,0.12)"/>
+
+  <rect x="60" y="372" width="140" height="28" rx="14" fill="rgba(59,168,154,0.18)"/>
+  <rect x="84" y="382" width="92" height="8" rx="4" fill="#1F6B62"/>
+
+  <!-- Flow -->
+  <path d="M330 180h48" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M366 172l12 8-12 8" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M330 300h48" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.5"/>
+  <path d="M366 292l12 8-12 8" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+
+  <!-- Right: meaning / ownership stack -->
+  <rect x="392" y="56" width="292" height="96" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <circle cx="432" cy="104" r="16" fill="#3BA89A"/>
+  <path d="M425 104l5 5 10-12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="462" y="88" width="180" height="12" rx="4" fill="rgba(10,15,30,0.5)"/>
+  <rect x="462" y="112" width="128" height="10" rx="4" fill="rgba(10,15,30,0.16)"/>
+
+  <rect x="392" y="172" width="292" height="96" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <circle cx="432" cy="220" r="16" fill="rgba(59,168,154,0.2)" stroke="#3BA89A" stroke-width="2"/>
+  <rect x="462" y="204" width="168" height="12" rx="4" fill="rgba(10,15,30,0.42)"/>
+  <rect x="462" y="228" width="112" height="10" rx="4" fill="rgba(10,15,30,0.14)"/>
+
+  <rect x="392" y="288" width="292" height="96" rx="4" fill="#fff" stroke="rgba(59,168,154,0.4)"/>
+  <circle cx="432" cy="336" r="16" fill="none" stroke="#3BA89A" stroke-width="2.5"/>
+  <rect x="462" y="320" width="148" height="12" rx="4" fill="#1F6B62"/>
+  <rect x="462" y="344" width="100" height="10" rx="4" fill="rgba(10,15,30,0.14)"/>
+
+  <rect x="392" y="404" width="180" height="28" rx="14" fill="#3BA89A"/>
+  <rect x="428" y="414" width="108" height="8" rx="4" fill="#fff" fill-opacity="0.9"/>
+</svg>

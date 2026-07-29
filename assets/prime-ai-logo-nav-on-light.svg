@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="118" viewBox="0 0 500 118" role="img" aria-label="Prime AI Consultants">
+  <g transform="translate(0 9) scale(1)">
+    <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#0A0F1E" stroke-width="18" stroke-linecap="butt"/>
+    <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#0A0F1E" stroke-width="18" stroke-linecap="butt"/>
+    <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#0A0F1E" stroke-width="18" stroke-linecap="butt"/>
+    <circle cx="50" cy="50" r="11" fill="#1F6B62"/>
+  </g>
+  <text x="116" y="66" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="58" letter-spacing="-1.5" fill="#0A0F1E">Prime AI</text>
+  <text x="119" y="102" font-family="IBM Plex Sans, Helvetica Neue, Arial, sans-serif" font-weight="600" font-size="17.5" letter-spacing="7.2" fill="#0A0F1E">CONSULTANTS</text>
+</svg>

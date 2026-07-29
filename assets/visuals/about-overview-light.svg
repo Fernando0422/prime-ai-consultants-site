@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" fill="none" aria-hidden="true">
+  <rect width="720" height="560" fill="#F1F1F1"/>
+
+  <!-- Top left: systems panel -->
+  <rect x="40" y="48" width="300" height="168" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="64" y="76" width="120" height="10" rx="5" fill="#3BA89A"/>
+  <rect x="64" y="108" width="220" height="10" rx="5" fill="rgba(10,15,30,0.16)"/>
+  <rect x="64" y="132" width="176" height="8" rx="4" fill="rgba(10,15,30,0.1)"/>
+  <rect x="64" y="164" width="220" height="28" rx="8" fill="rgba(59,168,154,0.12)" stroke="#3BA89A" stroke-opacity="0.35"/>
+
+  <!-- Top right: people / ownership -->
+  <rect x="368" y="48" width="312" height="168" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <circle cx="416" cy="112" r="18" fill="#3BA89A"/>
+  <path d="M409 112l5 5 10-12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="450" y="98" width="180" height="12" rx="4" fill="rgba(10,15,30,0.5)"/>
+  <rect x="450" y="122" width="128" height="10" rx="4" fill="rgba(10,15,30,0.16)"/>
+  <rect x="400" y="156" width="240" height="36" rx="8" fill="rgba(10,15,30,0.03)" stroke="rgba(10,15,30,0.1)"/>
+
+  <!-- Middle flow -->
+  <rect x="40" y="244" width="640" height="112" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="72" y="272" width="128" height="56" rx="8" fill="#F7F7F4" stroke="rgba(10,15,30,0.12)"/>
+  <rect x="96" y="294" width="80" height="10" rx="5" fill="rgba(10,15,30,0.35)"/>
+  <path d="M216 300h44" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="288" cy="300" r="18" fill="#3BA89A"/>
+  <path d="M281 300h14M288 293v14" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M306 300h44" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="366" y="272" width="128" height="56" rx="8" fill="#F7F7F4" stroke="rgba(59,168,154,0.45)"/>
+  <rect x="390" y="294" width="80" height="10" rx="5" fill="#1F6B62"/>
+  <path d="M510 300h36" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="562" y="272" width="86" height="56" rx="8" fill="rgba(59,168,154,0.14)" stroke="#3BA89A" stroke-opacity="0.5"/>
+  <circle cx="605" cy="300" r="12" fill="#3BA89A"/>
+  <path d="M599 300h12M605 294v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Bottom left: definitions -->
+  <rect x="40" y="384" width="300" height="128" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="64" y="416" width="200" height="10" rx="5" fill="rgba(10,15,30,0.35)"/>
+  <rect x="64" y="444" width="240" height="10" rx="5" fill="rgba(10,15,30,0.14)"/>
+  <rect x="64" y="468" width="176" height="10" rx="5" fill="rgba(10,15,30,0.1)"/>
+
+  <!-- Bottom right: validated -->
+  <rect x="368" y="384" width="312" height="128" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <circle cx="416" cy="440" r="20" fill="rgba(59,168,154,0.16)" stroke="#3BA89A" stroke-width="2"/>
+  <path d="M408 440l6 6 12-14" stroke="#1F6B62" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="452" y="426" width="180" height="12" rx="4" fill="rgba(10,15,30,0.45)"/>
+  <rect x="452" y="452" width="136" height="10" rx="4" fill="rgba(10,15,30,0.14)"/>
+</svg>
