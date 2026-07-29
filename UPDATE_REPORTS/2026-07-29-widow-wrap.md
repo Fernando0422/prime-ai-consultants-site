@@ -28,3 +28,7 @@ Fixed one-word hang lines on key heroes and CTAs by widening constrained `max-wi
 
 - Asset query `?v=wrap1` on CSS/JS across pages; methodology overview img `?v=wrap1`.
 - `CSS_VERSION` in `unify_site_chrome.py` → `wrap1`.
+
+## Follow-up — About hero copy
+
+- company.html: "Small firm. Boring first step. On purpose." → "Small firm. Documented first step. On purpose." (`On&nbsp;purpose.` widow fix kept).
