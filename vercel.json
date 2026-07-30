@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/company", "destination": "/about", "permanent": true },
+    { "source": "/company.html", "destination": "/about", "permanent": true },
     { "source": "/ai-individuals", "destination": "/services", "permanent": true },
     { "source": "/ai-individuals.html", "destination": "/services", "permanent": true },
     { "source": "/levels-of-ai", "destination": "/methodology", "permanent": true },

@@ -6,14 +6,15 @@ Static marketing site for Prime AI Consultants. Plain HTML / CSS / JS — no bui
 
 | Path | Purpose |
 |---|---|
-| `index.html` | Homepage (12 widgets: hero, stats, problem, services, methodology preview, proof, differentiators, team, dual CTA) |
-| `methodology.html` | Full 10-phase MES + AI integration framework |
-| `services.html` | Three engagements (Diagnostics, Build, Retainer) + system pages |
+| `index.html` | Operational-context homepage |
+| `diagnostics.html` | Prime Diagnostics |
+| `methodology.html` | Discover, Define, Govern, Activate methodology |
+| `services.html` | Prime Diagnostics, Prime Build, and Prime Retainer |
 | `ai-mes.html` | AI for MES (manufacturing) |
 | `ai-erp.html` | AI for ERP (SAP, Oracle, NetSuite, Dynamics) |
 | `ai-crm.html` | AI for CRM (Salesforce, HubSpot, Dynamics) |
-| `company.html` | About / mission / principles / team |
-| `contact.html` | Contact form + discovery call info |
+| `about.html` | About the founders and firm |
+| `contact.html` | Contact form and inquiry guidance |
 | `privacy.html` | Privacy Policy (starter — replace with Termly output) |
 | `terms.html` | Terms of Service (starter — replace with Termly output) |
 
