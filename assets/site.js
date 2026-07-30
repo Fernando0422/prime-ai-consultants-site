@@ -36,7 +36,7 @@
   function setActiveNav() {
     var current = pageFile();
     var currentHash = (window.location.hash || "").toLowerCase();
-    var aiPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html", "ai-mes", "ai-erp", "ai-crm", "services"];
+    var servicesPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html", "ai-mes", "ai-erp", "ai-crm", "services"];
     document.querySelectorAll(".nav-links a[href], .nav-parent-link[href]").forEach(function (a) {
       var parsed = parseNavHref(a.getAttribute("href"));
       if (!parsed) return;
