@@ -9,6 +9,10 @@
   // Set your Formspree form ID from https://formspree.io (e.g. "xrgvabcd").
   // Leave empty to show a clear error and direct visitors to email instead.
   var FORMSPREE_FORM_ID = "xgoqorke";
+  var BUSINESS_EMAIL = "hello@primeaiconsultants.com";
+  // Set to Fernando's exact LinkedIn profile URL when confirmed.
+  var FERNANDO_LINKEDIN_URL = "https://www.linkedin.com/in/fernando-rojas0422/";
+  var ANTONIO_LINKEDIN_URL = "https://www.linkedin.com/in/antonio-rojas-31016022/";
 
   // ---------- Helpers ----------
   function pageFile() {
@@ -36,16 +40,94 @@
     document.querySelectorAll(".nav-links a[href], .nav-parent-link[href]").forEach(function (a) {
       var parsed = parseNavHref(a.getAttribute("href"));
       if (!parsed) return;
+      // Skip CTA chrome; only mark real nav destinations
+      if (a.classList.contains("nav-links-cta-btn") || a.classList.contains("btn")) return;
+      a.classList.remove("active");
       if (parsed.file === current) {
-        if (parsed.hash === currentHash) {
-          a.classList.add("active");
-        } else if (!parsed.hash && !currentHash) {
-          a.classList.add("active");
-        }
-      } else if (a.dataset.parent === "services" && aiPages.indexOf(current) !== -1) {
+        if (parsed.hash && parsed.hash !== currentHash) return;
+        a.classList.add("active");
+      } else if (a.dataset.parent === "services" && servicesPages.indexOf(current) !== -1) {
         a.classList.add("active");
       }
     });
+  }
+
+  // ---------- Services dropdown (desktop hover/focus + Escape) ----------
+  function initNavDropdowns() {
+    var items = document.querySelectorAll(".nav-item-has-sub");
+    if (!items.length) return;
+
+    var desktopMq = window.matchMedia("(min-width: 1180px)");
+
+    items.forEach(function (item) {
+      var trigger = item.querySelector(".nav-parent-link");
+      var submenu = item.querySelector(".nav-sub");
+      if (!trigger || !submenu) return;
+
+      if (!trigger.hasAttribute("aria-haspopup")) {
+        trigger.setAttribute("aria-haspopup", "true");
+      }
+      if (!trigger.hasAttribute("aria-expanded")) {
+        trigger.setAttribute("aria-expanded", "false");
+      }
+      if (!trigger.getAttribute("aria-controls") && submenu.id) {
+        trigger.setAttribute("aria-controls", submenu.id);
+      }
+
+      function setOpen(open) {
+        if (!desktopMq.matches) {
+          // Mobile: nested list stays visible inside the open drawer
+          trigger.setAttribute("aria-expanded", open ? "true" : "false");
+          item.classList.remove("is-sub-open", "is-sub-closed");
+          return;
+        }
+        item.classList.toggle("is-sub-open", open);
+        item.classList.toggle("is-sub-closed", !open);
+        trigger.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      item.addEventListener("mouseenter", function () {
+        if (desktopMq.matches) setOpen(true);
+      });
+      item.addEventListener("mouseleave", function () {
+        if (desktopMq.matches) setOpen(false);
+      });
+      item.addEventListener("focusin", function () {
+        if (desktopMq.matches) setOpen(true);
+      });
+      item.addEventListener("focusout", function (e) {
+        if (!desktopMq.matches) return;
+        if (!item.contains(e.relatedTarget)) setOpen(false);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        if (!item.classList.contains("is-sub-open") && trigger.getAttribute("aria-expanded") !== "true") {
+          return;
+        }
+        if (!desktopMq.matches) return;
+        setOpen(false);
+        trigger.focus();
+      });
+    });
+
+    // Keep aria-expanded honest when switching breakpoints
+    function syncMobileExpanded() {
+      items.forEach(function (item) {
+        var trigger = item.querySelector(".nav-parent-link");
+        if (!trigger) return;
+        if (!desktopMq.matches) {
+          var navOpen = document.querySelector(".site-nav.is-nav-open");
+          trigger.setAttribute("aria-expanded", navOpen ? "true" : "false");
+          item.classList.remove("is-sub-open", "is-sub-closed");
+        }
+      });
+    }
+    if (desktopMq.addEventListener) {
+      desktopMq.addEventListener("change", syncMobileExpanded);
+    } else if (desktopMq.addListener) {
+      desktopMq.addListener(syncMobileExpanded);
+    }
   }
 
   // ---------- Mobile nav ----------
@@ -91,7 +173,15 @@
     function setOpen(open) {
       wrap.classList.toggle("is-nav-open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
       document.documentElement.style.overflow = open ? "hidden" : "";
+
+      // Nested Services list is visible whenever the mobile drawer is open
+      if (window.matchMedia("(max-width: 1179px)").matches) {
+        document.querySelectorAll(".nav-item-has-sub > .nav-parent-link").forEach(function (trigger) {
+          trigger.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      }
 
       if (open) {
         if (!focusTrapHandler) {
@@ -116,7 +206,7 @@
 
     document.querySelectorAll(".nav-links a").forEach(function (a) {
       a.addEventListener("click", function () {
-        if (window.matchMedia("(max-width: 920px)").matches) setOpen(false);
+        if (window.matchMedia("(max-width: 1179px)").matches) setOpen(false);
       });
     });
 
@@ -128,24 +218,18 @@
     });
 
     window.addEventListener("resize", function () {
-      if (!window.matchMedia("(max-width: 920px)").matches) {
+      if (!window.matchMedia("(max-width: 1179px)").matches) {
         setOpen(false);
       }
     });
   }
 
-  // ---------- Ai4 bottom toast (conference window only) ----------
-  function initAi4Toast() {
-    var el = document.querySelector(".ai4-toast");
+  // ---------- Announcement bar ----------
+  function initAnnounceBar() {
+    var el = document.getElementById("announce-bar") || document.querySelector(".announce");
     if (!el) return;
 
-    var end = new Date("2026-08-07T00:00:00");
-    if (Date.now() >= end.getTime()) {
-      el.setAttribute("hidden", "");
-      return;
-    }
-
-    var storageKey = "prime_ai4_toast_dismissed_v2";
+    var storageKey = "prime_announce_la_summer_2026_dismissed";
     try {
       if (localStorage.getItem(storageKey) === "1") {
         el.setAttribute("hidden", "");
@@ -153,46 +237,26 @@
       }
     } catch (e) { /* storage blocked */ }
 
-    var hero =
-      document.querySelector(".hero") ||
-      document.querySelector(".page-hero");
-    var dismissedScroll = false;
-
-    function hideToast(persist) {
-      el.setAttribute("hidden", "");
-      el.classList.remove("is-visible");
-      document.body.classList.remove("has-ai4-toast");
-      if (persist) {
-        try { localStorage.setItem(storageKey, "1"); } catch (err) { /* ignore */ }
-      }
-    }
-
-    function showToast() {
-      el.removeAttribute("hidden");
-      el.classList.add("is-visible");
-      document.body.classList.add("has-ai4-toast");
-    }
-
-    showToast();
-
-    var closeBtn = el.querySelector(".ai4-toast-close");
+    var closeBtn = el.querySelector(".announce-close");
     if (closeBtn) {
       closeBtn.addEventListener("click", function () {
-        hideToast(true);
+        el.setAttribute("hidden", "");
+        try { localStorage.setItem(storageKey, "1"); } catch (err) { /* ignore */ }
       });
     }
+  }
 
-    function onScroll() {
-      if (dismissedScroll || !hero) return;
-      var heroBottom = hero.getBoundingClientRect().bottom;
-      if (heroBottom < 0) {
-        dismissedScroll = true;
-        hideToast(false);
-      }
+  function initLinkedInLinks() {
+    function wire(selector, url) {
+      if (!url) return;
+      document.querySelectorAll(selector).forEach(function (a) {
+        a.setAttribute("href", url);
+        a.setAttribute("rel", "noopener noreferrer");
+        a.setAttribute("target", "_blank");
+      });
     }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    wire("[data-fernando-linkedin]", FERNANDO_LINKEDIN_URL);
+    wire("[data-antonio-linkedin]", ANTONIO_LINKEDIN_URL);
   }
 
   // ---------- Sticky CTA ----------
@@ -253,7 +317,7 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -4% 0px", threshold: 0.12 });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.18 });
     els.forEach(function (el) { obs.observe(el); });
   }
 
@@ -266,8 +330,16 @@
       form.setAttribute("action", "https://formspree.io/f/" + FORMSPREE_FORM_ID);
     }
 
+    var params = new URLSearchParams(window.location.search);
+    var interest = params.get("interest");
+    var interestField = document.getElementById("interest-field");
+    if (interest && interestField) {
+      interestField.value = interest;
+    }
+
     var status = form.querySelector(".form-status");
     var submit = form.querySelector('button[type="submit"]');
+    var success = document.getElementById("form-success");
 
     function setStatus(message, kind) {
       if (!status) return;
@@ -289,10 +361,9 @@
       }
       var fd = new FormData(form);
 
-      // Block submission if Formspree endpoint is still the placeholder.
       if (!FORMSPREE_FORM_ID || endpoint.indexOf("YOUR_FORM_ID") !== -1 || !endpoint) {
         setStatus(
-          "Form endpoint not yet configured. Please email hello@primeaiconsultants.com directly.",
+          "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ". Do not include confidential or security-sensitive information.",
           "error"
         );
         return;
@@ -586,15 +657,154 @@
     });
   }
 
+  // ---------- About accordion (homepage) ----------
+  function initAboutAccordion() {
+    var root = document.querySelector("[data-about-accordion]");
+    if (!root) return;
+
+    var items = root.querySelectorAll(".flow-about-item");
+    items.forEach(function (item) {
+      var btn = item.querySelector(".flow-about-trigger");
+      var panel = item.querySelector(".flow-about-panel");
+      if (!btn || !panel) return;
+
+      btn.addEventListener("click", function () {
+        var willOpen = panel.hasAttribute("hidden");
+        items.forEach(function (other) {
+          var otherBtn = other.querySelector(".flow-about-trigger");
+          var otherPanel = other.querySelector(".flow-about-panel");
+          other.classList.remove("is-open");
+          if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+          if (otherPanel) otherPanel.setAttribute("hidden", "");
+        });
+        if (willOpen) {
+          item.classList.add("is-open");
+          btn.setAttribute("aria-expanded", "true");
+          panel.removeAttribute("hidden");
+        }
+      });
+    });
+  }
+
+  // ---------- Light parallax ----------
+  function initParallax() {
+    var els = document.querySelectorAll("[data-parallax]");
+    if (!els.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Avoid motion on touch / coarse pointers (vestibular + battery).
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+    if (window.matchMedia("(hover: none)").matches) return;
+
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var y = window.scrollY || window.pageYOffset || 0;
+      els.forEach(function (el) {
+        var speed = parseFloat(el.getAttribute("data-parallax-speed") || "0.12");
+        if (isNaN(speed)) speed = 0.12;
+        var offset = Math.max(-48, Math.min(48, y * speed * -0.35));
+        el.style.transform = "translate3d(0, " + offset.toFixed(2) + "px, 0)";
+      });
+    }
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+  }
+
+  // ---------- Global footer ----------
+  var SITE_FOOTER_HTML = ""
+    + '<footer class="footer footer--prime" role="contentinfo">'
+    + '<div class="container footer-inner">'
+    + '<div class="footer-top">'
+    + '<div class="footer-brand">'
+    + '<a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-nav.svg" alt="Prime AI Consultants" width="180" height="72" decoding="async" /></a>'
+    + '<p class="footer-tagline">Prime AI Consultants helps organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation&nbsp;begins.</p>'
+    + '<p class="footer-email"><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></p>'
+    + '</div>'
+    + '<div class="footer-nav">'
+    + '<div class="footer-col"><h2 class="footer-col-title">Approach</h2><ul>'
+    + '<li><a href="diagnostics.html">Prime Diagnostics</a></li>'
+    + '<li><a href="methodology.html">Methodology</a></li>'
+    + '<li><a href="services.html">Services</a></li>'
+    + '</ul></div>'
+    + '<div class="footer-col"><h2 class="footer-col-title">Applications</h2><ul>'
+    + '<li><a href="ai-mes.html">AI for MES</a></li>'
+    + '<li><a href="ai-erp.html">AI for ERP</a></li>'
+    + '<li><a href="ai-crm.html">AI for CRM</a></li>'
+    + '</ul></div>'
+    + '<div class="footer-col"><h2 class="footer-col-title">About</h2><ul>'
+    + '<li><a href="company.html">About Us</a></li>'
+    + '<li><a href="contact.html">Contact</a></li>'
+    + '<li><a href="https://www.linkedin.com/in/fernando-rojas0422/" data-fernando-linkedin rel="noopener noreferrer" target="_blank">Fernando on LinkedIn</a></li>'
+    + '<li><a href="https://www.linkedin.com/in/antonio-rojas-31016022/" data-antonio-linkedin rel="noopener noreferrer" target="_blank">Antonio on LinkedIn</a></li>'
+    + '</ul></div>'
+    + '</div></div>'
+    + '<p class="footer-disclaimer">Information on this website is general and does not constitute legal, regulatory, cybersecurity, financial, compliance, or other professional advice. Engagement scope, deliverables, responsibilities, ownership, and limitations are defined in a written&nbsp;agreement.</p>'
+    + '<div class="footer-base">'
+    + '<span>&copy; 2026 Prime AI Consultants LLC. All rights reserved.</span>'
+    + '<span class="footer-legal">'
+    + '<a href="privacy.html">Privacy</a>'
+    + '<a href="terms.html">Terms</a>'
+    + '<a href="accessibility.html">Accessibility</a>'
+    + '<a href="contact.html">Contact</a>'
+    + '</span></div></div></footer>';
+
+  function mountSiteFooter(html) {
+    var mounts = document.querySelectorAll("[data-site-footer]");
+    if (mounts.length) {
+      mounts.forEach(function (mount) {
+        mount.outerHTML = html;
+      });
+      return true;
+    }
+    var legacy = document.querySelectorAll("footer.footer--prime");
+    if (!legacy.length) return false;
+    legacy.forEach(function (el, i) {
+      if (i === 0) el.outerHTML = html;
+      else el.remove();
+    });
+    return true;
+  }
+
+  function initGlobalFooter() {
+    function apply(html) {
+      if (mountSiteFooter(html || SITE_FOOTER_HTML)) initLinkedInLinks();
+    }
+
+    if (typeof fetch !== "function") {
+      apply(SITE_FOOTER_HTML);
+      return;
+    }
+
+    fetch("assets/partials/site-footer.html", { credentials: "same-origin" })
+      .then(function (res) { return res.ok ? res.text() : Promise.reject(); })
+      .then(function (html) {
+        apply(html && html.indexOf("footer--prime") !== -1 ? html : SITE_FOOTER_HTML);
+      })
+      .catch(function () {
+        apply(SITE_FOOTER_HTML);
+      });
+  }
+
   // ---------- Init ----------
   function initAll() {
     setActiveNav();
     initMobileNav();
-    initAi4Toast();
+    initNavDropdowns();
+    initAnnounceBar();
+    initGlobalFooter();
+    initLinkedInLinks();
     initStickyCta();
     initHeroVideo();
     initIndustryExplorer();
     initReveal();
+    initAboutAccordion();
+    initParallax();
     initContactForm();
     initAnchorScroll();
     initPhaseDetailAccordions();

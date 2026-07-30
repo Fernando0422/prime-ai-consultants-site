@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-labelledby="archTitleLight">
+  <title id="archTitleLight">Governed architecture: AI connects to a semantic layer, then read-only approved views, not raw operational tables</title>
+  <rect width="720" height="320" fill="#F1F1F1"/>
+  <!-- Flow row -->
+  <rect x="24" y="48" width="140" height="72" rx="8" fill="#fff" stroke="rgba(10,15,30,0.12)"/>
+  <text x="94" y="78" text-anchor="middle" fill="#1F6B62" font-family="system-ui,sans-serif" font-size="15" font-weight="700">AI Layer</text>
+  <text x="94" y="100" text-anchor="middle" fill="rgba(10,15,30,0.55)" font-family="system-ui,sans-serif" font-size="13">Queries &amp; insights</text>
+
+  <rect x="220" y="36" width="180" height="96" rx="8" fill="#fff" stroke="#3BA89A" stroke-width="2"/>
+  <text x="310" y="72" text-anchor="middle" fill="#0A0F1E" font-family="system-ui,sans-serif" font-size="15" font-weight="700">Semantic Layer</text>
+  <text x="310" y="92" text-anchor="middle" fill="#1F6B62" font-family="system-ui,sans-serif" font-size="13">Business logic + rules</text>
+  <text x="310" y="112" text-anchor="middle" fill="rgba(10,15,30,0.5)" font-family="system-ui,sans-serif" font-size="12">Validated calculations</text>
+
+  <rect x="456" y="48" width="180" height="72" rx="8" fill="#fff" stroke="rgba(10,15,30,0.12)"/>
+  <text x="546" y="78" text-anchor="middle" fill="#0A0F1E" font-family="system-ui,sans-serif" font-size="15" font-weight="700">Approved Views</text>
+  <text x="546" y="100" text-anchor="middle" fill="#1F6B62" font-family="system-ui,sans-serif" font-size="13">Read-only access</text>
+
+  <!-- Arrows -->
+  <path d="M164 84h46" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M198 78l10 6-10 6" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M400 84h46" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M434 78l10 6-10 6" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Operational database band -->
+  <rect x="24" y="168" width="612" height="120" rx="8" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <text x="330" y="198" text-anchor="middle" fill="rgba(10,15,30,0.65)" font-family="system-ui,sans-serif" font-size="15" font-weight="600">Operational database (MES / ERP / custom)</text>
+  <g fill="#F7F7F4" stroke="rgba(10,15,30,0.1)" stroke-width="1">
+    <rect x="48" y="214" width="72" height="36" rx="4"/>
+    <rect x="132" y="214" width="72" height="36" rx="4"/>
+    <rect x="216" y="214" width="72" height="36" rx="4"/>
+    <rect x="300" y="214" width="72" height="36" rx="4"/>
+    <rect x="384" y="214" width="72" height="36" rx="4"/>
+    <rect x="468" y="214" width="72" height="36" rx="4"/>
+    <rect x="552" y="214" width="72" height="36" rx="4"/>
+  </g>
+
+  <!-- Blocked direct path -->
+  <path d="M94 120v48" stroke="#B45353" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="94" cy="144" r="14" fill="#FCEAEA" stroke="#B45353"/>
+  <path d="M88 144h12M94 138v12" stroke="#B45353" stroke-width="2" stroke-linecap="round"/>
+  <text x="120" y="148" fill="#B45353" font-family="system-ui,sans-serif" font-size="12" font-weight="600">No direct access</text>
+
+  <!-- Allowed path -->
+  <path d="M546 120v48" stroke="#1F6B62" stroke-width="2.5"/>
+  <text x="562" y="148" fill="#1F6B62" font-family="system-ui,sans-serif" font-size="12" font-weight="600">Governed reads only</text>
+</svg>

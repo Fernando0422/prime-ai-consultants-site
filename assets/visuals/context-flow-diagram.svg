@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" role="img" aria-labelledby="ctxTitle ctxDesc">
+  <title id="ctxTitle">Operational context before AI</title>
+  <desc id="ctxDesc">Operational systems, reports, application logic, and expert knowledge are organized into documented definitions, relationships, business rules, and ownership before AI or analytics are evaluated.</desc>
+  <defs>
+    <marker id="flowArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#3BA89A"/>
+    </marker>
+  </defs>
+
+  <!-- Stage 1 -->
+  <rect x="16" y="28" width="250" height="224" rx="2" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="141" y="58" text-anchor="middle" fill="#3BA89A" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="12" font-weight="500">Fragmented operation</text>
+  <text x="40" y="98" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">MES and ERP</text>
+  <text x="40" y="128" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Reports and spreadsheets</text>
+  <text x="40" y="158" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Application logic</text>
+  <text x="40" y="188" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Expert knowledge</text>
+
+  <line x1="278" y1="140" x2="318" y2="140" stroke="#3BA89A" stroke-width="1.5" marker-end="url(#flowArrow)"/>
+
+  <!-- Stage 2 -->
+  <rect x="330" y="28" width="250" height="224" rx="2" fill="rgba(59,168,154,0.08)" stroke="rgba(59,168,154,0.5)"/>
+  <text x="455" y="58" text-anchor="middle" fill="#3BA89A" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="12" font-weight="500">Documented context</text>
+  <text x="354" y="98" fill="#fff" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Definitions</text>
+  <text x="354" y="128" fill="#fff" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Relationships</text>
+  <text x="354" y="158" fill="#fff" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Business rules</text>
+  <text x="354" y="188" fill="#fff" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Ownership and access</text>
+
+  <line x1="592" y1="140" x2="632" y2="140" stroke="#3BA89A" stroke-width="1.5" marker-end="url(#flowArrow)"/>
+
+  <!-- Stage 3 -->
+  <rect x="644" y="28" width="260" height="224" rx="2" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="774" y="58" text-anchor="middle" fill="#3BA89A" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="12" font-weight="500">Evaluated next step</text>
+  <text x="668" y="98" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">AI and analytics</text>
+  <text x="668" y="128" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Human validation</text>
+  <text x="668" y="158" fill="rgba(255,255,255,0.9)" font-family="IBM Plex Sans, Helvetica, sans-serif" font-size="15">Traceable decisions</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" fill="none" aria-hidden="true">
+  <rect width="720" height="480" fill="#F1F1F1"/>
+
+  <!-- Left: customer / workflow context -->
+  <rect x="36" y="40" width="280" height="400" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="60" y="68" width="110" height="10" rx="5" fill="#1F6B62"/>
+  <rect x="60" y="100" width="200" height="12" rx="4" fill="rgba(10,15,30,0.12)"/>
+  <rect x="60" y="128" width="152" height="10" rx="4" fill="rgba(10,15,30,0.08)"/>
+
+  <circle cx="84" cy="190" r="14" fill="#3BA89A"/>
+  <rect x="112" y="180" width="148" height="10" rx="4" fill="rgba(10,15,30,0.4)"/>
+  <rect x="112" y="198" width="100" height="8" rx="4" fill="rgba(10,15,30,0.14)"/>
+
+  <circle cx="84" cy="250" r="14" fill="rgba(59,168,154,0.25)" stroke="#3BA89A" stroke-width="2"/>
+  <rect x="112" y="240" width="160" height="10" rx="4" fill="rgba(10,15,30,0.35)"/>
+  <rect x="112" y="258" width="112" height="8" rx="4" fill="rgba(10,15,30,0.12)"/>
+
+  <circle cx="84" cy="310" r="14" fill="none" stroke="#3BA89A" stroke-width="2"/>
+  <rect x="112" y="300" width="136" height="10" rx="4" fill="rgba(10,15,30,0.3)"/>
+  <rect x="112" y="318" width="96" height="8" rx="4" fill="rgba(10,15,30,0.1)"/>
+
+  <rect x="60" y="360" width="232" height="48" rx="8" fill="rgba(59,168,154,0.1)" stroke="#3BA89A" stroke-opacity="0.4"/>
+  <rect x="76" y="378" width="120" height="8" rx="4" fill="#1F6B62"/>
+  <rect x="76" y="394" width="160" height="8" rx="4" fill="rgba(10,15,30,0.12)"/>
+
+  <!-- Flow -->
+  <path d="M330 200h48" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M366 192l12 8-12 8" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M330 320h48" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.5"/>
+  <path d="M366 312l12 8-12 8" stroke="#3BA89A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+
+  <!-- Right: decision / controls -->
+  <rect x="392" y="56" width="292" height="100" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="416" y="84" width="88" height="10" rx="5" fill="#1F6B62"/>
+  <rect x="416" y="112" width="200" height="12" rx="4" fill="rgba(10,15,30,0.14)"/>
+  <rect x="416" y="136" width="148" height="8" rx="4" fill="rgba(10,15,30,0.1)"/>
+
+  <rect x="392" y="176" width="292" height="100" rx="4" fill="#fff" stroke="rgba(10,15,30,0.1)"/>
+  <rect x="416" y="204" width="72" height="10" rx="5" fill="rgba(10,15,30,0.45)"/>
+  <rect x="416" y="232" width="184" height="12" rx="4" fill="rgba(10,15,30,0.12)"/>
+  <rect x="416" y="252" width="128" height="8" rx="4" fill="rgba(10,15,30,0.08)"/>
+
+  <rect x="392" y="296" width="292" height="120" rx="4" fill="#fff" stroke="rgba(59,168,154,0.4)"/>
+  <rect x="416" y="324" width="104" height="10" rx="5" fill="#1F6B62"/>
+  <rect x="416" y="352" width="200" height="12" rx="4" fill="rgba(10,15,30,0.14)"/>
+  <rect x="416" y="380" width="140" height="8" rx="4" fill="rgba(10,15,30,0.1)"/>
+
+  <rect x="488" y="48" width="28" height="28" rx="14" fill="rgba(180,83,83,0.12)" stroke="#B45353" stroke-opacity="0.55"/>
+  <path d="M496 62h12M502 56v12" stroke="#B45353" stroke-width="2" stroke-linecap="round"/>
+</svg>
