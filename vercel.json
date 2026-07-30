@@ -10,9 +10,7 @@
     { "source": "/ai-individuals", "destination": "/services", "permanent": true },
     { "source": "/ai-individuals.html", "destination": "/services", "permanent": true },
     { "source": "/levels-of-ai", "destination": "/methodology", "permanent": true },
-    { "source": "/levels-of-ai.html", "destination": "/methodology", "permanent": true },
-    { "source": "/about", "destination": "/company", "permanent": true },
-    { "source": "/about.html", "destination": "/company", "permanent": true }
+    { "source": "/levels-of-ai.html", "destination": "/methodology", "permanent": true }
   ],
   "headers": [
     {
