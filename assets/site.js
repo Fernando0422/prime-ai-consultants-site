@@ -32,7 +32,7 @@
   function setActiveNav() {
     var current = pageFile();
     var currentHash = (window.location.hash || "").toLowerCase();
-    var aiPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html"];
+    var aiPages = ["ai-mes.html", "ai-erp.html", "ai-crm.html", "services.html", "ai-mes", "ai-erp", "ai-crm", "services"];
     document.querySelectorAll(".nav-links a[href], .nav-parent-link[href]").forEach(function (a) {
       var parsed = parseNavHref(a.getAttribute("href"));
       if (!parsed) return;
@@ -275,6 +275,7 @@
       status.classList.remove("is-success", "is-error");
       status.classList.add("is-visible");
       status.classList.add(kind === "error" ? "is-error" : "is-success");
+      status.focus();
     }
 
     form.addEventListener("submit", function (ev) {
@@ -300,7 +301,7 @@
       if (submit) {
         submit.disabled = true;
         submit.dataset.label = submit.textContent;
-        submit.textContent = "Sending…";
+        submit.textContent = "Sending your inquiry…";
       }
 
       fetch(endpoint, {
@@ -312,21 +313,21 @@
           if (res.ok) {
             form.reset();
             setStatus(
-              "Thanks. Your message reached us. We will respond within one business day.",
+              "Thank you. We received your note. A founder will review the information you submitted.",
               "success"
             );
           } else {
             return res.json().then(function (data) {
               var msg = data && data.errors && data.errors.length
                 ? data.errors.map(function (e) { return e.message; }).join(", ")
-                : "Submission failed. Please email hello@primeaiconsultants.com directly.";
+                : "We could not send your inquiry. Please try again or email hello@primeaiconsultants.com.";
               setStatus(msg, "error");
             });
           }
         })
         .catch(function () {
           setStatus(
-            "Network error. Please email hello@primeaiconsultants.com directly.",
+            "We could not send your inquiry. Please try again or email hello@primeaiconsultants.com.",
             "error"
           );
         })

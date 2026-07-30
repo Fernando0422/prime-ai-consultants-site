@@ -1,329 +1,88 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI for MES · Manufacturing Intelligence at the Speed of a Question</title>
-  <meta name="description" content="MES + AI integration. MES stays the system of record. AI removes every barrier between your data and your decisions. Platform agnostic. Works with Camstar, SAP ME, Siemens Opcenter, FactoryTalk, and custom MES." />
-  <meta name="theme-color" content="#0A0F1E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css" />
-  <link rel="stylesheet" href="assets/enhancements.css" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
-</head>
-<body class="page-route page-site">
-  <a class="skip-link" href="#main">Skip to main content</a>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI for MES | Prime AI Consultants</title><meta name="description" content="Document MES structure, manufacturing logic, ownership, validation, and approved access before building AI on production data." />
+<meta name="robots" content="index, follow" /><link rel="canonical" href="https://www.primeaiconsultants.com/ai-mes/" />
+<meta property="og:title" content="Operational context for AI on MES data" /><meta property="og:description" content="Start with the routes, states, definitions, exceptions, and owners behind one manufacturing decision." /><meta property="og:type" content="website" /><meta property="og:url" content="https://www.primeaiconsultants.com/ai-mes/" />
+<meta name="theme-color" content="#0A0F1E" /><link rel="stylesheet" href="/assets/styles.css" /><link rel="stylesheet" href="/assets/enhancements.css" /><link rel="icon" href="/assets/favicon.svg" />
+</head><body class="page-system page-site">
+<a class="skip-link" href="#main">Skip to main content</a>
 
-  <aside class="ai4-toast" id="ai4-toast" role="region" aria-label="Ai4 conference" hidden>
-    <div class="ai4-toast-inner">
-      <span class="ai4-toast-tag">Ai4 2026</span>
-      <p class="ai4-toast-text"><strong>Meet Prime AI</strong> Aug 4&ndash;6 &middot; The Venetian, Las Vegas.</p>
-      <a href="contact.html#schedule" class="btn btn-primary btn-sm ai4-toast-cta">Book a meeting</a>
-      <button type="button" class="ai4-toast-close" aria-label="Dismiss Ai4 notice">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg>
-      </button>
-    </div>
-  </aside>
+<nav class="site-nav" aria-label="Primary navigation"><div class="nav-inner">
+  <a class="brand" href="/" aria-label="Prime AI Consultants home"><img class="brand-logo" src="/assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" /></a>
+  <ul class="nav-links" id="nav-links" role="list">
+    <li><a href="/">Home</a></li><li><a href="/diagnostics">Diagnostics</a></li><li><a href="/methodology">Methodology</a></li>
+    <li class="nav-item-has-sub"><a href="/services" class="nav-parent-link" data-parent="services">Services</a><ul class="nav-sub" role="list">
+      <li><a href="/services">All Services</a></li><li><a href="/diagnostics">Prime Diagnostics</a></li><li><a href="/services#prime-build">Prime Build</a></li><li><a href="/services#prime-retainer">Prime Retainer</a></li><li><a href="/ai-mes">AI for MES</a></li><li><a href="/ai-erp">AI for ERP</a></li><li><a href="/ai-crm">AI for CRM</a></li>
+    </ul></li>
+    <li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li>
+    <li class="nav-links-cta-item"><a href="/contact" class="btn btn-primary btn-sm">Discuss your environment</a></li>
+  </ul>
+  <div class="nav-cta"><a href="/contact" class="btn btn-primary btn-sm">Discuss your environment</a></div>
+  <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"></span></button>
+</div></nav>
+<main id="main" tabindex="-1"><article class="copy-page"><div class="container copy-shell"><!-- Hero -->
+<p class="eyebrow">AI for manufacturing execution systems</p>
+<h1>MES data has structure. The operation gives it meaning.</h1>
+<p>Lots, routes, operations, equipment, holds, rework, recipes, and history tables can describe what happened. They do not automatically explain why it happened, which exceptions matter, or which answer the floor will trust.</p>
+<p>Prime documents that context before AI is asked to reason over production data.</p>
+<p class="copy-cta"><a class="btn btn-primary" href="/contact">Discuss your MES environment</a></p>
+<p class="copy-cta"><a class="btn btn-secondary" href="/diagnostics">Explore Prime Diagnostics</a></p>
+<!-- The MES problem -->
+<h2>The trusted answer may not live in one place.</h2>
+<p>A production question can cross:</p>
+<ul>
+<li>MES screens and reports;</li>
+<li>underlying tables, views, procedures, and jobs;</li>
+<li>equipment, quality, maintenance, planning, and ERP interfaces;</li>
+<li>manual classifications and spreadsheet reconciliations;</li>
+<li>rules and exceptions known by engineers, operators, and application owners.</li>
+</ul>
+<p>The work is not merely to connect a model to the schema. It is to document which evidence matters and who can validate it.</p>
+<!-- Questions Prime can help clarify -->
+<h2>Begin with one manufacturing decision.</h2>
+<ul>
+<li>How is the metric defined on the floor, in the report, and in the database?</li>
+<li>Which lot, route, operation, resource, equipment, hold, or transaction records shape the answer?</li>
+<li>Which relationships are documented and which are inferred?</li>
+<li>Where do rework, overrides, late transactions, genealogy, or manual practices change interpretation?</li>
+<li>Which report or example is trusted for validation?</li>
+<li>Who owns the definition and who approves use?</li>
+<li>What data should remain restricted?</li>
+<li>What would an approved analysis or AI surface require?</li>
+</ul>
+<!-- What the work may produce -->
+<h2>A manufacturing context package your team can review.</h2>
+<ul>
+<li>system and interface inventory for the selected question;</li>
+<li>priority entity and relationship map;</li>
+<li>MES terminology and definition set;</li>
+<li>calculation, state, exception, and rework register;</li>
+<li>representative-example and validation plan;</li>
+<li>ownership and restriction matrix;</li>
+<li>readiness findings and next-step recommendation.</li>
+</ul>
+<!-- Illustrative access principle -->
+<h2>Approved and reviewable access.</h2>
+<p>Prime does not recommend unrestricted AI access to raw production tables as a default.</p>
+<p>Where a later phase is appropriate, a proposed path may use client-approved read-only views, interfaces, or representative data; documented definitions and logic; named reviewers; and traceability appropriate to the use case.</p>
+<p>The client’s technical, legal, privacy, security, compliance, data-owner, system-owner, and executive functions retain approval authority.</p>
+<!-- Fit -->
+<h2>A strong fit has a system owner and a question that matters.</h2>
+<p>Examples include a disputed yield definition, a recurring WIP investigation, an equipment-state reporting problem, an unclear cycle-time calculation, or a proposed AI workflow whose answers operators do not yet trust.</p>
+<p>Prime is not the right fit for bypassing MES controls, replacing subject-matter experts, or connecting a model directly to unrestricted production data.</p>
+<!-- Closing CTA -->
+<h2>Bring the manufacturing question, not a platform shopping list.</h2>
+<p class="copy-cta"><a class="btn btn-primary" href="/contact">Discuss your MES environment</a></p>
+<p class="copy-cta"><a class="btn btn-secondary" href="/methodology">See the methodology</a></p></div></article></main>
 
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-nav.svg" alt="" width="408" height="96" decoding="async" />
-      </a>
-      <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="methodology.html">Methodology</a></li>
-        <li class="nav-item-has-sub">
-          <a href="services.html" class="nav-parent-link" data-parent="services">Services</a>
-          <ul class="nav-sub" id="nav-sub-services" role="list">
-            <li><a href="services.html">All Services</a></li>
-            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
-            <li><a href="services.html#build">Prime Build</a></li>
-            <li><a href="services.html#retainer">Prime Retainer</a></li>
-            <li class="nav-sub-label" aria-hidden="true">Solutions</li>
-            <li><a href="ai-mes.html">AI for MES</a></li>
-            <li><a href="ai-erp.html">AI for ERP</a></li>
-            <li><a href="ai-crm.html">AI for CRM</a></li>
-          </ul>
-        </li>
-        <li><a href="company.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="nav-links-cta-item"><a href="contact.html#schedule" class="btn btn-primary btn-sm nav-links-cta-btn">Book Discovery Call</a></li>
-      </ul>
-      <div class="nav-cta">
-        <a href="contact.html#schedule" class="btn btn-primary btn-sm">Book Discovery Call</a>
-      </div>
-      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-        <span class="bars" aria-hidden="true"></span>
-      </button>
-    </div>
-  </nav>
-
-  <main id="main" tabindex="-1">
-
-    <!-- ============== PAGE HERO ============== -->
-    <section class="page-hero">
-      <div class="container page-hero-inner">
-        <span class="eyebrow hero-eyebrow">MES + AI Integration</span>
-        <h1 class="h-h1">Manufacturing intelligence at the speed of a question.</h1>
-        <p class="lede lede-text">MES stays the system of record. AI removes every barrier between your data and your decisions.</p>
-        <div class="cta-row">
-          <a href="contact.html#schedule" class="btn btn-primary btn-arrow">Book Discovery Call</a>
-          <a href="methodology.html" class="btn btn-secondary">See Methodology</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== MES CONTEXT (METHOD INTRO STYLE) ============== -->
-    <section class="method-intro section home-section">
-      <div class="container">
-        <div class="home-shell home-shell--pad method-intro-inner reveal">
-          <p class="method-intro-top">Semiconductor and advanced manufacturing environments carry years of customizations, interfaces, reports, and integrations.</p>
-          <p class="method-intro-impact">The data exists. The insight does not.</p>
-          <div class="method-intro-statements">
-            <p class="method-intro-statement">Engineers write SQL tickets. DBAs build reports. Managers wait three days for answers that should take three seconds.</p>
-            <p class="method-intro-statement">We fix that. Without replacing your MES, without ripping out your infrastructure, and without a two-year implementation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== BEFORE / AFTER ============== -->
-    <section class="before-after before-after--prominent section home-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Before / After</span>
-          <h2 class="h-h2">Today vs. with Prime AI.</h2>
-        </div>
-
-        <div class="home-shell home-shell--pad before-after-grid">
-          <div class="before-after-head">Today</div>
-          <div></div>
-          <div class="before-after-head before-after-head-r">With Prime AI</div>
-
-          <div class="before-after-cell">Report queues</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">Plain English queries</div>
-
-          <div class="before-after-cell">SQL gateways</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">Governed AI answers</div>
-
-          <div class="before-after-cell">3-day wait for yield data</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">Real-time insight</div>
-
-          <div class="before-after-cell">Tribal knowledge in one head</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">Documented, accessible</div>
-
-          <div class="before-after-cell">Developer dependency</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">Engineer self-service</div>
-
-          <div class="before-after-cell">Manual root cause analysis</div>
-          <div class="before-after-arrow">→</div>
-          <div class="before-after-cell before-after-cell-after">AI-correlated patterns</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== THREE HORIZONS ============== -->
-    <section class="horizons horizons--cards section home-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Three Horizons</span>
-          <h2 class="h-h2 horizons-headline-lines"><span class="horizons-headline-line">What changes first.</span><span class="horizons-headline-line">What changes next.</span><span class="horizons-headline-line">What scales.</span></h2>
-        </div>
-
-        <div class="home-shell home-shell--pad">
-        <ul class="horizons-cards">
-          <li class="horizon-card">
-            <header class="horizon-card-head">
-              <div class="horizon-card-phase-row">
-                <span class="horizon-card-phase">Now</span>
-                <span class="horizon-card-window" aria-label="Time horizon">0 – 6 months</span>
-              </div>
-              <h3 class="horizon-card-title">Short-term operational lift</h3>
-            </header>
-            <ul class="horizon-card-points">
-              <li>Natural language queries against MES data (yield trends, WIP status, equipment downtime, cycle time) without SQL or developer tickets.</li>
-              <li>Faster reporting: what used to take days takes minutes. Same data. No new systems.</li>
-              <li>Accelerated root cause analysis: AI correlates excursions, rework, tooling, and history faster than manual investigation, with receipts.</li>
-              <li>Reduced IT backlog: engineers answer their own exploratory questions inside governed guardrails. Developers focus on architecture, not report tickets.</li>
-            </ul>
-          </li>
-          <li class="horizon-card">
-            <header class="horizon-card-head">
-              <div class="horizon-card-phase-row">
-                <span class="horizon-card-phase">Next</span>
-                <span class="horizon-card-window" aria-label="Time horizon">6 – 18 months</span>
-              </div>
-              <h3 class="horizon-card-title">Medium-term depth</h3>
-            </header>
-            <ul class="horizon-card-points">
-              <li>AI-assisted MES development: faster prototyping of queries, APIs, and integrations with appropriate human review gates.</li>
-              <li>Cross-system intelligence: bridge ERP, SPC, quality, and supply chain where policy allows.</li>
-              <li>Conversational manufacturing analytics: &ldquo;Why did yield step down on line three overnight?&rdquo; Structured answers. Traceable evidence. Human validation required before action.</li>
-            </ul>
-          </li>
-          <li class="horizon-card">
-            <header class="horizon-card-head">
-              <div class="horizon-card-phase-row">
-                <span class="horizon-card-phase">Scale</span>
-                <span class="horizon-card-window" aria-label="Time horizon">18+ months</span>
-              </div>
-              <h3 class="horizon-card-title">Long-term intelligence posture</h3>
-            </header>
-            <ul class="horizon-card-points">
-              <li>Proactive operational signals alongside human authority. Predictive, not prescriptive.</li>
-              <li>Democratized MES data: broader conversational literacy across operations, engineering, and executive teams.</li>
-              <li>Multi-plant expansion: the same governed AI layer deployed across every facility.</li>
-            </ul>
-          </li>
-        </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== COMPATIBILITY ============== -->
-    <section class="compatibility section" aria-labelledby="platform-agnostic-heading">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Platform Agnostic</span>
-          <h2 class="h-h2" id="platform-agnostic-heading">Our methodology works<br/>with any MES platform.</h2>
-        </div>
-
-        <div class="platform-lattice">
-          <article class="platform-lattice-band" aria-labelledby="mes-platforms-caption">
-            <span class="platform-lattice-index" aria-hidden="true">01</span>
-            <div>
-              <p class="platform-lattice-caption" id="mes-platforms-caption">MES platforms we&rsquo;ve worked with or modeled against</p>
-              <ul class="platform-lattice-roll">
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img" src="assets/platform-icons/mes-cell.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Camstar</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/sap.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">SAP ME/MII</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/siemens.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Siemens Opcenter</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/rockwellautomation.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">FactoryTalk</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img" src="assets/platform-icons/mes-floor.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Critical Manufacturing</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/oracle.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Oracle MES</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img" src="assets/platform-icons/intelli-fab.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">IntelliFab</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img" src="assets/platform-icons/mes-custom.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Custom MES Applications</span></li>
-              </ul>
-            </div>
-          </article>
-
-          <div class="platform-lattice-splice" aria-hidden="true">
-            <span class="platform-lattice-splice-line"></span>
-            <span class="platform-lattice-splice-core">Methodology</span>
-            <span class="platform-lattice-splice-line"></span>
-          </div>
-
-          <article class="platform-lattice-band" aria-labelledby="mes-ai-caption">
-            <span class="platform-lattice-index" aria-hidden="true">02</span>
-            <div>
-              <p class="platform-lattice-caption" id="mes-ai-caption">And any AI layer</p>
-              <ul class="platform-lattice-roll">
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/anthropic.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Claude</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/openai.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">ChatGPT / OpenAI</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/microsoft.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Microsoft Copilot</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/microsoftazure.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Azure OpenAI</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img platform-lattice-marker-img--invert" src="assets/platform-icons/amazonaws.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">AWS Bedrock</span></li>
-                <li><span class="platform-lattice-marker" aria-hidden="true"><img class="platform-lattice-marker-img" src="assets/platform-icons/llm-private.svg" alt="" width="22" height="22" decoding="async" loading="lazy" /></span><span class="platform-lattice-label">Private LLMs</span></li>
-              </ul>
-            </div>
-          </article>
-        </div>
-
-        <p class="compatibility-closing">The intelligence is in the <strong>methodology</strong>, not the platform.</p>
-      </div>
-    </section>
-
-    <section class="methodology-bridge section home-section" aria-labelledby="mes-methodology-bridge-heading">
-      <div class="container">
-        <div class="home-shell home-shell--pad methodology-bridge-panel reveal">
-          <div class="methodology-bridge-copy">
-            <span class="eyebrow">Shared framework</span>
-            <h2 class="h-h2" id="mes-methodology-bridge-heading">The full 10-phase roadmap — manufacturing reference</h2>
-            <p>This is where we go deepest: lot genealogy, yield, equipment downtime, SME validation on the shop floor. The methodology page documents every phase with MES-specific deliverables. ERP and CRM engagements follow the same sequence.</p>
-          </div>
-          <div class="methodology-bridge-actions">
-            <a href="methodology.html#framework" class="btn btn-primary btn-arrow">See the full roadmap</a>
-            <a href="services.html#diagnostics" class="btn btn-secondary">Start with Diagnostics</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============== DUAL CTA ============== -->
-    <section class="dual-cta-section" aria-label="Next steps">
-      <div class="dual-cta">
-        <a href="contact.html#schedule" class="dual-panel dual-panel-light">
-          <span>Book a Discovery Call</span>
-          <span class="dual-panel-arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="methodology.html#framework" class="dual-panel dual-panel-dark">
-          <span>See Full Methodology</span>
-          <span class="dual-panel-arrow" aria-hidden="true">→</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="footer-brand-logo-link" href="index.html"><img class="footer-brand-logo" src="assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" width="56" height="60" decoding="async" /></a>
-          <p class="footer-tagline">Governed AI on operational data you already run. Deepest in manufacturing — built for any team stalled on legacy MES, ERP, or custom apps.</p>
-        </div>
-        <div class="footer-col">
-          <h2 class="footer-col-title">Services</h2>
-          <ul>
-            <li><a href="services.html">All Services</a></li>
-            <li><a href="services.html#diagnostics">Prime Diagnostics</a></li>
-            <li><a href="services.html#build">Prime Build</a></li>
-            <li><a href="services.html#retainer">Prime Retainer</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h2 class="footer-col-title">Methodology</h2>
-          <ul>
-            <li><a href="methodology.html">10-Phase Roadmap</a></li>
-            <li><a href="ai-mes.html">AI for MES</a></li>
-            <li><a href="ai-erp.html">AI for ERP</a></li>
-            <li><a href="ai-crm.html">AI for CRM</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h2 class="footer-col-title">Connect</h2>
-          <ul>
-            <li><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></li>
-            <li><a href="tel:8052164651">Antonio Rojas: (805) 216-4651</a></li>
-            <li>Phoenix, AZ · Los Angeles, CA</li>
-            <li><a href="contact.html#schedule">Schedule a Call</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="footer-statement">The next AI revolution is in the physical world.<br/>We are building the intelligence layer for it.</p>
-
-      <div class="footer-base">
-        <span>© 2026 Prime AI Consultants LLC. All rights reserved.</span>
-        <span>
-          <a href="privacy.html">Privacy Policy</a> ·
-          <a href="terms.html">Terms of Service</a> ·
-          Security Posture available on request
-        </span>
-      </div>
-    </div>
-  </footer>
-
-  <a href="contact.html#schedule" class="sticky-cta" aria-label="Book a discovery call">Book Discovery Call</a>
-
-  <script src="assets/site.js" defer></script>
-</body>
-</html>
+<footer class="site-footer"><div class="container footer-grid">
+  <div><img class="footer-logo" src="/assets/prime-ai-logo-footer.svg" alt="Prime AI Consultants" /><p>Prime AI Consultants documents the operational context teams need before they trust AI on MES, ERP, CRM, databases, and custom applications.</p></div>
+  <div><h2>Services</h2><a href="/diagnostics">Prime Diagnostics</a><a href="/services#prime-build">Prime Build</a><a href="/services#prime-retainer">Prime Retainer</a><a href="/services">All Services</a></div>
+  <div><h2>Approach</h2><a href="/methodology">Methodology</a><a href="/ai-mes">AI for MES</a><a href="/ai-erp">AI for ERP</a><a href="/ai-crm">AI for CRM</a></div>
+  <div><h2>Company</h2><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/accessibility">Accessibility</a></div>
+  <div><h2>Contact</h2><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a><a href="tel:+18052164651">(805) 216-4651</a><p>Los Angeles, California</p></div>
+</div><div class="container footer-bottom"><p>Please do not send confidential, proprietary, regulated, personal, export-controlled, or security-sensitive information through the public website.</p><p>&copy; 2026 Prime AI Consultants LLC. All rights reserved.</p></div></footer>
+<a class="sticky-cta btn btn-primary" href="/contact">Discuss your environment</a>
+<script src="/assets/site.js" defer></script>
+</body></html>
