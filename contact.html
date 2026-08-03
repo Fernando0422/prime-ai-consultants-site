@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css?v=audit2" />
-  <link rel="stylesheet" href="assets/enhancements.css?v=audit2" />
+  <link rel="stylesheet" href="assets/styles.min.css?v=perfect1" />
+  <link rel="stylesheet" href="assets/enhancements.min.css?v=perfect1" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
@@ -89,40 +89,41 @@
             <input type="hidden" name="interest" id="interest-field" value="" />
 
             <div class="contact-form-grid">
-              <label class="form-field">
+              <label class="form-field" for="field-name">
                 <span class="form-label">Name<span class="req">*</span></span>
-                <input class="form-input" name="name" type="text" required autocomplete="name" aria-required="true" />
+                <input class="form-input" id="field-name" name="name" type="text" required autocomplete="name" aria-required="true" />
                 <span class="form-error" data-error-for="name" hidden>Please complete this field.</span>
               </label>
 
-              <label class="form-field">
+              <label class="form-field" for="field-email">
                 <span class="form-label">Work email<span class="req">*</span></span>
-                <input class="form-input" name="email" type="email" required autocomplete="email" aria-required="true" />
+                <input class="form-input" id="field-email" name="email" type="email" required autocomplete="email" aria-required="true" />
                 <span class="form-error" data-error-for="email" hidden>Enter a valid email address.</span>
               </label>
 
-              <label class="form-field">
+              <label class="form-field" for="field-company">
                 <span class="form-label">Company<span class="req">*</span></span>
-                <input class="form-input" name="company" type="text" required autocomplete="organization" aria-required="true" />
+                <input class="form-input" id="field-company" name="company" type="text" required autocomplete="organization" aria-required="true" />
                 <span class="form-error" data-error-for="company" hidden>Please complete this field.</span>
               </label>
 
-              <label class="form-field">
+              <label class="form-field" for="field-role">
                 <span class="form-label">Role<span class="req">*</span></span>
-                <input class="form-input" name="role" type="text" required autocomplete="organization-title" aria-required="true" />
+                <input class="form-input" id="field-role" name="role" type="text" required autocomplete="organization-title" aria-required="true" />
                 <span class="form-error" data-error-for="role" hidden>Please complete this field.</span>
               </label>
             </div>
 
-            <label class="form-field">
+            <label class="form-field" for="field-primary-system">
               <span class="form-label">Primary system</span>
-              <input class="form-input" name="primarySystem" type="text" autocomplete="off" placeholder="Manufacturing Execution System (MES), Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), custom app, database, or not sure" />
+              <input class="form-input" id="field-primary-system" name="primarySystem" type="text" autocomplete="off" placeholder="Manufacturing Execution System (MES), Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), custom app, database, or not sure" />
             </label>
 
-            <label class="form-field">
+            <label class="form-field" for="field-message">
               <span class="form-label">What are you trying to understand or improve?<span class="req">*</span></span>
               <textarea
                 class="form-textarea"
+                id="field-message"
                 name="message"
                 required
                 rows="5"
@@ -132,9 +133,9 @@
               <span class="form-error" data-error-for="message" hidden>Please complete this field.</span>
             </label>
 
-            <label class="form-field">
+            <label class="form-field" for="field-timeline">
               <span class="form-label">Desired timeline</span>
-              <select class="form-select" name="timeline">
+              <select class="form-select" id="field-timeline" name="timeline">
                 <option value="">Select timeline (optional)</option>
                 <option value="exploring">Exploring</option>
                 <option value="within-3-months">Within 3 months</option>
@@ -183,11 +184,11 @@
                   <span>Based in Los Angeles, California</span>
                 </li>
                 <li>
-                  <strong>LinkedIn — Antonio</strong>
+                  <strong>LinkedIn (Antonio)</strong>
                   <a href="https://www.linkedin.com/in/antonio-rojas-31016022/" data-antonio-linkedin rel="noopener noreferrer" target="_blank">Connect with Antonio Rojas</a>
                 </li>
                 <li>
-                  <strong>LinkedIn — Fernando</strong>
+                  <strong>LinkedIn (Fernando)</strong>
                   <a href="https://www.linkedin.com/in/fernando-rojas0422/" data-fernando-linkedin rel="noopener noreferrer" target="_blank">Connect with Fernando Rojas</a>
                 </li>
               </ul>
@@ -225,6 +226,6 @@
 
   <div data-site-footer></div>
 
-  <script src="assets/site.js?v=audit2" defer></script>
+  <script src="assets/site.min.js?v=perfect1" defer></script>
 </body>
 </html>

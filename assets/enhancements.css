@@ -9727,3 +9727,56 @@ a:focus-visible {
 .page-flow .flow-help-card-body {
   padding: 1.35rem 1.4rem 1.5rem;
 }
+
+/* ============================================================
+   Ship quality bar — a11y + motion + density lock
+   ============================================================ */
+:focus-visible {
+  outline: 3px solid var(--color-teal, #3BA89A);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+.page-site,
+.page-flow,
+.page-mes,
+.page-erp,
+.page-crm,
+.page-contact,
+.page-about,
+.page-methodology,
+.page-diagnostics {
+  overflow-x: clip;
+}
+/* Form field hit areas */
+.page-contact .form-input,
+.page-contact .form-textarea,
+.page-contact .form-select {
+  min-height: 3rem;
+  font-size: 16px;
+}
+.page-contact .form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+/* Secondary buttons readable on light */
+.btn-secondary {
+  color: var(--color-dark, #0A0F1E);
+  border-color: rgba(10, 15, 30, 0.28);
+  background: #fff;
+}
+.btn-secondary:hover {
+  border-color: var(--color-dark, #0A0F1E);
+  background: rgba(10, 15, 30, 0.04);
+}
