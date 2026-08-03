@@ -351,7 +351,25 @@
 
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
-      if (!form.reportValidity()) return;
+      ev.stopPropagation();
+
+      // Show clear field errors on invalid email etc. (stay on page)
+      if (typeof form.reportValidity === "function" && !form.reportValidity()) {
+        setStatus("Please fix the highlighted fields and try again.", "error");
+        return;
+      }
+
+      var emailEl = form.querySelector('input[name="email"]');
+      if (emailEl) {
+        var em = (emailEl.value || "").trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+          emailEl.setCustomValidity("Enter a valid email address.");
+          emailEl.reportValidity();
+          emailEl.setCustomValidity("");
+          setStatus("Enter a valid work email before submitting.", "error");
+          return;
+        }
+      }
 
       var endpoint = form.getAttribute("action") || "";
       if (!endpoint && FORMSPREE_FORM_ID) {
@@ -377,7 +395,8 @@
       fetch(endpoint, {
         method: "POST",
         body: fd,
-        headers: { Accept: "application/json" }
+        headers: { Accept: "application/json" },
+        mode: "cors"
       })
         .then(function (res) {
           if (res.ok) {
@@ -392,12 +411,21 @@
               success.focus && success.focus();
               success.scrollIntoView({ behavior: "smooth", block: "start" });
             }
+            form.reset();
           } else {
             return res.json().then(function (data) {
               var msg = data && data.errors && data.errors.length
-                ? data.errors.map(function (e) { return e.message; }).join(", ")
+                ? data.errors.map(function (e) { return e.message || e.field || ""; }).filter(Boolean).join(" ")
                 : "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ". Do not include confidential or security-sensitive information.";
+              if (!msg) {
+                msg = "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ".";
+              }
               setStatus(msg, "error");
+            }).catch(function () {
+              setStatus(
+                "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ".",
+                "error"
+              );
             });
           }
         })
