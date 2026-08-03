@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.min.css?v=formfix1" />
-  <link rel="stylesheet" href="assets/enhancements.min.css?v=formfix1" />
+  <link rel="stylesheet" href="assets/styles.min.css?v=mailto1" />
+  <link rel="stylesheet" href="assets/enhancements.min.css?v=mailto1" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
@@ -82,8 +82,9 @@
           <form
             id="contact-form"
             class="contact-form contact-form--prime"
-            action="https://formspree.io/f/xgoqorke"
-            method="POST"
+            action="mailto:hello@primeaiconsultants.com"
+            method="GET"
+            enctype="text/plain"
           >
             <input type="hidden" name="interest" id="interest-field" value="" />
 
@@ -148,12 +149,12 @@
               <p class="form-notice">Sending this form does not create a client, advisory, fiduciary, or confidential relationship. Confidentiality only starts after both parties sign an appropriate written agreement.</p>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-arrow form-submit">Submit inquiry</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-arrow form-submit">Open email to send</button>
             <div class="form-status" role="status" aria-live="polite"></div>
             <div id="form-success" class="form-success" hidden>
-              <h2 class="h-h2">Thank you. We got your note.</h2>
-              <p>We read every note ourselves. Please don't send confidential or security-sensitive materials unless we've confirmed an appropriate secure process and both parties have signed the necessary agreement.</p>
-              <a href="index.html" class="btn btn-primary">Return home</a>
+              <h2 class="h-h2">Almost done. Send the email from your app.</h2>
+              <p>Your email app should open with a draft to <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a>. Review it and hit send. If nothing opened, email us at that address with the same details.</p>
+              <a href="mailto:hello@primeaiconsultants.com" class="btn btn-primary">Email hello@primeaiconsultants.com</a>
             </div>
           </form>
 
@@ -225,6 +226,6 @@
 
   <div data-site-footer></div>
 
-  <script src="assets/site.min.js?v=formfix1" defer></script>
+  <script src="assets/site.min.js?v=mailto1" defer></script>
 </body>
 </html>

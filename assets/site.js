@@ -1,14 +1,11 @@
 /* =================================================================
    PRIME AI CONSULTANTS — site.js
    Lightweight client-side: mobile nav, active link, announcement
-   dismiss, sticky CTA, scroll reveal, Formspree contact submit.
+   dismiss, sticky CTA, scroll reveal, mailto contact form.
    ================================================================= */
 (function () {
   "use strict";
 
-  // Set your Formspree form ID from https://formspree.io (e.g. "xrgvabcd").
-  // Leave empty to show a clear error and direct visitors to email instead.
-  var FORMSPREE_FORM_ID = "xgoqorke";
   var BUSINESS_EMAIL = "hello@primeaiconsultants.com";
   // Set to Fernando's exact LinkedIn profile URL when confirmed.
   var FERNANDO_LINKEDIN_URL = "https://www.linkedin.com/in/fernando-rojas0422/";
@@ -321,14 +318,14 @@
     els.forEach(function (el) { obs.observe(el); });
   }
 
-  // ---------- Contact form (Formspree) ----------
+  // ---------- Contact form (mailto:hello@…) ----------
   function initContactForm() {
     var form = document.getElementById("contact-form");
     if (!form) return;
 
-    if (FORMSPREE_FORM_ID) {
-      form.setAttribute("action", "https://formspree.io/f/" + FORMSPREE_FORM_ID);
-    }
+    form.setAttribute("action", "mailto:" + BUSINESS_EMAIL);
+    form.setAttribute("method", "GET");
+    form.setAttribute("enctype", "text/plain");
 
     var params = new URLSearchParams(window.location.search);
     var interest = params.get("interest");
@@ -349,98 +346,125 @@
       status.classList.add(kind === "error" ? "is-error" : "is-success");
     }
 
+    function fieldVal(name) {
+      var el = form.querySelector('[name="' + name + '"]');
+      return el ? String(el.value || "").trim() : "";
+    }
+
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       ev.stopPropagation();
 
-      // Show clear field errors on invalid email etc. (stay on page)
       if (typeof form.reportValidity === "function" && !form.reportValidity()) {
         setStatus("Please fix the highlighted fields and try again.", "error");
         return;
       }
 
-      var emailEl = form.querySelector('input[name="email"]');
-      if (emailEl) {
-        var em = (emailEl.value || "").trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) {
+      var name = fieldVal("name");
+      var email = fieldVal("email");
+      var company = fieldVal("company");
+      var role = fieldVal("role");
+      var system = fieldVal("primarySystem");
+      var message = fieldVal("message");
+      var timeline = fieldVal("timeline");
+      var interestVal = fieldVal("interest");
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        var emailEl = form.querySelector('input[name="email"]');
+        if (emailEl) {
           emailEl.setCustomValidity("Enter a valid email address.");
           emailEl.reportValidity();
           emailEl.setCustomValidity("");
-          setStatus("Enter a valid work email before submitting.", "error");
-          return;
         }
-      }
-
-      var endpoint = form.getAttribute("action") || "";
-      if (!endpoint && FORMSPREE_FORM_ID) {
-        endpoint = "https://formspree.io/f/" + FORMSPREE_FORM_ID;
-        form.setAttribute("action", endpoint);
-      }
-      var fd = new FormData(form);
-
-      if (!FORMSPREE_FORM_ID || endpoint.indexOf("YOUR_FORM_ID") !== -1 || !endpoint) {
-        setStatus(
-          "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ". Do not include confidential or security-sensitive information.",
-          "error"
-        );
+        setStatus("Enter a valid work email before submitting.", "error");
         return;
+      }
+
+      var subject = "Prime inquiry from " + name + (company ? " (" + company + ")" : "");
+      if (interestVal) {
+        subject += " - " + interestVal;
+      }
+
+      var lines = [
+        "Name: " + name,
+        "Work email: " + email,
+        "Company: " + company,
+        "Role: " + role,
+        "Primary system: " + (system || "(not specified)"),
+        "Desired timeline: " + (timeline || "(not specified)"),
+        "Interest param: " + (interestVal || "(none)"),
+        "",
+        "Message:",
+        message,
+        "",
+        "-",
+        "Sent from the Prime AI Consultants contact form.",
+        "Reply to: " + email
+      ];
+
+      var body = lines.join("\n");
+      var mailto =
+        "mailto:" +
+        encodeURIComponent(BUSINESS_EMAIL) +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+
+      // Some clients cap mailto URL length; keep a safe headroom
+      if (mailto.length > 1800) {
+        var shortBody = [
+          "Name: " + name,
+          "Work email: " + email,
+          "Company: " + company,
+          "Role: " + role,
+          "Primary system: " + (system || "(not specified)"),
+          "Desired timeline: " + (timeline || "(not specified)"),
+          "",
+          "Message:",
+          message.slice(0, 900) + (message.length > 900 ? "…" : ""),
+          "",
+          "Reply to: " + email
+        ].join("\n");
+        mailto =
+          "mailto:" +
+          encodeURIComponent(BUSINESS_EMAIL) +
+          "?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(shortBody);
       }
 
       if (submit) {
         submit.disabled = true;
         submit.dataset.label = submit.textContent;
-        submit.textContent = "Submitting…";
+        submit.textContent = "Opening email…";
       }
 
-      fetch(endpoint, {
-        method: "POST",
-        body: fd,
-        headers: { Accept: "application/json" },
-        mode: "cors"
-      })
-        .then(function (res) {
-          if (res.ok) {
-            setStatus("Inquiry received.", "success");
-            if (success) {
-              Array.prototype.forEach.call(form.children, function (child) {
-                if (child !== success && !child.classList.contains("form-status")) {
-                  child.setAttribute("hidden", "");
-                }
-              });
-              success.removeAttribute("hidden");
-              success.focus && success.focus();
-              success.scrollIntoView({ behavior: "smooth", block: "start" });
+      try {
+        window.location.href = mailto;
+        setStatus("Your email app should open with the message ready to send.", "success");
+        if (success) {
+          Array.prototype.forEach.call(form.children, function (child) {
+            if (child !== success && !child.classList.contains("form-status")) {
+              child.setAttribute("hidden", "");
             }
-            form.reset();
-          } else {
-            return res.json().then(function (data) {
-              var msg = data && data.errors && data.errors.length
-                ? data.errors.map(function (e) { return e.message || e.field || ""; }).filter(Boolean).join(" ")
-                : "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ". Do not include confidential or security-sensitive information.";
-              if (!msg) {
-                msg = "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ".";
-              }
-              setStatus(msg, "error");
-            }).catch(function () {
-              setStatus(
-                "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ".",
-                "error"
-              );
-            });
-          }
-        })
-        .catch(function () {
-          setStatus(
-            "We could not submit your inquiry. Please try again or email " + BUSINESS_EMAIL + ". Do not include confidential or security-sensitive information.",
-            "error"
-          );
-        })
-        .finally(function () {
-          if (submit) {
-            submit.disabled = false;
-            if (submit.dataset.label) submit.textContent = submit.dataset.label;
-          }
-        });
+          });
+          success.removeAttribute("hidden");
+          if (success.focus) success.focus();
+          success.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } catch (err) {
+        setStatus(
+          "Could not open your email app. Please email " + BUSINESS_EMAIL + " directly.",
+          "error"
+        );
+      } finally {
+        if (submit) {
+          submit.disabled = false;
+          if (submit.dataset.label) submit.textContent = submit.dataset.label;
+        }
+      }
     });
   }
 
