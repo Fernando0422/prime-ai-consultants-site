@@ -5072,11 +5072,14 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
 }
 
 .page-flow .flow-hero-aside {
-  width: min(100%, 36rem);
+  width: min(100%, 34rem);
   max-width: 100%;
   margin: 0 auto;
-  text-align: left;
   padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .page-flow .flow-hero-aside-copy {
@@ -5084,6 +5087,9 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
   font-size: 1.125rem;
   line-height: 1.65;
   color: rgba(10, 15, 30, 0.82);
+  text-align: center;
+  text-wrap: pretty;
+  max-width: 34rem;
 }
 
 .page-flow .flow-hero-cta {
@@ -5098,6 +5104,8 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .page-flow .flow-hero-cta span {
   font-size: 1.05em;
@@ -5126,13 +5134,24 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
 @media (max-width: 900px) {
   .page-flow .flow-hero-stack {
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
   .page-flow .flow-hero-aside {
     max-width: 100%;
     width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .page-flow .flow-hero-aside-copy {
+    margin-inline: auto;
   }
   .page-flow .flow-hero-tagline {
     margin-bottom: 1.5rem;
+  }
+  .page-flow .flow-hero-cta {
+    width: min(100%, 22rem);
+    margin-inline: auto;
   }
 }
 
