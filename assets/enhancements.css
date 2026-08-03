@@ -9597,3 +9597,60 @@ a:focus-visible {
 .page-mes .mes-hero-copy .h-h1 {
   max-width: min(20ch, 100%);
 }
+
+/* ============================================================
+   Typographic cliffs — widows / short last lines (mobile+desktop)
+   ============================================================ */
+.h-h1,
+.h-h2,
+.h-h3,
+.flow-title,
+.flow-problem-title,
+.flow-work-title,
+.flow-help-title,
+.flow-display,
+.flow-impact-line,
+.flow-problem-layers-title,
+.flow-problem-closing,
+.flow-work-footer p,
+.page-flow .flow-work-footer p,
+.mes-section-head .h-h2,
+.aisvc-section-head .h-h2,
+.diag-section-head .h-h2,
+.meth-section-head .h-h2,
+.about-section-head .h-h2,
+.contact-section-head .h-h2 {
+  text-wrap: balance;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.lede,
+.lede-text,
+.flow-lede,
+.flow-lede-dark,
+.flow-problem-sub,
+.flow-help-sub,
+.flow-work-sub,
+.flow-hero-aside-copy,
+.flow-caption,
+.mes-arch-lede,
+.aisvc-section-aside,
+.diag-section-aside,
+.meth-section-aside,
+.about-section-lede,
+.body-text,
+.flow-help-card-body p,
+.flow-work-step p {
+  text-wrap: pretty;
+  hyphens: none;
+}
+
+/* Short punch lines in work footer: keep sentence units together */
+.page-flow .flow-work-footer p:first-child {
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
