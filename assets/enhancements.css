@@ -9654,3 +9654,76 @@ a:focus-visible {
   margin-right: auto;
   text-wrap: balance;
 }
+
+/* ============================================================
+   Contact alternate list + no-diagram interiors (AI4)
+   ============================================================ */
+.page-contact .contact-aside-list {
+  gap: 1.15rem;
+}
+.page-contact .contact-aside-list li {
+  gap: 0.35rem;
+}
+.page-contact .contact-aside-list strong {
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  line-height: 1.3;
+  margin: 0;
+}
+.page-contact .contact-aside-list a,
+.page-contact .contact-aside-list span {
+  font-size: 1.02rem;
+  line-height: 1.45;
+  word-break: break-word;
+}
+.page-contact .contact-aside-card {
+  padding: 1.5rem 1.4rem;
+}
+.page-contact .contact-aside-card .contact-kicker {
+  margin-bottom: 1rem;
+}
+
+/* Single-column heroes after diagram removal */
+.page-erp .aisvc-hero-grid,
+.page-crm .aisvc-hero-grid,
+.page-erp .aisvc-final-inner,
+.page-crm .aisvc-final-inner,
+.page-mes .mes-final-inner,
+.page-contact .contact-hero-grid,
+.page-contact .contact-final-inner,
+.page-about .about-hero-grid,
+.page-about .about-final-inner,
+.page-methodology .meth-hero-grid,
+.page-methodology .meth-final-inner,
+.page-diagnostics .diag-hero-grid,
+.page-diagnostics .diag-final-inner {
+  grid-template-columns: 1fr !important;
+  max-width: 48rem;
+}
+
+.page-erp .aisvc-hero-visual,
+.page-crm .aisvc-hero-visual,
+.page-erp .aisvc-final-visual,
+.page-crm .aisvc-final-visual,
+.page-mes .mes-final-visual,
+.page-contact .contact-hero-visual,
+.page-contact .contact-final-visual,
+.page-about .about-hero-visual,
+.page-about .about-final-visual {
+  display: none !important;
+}
+
+/* Home help cards: text-first without empty media gaps */
+.page-flow .flow-help-card-media {
+  display: none !important;
+}
+.page-flow .flow-help-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid rgba(10, 15, 30, 0.1);
+  border-top: 3px solid var(--color-teal);
+}
+.page-flow .flow-help-card-body {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
