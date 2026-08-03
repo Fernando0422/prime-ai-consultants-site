@@ -9268,3 +9268,332 @@ html.js .page-flow .reveal-stagger > .reveal:nth-child(4) { transition-delay: 27
 .page-flow .flow-diag-intro .flow-eyebrow {
   font-size: clamp(1.05rem, 1.4vw, 1.2rem);
 }
+
+/* ============================================================
+   AI4 SHIP — Unified spacing & density system
+   One gutter, one section pad, one button scale (overrides prior drifts)
+   ============================================================ */
+
+:root {
+  --content-pad-x: clamp(1.25rem, 4vw, 2.5rem);
+  --section-pad: clamp(3.5rem, 8vw, 6.5rem);
+  --section-pad-sm: clamp(3rem, 6vw, 5rem);
+  --stack-kicker: 0.75rem;
+  --stack-title: 1rem;
+  --stack-lede: 1.75rem;
+  --stack-intro: 2.75rem;
+  --measure-intro: 42rem;
+  --measure-body: 48rem;
+  --btn-pad-y: 0.875rem;
+  --btn-pad-x: 1.5rem;
+  --btn-min-h: 3rem;
+}
+
+/* ---- Site shell: one horizontal pad ---- */
+.container,
+.container-narrow,
+.container-text,
+.nav-inner,
+.footer-inner,
+.footer .footer-inner {
+  padding-left: var(--content-pad-x) !important;
+  padding-right: var(--content-pad-x) !important;
+}
+
+.section {
+  padding-top: var(--section-pad) !important;
+  padding-bottom: var(--section-pad) !important;
+}
+.section-sm {
+  padding-top: var(--section-pad-sm) !important;
+  padding-bottom: var(--section-pad-sm) !important;
+}
+
+/* Interior wide shells share max width + same pad */
+.page-mes .mes-wide,
+.page-mes .container.mes-wide,
+.page-mes .container.mes-hero-grid,
+.page-mes .container.mes-final-inner,
+.page-methodology .meth-wide,
+.page-methodology .container.meth-wide,
+.page-diagnostics .diag-wide,
+.page-diagnostics .container.diag-wide,
+.page-about .about-wide,
+.page-about .container.about-wide,
+.page-contact .contact-wide,
+.page-contact .container.contact-wide,
+.page-erp .aisvc-wide,
+.page-crm .aisvc-wide,
+.page-services .measure-editorial,
+[class*="-wide"].container,
+.container[class*="-wide"] {
+  max-width: min(var(--max-width), 100%) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--content-pad-x) !important;
+  padding-right: var(--content-pad-x) !important;
+  box-sizing: border-box !important;
+}
+
+/* ---- Home page-flow: kill multi-rail drift ---- */
+.page-flow .container,
+.page-flow .flow-problem-inner,
+.page-flow .flow-work-inner,
+.page-flow .flow-help > .container,
+.page-flow .flow-foundation > .container,
+.page-flow .flow-founders-section > .container,
+.page-flow .flow-trust-section > .container,
+.page-flow .flow-pillars-section > .container,
+.page-flow .flow-approach > .container,
+.page-flow .flow-diag-section > .container,
+.page-flow .flow-final > .container,
+.page-flow .flow-diag-grid.container,
+.page-flow .flow-pillars.container,
+.page-flow .flow-split.container,
+.page-flow .flow-trust-foundation.container,
+.page-flow .flow-founders.container,
+.page-flow .flow-about-inner,
+.page-flow .footer.footer--prime .footer-inner,
+.page-flow .site-footer .footer-inner {
+  padding-left: var(--content-pad-x) !important;
+  padding-right: var(--content-pad-x) !important;
+  box-sizing: border-box;
+}
+
+@media (min-width: 921px) {
+  .page-flow .container {
+    padding-left: var(--content-pad-x) !important;
+    padding-right: var(--content-pad-x) !important;
+  }
+}
+
+.page-flow .flow-section,
+.page-flow .flow-problem,
+.page-flow .flow-help,
+.page-flow .flow-work,
+.page-flow .flow-diag-section,
+.page-flow .flow-final,
+.page-flow .flow-trust-section,
+.page-flow .flow-founders-section,
+.page-flow .flow-about {
+  padding-top: var(--section-pad) !important;
+  padding-bottom: var(--section-pad) !important;
+}
+
+.page-flow .flow-hero {
+  padding-top: clamp(2.5rem, 6vw, 4rem) !important;
+  padding-bottom: clamp(2.75rem, 7vw, 4.25rem) !important;
+  min-height: 0 !important;
+}
+
+/* Home intros: measure copy only */
+.page-flow .flow-help-intro,
+.page-flow .flow-work-intro,
+.page-flow .flow-problem-intro,
+.page-flow .flow-diag-intro,
+.page-flow .flow-diag-outro,
+.page-flow .flow-problem-close {
+  max-width: var(--measure-body);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--stack-intro);
+}
+
+.page-flow .flow-eyebrow,
+.page-flow .flow-problem-label {
+  margin-bottom: var(--stack-kicker) !important;
+}
+
+.page-flow .flow-title,
+.page-flow .flow-problem-title,
+.page-flow .flow-work-title,
+.page-flow .flow-help-title {
+  margin-bottom: var(--stack-title) !important;
+}
+
+.page-flow .flow-lede-dark,
+.page-flow .flow-lede,
+.page-flow .flow-work-sub,
+.page-flow .flow-help-sub,
+.page-flow .flow-problem-sub,
+.page-flow .flow-hero-aside-copy {
+  margin-bottom: var(--stack-lede) !important;
+}
+
+.page-flow .flow-hero-tagline {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Full-width step/card stacks on phone — no slim 32rem column */
+@media (max-width: 1024px) {
+  .page-flow .flow-help-grid,
+  .page-flow .flow-work-steps {
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+}
+
+/* ---- MES + interior heroes: use full shell width ---- */
+.page-mes .mes-hero-grid,
+.page-mes .mes-arch-grid {
+  max-width: none !important;
+  width: 100% !important;
+  grid-template-columns: 1fr !important;
+}
+
+.page-mes .mes-hero,
+.page-methodology .meth-hero,
+.page-diagnostics .diag-hero,
+.page-erp .aisvc-hero,
+.page-crm .aisvc-hero,
+.page-about .about-hero,
+.page-contact .contact-hero,
+.page-services .page-hero {
+  padding-top: clamp(3.25rem, 7vw, 5rem) !important;
+  padding-bottom: clamp(2.5rem, 6vw, 3.75rem) !important;
+}
+
+.page-mes .mes-hero {
+  padding-bottom: clamp(2.5rem, 6vw, 3.75rem) !important;
+}
+
+.page-interior .page-hero .eyebrow,
+.page-mes .mes-kicker,
+.page-mes p.mes-kicker,
+.page-methodology .meth-kicker,
+.page-diagnostics .diag-kicker,
+.page-erp .aisvc-kicker,
+.page-crm .aisvc-kicker,
+.page-about .about-kicker,
+.page-contact .contact-kicker {
+  margin-bottom: var(--stack-kicker) !important;
+}
+
+.page-interior .page-hero .h-h1,
+.page-mes .mes-hero-copy .h-h1 {
+  margin-bottom: 0 !important;
+}
+
+.page-interior .page-hero .lede,
+.page-mes .mes-hero-copy .lede {
+  margin-top: var(--stack-title) !important;
+  margin-bottom: 0 !important;
+  max-width: var(--measure-intro);
+}
+
+.page-interior .page-hero .cta-row,
+.page-mes .mes-hero .cta-row,
+.page-flow .flow-hero-aside .flow-hero-cta {
+  margin-top: var(--stack-lede) !important;
+}
+
+.page-mes .mes-section-head {
+  margin-bottom: var(--stack-intro) !important;
+  max-width: var(--measure-body);
+}
+
+.page-mes .mes-note,
+.page-methodology .meth-note {
+  margin-top: 2rem;
+}
+
+/* Card density — aligned internal pad */
+.page-mes .mes-signal-row li,
+.page-mes .mes-area-grid li,
+.page-mes .mes-output-grid article,
+.page-mes .mes-usecase-grid li,
+.page-mes .mes-path-grid li,
+.page-mes .mes-commit-grid article {
+  padding: 1.25rem 1.3rem !important;
+}
+
+/* ---- Buttons: three sizes max ---- */
+.btn {
+  padding: var(--btn-pad-y) var(--btn-pad-x) !important;
+  min-height: var(--btn-min-h) !important;
+  box-sizing: border-box;
+}
+.btn-sm {
+  padding: 0.55rem 1.15rem !important;
+  min-height: 2.75rem !important;
+}
+.btn-lg {
+  padding: 1rem 1.75rem !important;
+  min-height: 3.25rem !important;
+}
+
+.page-flow .flow-hero-cta,
+.page-flow .flow-problem-oval-cta {
+  padding: 1rem 1.75rem !important;
+  min-height: 3.25rem !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.06em !important;
+}
+
+.page-flow .nav-cta .btn-primary,
+.page-flow .site-nav--light .nav-cta .btn-primary {
+  padding: 0.55rem 1.15rem !important;
+  min-height: 2.75rem !important;
+}
+
+/* CTA rows on mobile: full width but not ultra-tall */
+@media (max-width: 900px) {
+  .page-flow .flow-hero-cta,
+  .page-flow .flow-work-cta .btn,
+  .page-flow .flow-diag-outro .btn,
+  .page-flow .cta-row .btn,
+  .page-mes .cta-row .btn,
+  .page-interior .cta-row .btn {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+
+  .page-flow .cta-row,
+  .page-mes .cta-row,
+  .page-interior .cta-row {
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .page-flow .flow-problem-pill {
+    border-radius: 12px !important;
+  }
+}
+
+/* Secondary btn readable on light */
+.page-mes .btn-secondary,
+.page-interior .page-hero .btn-secondary,
+.page-flow .btn-secondary {
+  color: var(--color-dark);
+  border-color: rgba(10, 15, 30, 0.28);
+  background: #fff;
+}
+
+/* Footer: one-col mobile, consistent pad */
+@media (max-width: 700px) {
+  .site-footer .footer-grid,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* A11y: focus rings stay visible after pad changes */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 3px;
+}
+
+/* Prevent text overflow without oversized measure squeezes */
+.page-mes .mes-hero-copy,
+.page-methodology .meth-hero-copy,
+.page-diagnostics .diag-hero-copy {
+  max-width: var(--measure-body);
+}
+
+.page-mes .mes-hero-copy .h-h1 {
+  max-width: min(20ch, 100%);
+}
