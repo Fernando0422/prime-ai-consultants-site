@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.min.css?v=mailto1" />
-  <link rel="stylesheet" href="assets/enhancements.min.css?v=heroctr1" />
+  <link rel="stylesheet" href="assets/enhancements.min.css?v=heroctr2" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 </head>
@@ -116,7 +116,17 @@
 
             <label class="form-field" for="field-primary-system">
               <span class="form-label">Primary system</span>
-              <input class="form-input" id="field-primary-system" name="primarySystem" type="text" autocomplete="off" placeholder="Manufacturing Execution System (MES), Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), custom app, database, or not sure" />
+              <select class="form-select" id="field-primary-system" name="primarySystem">
+                <option value="">Select primary system (optional)</option>
+                <option value="mes-camstar">Camstar</option>
+                <option value="mes-sap-me-mii">SAP ME/MII</option>
+                <option value="mes-siemens-opcenter">Siemens Opcenter</option>
+                <option value="mes-factorytalk">FactoryTalk</option>
+                <option value="erp-sap-ecc">SAP ECC</option>
+                <option value="mes-oracle">Oracle MES</option>
+                <option value="other">Other</option>
+                <option value="not-sure">Not sure</option>
+              </select>
             </label>
 
             <label class="form-field" for="field-message">
