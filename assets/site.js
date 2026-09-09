@@ -335,7 +335,6 @@
     }
 
     var status = form.querySelector(".form-status");
-    var submit = form.querySelector('button[type="submit"]');
     var success = document.getElementById("form-success");
 
     function setStatus(message, kind) {
@@ -411,7 +410,7 @@
         "&body=" +
         encodeURIComponent(body);
 
-      // Some clients cap mailto URL length; keep a safe headroom
+      // Some clients cap mailto and webmail compose URL length; keep a safe headroom
       if (mailto.length > 1800) {
         var shortBody = [
           "Name: " + name,
@@ -433,37 +432,48 @@
           encodeURIComponent(subject) +
           "&body=" +
           encodeURIComponent(shortBody);
+        body = shortBody;
       }
 
-      if (submit) {
-        submit.disabled = true;
-        submit.dataset.label = submit.textContent;
-        submit.textContent = "Opening email…";
-      }
+      // Pre-fill real compose windows so webmail users never depend on the
+      // operating system's mail handler (Gmail cannot reliably service a
+      // mailto: URL from the OS chooser, which silently swallows the click).
+      var encTo = encodeURIComponent(BUSINESS_EMAIL);
+      var encSubject = encodeURIComponent(subject);
+      var encBody = encodeURIComponent(body);
 
-      try {
-        window.location.href = mailto;
-        setStatus("Your email app should open with the message ready to send.", "success");
-        if (success) {
-          Array.prototype.forEach.call(form.children, function (child) {
-            if (child !== success && !child.classList.contains("form-status")) {
-              child.setAttribute("hidden", "");
-            }
-          });
-          success.removeAttribute("hidden");
-          if (success.focus) success.focus();
-          success.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      } catch (err) {
-        setStatus(
-          "Could not open your email app. Please email " + BUSINESS_EMAIL + " directly.",
-          "error"
+      var gmailLink = document.getElementById("send-gmail");
+      if (gmailLink) {
+        gmailLink.setAttribute(
+          "href",
+          "https://mail.google.com/mail/?view=cm&fs=1&to=" + encTo + "&su=" + encSubject + "&body=" + encBody
         );
-      } finally {
-        if (submit) {
-          submit.disabled = false;
-          if (submit.dataset.label) submit.textContent = submit.dataset.label;
-        }
+      }
+
+      var outlookLink = document.getElementById("send-outlook");
+      if (outlookLink) {
+        outlookLink.setAttribute(
+          "href",
+          "https://outlook.office.com/mail/deeplink/compose?to=" + encTo + "&subject=" + encSubject + "&body=" + encBody
+        );
+      }
+
+      var mailappLink = document.getElementById("send-mailapp");
+      if (mailappLink) {
+        mailappLink.setAttribute("href", mailto);
+      }
+
+      if (success) {
+        // Hide the form fields via inline style, not the hidden attribute:
+        // author display rules on these elements would override [hidden].
+        Array.prototype.forEach.call(form.children, function (child) {
+          if (child !== success && !child.classList.contains("form-status")) {
+            child.style.display = "none";
+          }
+        });
+        success.removeAttribute("hidden");
+        if (success.focus) success.focus();
+        success.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   }

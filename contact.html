@@ -162,9 +162,14 @@
             <button type="submit" class="btn btn-primary btn-lg btn-arrow form-submit">Open email to send</button>
             <div class="form-status" role="status" aria-live="polite"></div>
             <div id="form-success" class="form-success" hidden>
-              <h2 class="h-h2">Almost done. Send the email from your app.</h2>
-              <p>Your email app should open with a draft to <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a>. Review it and hit send. If nothing opened, email us at that address with the same details.</p>
-              <a href="mailto:hello@primeaiconsultants.com" class="btn btn-primary">Email hello@primeaiconsultants.com</a>
+              <h2 class="h-h2">Almost done. Choose how to send it.</h2>
+              <p>Your message is ready and addressed to hello@primeaiconsultants.com. Pick an option below to open the pre-filled draft.</p>
+              <div class="cta-row form-send-row" role="group" aria-label="Ways to send your message">
+                <a id="send-gmail" class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1" target="_blank" rel="noopener">Send with Gmail</a>
+                <a id="send-outlook" class="btn btn-secondary-light" href="https://outlook.office.com/mail/deeplink/compose" target="_blank" rel="noopener">Send with Outlook</a>
+                <a id="send-mailapp" class="btn btn-secondary-light" href="mailto:hello@primeaiconsultants.com">Open my email app</a>
+              </div>
+              <p>If no window opens, email <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a> with the same details.</p>
             </div>
           </form>
 
@@ -236,6 +241,6 @@
 
   <div data-site-footer></div>
 
-  <script src="assets/site.min.js?v=mailto1" defer></script>
+  <script src="assets/site.min.js?v=mailto2" defer></script>
 </body>
 </html>
