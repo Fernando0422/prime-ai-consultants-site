@@ -10084,3 +10084,16 @@ img, svg {
   border: 1px solid rgba(31, 107, 98, 0.16);
   background: rgba(59, 168, 154, 0.045);
 }
+
+
+/* Third pass: three rules pinned max-width:none at higher specificity and
+   silently defeated the measure overrides above. */
+.page-flow .flow-diag-outro .flow-caption,
+.page-flow .flow-pillars-note .flow-caption {
+  max-width: 44rem;
+}
+.page-flow .flow-trust-foundation-copy .flow-title,
+.page-flow .flow-trust-foundation-copy .flow-eyebrow,
+.page-flow .flow-trust-foundation-copy p {
+  max-width: var(--measure-body);
+}
