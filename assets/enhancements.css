@@ -9744,6 +9744,75 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+/* ============================================================
+   Text measure
+   Several blocks ran the full container width, producing 100-150
+   character lines at 1440px. Reading measure should stay near the
+   existing --measure tokens (42rem / 48rem). Selectors below match
+   the winning rules further up this file so they actually apply;
+   they constrain paragraph text only, never grids or headings.
+   ============================================================ */
+.page-flow .flow-trust-foundation-copy p,
+.page-flow .flow-trust-foundation-copy .flow-title {
+  max-width: var(--measure-body);
+}
+
+.page-methodology .meth-phase-lede,
+.page-methodology .meth-phase-why {
+  max-width: 40rem !important;
+}
+
+.page-methodology .meth-timeline-note,
+.page-methodology .meth-note {
+  max-width: var(--measure-intro) !important;
+}
+
+.page-diagnostics .diag-note,
+.page-diagnostics .diag-note--emphasis {
+  max-width: 40rem !important;
+}
+
+/* About: the notice had an explicit max-width:none and the lede sits inside a
+   centred head, so both need the page scope to win. */
+.page-about .about-scope-notice {
+  max-width: 44rem !important;
+}
+.page-about .about-section-lede {
+  max-width: var(--measure-body);
+}
+
+/* AI for MES/ERP/CRM closing notes were pinned at 52rem (~109 chars). */
+.page-mes .mes-note,
+.page-mes .mes-timeline-note {
+  max-width: 40rem !important;
+}
+
+/* Footer legalese: 48rem at 14px measured ~109 characters per line. */
+.footer--prime .footer-disclaimer,
+.page-flow .footer.footer--prime .footer-disclaimer,
+.page-flow .footer.footer--prime .footer-tagline,
+.footer--prime .footer-tagline,
+.footer--prime .footer-legal,
+.page-flow .footer.footer--prime .footer-legal {
+  max-width: 34rem;
+}
+
+/* Homepage closing captions were 52rem (~102-105 chars). The legal variant is
+   scoped to .flow-final and needed matching specificity to be caught. */
+.page-flow .flow-caption,
+.page-flow .flow-caption--light {
+  max-width: 44rem;
+}
+.page-flow .flow-final .flow-caption--light {
+  max-width: 44rem;
+}
+.page-flow .flow-problem-signals p {
+  max-width: var(--measure-body);
+}
+.page-about .about-section-head--center .about-section-lede {
+  max-width: var(--measure-body);
+}
+
 /* Prevent text overflow without oversized measure squeezes */
 .page-mes .mes-hero-copy,
 .page-methodology .meth-hero-copy,
