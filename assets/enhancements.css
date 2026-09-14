@@ -5208,6 +5208,13 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
   line-height: 1.55;
   color: #000;
 }
+/* Each sentence on its own line (index.html "What we actually do" intro). */
+.page-flow .flow-help-sub-line {
+  display: block;
+}
+.page-flow .flow-help-sub-line + .flow-help-sub-line {
+  margin-top: 0.35em;
+}
 .page-flow .flow-help-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
