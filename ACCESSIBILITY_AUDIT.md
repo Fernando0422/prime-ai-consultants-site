@@ -196,7 +196,7 @@ document instance, and never infer "nothing happened" from a state read after a 
 | Content | 5% | 100 | headings and labels coherent |
 | Accessibility | 15% | 98 | no A/AA failures; one ARIA pattern deviation |
 
-Weighted: 99.0 points over 0.90 total weight (Performance excluded, not measured).
+Weighted: 89.0 points over 0.90 total weight (Performance excluded, not measured). 89.0 / 0.90 = 98.9.
 
 **Weighted score: 99 / 100**
 
