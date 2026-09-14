@@ -83,6 +83,11 @@
         trigger.setAttribute("aria-expanded", open ? "true" : "false");
       }
 
+      // Escape closes the menu and returns focus to the trigger. Without this
+      // guard the refocus fires focusin, whose handler calls setOpen(true) and
+      // immediately reopens the menu, so Escape appeared to do nothing.
+      var suppressFocusOpen = false;
+
       item.addEventListener("mouseenter", function () {
         if (desktopMq.matches) setOpen(true);
       });
@@ -90,6 +95,7 @@
         if (desktopMq.matches) setOpen(false);
       });
       item.addEventListener("focusin", function () {
+        if (suppressFocusOpen) return;
         if (desktopMq.matches) setOpen(true);
       });
       item.addEventListener("focusout", function (e) {
@@ -104,7 +110,11 @@
         }
         if (!desktopMq.matches) return;
         setOpen(false);
+        suppressFocusOpen = true;
         trigger.focus();
+        window.setTimeout(function () {
+          suppressFocusOpen = false;
+        }, 150);
       });
     });
 
