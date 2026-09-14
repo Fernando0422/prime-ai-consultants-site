@@ -10006,3 +10006,41 @@ img, svg {
   border-color: var(--color-dark, #0A0F1E);
   background: rgba(10, 15, 30, 0.04);
 }
+
+
+/* ============================================================
+   Card treatment: remove the accent side bar
+   A saturated bar down the left edge of a card is one of the most
+   recognisable generated-layout patterns. These replace it with a
+   uniform hairline outline and a faint tint, so the card still
+   reads as a distinct object without the bar. Note callouts get a
+   top rule instead, matching the convention already used
+   elsewhere on the site.
+   ============================================================ */
+.page-diagnostics .diag-q-grid li,
+.page-methodology .meth-arch-steps li,
+.page-mes .mes-arch-steps li,
+.page-mes .mes-commit-grid article,
+.page-ai-svc .aisvc-question-grid li,
+.page-route .svc-clarity-grid article {
+  border-left: 0;
+  border: 1px solid rgba(31, 107, 98, 0.16);
+  background: rgba(59, 168, 154, 0.045);
+}
+
+/* AI service cards already carried a hairline; drop only the bar. */
+.page-ai-svc .aisvc-path-grid li {
+  border-left: 0;
+  border-left: 1px solid rgba(31, 107, 98, 0.16);
+}
+
+/* Note callouts: full-width top rule, no left bar. */
+.page-diagnostics .diag-note,
+.page-diagnostics .diag-note--emphasis,
+.page-methodology .meth-phase-why,
+.page-route .svc-price-note {
+  border-left: 0;
+  border-top: 1px solid rgba(31, 107, 98, 0.28);
+  padding: 0.9rem 0 0;
+  background: transparent;
+}
