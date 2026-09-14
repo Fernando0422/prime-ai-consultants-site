@@ -10044,3 +10044,43 @@ img, svg {
   padding: 0.9rem 0 0;
   background: transparent;
 }
+
+
+/* ============================================================
+   Card treatment: remove the accent top rule
+   Companion to the left-bar removal above. The same saturated bar
+   was also used along the TOP edge of these cards, which is the
+   same generated-layout pattern rotated. Replaced with the same
+   hairline outline and faint tint so every card on the site now
+   uses one vocabulary.
+   ============================================================ */
+.page-flow .flow-help-card,
+.page-diagnostics .diag-signal-row li,
+.page-diagnostics .diag-fit-card--yes,
+.page-diagnostics .diag-fit-card--no,
+.page-methodology .meth-signal-row li,
+.page-methodology .meth-phase-card,
+.page-mes .mes-signal-row li,
+.page-ai-svc .aisvc-signal-row li,
+.page-about .about-signal-row li,
+.page-contact .contact-signal-row li {
+  border-top: 0;
+  border: 1px solid rgba(31, 107, 98, 0.16);
+  background: rgba(59, 168, 154, 0.045);
+}
+
+
+/* Second pass: the remaining step/process/area grids that carried the same
+   accent top rule. Listed by container so every instance is caught. */
+.page-about .about-role-grid li,
+.page-ai-svc .aisvc-path-grid li,
+.page-diagnostics .diag-process-grid li,
+.page-mes .mes-area-grid li,
+.page-mes .mes-path-grid li,
+.page-mes .mes-usecase-grid li,
+.page-methodology .meth-foundation-grid li,
+.page-methodology .meth-stage-grid li {
+  border-top: 0;
+  border: 1px solid rgba(31, 107, 98, 0.16);
+  background: rgba(59, 168, 154, 0.045);
+}
