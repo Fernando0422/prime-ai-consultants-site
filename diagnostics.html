@@ -154,7 +154,7 @@
             <p>A specific question, investigation, reporting problem, or proposed AI use case. If you can't name it, we won't start.</p>
           </article>
         </div>
-        <p class="diag-note">Larger environments can be split into more phases. A focused diagnostic is not an enterprise-wide data audit, and that limit is intentional.</p>
+        <p class="diag-note">A typical diagnostic runs about two weeks for one system and one decision. Discovery is read-only where that is feasible, and there is no control path to your machines or robots during it. Larger environments can be split into more phases. A focused diagnostic is not an enterprise-wide data audit, and that limit is intentional.</p>
       </div>
     </section>
 
@@ -194,7 +194,7 @@
               <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16v3H4V6zm0 5h10v3H4v-3zm0 5h14v3H4v-3z" fill="currentColor"/></svg>
             </span>
             <h3 class="h-h3">System inventory</h3>
-            <p>In-scope databases, tables, views, procedures, reports, interfaces, and who owns what.</p>
+            <p>What you actually have: the databases, tables, views, stored procedures, reports, and interfaces in scope, and who owns each one. Ends the argument about which screen is authoritative.</p>
           </article>
             <article>
             <span class="diag-output-mark" aria-hidden="true">
@@ -206,38 +206,86 @@
               </svg>
             </span>
             <h3 class="h-h3">Priority relationship map</h3>
-            <p>How the important entities, data flows, and boundaries actually connect, including the links that aren't formal foreign keys.</p>
+            <p>How the important things actually connect, including the joins that exist in application code but never in the schema. This is usually where the surprises are.</p>
           </article>
           <article>
             <span class="diag-output-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 3h9l5 5v13H6V3zm8 1.5V9h4.5L14 4.5zM8 12h8v2H8v-2zm0 4h8v2H8v-2z" fill="currentColor"/></svg>
             </span>
             <h3 class="h-h3">Operational data dictionary</h3>
-            <p>Business meaning, source, ownership, sensitivity, relationships, and the questions still sitting open.</p>
+            <p>Each field in plain language: what it means, where it comes from, who owns it, and what is still unresolved. Written so an engineer and a manager read the same definition.</p>
           </article>
           <article>
             <span class="diag-output-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 4h10v4H7V4zm-3 6h16v2H4v-2zm2 4h5v6H6v-6zm7 0h5v6h-5v-6z" fill="currentColor"/></svg>
             </span>
             <h3 class="h-h3">Business-logic register</h3>
-            <p>Calculations, report rules, application quirks, and the expert practices documented during the work.</p>
+            <p>The rules that live in people's heads and in code nobody wants to touch: calculations, report logic, workarounds, exceptions, and the practice that makes them work.</p>
           </article>
           <article>
             <span class="diag-output-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 14l-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z" fill="currentColor"/></svg>
             </span>
             <h3 class="h-h3">Readiness findings</h3>
-            <p>Access paths, validation duties, restrictions, assumptions, and decisions that still need an owner.</p>
+            <p>What can be reached, what must stay restricted, who has to validate an answer, and which decisions still need a named owner before anything proceeds.</p>
           </article>
           <article>
             <span class="diag-output-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16v2H4V6zm0 5h12v2H4v-2zm0 5h16v2H4v-2z" fill="currentColor"/></svg>
             </span>
             <h3 class="h-h3">Prioritized roadmap</h3>
-            <p>What to resolve first, what can move, and what should wait, including when waiting is the right call.</p>
+            <p>What to fix first, what can wait, and what is not worth doing at all. Sometimes the answer is that the problem is smaller than the tooling would be.</p>
           </article>
         </div>
         <p class="diag-note">Final outputs are confirmed in a written agreement, and not every engagement needs every item on this list.</p>
+      </div>
+    </section>
+
+    <!-- Worked example -->
+    <section class="section section-white diag-example" aria-labelledby="example-heading">
+      <div class="container diag-wide">
+        <div class="diag-section-head">
+          <p class="diag-kicker">A worked example</p>
+          <h2 class="h-h2" id="example-heading">What one cell record actually looks like.</h2>
+          <p class="diag-example-lede">Synthetic example, published so the shape of the work is inspectable before anyone signs anything. No real facility or machine is described here. The point is not the geometry. It is that every claim carries a confidence level and every gap is written down.</p>
+        </div>
+
+        <div class="diag-example-grid">
+          <article class="diag-example-card">
+            <h3 class="h-h3">What is in scope, and what is not</h3>
+            <dl class="diag-example-list">
+              <dt>In scope</dt>
+              <dd>Two assets, the floor strip between them, and the camera pair covering that strip.</dd>
+              <dt>Out of scope</dt>
+              <dd>Every other part of the facility, process behaviour, throughput, and tooling.</dd>
+              <dt>Boundary note</dt>
+              <dd>Synthetic. No real equipment is modelled or inferred.</dd>
+            </dl>
+          </article>
+
+          <article class="diag-example-card">
+            <h3 class="h-h3">How confident, and on what basis</h3>
+            <dl class="diag-example-list diag-example-list--scores">
+              <dt>Identity</dt><dd><span class="diag-meter" data-level="low" aria-hidden="true"></span>Low. Class membership only, not a unit-level identification.</dd>
+              <dt>Position</dt><dd><span class="diag-meter" data-level="medium" aria-hidden="true"></span>Medium. Derived from two recovered camera poses.</dd>
+              <dt>Rotation</dt><dd><span class="diag-meter" data-level="medium" aria-hidden="true"></span>Medium. Yaw well constrained, roll assumed flush to the floor.</dd>
+              <dt>Scale</dt><dd><span class="diag-meter" data-level="low" aria-hidden="true"></span>Low. Rests on a single declared reference dimension.</dd>
+            </dl>
+          </article>
+
+          <article class="diag-example-card">
+            <h3 class="h-h3">What was never observed</h3>
+            <dl class="diag-example-list">
+              <dt>Never seen</dt>
+              <dd>Rear, rear right, and bottom. Nothing was modelled there, and the record says so rather than guessing.</dd>
+              <dt>Still open</dt>
+              <dd>Whether the anchor dimension is the right unit. Resolvable only by measuring on site.</dd>
+            </dl>
+            <p class="diag-example-kicker">The gaps are the deliverable as much as the findings are. A record that cannot say what it does not know is not one you can govern.</p>
+          </article>
+        </div>
+
+        <p class="diag-note">This record format comes from our own cell-level work. It is the same structure we would use on your first cell, whether or not a spatial view is ever part of it.</p>
       </div>
     </section>
 
@@ -294,7 +342,7 @@
               <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 14l-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z" fill="currentColor"/></svg>
             </div>
             <h3 class="h-h3">Strong fit</h3>
-            <p>A real operational system, a meaningful question, an identified owner, available experts, and a willingness to examine context before building.</p>
+            <p>A real operational system, a meaningful question, an identified owner, available experts, and a willingness to examine context before building. A single machine or production cell with real downtime or quality exposure is enough. You do not need an MES, an ERP, or a data team to start. A shop running on paper travelers, a spreadsheet, and one CAM system is a legitimate starting point.</p>
           </article>
           <article class="diag-fit-card diag-fit-card--no">
             <div class="diag-fit-badge" aria-hidden="true">

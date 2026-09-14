@@ -5215,6 +5215,90 @@ html.js .page-flow .flow-founder:nth-child(2).reveal {
 .page-flow .flow-help-sub-line + .flow-help-sub-line {
   margin-top: 0.35em;
 }
+
+/* ============================================================
+   Diagnostics: worked example block
+   Shows the shape of a cell record without exposing client data.
+   ============================================================ */
+.page-route .diag-example-lede {
+  margin-top: var(--stack-kicker);
+  max-width: var(--measure-body);
+  color: var(--color-text-body);
+}
+.page-route .diag-example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 1.6vw, 1.5rem);
+  margin-top: var(--stack-title);
+  align-items: stretch;
+}
+.page-route .diag-example-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  background: var(--color-mist);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+.page-route .diag-example-card .h-h3 {
+  margin: 0;
+}
+.page-route .diag-example-list {
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+.page-route .diag-example-list dt {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-teal-text-on-light);
+}
+.page-route .diag-example-list dd {
+  margin: 0.15rem 0 0;
+  color: var(--color-text-body);
+}
+.page-route .diag-example-kicker {
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-body);
+  font-size: var(--text-small);
+}
+/* Confidence meter: three ticks, filled to the stated level. */
+.page-route .diag-meter {
+  display: inline-flex;
+  gap: 2px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+.page-route .diag-meter::before,
+.page-route .diag-meter::after,
+.page-route .diag-meter {
+  --meter-on: var(--color-teal-text-on-light);
+}
+.page-route .diag-meter::before,
+.page-route .diag-meter::after {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+.page-route .diag-meter::before {
+  background: var(--meter-on);
+}
+.page-route .diag-meter[data-level="medium"]::after {
+  background: var(--meter-on);
+}
+@media (max-width: 1024px) {
+  .page-route .diag-example-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .page-flow .flow-help-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
