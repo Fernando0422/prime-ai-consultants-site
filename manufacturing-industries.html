@@ -43,10 +43,11 @@ section{scroll-margin-top:96px}
 .practice-tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);background:#E3EFEc;border:1px solid #CBE0DA;padding:.3rem .6rem;border-radius:999px;white-space:nowrap}
 .nav-links{list-style:none;display:flex;gap:.15rem;margin:0 0 0 auto;padding:0;align-items:center}
 .nav-links>li{position:relative}
+.nav-links>li::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px;}
 .nav-links a,.nav-dropdown-toggle{font-family:var(--fd);font-weight:600;font-size:.92rem;color:var(--tdark);text-decoration:none;padding:.55rem .7rem;border-radius:var(--r-sm);display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;min-height:2.25rem}
 .nav-links a:hover,.nav-dropdown-toggle:hover{color:var(--teal-text)}
 .nav-links a.active{color:var(--teal-text);box-shadow:inset 0 -2px 0 var(--teal)}
-.nav-dropdown{list-style:none;position:absolute;top:calc(100% + 6px);left:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-md);padding:.45rem;margin:0;min-width:230px;display:none}
+.nav-dropdown{list-style:none;position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-md);padding:.45rem;margin:0;min-width:230px;display:none}
 .nav-dropdown.open{display:block}
 .nav-dropdown a{display:flex;width:100%;padding:.5rem .6rem}
 .nav-dropdown-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A99;padding:.45rem .6rem .15rem}
@@ -201,6 +202,12 @@ footer.site a{color:#E8EAF1}
 .footer-note{grid-column:1/-1;border-top:1px solid #232B45;padding-top:1.2rem;font-size:.82rem;color:#9AA0B4;max-width:none}
 @media (max-width:760px){.footer-in{grid-template-columns:1fr}}
 </style>
+<style>/* UAT-2026-11-11 */
+html{scroll-padding-top:110px}
+section[id]{scroll-margin-top:110px}
+[hidden]{display:none!important}
+.nav-cta .btn{white-space:nowrap;flex:0 0 auto}
+</style>
 </head>
 <body>
 
@@ -214,8 +221,6 @@ footer.site a{color:#E8EAF1}
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="#diagnostics">Diagnostics</a></li>
-      <li><a href="#methodology">Methodology</a></li>
-      <li><a href="#services">Services</a></li>
       <li class="nav-has-dropdown">
         <button type="button" class="nav-dropdown-toggle" id="applications-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="applications-menu">Applications <span class="nav-caret" aria-hidden="true">▾</span></button>
         <ul class="nav-dropdown" id="applications-menu" aria-labelledby="applications-toggle">
@@ -238,8 +243,6 @@ footer.site a{color:#E8EAF1}
   <ul class="mobile-menu" id="mobile-menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="#diagnostics">Diagnostics</a></li>
-    <li><a href="#methodology">Methodology</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#applications">Applications</a></li>
     <li class="mobile-sub"><a href="#mes">AI for MES</a></li>
     <li class="mobile-sub"><a href="#erp">AI for ERP</a></li>
@@ -257,7 +260,7 @@ footer.site a{color:#E8EAF1}
     <div class="hero-grid">
       <div>
         <h1>Different kinds of manufacturing. <span class="accent">The same data problems, in different forms.</span></h1>
-        <p class="lede">A semiconductor fab, a machine shop, and a process plant do not run the same operation, and nobody should pretend they do. What they share is quieter than that: production numbers that live in more than one system, definitions that were never written down, and reports that disagree with each other in front of the people who have to act on them. Prime works across manufacturing because that underlying problem is the same work everywhere it shows up, and it has to be understood in the terms of the plant in front of us before anything is built on top of it.</p>
+        <p class="lede">A semiconductor fab, a machine shop, and a process plant do not run the same operation, and nobody should pretend they do. What they share is quieter than that: production numbers that live in more than one system, definitions that were never written down, and reports that disagree with each other in front of the people who have to act on them. We work across manufacturing because that underlying problem is the same work everywhere it shows up, and it has to be understood in the terms of the plant in front of us before anything is built on top of it.</p>
         <div class="hero-actions">
           <a class="btn btn-teal" href="#contact">Discuss your environment</a>
           <a class="btn btn-ghost" href="#about">The background behind this page</a>
@@ -284,7 +287,7 @@ footer.site a{color:#E8EAF1}
     <div class="section-head">
       <p class="kicker">Industries</p>
       <h2>Where the work applies, stated plainly</h2>
-      <p>Each section below says what that kind of operation needs, what usually goes wrong with its numbers, and what Prime can provide there. Where our background is direct, the section says so. Where a kind of manufacturing is a fit for the same work rather than a place we have already worked, the section says that instead, because the difference matters and we would rather state it than blur it.</p>
+      <p>Each section below says what that kind of operation needs, what usually goes wrong with its numbers, and what we can provide there. Where our background is direct, the section says so. Where a kind of manufacturing is a fit for the same work rather than a place we have already worked, the section says that instead, because the difference matters and we would rather state it than blur it.</p>
     </div>
   </div>
 </section>
@@ -313,7 +316,7 @@ footer.site a{color:#E8EAF1}
         <p>Yield is the number that argues back. Operations calculates it one way, finance another, and the export that runs overnight can disagree with the MES screen the floor is looking at, so the same question gets two defensible answers and the meeting becomes about the arithmetic instead of the product.</p>
       </div>
       <div class="ind-col">
-        <h4>What Prime can provide</h4>
+        <h4>What we can provide</h4>
         <p>A diagnostic that maps how lot, yield, and inventory data actually moves between the MES and the ERP, written down in definitions your own engineers can challenge, followed by an architecture and a small pilot in your own systems before anyone commits to a larger build.</p>
       </div>
     </div>
@@ -341,7 +344,7 @@ footer.site a{color:#E8EAF1}
         <p>The ERP says one quantity, the shelf holds another, and the spreadsheet someone maintains by hand holds a third. Shop activity gets reported at the end of the shift instead of as it happens, so the schedule is always describing yesterday, and nobody can say exactly when the records stopped matching the floor.</p>
       </div>
       <div class="ind-col">
-        <h4>What Prime can provide</h4>
+        <h4>What we can provide</h4>
         <p>A diagnostic that follows one part or one job from quote to shipment and writes down where the records diverge, then a scoped pilot, for example around inventory accuracy or shop reporting, built inside the ERP and spreadsheets you already use rather than a replacement platform.</p>
       </div>
     </div>
@@ -369,7 +372,7 @@ footer.site a{color:#E8EAF1}
         <p>The batch record lives in one system, the lab results in another, and the ERP holds a yield figure that neither of them produced. Material loss gets explained differently by production and by finance, and the explanation that survives is usually the one belonging to whoever wrote the report, not the one the data supports.</p>
       </div>
       <div class="ind-col">
-        <h4>What Prime can provide</h4>
+        <h4>What we can provide</h4>
         <p>The same diagnostic discipline we apply in discrete and semiconductor work: pick one product family or one recurring argument about yield or loss, document how the numbers are produced today across the batch record, the lab, and the ERP, and write down the definitions before any analytics or AI is pointed at them.</p>
       </div>
     </div>
@@ -397,7 +400,7 @@ footer.site a{color:#E8EAF1}
         <p>The customer change lands in email or in the CRM and never reaches the build record, work in progress is counted differently by the line and by accounting, and the status a customer is given on the phone comes from whichever system the person answering happened to open first.</p>
       </div>
       <div class="ind-col">
-        <h4>What Prime can provide</h4>
+        <h4>What we can provide</h4>
         <p>A diagnostic focused on one order flow, from quote to shipment, that writes down where the CRM, the MES, and the ERP stop agreeing and who owns each handoff, followed by a pilot that connects one of those handoffs properly before anyone talks about automating the rest.</p>
       </div>
     </div>
@@ -425,7 +428,7 @@ footer.site a{color:#E8EAF1}
         <p>The quality system says one thing, the MES records another, and the ERP closes the order on a third understanding of what passed. The records are usually complete in the sense that every field is filled in, and inconsistent in the sense that matters, which only becomes visible when an audit or a complaint forces the three to be read side by side.</p>
       </div>
       <div class="ind-col">
-        <h4>What Prime can provide</h4>
+        <h4>What we can provide</h4>
         <p>A diagnostic that reads your operation the way an auditor would, following one product&rsquo;s record across the quality system, the MES, and the ERP, and writing down every place the story changes. Any build that follows stays inside your validated systems, and our recommendations do not replace review by your own quality and regulatory owners.</p>
       </div>
     </div>
@@ -441,14 +444,14 @@ footer.site a{color:#E8EAF1}
     </div>
     <div class="bg-grid">
       <div>
-        <p>Prime&rsquo;s manufacturing practice rests on more than three decades of work in enterprise applications and IT. Antonio Rojas has spent that career on the architecture and deployment of ERP, CRM, and Manufacturing Execution Systems for operations across the United States and Mexico, which means the work has been done in plants with different languages, different shifts, and different habits, and the systems still had to agree with each other at the end of the month, and again at every close that followed it.</p>
+        <p>Our manufacturing practice rests on more than three decades of work in enterprise applications and IT. Antonio Rojas has spent that career on the architecture and deployment of ERP, CRM, and Manufacturing Execution Systems for operations across the United States and Mexico, which means the work has been done in plants with different languages, different shifts, and different habits, and the systems still had to agree with each other at the end of the month, and again at every close that followed it.</p>
         <p>Eighteen of those years were spent inside Semtech&rsquo;s semiconductor manufacturing operations, as Sr. Manager and Manager of Applications Development at Semtech Corp, where the applications his team built and maintained were the ones production depended on. His ERP work includes MAPICS, now Infor XA, down at the level where manufacturing data is actually made: bills of materials, inventory, and shop activity.</p>
         <p>That background is the reason this page separates experience from fit the way it does. We would rather tell a process plant plainly that the setting is new to us and the data problem is not, than let a long industry list imply a history we do not have, and we think most operations executives can tell the difference within about a page.</p>
       </div>
       <div class="proof" aria-label="Documented work">
         <div class="proof-card">
           <div class="num">400+ tables, <em>under 2 hours</em></div>
-          <p>An MES database of more than 400 tables, handed over with no documentation, mapped well enough to work from in under two hours, as documented on Prime&rsquo;s own site.</p>
+          <p>An MES database of more than 400 tables, handed over with no documentation, mapped well enough to work from in under two hours, as documented on our own site.</p>
         </div>
         <div class="proof-card">
           <div class="num">5 dashboards, <em>3 working days</em></div>
@@ -518,7 +521,7 @@ footer.site a{color:#E8EAF1}
         <p>If the pilot earns it, we support the implementation inside the systems you already run, and the final decisions about access, scope, and what gets built and used stay with you and your own owners throughout.</p>
       </div>
     </div>
-    <h3 id="services" style="font-size:1.15rem;font-weight:800;margin-top:2.4rem;scroll-margin-top:110px">What Prime can provide, across industries</h3>
+    <h3 id="services" style="font-size:1.15rem;font-weight:800;margin-top:2.4rem;scroll-margin-top:110px">What we can provide, across industries</h3>
     <ul class="plain svc-list">
       <li>Documentation of how MES, ERP, and CRM data actually moves through your operation</li>
       <li>Written definitions for the numbers your plant argues about, with a named owner for each one</li>
@@ -563,9 +566,9 @@ footer.site a{color:#E8EAF1}
         <h2>Discuss your environment</h2>
         <p>Tell us what kind of operation you run and where its numbers stop agreeing, and we will talk about whether a diagnostic makes sense for it. If it does not, we will say that instead, because a short honest answer costs nobody anything and a build that should not happen costs a great deal.</p>
         <div class="contact-lines">
-          <a href="tel:+18052164651">(805) 216-4651</a>
-          <a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a>
-          <span style="color:var(--tbody);font-weight:500">Greater Los Angeles, California</span>
+          <a href="tel:+16617795568">661-779-5568</a>
+          <a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a>
+          <span style="color:var(--tbody);font-weight:500">Santa Clarita, California</span>
         </div>
       </div>
       <form id="mfg-form" novalidate>
@@ -610,7 +613,7 @@ footer.site a{color:#E8EAF1}
           <textarea id="f-message" name="message" placeholder="What are you making, and where do the numbers stop agreeing?"></textarea>
         </div>
         <button type="submit" class="btn btn-teal" style="width:100%">Send by email</button>
-        <p class="form-note">Sending opens your email app with the message addressed to hello@primeaiconsultants.com, ready to send. Prefer to talk first? Call <a href="tel:+18052164651">(805) 216-4651</a>.</p>
+        <p class="form-note">Sending opens your email app with the message addressed to Fernando@primeaiconsultants.com, ready to send. Prefer to talk first? Call <a href="tel:+16617795568">661-779-5568</a>.</p>
         <div class="form-status" id="form-status" role="status"></div>
       </form>
     </div>
@@ -622,8 +625,8 @@ footer.site a{color:#E8EAF1}
   <div class="container"><div class="footer-in">
     <div>
       <a class="footer-brand" href="#home"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true" width="40" height="40"><path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#FFFFFF" stroke-width="17"/><circle cx="50" cy="50" r="11" fill="#3BA89A"/></svg><span class="brand-text"><span class="brand-name">Prime AI</span><span class="brand-sub">CONSULTANTS</span></span></a>
-      <p>Manufacturing practice. Prime AI Consultants helps organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation begins.</p>
-      <p style="margin-top:8px"><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a> · <a href="tel:+18052164651">(805) 216-4651</a> · Greater Los Angeles, California</p>
+      <p>Manufacturing practice. We help organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation begins.</p>
+      <p style="margin-top:8px"><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a> · Santa Clarita, California</p>
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="index.html">Home</a><a href="#diagnostics">Diagnostics</a><a href="#methodology">Methodology</a><a href="#services">Services</a><a href="#applications">Applications overview</a><a href="#mes">AI for MES</a><a href="#erp">AI for ERP</a><a href="#crm">AI for CRM</a><a href="#industries">Industries</a><a href="#insights">Insights</a><a href="#about">About</a><a href="#contact">Contact</a>
@@ -707,13 +710,47 @@ footer.site a{color:#E8EAF1}
     if (phone) lines.push('Phone: ' + phone);
     if (ind) lines.push('Industry: ' + ind);
     if (message) lines.push('', message);
-    var href = 'mailto:hello@primeaiconsultants.com'
+    var href = 'mailto:Fernando@primeaiconsultants.com'
       + '?subject=' + encodeURIComponent('Manufacturing inquiry from ' + name)
       + '&body=' + encodeURIComponent(lines.join('\n'));
-    status.textContent = 'Your email app should now open with the message addressed to hello@primeaiconsultants.com. If it does not, write to us there directly or call (805) 216-4651.';
+    status.textContent = 'Your email app should now open with the message addressed to Fernando@primeaiconsultants.com. If it does not, write to us there directly or call 661-779-5568.';
     status.classList.add('show');
     window.location.href = href;
   });
+})();
+
+/* UAT 2026-11-11: nav active pill follows the clicked item and the section in view. */
+(function(){
+  var nav=document.querySelector('.site-nav')||document.querySelector('nav');
+  var links=nav?Array.prototype.slice.call(nav.querySelectorAll('.nav-links a')):[];
+  var spySections=['diagnostics','applications','industries','about','contact'];
+  function setActive(key){
+    links.forEach(function(a){
+      var href=a.getAttribute('href')||'';
+      var on=(key==='home'&&href==='index.html')||href==='#'+key;
+      a.classList.toggle('active',on);
+      if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}
+    });
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(){
+      var href=a.getAttribute('href')||'';
+      if(href==='index.html'){setActive('home');}
+      else if(href.charAt(0)==='#'){setActive(href.slice(1));}
+    });
+  });
+  function onScroll(){
+    var offset=(nav?nav.offsetHeight:72)+32; var pos=window.scrollY+offset; var current='home';
+    spySections.forEach(function(id){
+      var el=document.getElementById(id);
+      if(el&&el.getBoundingClientRect().top+window.scrollY<=pos){current=id;}
+    });
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4){current='contact';}
+    setActive(current);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
 })();
 </script>
 </body>

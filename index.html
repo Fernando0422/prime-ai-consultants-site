@@ -125,12 +125,13 @@
       .nav-links .nav-sub-toggle .chev { font-size: 0.7rem; line-height: 1; transition: transform 200ms ease; }
       .nav-item.is-open .nav-sub-toggle .chev { transform: rotate(180deg); }
       .submenu {
-        display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+        display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
         min-width: 300px; max-width: calc(100vw - 32px); list-style: none; margin: 0; padding: 8px;
         background: var(--color-white); border: 1px solid rgba(10, 15, 30, 0.1);
         border-radius: var(--radius-md); box-shadow: var(--shadow-md); z-index: 60;
       }
       .nav-item.is-open .submenu { display: block; }
+.nav-item::after { content: ""; position: absolute; left: -8px; right: -8px; top: 100%; height: 14px; }
       @media (hover: hover) and (min-width: 1180px) {
         .nav-item:hover .submenu, .nav-item:focus-within .submenu { display: block; }
       }
@@ -460,7 +461,14 @@
         .mobile-callbar, .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { transition: none; }
       }
     </style>
-  </head>
+  <style>/* UAT-2026-11-11 */
+html{scroll-padding-top:110px}
+section[id]{scroll-margin-top:110px}
+[hidden]{display:none!important}
+.contact-copy{min-width:0}
+.contact-actions .btn{overflow-wrap:anywhere;word-break:break-word;min-width:0}
+</style>
+</head>
   <body>
     <nav class="site-nav" aria-label="Primary navigation" id="site-nav">
       <div class="nav-inner">
@@ -482,8 +490,7 @@
             <button type="button" class="nav-sub-toggle" id="industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="industries-submenu" aria-label="Toggle Industries submenu"><span class="chev" aria-hidden="true">▾</span></button>
             <ul class="submenu" id="industries-submenu" aria-label="Industries">
               <li><a href="#industries">Industries overview</a></li>
-              <li><a href="manufacturing.html">Services for Manufacturers</a></li><li><a href="manufacturing-industries.html">Manufacturing Industries</a></li>
-              <li><a href="law.html">Services for Legal Professionals</a></li>
+              <li><a href="manufacturing.html">Services for Manufacturers</a></li>              <li><a href="law.html">Services for Legal Professionals</a></li>
               <li><a href="local-businesses.html">Services for Local Businesses</a></li>
             </ul>
           </li>
@@ -524,7 +531,7 @@
               <span class="flow-impact-line flow-impact-line--accent"><em>loses money, then fix it.</em></span>
             </h1>
             <div class="flow-hero-aside">
-              <p class="flow-hero-aside-copy">Prime helps businesses directly, not as a software vendor. We find the specific problems costing your business money, then fix them, with AI only where it earns its place.</p>
+              <p class="flow-hero-aside-copy">We help businesses directly, not as a software vendor. We find the specific problems costing your business money, then fix them, with AI only where it earns its place.</p>
               <div class="hero-actions">
                 <a class="btn btn-primary btn-uppercase flow-hero-cta" href="#industries">Find your industry</a>
                 <a class="btn btn-secondary-light btn-uppercase flow-hero-cta" href="#work">See how we work</a>
@@ -547,21 +554,21 @@
           <div class="sec-head">
             <p class="eyebrow">Industries overview</p>
             <h2>One consultancy, <em>three focused industries</em></h2>
-            <p>No matter what kind of business you run, Prime can help. These are the industries Prime is already focused on, shown as examples, not limits. Each industry has its own page with the full detail, and each one starts with its own first step, set out on its card.</p>
+            <p>No matter what kind of business you run, we can help. These are the industries we're already focused on, shown as examples, not limits. Each industry has its own page with the full detail, and each one starts with its own first step, set out on its card.</p>
           </div>
           <div class="overview-grid">
             <article class="overview-card">
-              <h3>Who Prime is</h3>
-              <p>Prime is a consultancy. Businesses hire Prime to find a specific problem and fix it, not to buy a product off a shelf.</p>
+              <h3>Who we are</h3>
+              <p>We're a consultancy. Businesses hire us to find a specific problem and fix it, not to buy a product off a shelf.</p>
               <p>The work starts with the problem, written down in plain language. AI is used only where it earns its place.</p>
             </article>
             <article class="overview-card">
               <h3>The same problem, in different buildings</h3>
               <p>At the end of the day, a plant, a law firm, and a shop all run on their data, and all of them have data problems. Systems that do not agree with each other. Definitions no one wrote down. Work waiting in intake. Customers who cannot find you.</p>
-              <p>Prime comes in, maps how the work and the data actually move, and fixes the problem in a clear order.</p>
+              <p>We come in, maps how the work and the data actually move, and fixes the problem in a clear order.</p>
             </article>
           </div>
-          <p class="overview-cta-line">The three industries below are where Prime is focused today. <strong>They are not a limit.</strong> Prime is open to other industries, and the first step is the same either way: a diagnostic or an audit, findings in writing, yours to keep. If a build is not worth doing, Prime says so.</p>
+          <p class="overview-cta-line">The three industries below are where we're focused today. <strong>They are not a limit.</strong> we're open to other industries, and the first step is the same either way: a diagnostic or an audit, findings in writing, yours to keep. If a build is not worth doing, we say so.</p>
           <div class="practices">
             <article class="practice-card">
               <!-- Photo: Pexels photo 32845694, royalty free (images.pexels.com/photos/32845694) -->
@@ -571,7 +578,7 @@
               <p>Know your operation before you trust AI. We write down how your MES, ERP, and floor systems actually work before anyone builds on them.</p>
               <div class="first-step">
                 <p class="label">First step · Prime Diagnostics</p>
-                <p>Prime Diagnostics starts in the plant. Prime goes in and meets your engineers, directors, and managers, and maps your environment as it really runs.</p>
+                <p>Prime Diagnostics starts in the plant. We go in and meet your engineers, directors, and managers, and map your environment as it really runs.</p>
               </div>
               <div class="card-actions">
                 <a class="btn btn-primary btn-uppercase" href="manufacturing.html">Services for Manufacturers</a>
@@ -599,14 +606,14 @@
               <p>We find where your business loses money online, then fix it. Shops, trades, and local services across the Santa Clarita Valley.</p>
               <div class="first-step">
                 <p class="label">First step · Free audit</p>
-                <p>The audit reviews your Google reviews, checks how your business ranks, and asks AI who it recommends when a customer asks for your kind of service. Prime meets with you in person to go through the findings, and they are yours to keep.</p>
+                <p>The audit reviews your Google reviews, checks how your business ranks, and asks AI who it recommends when a customer asks for your kind of service. We meet with you in person to go through the findings, and they are yours to keep.</p>
               </div>
               <div class="card-actions">
                 <a class="btn btn-primary btn-uppercase" href="local-businesses.html">Services for Local Businesses</a>
               </div>
             </article>
           </div>
-          <p class="other-note">Run a different kind of business? Prime can still help. Call <a href="tel:+16617795568">661-779-5568</a> or write to <a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> and tell us where your business is losing money.</p>
+          <p class="other-note">Run a different kind of business? We can still help. Call <a href="tel:+16617795568">661-779-5568</a> or write to <a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> and tell us where your business is losing money.</p>
         </div>
       </section>
 
@@ -623,7 +630,7 @@
             <article class="diag-card">
               <p class="label">The diagnostic</p>
               <h3>For manufacturers and for law and professional firms</h3>
-              <p>Prime goes in and meets the people who run the work. In a plant, that means the engineers, directors, and managers. In a firm, it means the partners and the team who handle intake and case work day to day.</p>
+              <p>We go in and meet the people who run the work. In a plant, that means the engineers, directors, and managers. In a firm, it means the partners and the team who handle intake and case work day to day.</p>
               <p>We map how the work actually flows, where it slows down, where it gets handed off, and where money is lost along the way. Nothing is proposed until that picture is written down and agreed.</p>
               <p>For law and professional firms, the diagnostic is free and takes 30 minutes. For manufacturers, it starts with a conversation about your environment.</p>
               <div class="diag-cta">
@@ -633,9 +640,9 @@
             <article class="diag-card">
               <p class="label">The audit</p>
               <h3>For local businesses</h3>
-              <p>Prime reviews your Google reviews and what they tell a customer who is deciding whether to call. Prime checks how your business ranks when customers search for your kind of service.</p>
-              <p>Prime also asks AI who it recommends when a customer asks for that service, and whether your business is the name it gives. You see where you stand today, and what is costing you calls.</p>
-              <p>You get the same attention as any other business Prime works with. Prime will meet with you in person at your business to go through the findings together and talk through what to fix first.</p>
+              <p>We review your Google reviews and what they tell a customer who is deciding whether to call. We check how your business ranks when customers search for your kind of service.</p>
+              <p>We also ask AI who it recommends when a customer asks for that service, and whether your business is the name it gives. You see where you stand today, and what is costing you calls.</p>
+              <p>You get the same attention as any other business we work with. We will meet with you in person at your business to go through the findings together and talk through what to fix first.</p>
               <p>The audit is free, and the findings are yours to keep either way.</p>
               <div class="diag-cta">
                 <a class="btn btn-primary btn-uppercase" href="#contact" data-open-form data-step="audit">Get your free audit</a>
@@ -665,9 +672,9 @@
           </ol>
           </div>
           <div class="method-principles">
-            <div class="principle"><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span><h4>Additive, never a replacement</h4><p>What already works stays in place. New work connects to your current systems and logs back into them, so nothing your business depends on gets pulled out from under it.</p></div>
+            <div class="principle"><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14" /></svg></span><h4>Add to what works</h4><p>What already works stays in place. New work connects to your current systems and logs back into them, so nothing your business depends on gets pulled out from under it.</p></div>
             <div class="principle"><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" /></svg></span><h4>One system, one decision at a time</h4><p>We do not rebuild everything at once. Each change is small enough to check, and each decision is written down before the next one is made.</p></div>
-            <div class="principle"><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4" /><path d="M10.8 12.2 20 3M16.5 6.5l2.5 2.5M13.8 9.2l2.5 2.5" /></svg></span><h4>You own everything</h4><p>The site, the content, the profiles, and the systems we build are yours to keep. If we stopped working together, it all stays with your business.</p></div>
+            <div class="principle"><span class="principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4" /><path d="M10.8 12.2 20 3M16.5 6.5l2.5 2.5M13.8 9.2l2.5 2.5" /></svg></span><h4>You keep everything we build</h4><p>The site, the content, the profiles, and the systems we build are yours to keep. If we stopped working together, it all stays with your business.</p></div>
           </div>
         </div>
       </section>
@@ -676,7 +683,7 @@
       <section class="flow-section flow-section--mist" id="work">
         <div class="container">
           <div class="sec-head">
-            <p class="eyebrow">How Prime works</p>
+            <p class="eyebrow">How we work</p>
             <h2>First step. Consult.</h2>
             <p>Each step earns the next one. We do not sell you the last step first.</p>
           </div>
@@ -697,7 +704,7 @@
               <div class="principle"><h4>Your number stays your number</h4><p>For local businesses, nothing ports your main number on day one. Call help starts after hours or in shadow mode, with a kill switch you control.</p></div>
               <div class="principle"><h4>Diagnostics first</h4><p>We write the operation down before we build. How your systems and your day actually work comes first, in plain language, before anyone proposes a tool.</p></div>
               <div class="principle"><h4>Pricing on the call</h4><p>The local business audit and the law firm diagnostic are free. Everything after that is priced on the call, not on this page. You approve a written quote before any paid work begins.</p></div>
-              <div class="principle"><h4>Local and in person where it matters</h4><p>Prime is based in the Santa Clarita Valley. We meet where you work when it matters, and we talk through the work face to face.</p></div>
+              <div class="principle"><h4>Local and in person where it matters</h4><p>We're based in the Santa Clarita Valley. We meet where you work when it matters, and we talk through the work face to face.</p></div>
             </div>
           </div>
         </div>
@@ -709,7 +716,7 @@
           <div class="sec-head">
             <p class="eyebrow">Who we are</p>
             <h2>Father and son, different decades of <em>the same work</em></h2>
-            <p>Prime is two people, deliberately, so the people who listen to your business at the start are the same people who build and explain what follows.</p>
+            <p>We're two people, deliberately, so the people who listen to your business at the start are the same people who build and explain what follows.</p>
           </div>
           <div class="founders">
             <article class="person">
@@ -726,7 +733,7 @@
               </div>
               <span class="role">Co-Founder and COO</span>
               <h3>Fernando Rojas</h3>
-              <p>Fernando leads strategy, service design, and client experience. He runs the first step with you, puts the findings in plain language and in a clear order, and stays with the work through the build, so what Prime delivers matches what was agreed on the call.</p>
+              <p>Fernando leads strategy, service design, and client experience. He runs the first step with you, puts the findings in plain language and in a clear order, and stays with the work through the build, so what we deliver matches what was agreed on the call.</p>
             </article>
           </div>
         </div>
@@ -740,10 +747,10 @@
             <h2>Questions owners <em>ask us</em></h2>
           </div>
           <div class="faq">
-            <details class="faq-item"><summary>What does the first step cost?</summary><div class="a"><p>Nothing, for the audit and the law firm diagnostic. The audit for a local business is free, and the diagnostic for a law firm is free, and you keep the findings either way. Take them and act on them yourself, hand them to someone else, or hire Prime to fix what they show. Neither one commits you to any paid work. Manufacturing starts with Prime Diagnostics, and it begins with a conversation about your environment.</p></div></details>
+            <details class="faq-item"><summary>What does the first step cost?</summary><div class="a"><p>Nothing, for the audit and the law firm diagnostic. The audit for a local business is free, and the diagnostic for a law firm is free, and you keep the findings either way. Take them and act on them yourself, hand them to someone else, or hire us to fix what they show. Neither one commits you to any paid work. Manufacturing starts with Prime Diagnostics, and it begins with a conversation about your environment.</p></div></details>
             <details class="faq-item"><summary>Will you replace our current systems?</summary><div class="a"><p>No. Our work is additive, never a replacement. Your current system stays the source of truth, and anything new connects to it and logs back into it.</p></div></details>
             <details class="faq-item"><summary>How much does the work cost?</summary><div class="a"><p>Pricing happens on the call, because the right scope depends on what your business actually needs. You get a written quote before any paid work starts, and you can say no to that quote and keep the findings either way.</p></div></details>
-            <details class="faq-item"><summary>Which businesses do you work with?</summary><div class="a"><p>Any business. The industries Prime is focused on today are manufacturers, law and professional firms, and local businesses. Pick the industry above that fits, and that page shows the work in detail. If none of them fits, call and tell us about your business.</p></div></details>
+            <details class="faq-item"><summary>Which businesses do you work with?</summary><div class="a"><p>Any business. The industries we're focused on today are manufacturers, law and professional firms, and local businesses. Pick the industry above that fits, and that page shows the work in detail. If none of them fits, call and tell us about your business.</p></div></details>
             <details class="faq-item"><summary>Do you only work in Santa Clarita?</summary><div class="a"><p>No. The Santa Clarita Valley is home. Manufacturing and professional work reaches more broadly, and local business work is in person across the Santa Clarita Valley, the San Fernando Valley, and Los Angeles.</p></div></details>
           </div>
         </div>
@@ -769,7 +776,7 @@
             <form class="first-step-form" id="first-step-form">
               <h3>Tell us about your business</h3>
               <p class="form-step" id="form-step-line">Your first step is a diagnostic or a free audit, depending on your industry.</p>
-              <p class="form-intro">Write down the basics and where things stand. Only your name and email are required. Everything else helps Prime come to the first conversation prepared.</p>
+              <p class="form-intro">Write down the basics and where things stand. Only your name and email are required. Everything else helps we come to the first conversation prepared.</p>
               <div class="form-grid">
                 <div class="form-field">
                   <label for="fs-name">Name <span class="req" aria-hidden="true">*</span></label>
@@ -808,8 +815,8 @@
               </div>
               <div class="form-submit-row">
                 <button class="btn btn-primary btn-uppercase" type="submit">Send by email</button>
-                <p class="form-note">Sending opens your email app with these details addressed to Fernando@primeaiconsultants.com. Press send there and Prime has it. Prefer to talk? Call <a href="tel:+16617795568">661-779-5568</a>.</p>
-                <p class="form-sent" id="form-sent" hidden>Your email app should be open with your details filled in. Press send there to reach Prime.</p>
+                <p class="form-note">Sending opens your email app with these details addressed to Fernando@primeaiconsultants.com. Press send there and we have it. Prefer to talk? Call <a href="tel:+16617795568">661-779-5568</a>.</p>
+                <p class="form-sent" id="form-sent" hidden>Your email app should be open with your details filled in. Press send there to reach us.</p>
               </div>
             </form>
           </div>
@@ -833,7 +840,7 @@
           <p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a></p>
         </div>
         <nav class="footer-links" aria-label="Prime AI Consultants pages">
-          <a href="#diagnostics">Diagnostics</a>
+          <a href="#top">Home</a> <a href="#diagnostics">Diagnostics</a>
           <a href="#methodology">Methodology</a>
           <a href="#industries">Industries Overview</a>
           <a href="manufacturing.html">Services for Manufacturers</a>
@@ -971,14 +978,63 @@
             var subject = "First step request";
             var business = get("fs-business");
             if (business) { subject += " from " + business; }
-            window.location.href = "mailto:Fernando@primeaiconsultants.com"
+            var mailLink = document.createElement("a");
+            mailLink.href = "mailto:Fernando@primeaiconsultants.com"
               + "?subject=" + encodeURIComponent(subject)
               + "&body=" + encodeURIComponent(lines.join("\n"));
+            document.body.appendChild(mailLink);
+            mailLink.click();
+            mailLink.remove();
             var sent = document.getElementById("form-sent");
-            if (sent) { sent.hidden = false; }
+            if (sent) {
+              sent.hidden = false;
+              sent.setAttribute("tabindex", "-1");
+              window.setTimeout(function () {
+                sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                sent.focus({ preventScroll: true });
+              }, 50);
+            }
           });
         }
 
+
+        /* UAT 2026-11-11: nav active pill follows the clicked item and the section in view. */
+        var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll(".nav-links a")) : [];
+        var spySections = ["diagnostics", "methodology", "industries", "about", "contact"];
+        function setActiveNav(key) {
+          navLinks.forEach(function (a) {
+            var href = a.getAttribute("href") || "";
+            var on = (key === "home" && href === "#top") || href === "#" + key;
+            a.classList.toggle("active", on);
+            if (on) { a.setAttribute("aria-current", "page"); } else { a.removeAttribute("aria-current"); }
+          });
+        }
+        navLinks.forEach(function (a) {
+          a.addEventListener("click", function () {
+            var href = a.getAttribute("href") || "";
+            if (href === "#top") { setActiveNav("home"); }
+            else if (href.charAt(0) === "#") { setActiveNav(href.slice(1)); }
+          });
+        });
+        function updateActiveOnScroll() {
+          var offset = (nav ? nav.offsetHeight : 72) + 32;
+          var pos = window.scrollY + offset;
+          var current = "home";
+          spySections.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top + window.scrollY <= pos) { current = id; }
+          });
+          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) { current = "contact"; }
+          setActiveNav(current);
+        }
+        window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
+        window.addEventListener("resize", updateActiveOnScroll);
+        window.addEventListener("hashchange", function () {
+          var id = window.location.hash.slice(1);
+          if (id === "top" || id === "") { setActiveNav("home"); }
+          else if (spySections.indexOf(id) !== -1) { setActiveNav(id); }
+        });
+        updateActiveOnScroll();
         var callbar = document.querySelector(".mobile-callbar");
         if (callbar) {
           var onScroll = function () {

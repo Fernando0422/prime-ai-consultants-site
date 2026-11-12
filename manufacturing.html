@@ -44,8 +44,9 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .nav-links a,.nav-dropdown-toggle{display:inline-flex;align-items:center;min-height:38px;padding:0 9px;border-radius:999px;color:rgba(10,15,30,.72);text-decoration:none;font-family:var(--fb);font-size:.78rem;font-weight:500;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;background:none;border:none;cursor:pointer}
 .nav-links a:hover,.nav-dropdown-toggle:hover{color:var(--dark);background:rgba(10,15,30,.06)}.nav-links a.active,.nav-dropdown-toggle.active{color:var(--teal-text);background:rgba(59,168,154,.14);font-weight:700}.nav-dropdown a.active{background:rgba(59,168,154,.14);color:var(--teal-text)}.mobile-menu a.active{color:var(--teal-text);font-weight:700}
 .nav-has-dropdown{position:relative}
+.nav-has-dropdown::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px;}
 .nav-caret{font-size:.62rem;margin-left:5px;line-height:1;color:var(--teal-text)}
-.nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translate(-50%,4px);min-width:228px;background:var(--white);border:1px solid rgba(10,15,30,.1);border-radius:14px;box-shadow:var(--sh-md);padding:8px;list-style:none;margin:0;opacity:0;visibility:hidden;transition:opacity 160ms ease,transform 160ms ease,visibility 160ms;z-index:60}
+.nav-dropdown{position:absolute;top:100%;left:50%;transform:translate(-50%,4px);min-width:228px;background:var(--white);border:1px solid rgba(10,15,30,.1);border-radius:14px;box-shadow:var(--sh-md);padding:8px;list-style:none;margin:0;opacity:0;visibility:hidden;transition:opacity 160ms ease,transform 160ms ease,visibility 160ms;z-index:60}
 .nav-dropdown::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
 .nav-has-dropdown:hover .nav-dropdown,.nav-has-dropdown:focus-within .nav-dropdown,.nav-has-dropdown.is-open .nav-dropdown{opacity:1;visibility:visible;transform:translate(-50%,0)}
 .nav-dropdown li{display:block}
@@ -185,6 +186,12 @@ footer.site p,footer.site a{font-size:.92rem;color:rgba(255,255,255,.72)}footer.
 .callout p{color:var(--tbody);margin-top:10px}
 table.conf{width:100%;border-collapse:collapse;font-size:.97rem}table.conf th,table.conf td{text-align:left;padding:10px 12px;border-top:1px solid rgba(10,15,30,.12);vertical-align:top}table.conf th{color:var(--dark)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav-toggle .bars,.nav-toggle .bars::before,.nav-toggle .bars::after,.nav-dropdown{transition:none}}
+</style>
+<style>/* UAT-2026-11-11 */
+html{scroll-padding-top:110px}
+section[id]{scroll-margin-top:110px}
+[hidden]{display:none!important}
+.nav-cta .btn{white-space:nowrap;flex:0 0 auto}
 </style>
 </head>
 <body>
@@ -536,7 +543,7 @@ table.conf{width:100%;border-collapse:collapse;font-size:.97rem}table.conf th,ta
 <p class="eyebrow">Contact</p>
 <h2>Have a system that <em>doesn’t explain itself?</em></h2>
 <p>Tell us which system is involved, what question you are trying to answer, and what seems to be getting in the way. Send it as a short note, and we will tell you honestly whether a focused diagnostic makes sense and whether we are the right fit.</p>
-<div class="contact-actions"><a class="btn btn-primary btn-uppercase" href="mailto:hello@primeaiconsultants.com">Discuss your environment <span aria-hidden="true">↗</span></a><a class="btn btn-outline-light btn-uppercase" href="tel:+18052164651">Call (805) 216-4651</a></div>
+<div class="contact-actions"><a class="btn btn-primary btn-uppercase" href="mailto:Fernando@primeaiconsultants.com">Discuss your environment <span aria-hidden="true">↗</span></a><a class="btn btn-outline-light btn-uppercase" href="tel:+16617795568">Call 661-779-5568</a></div>
 <p class="contact-meta">We read every inquiry ourselves. There are no queue bots.</p>
 <form class="contact-form" id="manufacturer-contact-form">
 <div class="form-grid">
@@ -548,13 +555,13 @@ table.conf{width:100%;border-collapse:collapse;font-size:.97rem}table.conf th,ta
 <div id="cf-other-wrap" hidden><label for="cf-industry-other">Industry, please specify</label><input id="cf-industry-other" name="industry_other" type="text" /></div>
 <div class="form-full"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message"></textarea></div>
 </div>
-<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send inquiry <span aria-hidden="true">↗</span></button><p class="form-note">Submitting opens your email app, addressed to hello@primeaiconsultants.com.</p></div>
+<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send inquiry <span aria-hidden="true">↗</span></button><p class="form-note">Submitting opens your email app, addressed to Fernando@primeaiconsultants.com.</p></div>
 </form>
 <div class="contact-grid">
-<div class="contact-cell"><p class="label">General email</p><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a></div>
-<div class="contact-cell"><p class="label">Phone</p><a href="tel:+18052164651">(805) 216-4651</a></div>
+<div class="contact-cell"><p class="label">General email</p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a></div>
+<div class="contact-cell"><p class="label">Phone</p><a href="tel:+16617795568">661-779-5568</a></div>
 <div class="contact-cell"><p class="label">Antonio Rojas</p><a href="mailto:antonio.rojas@primeaiconsultants.com">antonio.rojas@primeaiconsultants.com</a></div>
-<div class="contact-cell"><p class="label">Location</p><p>Based in Greater Los Angeles, California</p></div>
+<div class="contact-cell"><p class="label">Location</p><p>Based in Santa Clarita, California</p></div>
 <div class="contact-cell"><p class="label">What happens next</p><p>We read every note personally. A first conversation helps us understand your environment, see whether we are a fit, and work out what, if anything, belongs in a later conversation under a written agreement.</p></div>
 <div class="contact-cell"><p class="label">Start with</p><p>It starts with one conversation to clarify fit, before anyone talks about a larger engagement. Please keep sensitive material out of that first note.</p></div>
 </div>
@@ -565,8 +572,8 @@ table.conf{width:100%;border-collapse:collapse;font-size:.97rem}table.conf th,ta
 <div class="container"><div class="footer-in">
 <div>
 <a class="footer-brand" href="#home"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true" width="40" height="40"><path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#FFFFFF" stroke-width="17"/><circle cx="50" cy="50" r="11" fill="#3BA89A"/></svg><span class="brand-text"><span class="brand-name">Prime AI</span><span class="brand-sub">CONSULTANTS</span></span></a>
-<p>Manufacturing practice. Prime AI Consultants helps organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation begins.</p>
-<p style="margin-top:8px"><a href="mailto:hello@primeaiconsultants.com">hello@primeaiconsultants.com</a> · <a href="tel:+18052164651">(805) 216-4651</a> · Greater Los Angeles, California</p>
+<p>Manufacturing practice. We help organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation begins.</p>
+<p style="margin-top:8px"><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a> · Santa Clarita, California</p>
 </div>
 <nav class="footer-links" aria-label="Footer">
 <a href="index.html">Home</a><a href="#diagnostics">Diagnostics</a><a href="#methodology">Methodology</a><a href="#services">Services</a><a href="#applications">Applications overview</a><a href="#mes">AI for MES</a><a href="#erp">AI for ERP</a><a href="#crm">AI for CRM</a><a href="#insights">Insights</a><a href="#about">About</a><a href="#contact">Contact</a>
@@ -591,9 +598,9 @@ var spySections=['home','problem','work','diagnostics','services','methodology',
 var currentNavKey='__init__';var currentSubId='__init__';
 function setActiveNav(navKey,subId){
 if(navKey===currentNavKey&&subId===currentSubId)return;currentNavKey=navKey;currentSubId=subId;
-document.querySelectorAll('.nav-links>li>a').forEach(function(a){var on=a.getAttribute('href')==='#'+navKey;a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
+document.querySelectorAll('.nav-links>li>a').forEach(function(a){var on=a.getAttribute('href')==='#'+navKey||(navKey==='home'&&a.getAttribute('href')==='index.html');a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
 if(ddToggle){var onApp=navKey==='applications';ddToggle.classList.toggle('active',onApp);if(onApp){ddToggle.setAttribute('aria-current','true');}else{ddToggle.removeAttribute('aria-current');}}
-document.querySelectorAll('.nav-dropdown a').forEach(function(a){var on=a.getAttribute('href')==='#'+subId||(navKey==='applications'&&a.getAttribute('href')==='#applications'&&subId==='applications');a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
+document.querySelectorAll('.nav-dropdown a').forEach(function(a){var on=a.getAttribute('href')==='#'+subId&&subId!=='applications';a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
 document.querySelectorAll('.mobile-menu a').forEach(function(a){var h=a.getAttribute('href');var on=h==='#'+subId||h==='#'+navKey;a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
 }
 function setActiveForSection(sectionId){if(!(sectionId in sectionToNav))return;setActiveNav(sectionToNav[sectionId],sectionId);}
@@ -630,7 +637,7 @@ if(v('cf-business')){lines.push('Business name: '+v('cf-business'));}
 if(v('cf-phone')){lines.push('Phone: '+v('cf-phone'));}
 lines.push('Industry: '+industry);
 if(v('cf-message')){lines.push('','Message:',v('cf-message'));}
-window.location.href='mailto:hello@primeaiconsultants.com?subject='+encodeURIComponent('Manufacturing inquiry from '+v('cf-name'))+'&body='+encodeURIComponent(lines.join('\n'));});}
+window.location.href='mailto:Fernando@primeaiconsultants.com?subject='+encodeURIComponent('Manufacturing inquiry from '+v('cf-name'))+'&body='+encodeURIComponent(lines.join('\n'));});}
 })();
 </script>
 </body>

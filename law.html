@@ -432,7 +432,13 @@
         .mobile-callbar, .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { transition: none; }
       }
     </style>
-  </head>
+  <style>/* UAT-2026-11-11 */
+html{scroll-padding-top:110px}
+section[id]{scroll-margin-top:110px}
+[hidden]{display:none!important}
+@media(max-width:640px){.nav-cta .btn{display:none}}
+</style>
+</head>
   <body>
     <nav class="site-nav" aria-label="Primary navigation" id="site-nav">
       <div class="nav-inner">
@@ -461,11 +467,11 @@
         </div>
       </div>
       <ul class="mobile-menu" id="mobile-menu">
-        <li><a href="#needs">What Prime handles</a></li>
+        <li><a href="#needs">What we handle</a></li>
         <li><a href="#losses">Where firms lose</a></li>
-        <li><a href="#work">What Prime does</a></li>
+        <li><a href="#work">What we do</a></li>
         <li><a href="#faq">Questions</a></li>
-        <li><a href="#about">About Prime</a></li>
+        <li><a href="#about">About us</a></li>
         <li><a href="tel:+16617795568">Call 661 779 5568</a></li>
       </ul>
     </nav>
@@ -481,7 +487,7 @@
             </h1>
             <p class="flow-hero-tagline">For law firms and professional services</p>
             <div class="flow-hero-aside">
-              <p class="flow-hero-aside-copy">Prime works with firms where a new matter cannot wait for the morning, and neither can the records and documents that come with it. We find where the work waits, then build calm, practical support around intake, case work, and document preparation, inside the tools your team already uses.</p>
+              <p class="flow-hero-aside-copy">We work with firms where a new matter cannot wait for the morning, and neither can the records and documents that come with it. We find where the work waits, then build calm, practical support around intake, case work, and document preparation, inside the tools your team already uses.</p>
               <a class="btn btn-primary btn-uppercase flow-hero-cta" href="tel:+16617795568">Call for your free diagnostic <span aria-hidden="true">↗</span></a>
               <p class="hero-note">The diagnostic is free and takes 30 minutes. You keep the findings and the roadmap either way, whether we work together or not.</p>
             </div>
@@ -499,7 +505,7 @@
       <section class="flow-section flow-section--light" id="needs">
         <div class="container">
           <div class="sec-head">
-            <p class="eyebrow">What Prime handles</p>
+            <p class="eyebrow">What we handle</p>
             <h2>The work behind <em>every matter</em></h2>
             <p>Most of the strain in a firm is not in the legal work itself. It sits in everything around it, in the calls, the chasing, and the reading that has to happen before the real work can begin.</p>
           </div>
@@ -579,7 +585,7 @@
       <section class="flow-section flow-section--light" id="work">
         <div class="container">
           <div class="sec-head">
-            <p class="eyebrow">How Prime works</p>
+            <p class="eyebrow">How we work</p>
             <h2><span style="display:block">Listen.</span><span style="display:block">Build one thing well.</span><span style="display:block"><em>Hand it over properly.</em></span></h2>
             <p>Each step earns the next one. We do not sell you the last step first.</p>
           </div>
@@ -627,7 +633,7 @@
           <div class="sec-head">
             <p class="eyebrow">Our foundation</p>
             <h2>How we work</h2>
-            <p>Prime is a consultancy, not a software vendor. You hire us to find where your firm loses time and to fix those specific problems. Six commitments come with that.</p>
+            <p>We're a consultancy, not a software vendor. You hire us to find where your firm loses time and to fix those specific problems. Six commitments come with that.</p>
           </div>
           <div class="principles">
             <div class="principle"><h3>You own everything</h3><p>Accounts, workflows, and documentation are set up in the firm name. If we stopped working together, it all stays with you.</p></div>
@@ -649,15 +655,15 @@
             <p>Partners ask careful questions before letting anyone near client work, and rightly so. Here are our answers, as plainly as we can give them.</p>
           </div>
           <div class="faq">
-            <details class="faq-item"><summary>Will this replace our case management system?</summary><div class="a"><p>No. Your case system stays the source of truth, and everything Prime builds logs back into it. Prime works alongside what your firm already runs, connecting through Zapier, Make, or n8n where that fits. If a workflow cannot connect cleanly, Prime will say so before anything is built, not after.</p></div></details>
+            <details class="faq-item"><summary>Will this replace our case management system?</summary><div class="a"><p>No. Your case system stays the source of truth, and everything we build logs back into it. We work alongside what your firm already runs, connecting through Zapier, Make, or n8n where that fits. If a workflow cannot connect cleanly, we will say so before anything is built, not after.</p></div></details>
             <details class="faq-item"><summary>What about confidentiality and privilege?</summary><div class="a"><p>Client work starts only inside tools your firm has chosen and approved, such as Claude Enterprise, ChatGPT Enterprise, or Gemini in your firm workspace, with access limited to the people who need it. No client files are placed into personal or consumer tools for convenience. And some workflows should not use AI at all. Part of the diagnostic is telling you plainly which ones those are at your firm.</p></div></details>
             <details class="faq-item"><summary>Will AI speak to our clients without us knowing?</summary><div class="a"><p>No. Everything begins in shadow mode, where the system drafts and logs and your team reviews before anything is sent. Client facing use, such as after hours intake coverage, happens only if you approve it after seeing it work, with full logs your team can read and a simple keyword that stops it at once.</p></div></details>
-            <details class="faq-item"><summary>Do we have to change our phone number or our systems to start?</summary><div class="a"><p>No. Your main number is not ported and nothing is replaced to begin. Prime first maps your current lead flow, so new support fits the way inquiries already arrive and nothing fires twice or falls between two systems.</p></div></details>
+            <details class="faq-item"><summary>Do we have to change our phone number or our systems to start?</summary><div class="a"><p>No. Your main number is not ported and nothing is replaced to begin. We first map your current lead flow, so new support fits the way inquiries already arrive and nothing fires twice or falls between two systems.</p></div></details>
             <details class="faq-item"><summary>Why bring in outside help for this at all?</summary><div class="a"><p>Mostly because the everyday work does not pause while you figure out a new way of doing it. An outside perspective can map what is actually happening, make a clear plan, and get one useful thing working while your team keeps serving clients. Whatever is built is documented, so your firm can carry it forward in whatever way suits you best.</p></div></details>
             <details class="faq-item"><summary>Which tools will you actually use?</summary><div class="a"><p>Usually the ones your team already knows a little, such as Claude, ChatGPT, and Gemini for reading and drafting, with Zapier, Make, and n8n connecting the systems around them and Relevance AI or Lindy where a small, focused helper makes sense. When an answer lives inside your documents, we draw it from your own files, and the accounts always stay in your firm name.</p></div></details>
-            <details class="faq-item"><summary>We tried AI tools before and staff did not use them.</summary><div class="a"><p>That usually happens when a tool is placed on top of the work instead of inside it. Prime starts with the workflow itself, builds with the staff who will use it, trains them in person, and leaves written guidance behind. Adoption is part of the job, not an afterthought.</p></div></details>
+            <details class="faq-item"><summary>We tried AI tools before and staff did not use them.</summary><div class="a"><p>That usually happens when a tool is placed on top of the work instead of inside it. We start with the workflow itself, build with the staff who will use it, trains them in person, and leaves written guidance behind. Adoption is part of the job, not an afterthought.</p></div></details>
             <details class="faq-item"><summary>What does it cost?</summary><div class="a"><p>The diagnostic itself is free. Afterwards the scope and price are put in writing before any build begins, based on what we found together and the one place it makes most sense to start. There is no standard price list because there is no standard problem, and the work is shaped around your firm rather than taken off a shelf.</p></div></details>
-            <details class="faq-item"><summary>Who owns the work if we stop working together?</summary><div class="a"><p>You do. Accounts are opened in the firm name, workflows and documentation are handed over in full, and your team is trained to run them. Prime earns continued work by results, not by holding the keys.</p></div></details>
+            <details class="faq-item"><summary>Who owns the work if we stop working together?</summary><div class="a"><p>You do. Accounts are opened in the firm name, workflows and documentation are handed over in full, and your team is trained to run them. We earn continued work by results, not by holding the keys.</p></div></details>
           </div>
         </div>
       </section>
@@ -666,9 +672,9 @@
       <section class="flow-section flow-section--mist" id="about">
         <div class="container">
           <div class="sec-head">
-            <p class="eyebrow">About Prime</p>
+            <p class="eyebrow">About us</p>
             <h2>Who you would be <em>working with</em></h2>
-            <p>Prime is two people, deliberately, so the person who listens to your firm at the start is the same person who builds and explains what follows.</p>
+            <p>We're two people, deliberately, so the person who listens to your firm at the start is the same person who builds and explains what follows.</p>
           </div>
           <div class="founders">
             <article class="person">
@@ -677,8 +683,8 @@
               </div>
               <span class="role">Cofounder · Design and Engineering</span>
               <h3>Fernando Rojas</h3>
-              <p>Fernando leads diagnostics and builds. Every Prime engagement starts with him. He follows an inquiry from the first ring through to a signed client, maps where the work waits, gets done twice, or depends on memory, and puts those findings in writing, in a clear order of what would help most. That map becomes the build itself, so nothing Prime delivers is a guess at how your firm works.</p>
-              <p>He builds the systems, automations, and integrations Prime delivers, from the intake support that answers after hours to the tools that turn records and billing into chronologies and drafts your team can use. Everything is shaped around the tools your firm already runs and logs back into them. He trains your staff on it himself, in person and in plain language, so it holds up on an ordinary day, long after handover.</p>
+              <p>Fernando leads diagnostics and builds. Every engagement starts with him. He follows an inquiry from the first ring through to a signed client, maps where the work waits, gets done twice, or depends on memory, and puts those findings in writing, in a clear order of what would help most. That map becomes the build itself, so nothing we deliver is a guess at how your firm works.</p>
+              <p>He builds the systems, automations, and integrations we deliver, from the intake support that answers after hours to the tools that turn records and billing into chronologies and drafts your team can use. Everything is shaped around the tools your firm already runs and logs back into them. He trains your staff on it himself, in person and in plain language, so it holds up on an ordinary day, long after handover.</p>
             </article>
             <article class="person">
               <div class="founder-photo">
@@ -686,17 +692,17 @@
               </div>
               <span class="role">Cofounder · Enterprise Systems</span>
               <h3>Antonio Rojas</h3>
-              <p>Antonio leads governance and review at Prime, drawing on more than 30 years running systems inside large, regulated operations. Before anything new touches client work, he decides what is allowed near it: which tools, which access, and which approvals come first. Every workflow Prime builds starts in review, where your team can read the logs and stop it at once.</p>
-              <p>That discipline shapes everything Prime delivers. Access stays limited to the people who need it, every change is documented and can be reversed, and nothing reaches a client until someone at your firm has approved it. It is the careful way to work, and it is the way Prime works on every engagement.</p>
+              <p>Antonio leads governance and review at Prime, drawing on more than 30 years running systems inside large, regulated operations. Before anything new touches client work, he decides what is allowed near it: which tools, which access, and which approvals come first. Every workflow we build starts in review, where your team can read the logs and stop it at once.</p>
+              <p>That discipline shapes everything we deliver. Access stays limited to the people who need it, every change is documented and can be reversed, and nothing reaches a client until someone at your firm has approved it. It is the careful way to work, and it is the way we work on every engagement.</p>
             </article>
           </div>
 
           <div class="research">
-            <h3>Researching Prime? Start here.</h3>
-            <p>This page is written for law and professional services firms. Prime does other work as well, and you are welcome to look through all of it.</p>
+            <h3>Researching us? Start here.</h3>
+            <p>This page is written for law and professional services firms. We do other work as well, and you are welcome to look through all of it.</p>
             <div class="link-rows">
               <a class="link-row" href="manufacturing.html">
-                <span><span class="lr-title">Prime for manufacturing and operations</span><span class="lr-desc">The original Prime page, written for operations leaders and plant teams.</span></span>
+                <span><span class="lr-title">Our work in manufacturing and operations</span><span class="lr-desc">Our original manufacturing page, written for operations leaders and plant teams.</span></span>
                 <span class="lr-arrow" aria-hidden="true">→</span>
               </a>
               <a class="link-row" href="https://fernandorojasstudio.com" target="_blank" rel="noopener">
@@ -760,7 +766,7 @@
           <a href="https://www.linkedin.com/in/fernando-rojas0422" target="_blank" rel="noopener">Fernando on LinkedIn</a>
           <a href="https://github.com/Fernando0422" target="_blank" rel="noopener">Fernando on GitHub</a>
         <a href="index.html">Home</a><a href="manufacturing-industries.html">Manufacturing Industries</a></nav>
-        <p class="footer-note">This page is written for law firms and professional services firms, and covers the work Prime does around intake, case work, medical record review, demand preparation, and the documents behind them. Prime also serves manufacturers and local businesses, and those pages are linked above so you can judge the whole practice, not just the part aimed at you. © 2026 Prime AI Consultants LLC. All rights reserved.</p>
+        <p class="footer-note">This page is written for law firms and professional services firms, and covers the work we do around intake, case work, medical record review, demand preparation, and the documents behind them. We also serve manufacturers and local businesses, and those pages are linked above so you can judge the whole practice, not just the part aimed at you. © 2026 Prime AI Consultants LLC. All rights reserved.</p>
       </div>
     </footer>
 
@@ -811,5 +817,40 @@
         }
       })();
     </script>
-  </body>
+  
+<script>
+/* UAT 2026-11-11: nav active pill follows the clicked item and the section in view. */
+(function(){
+  var nav=document.getElementById('site-nav');
+  var links=nav?Array.prototype.slice.call(nav.querySelectorAll('.nav-links a')):[];
+  var spySections=['needs','losses','work','how','faq','about','contact'];
+  function setActive(key){
+    links.forEach(function(a){
+      var href=a.getAttribute('href')||'';
+      var on=href==='#'+key;
+      a.classList.toggle('active',on);
+      if(on){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}
+    });
+  }
+  links.forEach(function(a){
+    a.addEventListener('click',function(){
+      var href=a.getAttribute('href')||'';
+      if(href.charAt(0)==='#'){setActive(href.slice(1));}
+    });
+  });
+  function onScroll(){
+    var offset=(nav?nav.offsetHeight:72)+32; var pos=window.scrollY+offset; var current='needs';
+    spySections.forEach(function(id){
+      var el=document.getElementById(id);
+      if(el&&el.getBoundingClientRect().top+window.scrollY<=pos){current=id;}
+    });
+    if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4){current='contact';}
+    setActive(current);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  onScroll();
+})();
+</script>
+</body>
 </html>
