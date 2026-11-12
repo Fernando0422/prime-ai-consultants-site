@@ -44,12 +44,16 @@ section{scroll-margin-top:96px}
 .nav-links{list-style:none;display:flex;gap:.15rem;margin:0 0 0 auto;padding:0;align-items:center}
 .nav-links>li{position:relative}
 .nav-links>li::after{content:"";position:absolute;left:0;right:0;top:100%;height:10px;}
-.nav-links a,.nav-dropdown-toggle{font-family:var(--fd);font-weight:600;font-size:.92rem;color:var(--tdark);text-decoration:none;padding:.55rem .7rem;border-radius:var(--r-sm);display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;min-height:2.25rem}
-.nav-links a:hover,.nav-dropdown-toggle:hover{color:var(--teal-text)}
-.nav-links a.active{color:var(--teal-text);box-shadow:inset 0 -2px 0 var(--teal)}
+/* Nav active pill, copied from the homepage (index.html): solid mint-teal
+   pill, same colour, padding, radius and hover. Was teal text with an
+   inset 2px underline. Scoped to top-level links only (>li>) so the
+   Applications submenu links keep their own small-radius style. */
+.nav-links>li>a,.nav-links>li>.nav-dropdown-toggle{font-family:var(--fd);font-weight:600;font-size:.92rem;color:rgba(10,15,30,.72);text-decoration:none;padding:0 clamp(8px,.85vw,14px);border-radius:999px;display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;min-height:42px;white-space:nowrap}
+.nav-links>li>a:hover,.nav-links>li>.nav-dropdown-toggle:hover{color:var(--dark);background:rgba(10,15,30,.06)}
+.nav-links a.active{color:var(--teal-text);background:rgba(59,168,154,.14);font-weight:700;box-shadow:none}
 .nav-dropdown{list-style:none;position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-md);padding:.45rem;margin:0;min-width:230px;display:none}
 .nav-dropdown.open{display:block}
-.nav-dropdown a{display:flex;width:100%;padding:.5rem .6rem}
+.nav-dropdown a{display:flex;width:100%;padding:.5rem .6rem;font-family:var(--fd);font-weight:600;font-size:.92rem;color:var(--tdark);text-decoration:none;border-radius:var(--r-sm)}
 .nav-dropdown-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8A8A99;padding:.45rem .6rem .15rem}
 .nav-cta{display:flex;align-items:center;gap:.6rem;margin-left:.4rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;text-decoration:none;border-radius:var(--r-sm);padding:.7rem 1.2rem;min-height:2.75rem;border:1px solid transparent;cursor:pointer;font-size:.95rem}
@@ -729,7 +733,18 @@ section[id]{scroll-margin-top:110px}
    mid-scroll. Fixed the same way: list in document order, and a click
    locks the spy out for 1200ms so the clicked item stays lit until the
    smooth scroll arrives, then the spy resumes. Trigger line widened
-   from nav + 32 to nav + 48 against the 110px scroll-margin. */
+   from nav + 32 to nav + 48 against the 110px scroll-margin.
+   2026-11-11, pill unification: this page's nav is only ~60px tall
+   (homepage 88px), so nav + 48 is ~108px against the same 110px
+   scroll-margin and #industries landed ~2px BELOW the trigger line at
+   its anchor position, so the spy read 'home' until you scrolled
+   further (the live Industries lag). Trigger widened to nav + 72, so
+   the section counts as in view ~22px past its landing position.
+   Click lock extended to 2000ms: the longest jump here (Contact to
+   Industries) can outlast 1200ms of smooth scrolling. A hashchange
+   handler (as on the homepage) now also sets the pill straight from
+   the URL hash, so a #industries navigation lights Industries even
+   if the spy math is ever borderline again. */
 (function(){
   var nav=document.querySelector('.site-nav')||document.querySelector('nav');
   var links=nav?Array.prototype.slice.call(nav.querySelectorAll('.nav-links a')):[];
@@ -746,14 +761,14 @@ section[id]{scroll-margin-top:110px}
   links.forEach(function(a){
     a.addEventListener('click',function(){
       var href=a.getAttribute('href')||'';
-      spyLockUntil=Date.now()+1200;
+      spyLockUntil=Date.now()+2000;
       if(href==='index.html'){setActive('home');}
       else if(href.charAt(0)==='#'){setActive(href.slice(1));}
     });
   });
   function onScroll(){
     if(Date.now()<spyLockUntil){return;}
-    var offset=(nav?nav.offsetHeight:72)+48; var pos=window.scrollY+offset; var current='home';
+    var offset=(nav?nav.offsetHeight:72)+72; var pos=window.scrollY+offset; var current='home';
     spySections.forEach(function(id){
       var el=document.getElementById(id);
       if(el&&el.getBoundingClientRect().top+window.scrollY<=pos){current=id;}
@@ -763,6 +778,11 @@ section[id]{scroll-margin-top:110px}
   }
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
+  window.addEventListener('hashchange',function(){
+    var id=window.location.hash.slice(1);
+    if(id===''){setActive('home');}
+    else if(spySections.indexOf(id)!==-1){setActive(id);}
+  });
   onScroll();
 })();
 </script>
