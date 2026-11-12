@@ -114,16 +114,16 @@
       .nav-links a:hover { color: var(--color-dark); background: rgba(10, 15, 30, 0.06); }
       .nav-links a.active { color: var(--color-teal-text); background: rgba(59, 168, 154, 0.14); font-weight: 700; }
       .nav-links .nav-item { position: relative; display: inline-flex; align-items: center; }
-      .nav-links .nav-industries-link { padding-right: 4px; }
-      .nav-links .nav-sub-toggle {
-        display: inline-flex; align-items: center; justify-content: center;
-        width: 30px; min-height: 42px; padding: 0 10px 0 2px; margin: 0;
-        border-radius: 999px; color: rgba(10, 15, 30, 0.72);
-        background: none; border: none; cursor: pointer; font-family: inherit;
-      }
-      .nav-links .nav-sub-toggle:hover { color: var(--color-dark); background: rgba(10, 15, 30, 0.06); }
-      .nav-links .nav-sub-toggle .chev { font-size: 0.7rem; line-height: 1; transition: transform 200ms ease; }
-      .nav-item.is-open .nav-sub-toggle .chev { transform: rotate(180deg); }
+      /* Industries trigger is ONE control: the label and chevron live in a
+         single anchor, so hovering/focusing anywhere on it highlights the
+         whole pill. While the cursor is in the submenu (a child of the same
+         .nav-item, plus the 14px bridge below), the trigger stays highlighted. */
+      .nav-links .nav-industries-control { gap: 6px; }
+      .nav-links .nav-industries-control .chev { font-size: 0.7rem; line-height: 1; transition: transform 200ms ease; }
+      .nav-item.is-open .nav-industries-control .chev { transform: rotate(180deg); }
+      .nav-item:hover > .nav-industries-control,
+      .nav-item:focus-within > .nav-industries-control,
+      .nav-item.is-open > .nav-industries-control { color: var(--color-dark); background: rgba(10, 15, 30, 0.06); }
       .submenu {
         display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
         min-width: 300px; max-width: calc(100vw - 32px); list-style: none; margin: 0; padding: 8px;
@@ -486,8 +486,7 @@ section[id]{scroll-margin-top:110px}
           <li><a href="#diagnostics">Diagnostics</a></li>
           <li><a href="#methodology">Methodology</a></li>
           <li class="nav-item" id="industries-item">
-            <a href="#industries" class="nav-industries-link" id="industries-link">Industries</a>
-            <button type="button" class="nav-sub-toggle" id="industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="industries-submenu" aria-label="Toggle Industries submenu"><span class="chev" aria-hidden="true">▾</span></button>
+            <a href="#industries" class="nav-industries-control" id="industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="industries-submenu">Industries <span class="chev" aria-hidden="true">▾</span></a>
             <ul class="submenu" id="industries-submenu" aria-label="Industries">
               <li><a href="#industries">Industries overview</a></li>
               <li><a href="manufacturing.html">Services for Manufacturers</a></li>              <li><a href="law.html">Services for Legal Professionals</a></li>
@@ -884,16 +883,28 @@ section[id]{scroll-margin-top:110px}
             indItem.classList.remove("is-open");
             indToggle.setAttribute("aria-expanded", "false");
           };
+          /* Industries trigger is now a single anchor (label + chevron).
+             First click/tap opens the submenu instead of navigating;
+             a second click while it is open follows the link to #industries. */
           indToggle.addEventListener("click", function (event) {
-            event.stopPropagation();
-            var open = indItem.classList.toggle("is-open");
-            indToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            if (!indItem.classList.contains("is-open")) {
+              event.preventDefault();
+              event.stopPropagation();
+              indItem.classList.add("is-open");
+              indToggle.setAttribute("aria-expanded", "true");
+            } else {
+              closeInd();
+            }
+          });
+          indItem.addEventListener("mouseenter", function () {
+            indToggle.setAttribute("aria-expanded", "true");
+          });
+          indItem.addEventListener("mouseleave", function () {
+            indToggle.setAttribute("aria-expanded", indItem.classList.contains("is-open") ? "true" : "false");
           });
           indItem.querySelectorAll(".submenu a").forEach(function (link) {
             link.addEventListener("click", closeInd);
           });
-          var indLink = document.getElementById("industries-link");
-          if (indLink) { indLink.addEventListener("click", closeInd); }
           document.addEventListener("click", function (event) {
             if (!indItem.contains(event.target)) { closeInd(); }
           });
