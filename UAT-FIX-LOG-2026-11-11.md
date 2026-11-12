@@ -172,3 +172,11 @@ One phone, one email, one location, one nav style, one form behavior across all
 - Visible-text "Prime" remaining after the rewrite is only those kept cases above (plus "Prime AI" in the logo). JSON-LD/meta still name the organisation as Prime AI Consultants, as schema requires.
 - Facts, prices (free audit / free diagnostic), phone 661-779-5568, email Fernando@primeaiconsultants.com, first-step names, scores/proof points, and all UAT fixes already in the assembly (dropdown, nav pill, canonical contact, scroll offset, form behaviour, mobile fixes) were not changed.
 - Verification (local files only): all 5 files parse as HTML; no "We + third-person -s verb" remains in visible text; sample converted sentences read cleanly. Live staging revalidation still required after push + Vercel rebuild — not yet done.
+
+## Law nav: remove Manufacturing / Local Businesses from top nav (2026-11-11, staging only)
+- User request (with screenshot): on the law page, remove Manufacturing and Local Businesses from the nav so legal professionals aren't confused.
+- law.html only: removed the two desktop-nav items `<li><a href="manufacturing.html">Manufacturing</a></li>` and `<li><a href="local-businesses.html">Local Businesses</a></li>` from `.nav-links`. No other page touched.
+- Mobile menu: checked — it never contained Manufacturing / Local Businesses (only What we handle, Where firms lose, What we do, Questions, About us, Call), so nothing to remove there.
+- Kept unchanged, as instructed: footer links (Manufacturing, Local businesses), the body cross-link "Our work in manufacturing and operations" (link-row), and the footer note mentioning manufacturers and local businesses. All other nav items kept: Law Firms (active), Home, Where Firms Lose, What We Do, Questions, About, plus the GET YOUR FREE DIAGNOSTIC button.
+- No copy, facts, phone, email, or We-voice wording changed.
+- Verification (local files only): law.html parses with no unclosed tags; desktop `.nav-links` and `#mobile-menu` contain no Manufacturing / Local Businesses link; remaining `manufacturing.html` references in law.html are 2 (footer + body link-row) and `local-businesses.html` is 1 (footer). Live staging revalidation still required after push + Vercel rebuild — not yet done.
