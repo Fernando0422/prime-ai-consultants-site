@@ -51,6 +51,14 @@ section{scroll-margin-top:96px}
 .nav-links>li>a,.nav-links>li>.nav-dropdown-toggle{font-family:var(--fd);font-weight:600;font-size:.92rem;color:rgba(10,15,30,.72);text-decoration:none;padding:0 clamp(8px,.85vw,14px);border-radius:999px;display:inline-flex;align-items:center;gap:.3rem;background:none;border:0;cursor:pointer;min-height:42px;white-space:nowrap}
 .nav-links>li>a:hover,.nav-links>li>.nav-dropdown-toggle:hover{color:var(--dark);background:rgba(10,15,30,.06)}
 .nav-links a.active{color:var(--teal-text);background:rgba(59,168,154,.14);font-weight:700;box-shadow:none}
+/* Grey-hover masking fix (2026-11-11): the :hover rule above outranks .active
+   here (.nav-links>li>a:hover is more specific than .nav-links a.active),
+   so a hovered active link showed the grey hover pill instead of the mint
+   active pill until the pointer moved off. This rule outranks both, so the
+   mint pill stays visible while the pointer is on the active link, exactly
+   as on the homepage (where :hover and .active tie and .active wins on
+   source order). Non-active links keep the grey hover. */
+.nav-links>li>a.active:hover,.nav-links>li>a.active:focus-visible{color:var(--teal-text);background:rgba(59,168,154,.14);font-weight:700}
 .nav-dropdown{list-style:none;position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-md);padding:.45rem;margin:0;min-width:230px;display:none}
 .nav-dropdown.open{display:block}
 .nav-dropdown a{display:flex;width:100%;padding:.5rem .6rem;font-family:var(--fd);font-weight:600;font-size:.92rem;color:var(--tdark);text-decoration:none;border-radius:var(--r-sm)}
