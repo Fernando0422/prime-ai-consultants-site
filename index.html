@@ -587,7 +587,7 @@ section[id]{scroll-margin-top:110px}
             <article class="overview-card">
               <h3>The same problem, in different buildings</h3>
               <p>At the end of the day, a plant, a law firm, and a shop all run on their data, and all of them have data problems. Systems that do not agree with each other. Definitions no one wrote down. Work waiting in intake. Customers who cannot find you.</p>
-              <p>We come in, maps how the work and the data actually move, and fixes the problem in a clear order.</p>
+              <p>We come in, map how the work and the data actually move, and fix the problem in a clear order.</p>
             </article>
           </div>
           <p class="overview-cta-line">The three industries below are where we're focused today. <strong>They are not a limit.</strong> we're open to other industries, and the first step is the same either way: a diagnostic or an audit, findings in writing, yours to keep. If a build is not worth doing, we say so.</p>
@@ -1032,9 +1032,31 @@ section[id]{scroll-margin-top:110px}
         }
 
 
-        /* UAT 2026-11-11: nav active pill follows the clicked item and the section in view. */
-        var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll(".nav-links a")) : [];
-        var spySections = ["diagnostics", "methodology", "industries", "about", "contact"];
+        /* UAT 2026-11-11: nav active pill follows the clicked item and the section in view.
+           Root cause of the live failure (2026-11-11 revalidation): two bugs.
+           (1) spySections was NOT in document order. The page order is
+           industries (574), diagnostics, methodology, about, contact, but the
+           list was [diagnostics, methodology, industries, about, contact].
+           The spy takes the LAST listed section whose top has passed the
+           trigger line, so once the page scrolled past the industries
+           section (which sits ABOVE diagnostics), "industries" always beat
+           "diagnostics" and "methodology" in the loop, and the pill snapped
+           back to INDUSTRIES on every click, no matter what was clicked.
+           (2) The click handler set the pill immediately, but the scroll
+           handler fired during the smooth scroll to the anchor and
+           overwrote it with whatever the (wrong-order) spy computed
+           mid-scroll, so the pill lagged a click behind. The fix: the list
+           is now in document order, and a click locks the spy out for
+           1200ms (longer than the smooth scroll), so the clicked item
+           stays lit until the page has arrived, then the spy resumes.
+           (3) The trigger line was also too tight: offset was nav + 32
+           (~120px) against a 110px scroll-margin, a 10px margin that
+           could flip the wrong way on shorter nav heights. It is now
+           nav + 48, so a section counts as in view once its top is
+           clearly under the sticky nav. */
+        var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll(".nav-links > li > a")) : [];
+        var spySections = ["industries", "diagnostics", "methodology", "about", "contact"];
+        var spyLockUntil = 0;
         function setActiveNav(key) {
           navLinks.forEach(function (a) {
             var href = a.getAttribute("href") || "";
@@ -1046,12 +1068,14 @@ section[id]{scroll-margin-top:110px}
         navLinks.forEach(function (a) {
           a.addEventListener("click", function () {
             var href = a.getAttribute("href") || "";
+            spyLockUntil = Date.now() + 1200;
             if (href === "#top") { setActiveNav("home"); }
             else if (href.charAt(0) === "#") { setActiveNav(href.slice(1)); }
           });
         });
         function updateActiveOnScroll() {
-          var offset = (nav ? nav.offsetHeight : 72) + 32;
+          if (Date.now() < spyLockUntil) { return; }
+          var offset = (nav ? nav.offsetHeight : 72) + 48;
           var pos = window.scrollY + offset;
           var current = "home";
           spySections.forEach(function (id) {

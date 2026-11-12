@@ -719,11 +719,22 @@ section[id]{scroll-margin-top:110px}
   });
 })();
 
-/* UAT 2026-11-11: nav active pill follows the clicked item and the section in view. */
+/* UAT 2026-11-11: nav active pill follows the clicked item and the section in view.
+   Same bug as the homepage (fixed there first): spySections was NOT in
+   document order. Page order is industries, about, applications,
+   diagnostics, contact, but the list was [diagnostics, applications,
+   industries, about, contact], so the spy took the last listed section
+   past the trigger line and the pill snapped to the wrong item (e.g.
+   Applications/About instead of Diagnostics) and overwrote clicks
+   mid-scroll. Fixed the same way: list in document order, and a click
+   locks the spy out for 1200ms so the clicked item stays lit until the
+   smooth scroll arrives, then the spy resumes. Trigger line widened
+   from nav + 32 to nav + 48 against the 110px scroll-margin. */
 (function(){
   var nav=document.querySelector('.site-nav')||document.querySelector('nav');
   var links=nav?Array.prototype.slice.call(nav.querySelectorAll('.nav-links a')):[];
-  var spySections=['diagnostics','applications','industries','about','contact'];
+  var spySections=['industries','about','applications','diagnostics','contact'];
+  var spyLockUntil=0;
   function setActive(key){
     links.forEach(function(a){
       var href=a.getAttribute('href')||'';
@@ -735,12 +746,14 @@ section[id]{scroll-margin-top:110px}
   links.forEach(function(a){
     a.addEventListener('click',function(){
       var href=a.getAttribute('href')||'';
+      spyLockUntil=Date.now()+1200;
       if(href==='index.html'){setActive('home');}
       else if(href.charAt(0)==='#'){setActive(href.slice(1));}
     });
   });
   function onScroll(){
-    var offset=(nav?nav.offsetHeight:72)+32; var pos=window.scrollY+offset; var current='home';
+    if(Date.now()<spyLockUntil){return;}
+    var offset=(nav?nav.offsetHeight:72)+48; var pos=window.scrollY+offset; var current='home';
     spySections.forEach(function(id){
       var el=document.getElementById(id);
       if(el&&el.getBoundingClientRect().top+window.scrollY<=pos){current=id;}
