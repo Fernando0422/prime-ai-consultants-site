@@ -1060,7 +1060,7 @@ form :is(input,select,textarea,button){max-width:100%}
             industryOtherWrap.style.display = industrySelect.value === "Other" ? "flex" : "none";
             if (industrySelect.value === "Other") {
               var otherField = document.getElementById("fs-industry-other");
-              if (otherField) { otherField.value = ""; otherField.focus(); }
+              if (otherField) { otherField.value = ""; }
             }
           });
         }
