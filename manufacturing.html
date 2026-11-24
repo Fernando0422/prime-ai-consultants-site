@@ -206,7 +206,7 @@ section[id]{scroll-margin-top:110px}
 .gn-brand-sub{font-size:.68rem;font-weight:600;letter-spacing:.32em;color:#4A4A5A}
 .gn-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
 .gn-links>li{position:relative;display:flex;align-items:center}
-.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:#1A1A2E;font-size:.92rem;font-weight:600;white-space:nowrap}
+.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:#1A1A2E;font-size:.92rem;font-weight:600;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em}
 .gn-links>li>a:hover{color:#0A0F1E;background:rgba(10,15,30,.06)}
 .gn-links>li>a.gn-active{color:#1F6B62;background:rgba(59,168,154,.14);font-weight:700}
 .gn-links>li>a.gn-active:hover{color:#1F6B62;background:rgba(59,168,154,.14)}
@@ -226,7 +226,7 @@ section[id]{scroll-margin-top:110px}
 .gn-bars::after{top:8px}
 .gn-mobile-menu{display:none;list-style:none;margin:0;padding:10px clamp(1.25rem,4vw,2.5rem) 18px;background:#F1F1F1;border-top:1px solid #E0E0E8}
 .gn-nav.gn-nav-open .gn-mobile-menu{display:block}
-.gn-mobile-menu li a{display:block;padding:11px 6px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:1rem}
+.gn-mobile-menu li a{display:block;padding:11px 6px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.02em}
 .gn-mobile-menu .gn-sub a{padding-left:22px;font-weight:500;font-size:.95rem}
 .gn-mobile-industries-row{display:flex;align-items:center;justify-content:space-between}
 .gn-mobile-industries-toggle{background:none;border:0;cursor:pointer;width:44px;height:44px;font-size:1rem;color:#1A1A2E}
@@ -387,7 +387,7 @@ form :is(input,select,textarea,button){max-width:100%}
 <div class="prose" style="max-width:72rem;width:100%"><p style="text-wrap:balance">We work in stages, not as a bundled package you have to buy all at once. Some teams need discovery before they can define a pilot. Others arrive with a documented environment and a narrower question about what to build. After a first conversation, we recommend only the stage that fits. We will not sell you the rest simply because it happens to be on the menu.</p></div>
 <div class="cards" style="margin-top:2.5rem">
 <article class="card"><h3>Infrastructure, not demos</h3><p>The work is the documentation, the approved views, the clear paths for checking answers, and materials your engineers can keep using after we leave. Not a demonstration that looks good once and then fades.</p></article>
-<article class="card"><h3>You keep what we build for you</h3><p>The dictionaries, maps, views, and related work stay with you under the ownership terms in the agreement. You should never need to stay locked into a platform to keep using materials built for your operation.</p></article>
+<article class="card"><h3>Built to stay usable without us</h3><p>The dictionaries, maps, and views are delivered under the ownership terms in the agreement, in forms your team can keep using. You should never need to stay locked into a platform to keep using materials built for your operation.</p></article>
 <article class="card"><h3>Correct answers before open access</h3><p>The first milestone is not unrestricted access to query the database. It is answering real operational questions with logic that is written down and approved by the people responsible for it.</p></article>
 </div>
 <div class="sec-head" style="margin-top:clamp(3.5rem,7vw,5rem)"><p class="eyebrow">Working principles</p><h2>How we <em>work</em></h2></div>
@@ -426,9 +426,9 @@ form :is(input,select,textarea,button){max-width:100%}
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-crm" id="tab-crm" type="button">AI for CRM</button>
 </div>
 <div class="cards" style="margin-bottom:2.5rem" aria-label="All three applications at a glance">
-<article class="card"><p class="label">AI for MES</p><h3>The operational record</h3><p>Pointing AI at raw MES tables gives answers the floor cannot trust. We recover the written meaning first.</p><p style="margin-top:10px"><a href="#mes">Open AI for MES</a></p></article>
-<article class="card"><p class="label">AI for ERP</p><h3>Three versions of one number</h3><p>A system of record can still give three versions of the same number. We settle which source counts for the decision first.</p><p style="margin-top:10px"><a href="#erp">Open AI for ERP</a></p></article>
-<article class="card"><p class="label">AI for CRM</p><h3>Limits before automation</h3><p>Automation should not touch customer data before its limits are set. We take CRM work selectively, only where operational context is the real question.</p><p style="margin-top:10px"><a href="#crm">Open AI for CRM</a></p></article>
+<article class="card"><p class="label">AI for MES</p><h3>The operational record</h3><p>Your MES holds the record the floor works from. We write down what its numbers mean before a model reads them.</p><p style="margin-top:10px"><a href="#mes">Open AI for MES</a></p></article>
+<article class="card"><p class="label">AI for ERP</p><h3>Three versions of one number</h3><p>Three teams can read the same ERP and defend three different numbers. We settle which source counts for the decision.</p><p style="margin-top:10px"><a href="#erp">Open AI for ERP</a></p></article>
+<article class="card"><p class="label">AI for CRM</p><h3>Limits before automation</h3><p>Customer data carries limits that have to be set before any automation touches it. We take CRM work selectively, only where operational context is the real question.</p><p style="margin-top:10px"><a href="#crm">Open AI for CRM</a></p></article>
 </div>
 
 <div class="tab-panel active" id="panel-mes" role="tabpanel" aria-labelledby="tab-mes">
@@ -539,15 +539,14 @@ form :is(input,select,textarea,button){max-width:100%}
 <li class="step"><span class="step-num" aria-hidden="true">03</span><h3>Assign ownership</h3><p>We write down who owns the definitions, the access decisions, the checking of answers, and the escalation path, before anything is connected.</p></li>
 <li class="step"><span class="step-num" aria-hidden="true">04</span><h3>Decide whether to proceed</h3><p>We recommend a next step only when the context and your review path are both written down clearly.</p></li>
 </ol>
-<p class="statement"><a href="#methodology">Review the full methodology</a> or <a href="#diagnostics">start with Prime Diagnostics</a>.</p>
 <div style="text-align:center;margin-top:2rem"><p style="color:var(--tbody);max-width:44rem;margin:0 auto 16px">Start with the decision, the data it genuinely requires, and who is accountable for both.</p><a class="btn btn-primary btn-uppercase" href="#contact">Discuss your CRM environment <span aria-hidden="true">↗</span></a></div>
 </div>
 </div>
 <div style="margin-top:clamp(3.5rem,7vw,5rem)">
 <div class="sec-head"><p class="eyebrow">Also in Applications</p><h2>ERP and CRM, <em>in brief.</em></h2><p>The same discipline applies when the system is ERP or CRM: write the meaning down, set the limits, then decide what to build.</p></div>
 <div class="findings">
-<div class="finding"><p class="label">AI for ERP</p><h3>Three versions of the same number</h3><p>Each version can be right on its own terms. Configuration, custom logic, transaction timing, company policy, and the way each site actually works all change what a field means in use, and so does the spreadsheet a team trusts more than the ERP itself.</p><p>A model will not settle which version counts. That call comes first: which source is authoritative for this decision, how the number is calculated, and who owns the call when sites disagree.</p><p style="margin-top:10px"><a href="#erp">Open the full AI for ERP section</a></p></div>
-<div class="finding"><p class="label">AI for CRM</p><h3>Limits before automation</h3><p>CRM environments hold customer records, sales activity, service history, and notes in one place. Much of that data is personal or confidential, and much of it was entered for a purpose other than the one automation would now use it for.</p><p>We start from a named decision, separate the data it genuinely requires from the data that stays out of scope, and write down who owns the definitions, the access, and the checking of answers before anything is connected.</p><p style="margin-top:10px"><a href="#crm">Open the full AI for CRM section</a></p></div>
+<div class="finding"><p class="label">AI for ERP</p><h3>Three versions of the same number</h3><p>Each version can be right on its own terms, and a model will not settle which one counts. That call comes first, before anyone builds on the number.</p><p style="margin-top:10px"><a href="#erp">Open the full AI for ERP section</a></p></div>
+<div class="finding"><p class="label">AI for CRM</p><h3>Limits before automation</h3><p>Much of what a CRM holds is personal or confidential, and was entered for a different purpose than automation would use it for. We start from a named decision and set the limits before anything is connected.</p><p style="margin-top:10px"><a href="#crm">Open the full AI for CRM section</a></p></div>
 </div>
 </div>
 </div>
@@ -604,7 +603,7 @@ form :is(input,select,textarea,button){max-width:100%}
 <div class="sec-head" style="margin-top:clamp(3.5rem,7vw,5rem)"><p class="eyebrow">What we stand on</p><h2>A few things <em>we won’t bend on.</em></h2><p>We are a young firm, with no wall of client logos to show you. What we have instead is thirty years of this work inside plants, and written materials you can inspect before you commit to anything. We would rather show you the reasoning than a customer list.</p></div>
 <div class="principles">
 <div class="principle"><h3>Built inside operations, not from a whitepaper</h3><p>Our methods come from long experience inside manufacturing and enterprise applications, under real pressure to get definitions right at the moments when two reports disagree.</p></div>
-<div class="principle"><h3>Governed access or no access</h3><p>We will not recommend connecting AI to unrestricted raw operational tables. Our paths run through approved views, review by your team, and access that can be traced afterward.</p></div>
+<div class="principle"><h3>No unrestricted access</h3><p>We will not recommend connecting AI to unrestricted raw operational tables. Our paths run through approved views, review by your team, and access that can be traced afterward.</p></div>
 <div class="principle"><h3>You own what we build for you</h3><p>The dictionaries, documentation, views, and materials specific to your operation are delivered under the ownership terms in the written agreement. You should not need a platform lock in to keep using work built for you.</p></div>
 <div class="principle"><h3>We report what we find</h3><p>If the blocker is the process, the ownership, or the data quality rather than the model, we say so plainly. Confirmed facts, reasonable inferences, and unresolved questions stay labeled separately.</p></div>
 </div>
