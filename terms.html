@@ -27,44 +27,63 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/logo/app-icon.svg" />
 <style id="global-site-chrome">
-/* Global site chrome (2026-11-23 go-live unification): one header and footer on every page.
-   Classes are gn- / gf- prefixed so they do not collide with per-page styles. */
+/* Global site chrome (2026-11-23 go-live unification; header/footer values aligned to the homepage 2026-11-23): one header and footer on every page.
+   Classes are gn- / gf- prefixed so they do not collide with per-page styles. Header values mirror the homepage
+   .site-nav / .nav-inner / .brand / .nav-links / .submenu / .nav-toggle / .mobile-menu rules exactly, with the
+   homepage variables resolved to literals (--color-nav #F1F1F1, --color-dark #0A0F1E, --color-teal-text #1F6B62,
+   --font-display "Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif, --radius-sm 6px, --radius-md 10px,
+   --shadow-md 0 4px 24px rgba(10,15,30,0.08), --color-text-body #4A4A5A). Footer values were already identical to
+   the homepage footer's effective gf rules and are unchanged. */
 [hidden]{display:none!important}
-.gn-nav{position:sticky;top:0;z-index:100;background:#F1F1F1;border-bottom:1px solid #E0E0E8;font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
-.gn-inner{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);min-height:72px;display:flex;align-items:center;gap:20px}
-.gn-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#0A0F1E;min-width:0;flex-shrink:0}
-.gn-brand-mark{width:40px;height:40px;flex-shrink:0}
-.gn-brand-text{display:flex;flex-direction:column;line-height:1.05}
-.gn-brand-name{font-size:1.3rem;font-weight:700;letter-spacing:-0.01em;color:#0A0F1E;white-space:nowrap}
-.gn-brand-sub{font-size:.68rem;font-weight:600;letter-spacing:.32em;color:#4A4A5A}
-.gn-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
-.gn-links>li{position:relative;display:flex;align-items:center}
-.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:#1A1A2E;font-size:.92rem;font-weight:600;white-space:nowrap;text-transform:uppercase;letter-spacing:.02em}
+.gn-nav{position:sticky;top:0;z-index:50;background:#F1F1F1;color:#0A0F1E;border-bottom:1px solid rgba(10,15,30,.08);font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+.gn-inner{max-width:1440px;margin:0 auto;min-height:88px;padding:12px clamp(16px,2.2vw,36px);display:flex;align-items:center;gap:clamp(10px,1.2vw,20px)}
+.gn-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#0A0F1E;flex:0 0 auto;min-width:0}
+.gn-brand-mark{width:46px;height:46px;flex:0 0 auto}
+.gn-brand-text{display:flex;flex-direction:column;line-height:1}
+.gn-brand-name{font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-0.03em;color:#0A0F1E;white-space:nowrap}
+.gn-brand-sub{font-size:.58rem;font-weight:700;letter-spacing:.42em;color:#0A0F1E;margin-top:4px}
+.gn-links{display:none;align-items:center;justify-content:center;flex:1 1 auto;list-style:none;margin:0;padding:0}
+.gn-links>li{position:relative;display:inline-flex;align-items:center}
+.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:rgba(10,15,30,.72);font-size:.92rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
 .gn-links>li>a:hover{color:#0A0F1E;background:rgba(10,15,30,.06)}
 .gn-links>li>a.gn-active{color:#1F6B62;background:rgba(59,168,154,.14);font-weight:700}
 .gn-links>li>a.gn-active:hover{color:#1F6B62;background:rgba(59,168,154,.14)}
-.gn-item::after{content:"";position:absolute;left:50%;transform:translateX(-50%);top:100%;width:340px;max-width:90vw;height:24px;background:transparent}
-.gn-submenu{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% - 2px);min-width:300px;max-width:calc(100vw - 32px);list-style:none;margin:0;padding:10px;background:#fff;border:1px solid #E0E0E8;border-radius:14px;box-shadow:0 12px 32px rgba(10,15,30,.12);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 160ms ease,visibility 0s linear 200ms;z-index:110}
-.gn-submenu::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px;background:transparent}
-.gn-item:hover .gn-submenu,.gn-item:focus-within .gn-submenu,.gn-item.gn-open .gn-submenu,.gn-submenu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}
+.gn-industries-control{gap:6px}
+.gn-chev{font-size:.7rem;line-height:1;transition:transform 200ms ease}
+.gn-item.gn-open .gn-chev{transform:rotate(180deg)}
+.gn-item::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:340px;max-width:calc(100vw - 32px);top:100%;height:24px;background:transparent}
+.gn-submenu{display:block;position:absolute;top:calc(100% - 2px);left:50%;transform:translateX(-50%);min-width:300px;max-width:calc(100vw - 32px);list-style:none;margin:0;padding:8px;background:#fff;border:1px solid rgba(10,15,30,.1);border-radius:10px;box-shadow:0 4px 24px rgba(10,15,30,.08);z-index:60;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 160ms ease,visibility 0s linear 200ms}
+.gn-submenu::before{content:"";position:absolute;top:-24px;left:0;right:0;height:24px;background:transparent}
+.gn-item.gn-open .gn-submenu,.gn-submenu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}
+@media (hover:hover) and (min-width:1180px){.gn-item:hover .gn-submenu,.gn-item:focus-within .gn-submenu{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}}
 .gn-item:hover>.gn-industries-control,.gn-item:focus-within>.gn-industries-control,.gn-item.gn-open>.gn-industries-control{color:#0A0F1E;background:rgba(10,15,30,.06)}
 .gn-item:hover>.gn-industries-control.gn-active,.gn-item:focus-within>.gn-industries-control.gn-active,.gn-item.gn-open>.gn-industries-control.gn-active{color:#1F6B62;background:rgba(59,168,154,.14)}
-.gn-submenu li a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#1A1A2E;font-size:.95rem;font-weight:600;white-space:normal}
-.gn-submenu li a:hover{background:#F3F2EE;color:#1F6B62}
-.gn-chev{font-size:.8em;margin-left:2px}
-.gn-toggle{display:none;margin-left:auto;background:none;border:0;cursor:pointer;width:48px;height:48px;padding:12px;flex-shrink:0}
-.gn-bars,.gn-bars::before,.gn-bars::after{display:block;width:24px;height:2px;background:#0A0F1E;position:relative;transition:transform .25s ease}
+.gn-submenu li a{display:flex;align-items:center;min-height:44px;width:100%;padding:9px 14px;border-radius:6px;text-decoration:none;color:rgba(10,15,30,.72);font-size:.96rem;font-weight:600;letter-spacing:0;text-transform:none;white-space:normal}
+.gn-submenu li a:hover{color:#0A0F1E;background:rgba(59,168,154,.1)}
+.gn-toggle{display:inline-flex;width:44px;height:44px;flex:0 0 auto;margin-left:auto;align-items:center;justify-content:center;color:#0A0F1E;background:none;border:none;border-radius:6px;cursor:pointer}
+.gn-toggle:hover{background:rgba(10,15,30,.06)}
+.gn-bars,.gn-bars::before,.gn-bars::after{display:block;width:22px;height:2px;background:currentColor;transition:transform 200ms ease,opacity 200ms ease}
+.gn-bars{position:relative}
 .gn-bars::before,.gn-bars::after{content:"";position:absolute;left:0}
-.gn-bars::before{top:-8px}
-.gn-bars::after{top:8px}
-.gn-mobile-menu{display:none;list-style:none;margin:0;padding:10px clamp(1.25rem,4vw,2.5rem) 18px;background:#F1F1F1;border-top:1px solid #E0E0E8}
+.gn-bars::before{top:-7px}
+.gn-bars::after{top:7px}
+.gn-nav.gn-nav-open .gn-bars{background:transparent}
+.gn-nav.gn-nav-open .gn-bars::before{top:0;transform:rotate(45deg)}
+.gn-nav.gn-nav-open .gn-bars::after{top:0;transform:rotate(-45deg)}
+.gn-mobile-menu{display:none;list-style:none;margin:0;padding:10px clamp(16px,2.2vw,36px) 20px;border-top:1px solid rgba(10,15,30,.08);background:#F1F1F1}
 .gn-nav.gn-nav-open .gn-mobile-menu{display:block}
-.gn-mobile-menu li a{display:block;padding:11px 6px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.02em}
-.gn-mobile-menu .gn-sub a{padding-left:22px;font-weight:500;font-size:.95rem}
-.gn-mobile-industries-row{display:flex;align-items:center;justify-content:space-between}
-.gn-mobile-industries-toggle{background:none;border:0;cursor:pointer;width:44px;height:44px;font-size:1rem;color:#1A1A2E}
+.gn-mobile-menu li a{display:flex;align-items:center;min-height:48px;padding:10px 4px;color:#0A0F1E;text-decoration:none;font-weight:600;font-size:1rem;border-bottom:1px solid rgba(10,15,30,.07)}
+.gn-mobile-menu li:last-child a{border-bottom:none}
+.gn-mobile-menu .gn-sub a{padding-left:22px;font-size:.95rem;font-weight:500;color:#4A4A5A}
+.gn-mobile-industries-row{display:flex;align-items:center}
+.gn-mobile-industries-row a{flex:1 1 auto}
+.gn-mobile-industries-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:48px;flex:0 0 auto;padding:0;color:#0A0F1E;background:none;border:none;border-bottom:1px solid rgba(10,15,30,.07);cursor:pointer}
+.gn-mobile-industries-toggle:hover{background:rgba(10,15,30,.06)}
+.gn-mobile-industries-toggle .gn-chev{font-size:.8rem;line-height:1;transition:transform 200ms ease;transform:rotate(180deg)}
+.gn-mobile-menu.gn-industries-collapsed .gn-mobile-industries-toggle .gn-chev{transform:rotate(0deg)}
 .gn-mobile-menu.gn-industries-collapsed .gn-sub{display:none}
-@media (max-width:1179px){.gn-links{display:none}.gn-toggle{display:block}}
+@media (min-width:1180px){.gn-links{display:flex}.gn-toggle{display:none}.gn-mobile-menu{display:none!important}}
+@media (max-width:560px){.gn-inner{min-height:72px}.gn-brand-mark{width:38px;height:38px}.gn-brand-name{font-size:1.25rem}.gn-brand-sub{font-size:.5rem}}
 .gf-footer{background:#0A0F1E;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.12);padding:44px 0 52px;font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
 .gf-in{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:flex-start}
 .gf-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#fff;margin-bottom:10px;min-width:0}
@@ -99,36 +118,56 @@ form :is(input,select,textarea,button){max-width:100%}
 </head>
 <body class="page-route page-site page-interior">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <nav class="site-nav site-nav--light" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-        <img class="brand-logo" src="assets/prime-ai-logo-nav-on-light.svg" alt="" width="320" height="76" decoding="async" />
-      </a>
-      <ul class="nav-links" id="nav-links" role="list">
-        <li class="nav-home-item"><a href="index.html">Home</a></li>
+  <nav class="gn-nav" aria-label="Primary navigation" id="gn-nav">
+      <div class="gn-inner">
+        <a class="gn-brand" href="index.html" aria-label="Prime AI Consultants home">
+          <svg class="gn-brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <circle cx="50" cy="50" r="11" fill="#1F6B62" />
+          </svg>
+          <span class="gn-brand-text"><span class="gn-brand-name">Prime AI</span><span class="gn-brand-sub">CONSULTANTS</span></span>
+        </a>
+        <ul class="gn-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#diagnostics">Diagnostics</a></li>
+          <li><a href="index.html#methodology">Methodology</a></li>
+          <li class="gn-item" id="gn-industries-item">
+            <a href="index.html#industries" class="gn-industries-control" id="gn-industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="gn-industries-submenu">Industries <span class="gn-chev" aria-hidden="true">▾</span></a>
+            <ul class="gn-submenu" id="gn-industries-submenu" aria-label="Industries">
+              <li><a href="index.html#industries">Industries overview</a></li>
+              <li><a href="manufacturing.html">Services for Manufacturers</a></li>
+              <li><a href="law.html">Services for Legal Professionals</a></li>
+              <li><a href="local-businesses.html">Services for Local Businesses</a></li>
+              <li><a href="manufacturing-industries.html">Manufacturing Industries</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="gn-toggle" id="gn-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="gn-mobile-menu">
+          <span class="gn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+      <ul class="gn-mobile-menu" id="gn-mobile-menu">
+        <li><a href="index.html">Home</a></li>
         <li><a href="index.html#diagnostics">Diagnostics</a></li>
         <li><a href="index.html#methodology">Methodology</a></li>
-        <li class="nav-item-has-sub">
-          <a href="index.html#industries" class="nav-parent-link" data-parent="services" aria-haspopup="true" aria-expanded="false" aria-controls="nav-sub-services">Industries</a>
-          <ul class="nav-sub" id="nav-sub-services" role="list">
-            <li><a href="index.html#industries">Industries overview</a></li>
-            <li><a href="manufacturing.html">Services for Manufacturers</a></li>
-            <li><a href="law.html">Services for Legal Professionals</a></li>
-            <li><a href="local-businesses.html">Services for Local Businesses</a></li>
-          </ul>
+        <li class="gn-mobile-industries-row">
+          <a href="index.html#industries" id="gn-mobile-industries-link">Industries</a>
+          <button type="button" class="gn-mobile-industries-toggle" id="gn-mobile-industries-toggle" aria-expanded="true" aria-controls="gn-mobile-menu" aria-label="Toggle Industries submenu"><span class="gn-chev" aria-hidden="true">▾</span></button>
         </li>
+        <li class="gn-sub"><a href="index.html#industries">Industries overview</a></li>
+        <li class="gn-sub"><a href="manufacturing.html">Services for Manufacturers</a></li>
+        <li class="gn-sub"><a href="law.html">Services for Legal Professionals</a></li>
+        <li class="gn-sub"><a href="local-businesses.html">Services for Local Businesses</a></li>
+        <li class="gn-sub"><a href="manufacturing-industries.html">Manufacturing Industries</a></li>
         <li><a href="index.html#about">About Us</a></li>
         <li><a href="index.html#contact">Contact</a></li>
-        <li class="nav-links-cta-item"><a href="index.html#contact" class="btn btn-primary btn-sm nav-links-cta-btn">Contact us</a></li>
+        <li><a href="tel:+16617795568">Call 661-779-5568</a></li>
       </ul>
-      <div class="nav-cta">
-        <a href="index.html#contact" class="btn btn-primary btn-sm">Contact us</a>
-      </div>
-      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <span class="bars" aria-hidden="true"></span>
-      </button>
-    </div>
-  </nav>
+    </nav>
 <main id="main" tabindex="-1">
 
     <section class="page-hero page-hero--short">
@@ -234,5 +273,110 @@ form :is(input,select,textarea,button){max-width:100%}
     </footer>
 
   <script src="assets/site.min.js?v=mailto2" defer></script>
+<script id="global-site-chrome-js">
+/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard mailto form. */
+(function () {
+  var nav = document.getElementById("gn-nav");
+  var toggle = document.getElementById("gn-toggle");
+  if (nav && toggle) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("gn-nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.querySelectorAll(".gn-mobile-menu a, .gn-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("gn-nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+  }
+  var indItem = document.getElementById("gn-industries-item");
+  var indToggle = document.getElementById("gn-industries-toggle");
+  if (indItem && indToggle) {
+    var closeInd = function () {
+      indItem.classList.remove("gn-open");
+      indToggle.setAttribute("aria-expanded", "false");
+    };
+    indToggle.addEventListener("click", function (event) {
+      if (!indItem.classList.contains("gn-open")) {
+        event.preventDefault();
+        event.stopPropagation();
+        indItem.classList.add("gn-open");
+        indToggle.setAttribute("aria-expanded", "true");
+      } else {
+        closeInd();
+      }
+    });
+    indItem.addEventListener("mouseenter", function () { indToggle.setAttribute("aria-expanded", "true"); });
+    indItem.addEventListener("mouseleave", function () {
+      indToggle.setAttribute("aria-expanded", indItem.classList.contains("gn-open") ? "true" : "false");
+    });
+    indItem.querySelectorAll(".gn-submenu a").forEach(function (link) { link.addEventListener("click", closeInd); });
+    document.addEventListener("click", function (event) { if (!indItem.contains(event.target)) { closeInd(); } });
+    document.addEventListener("keydown", function (event) { if (event.key === "Escape") { closeInd(); } });
+  }
+  var mobileMenu = document.getElementById("gn-mobile-menu");
+  var mobileIndToggle = document.getElementById("gn-mobile-industries-toggle");
+  if (mobileMenu && mobileIndToggle) {
+    mobileIndToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      var collapsed = mobileMenu.classList.toggle("gn-industries-collapsed");
+      mobileIndToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
+  }
+  /* Industry "Other" write-in: one delegated toggle for every form on the page. */
+  document.addEventListener("change", function (event) {
+    var sel = event.target;
+    if (!sel || sel.tagName !== "SELECT" || !sel.form) { return; }
+    var wrap = sel.form.querySelector("[data-other-wrap]");
+    if (!wrap) { return; }
+    var isOther = sel.value === "Other";
+    wrap.hidden = !isOther;
+    wrap.style.display = isOther ? "" : "none";
+    wrap.classList.toggle("show", isOther);
+    if (isOther) {
+      var field = wrap.querySelector("input, textarea");
+      if (field) { field.focus(); }
+    }
+  });
+  /* Standard form pattern for forms marked data-gform (law, local businesses). */
+  document.querySelectorAll("form[data-gform]").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var get = function (name) {
+        var field = form.querySelector('[name="' + name + '"]');
+        return field ? field.value.trim() : "";
+      };
+      var industry = get("industry");
+      if (industry === "Other") { industry = get("industry_other") || "Other"; }
+      var lines = ["Name: " + get("name"), "Email: " + get("email")];
+      if (get("business_name")) { lines.push("Business name: " + get("business_name")); }
+      if (get("phone")) { lines.push("Phone: " + get("phone")); }
+      if (industry) { lines.push("Industry: " + industry); }
+      if (get("message")) { lines.push("", "Message:", get("message")); }
+      var subject = "First step request";
+      if (get("business_name")) { subject += " from " + get("business_name"); }
+      var mailLink = document.createElement("a");
+      mailLink.href = "mailto:Fernando@primeaiconsultants.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(lines.join("\n"));
+      document.body.appendChild(mailLink);
+      mailLink.click();
+      mailLink.remove();
+      var sent = form.querySelector("[data-gform-sent]");
+      if (sent) {
+        sent.hidden = false;
+        sent.setAttribute("tabindex", "-1");
+        window.setTimeout(function () {
+          sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          sent.focus({ preventScroll: true });
+        }, 50);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
