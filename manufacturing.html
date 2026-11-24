@@ -193,53 +193,128 @@ section[id]{scroll-margin-top:110px}
 [hidden]{display:none!important}
 .nav-cta .btn{white-space:nowrap;flex:0 0 auto}
 </style>
+<style id="global-site-chrome">
+/* Global site chrome (2026-11-23 go-live unification): one header and footer on every page.
+   Classes are gn- / gf- prefixed so they do not collide with per-page styles. */
+[hidden]{display:none!important}
+.gn-nav{position:sticky;top:0;z-index:100;background:#F1F1F1;border-bottom:1px solid #E0E0E8;font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+.gn-inner{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);min-height:72px;display:flex;align-items:center;gap:20px}
+.gn-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#0A0F1E;min-width:0;flex-shrink:0}
+.gn-brand-mark{width:40px;height:40px;flex-shrink:0}
+.gn-brand-text{display:flex;flex-direction:column;line-height:1.05}
+.gn-brand-name{font-size:1.3rem;font-weight:700;letter-spacing:-0.01em;color:#0A0F1E;white-space:nowrap}
+.gn-brand-sub{font-size:.68rem;font-weight:600;letter-spacing:.32em;color:#4A4A5A}
+.gn-links{display:flex;align-items:center;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
+.gn-links>li{position:relative;display:flex;align-items:center}
+.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:#1A1A2E;font-size:.92rem;font-weight:600;white-space:nowrap}
+.gn-links>li>a:hover{color:#0A0F1E;background:rgba(10,15,30,.06)}
+.gn-links>li>a.gn-active{color:#1F6B62;background:rgba(59,168,154,.14);font-weight:700}
+.gn-links>li>a.gn-active:hover{color:#1F6B62;background:rgba(59,168,154,.14)}
+.gn-item::after{content:"";position:absolute;left:50%;transform:translateX(-50%);top:100%;width:340px;max-width:90vw;height:24px;background:transparent}
+.gn-submenu{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% - 2px);min-width:300px;max-width:calc(100vw - 32px);list-style:none;margin:0;padding:10px;background:#fff;border:1px solid #E0E0E8;border-radius:14px;box-shadow:0 12px 32px rgba(10,15,30,.12);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 160ms ease,visibility 0s linear 200ms;z-index:110}
+.gn-submenu::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px;background:transparent}
+.gn-item:hover .gn-submenu,.gn-item:focus-within .gn-submenu,.gn-item.gn-open .gn-submenu,.gn-submenu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}
+.gn-item:hover>.gn-industries-control,.gn-item:focus-within>.gn-industries-control,.gn-item.gn-open>.gn-industries-control{color:#0A0F1E;background:rgba(10,15,30,.06)}
+.gn-item:hover>.gn-industries-control.gn-active,.gn-item:focus-within>.gn-industries-control.gn-active,.gn-item.gn-open>.gn-industries-control.gn-active{color:#1F6B62;background:rgba(59,168,154,.14)}
+.gn-submenu li a{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;color:#1A1A2E;font-size:.95rem;font-weight:600;white-space:normal}
+.gn-submenu li a:hover{background:#F3F2EE;color:#1F6B62}
+.gn-chev{font-size:.8em;margin-left:2px}
+.gn-toggle{display:none;margin-left:auto;background:none;border:0;cursor:pointer;width:48px;height:48px;padding:12px;flex-shrink:0}
+.gn-bars,.gn-bars::before,.gn-bars::after{display:block;width:24px;height:2px;background:#0A0F1E;position:relative;transition:transform .25s ease}
+.gn-bars::before,.gn-bars::after{content:"";position:absolute;left:0}
+.gn-bars::before{top:-8px}
+.gn-bars::after{top:8px}
+.gn-mobile-menu{display:none;list-style:none;margin:0;padding:10px clamp(1.25rem,4vw,2.5rem) 18px;background:#F1F1F1;border-top:1px solid #E0E0E8}
+.gn-nav.gn-nav-open .gn-mobile-menu{display:block}
+.gn-mobile-menu li a{display:block;padding:11px 6px;text-decoration:none;color:#1A1A2E;font-weight:600;font-size:1rem}
+.gn-mobile-menu .gn-sub a{padding-left:22px;font-weight:500;font-size:.95rem}
+.gn-mobile-industries-row{display:flex;align-items:center;justify-content:space-between}
+.gn-mobile-industries-toggle{background:none;border:0;cursor:pointer;width:44px;height:44px;font-size:1rem;color:#1A1A2E}
+.gn-mobile-menu.gn-industries-collapsed .gn-sub{display:none}
+@media (max-width:1179px){.gn-links{display:none}.gn-toggle{display:block}}
+.gf-footer{background:#0A0F1E;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.12);padding:44px 0 52px;font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+.gf-in{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:flex-start}
+.gf-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#fff;margin-bottom:10px;min-width:0}
+.gf-brand-mark{width:38px;height:38px;flex-shrink:0}
+.gf-brand-text{display:flex;flex-direction:column;line-height:1.05}
+.gf-brand-name{font-size:1.3rem;font-weight:700;color:#fff;white-space:nowrap}
+.gf-brand-sub{font-size:.68rem;font-weight:600;letter-spacing:.32em;color:rgba(255,255,255,.75)}
+.gf-footer p,.gf-footer a{font-size:.92rem;color:rgba(255,255,255,.72)}
+.gf-footer a{text-decoration:none;overflow-wrap:anywhere}
+.gf-footer a:hover{color:#fff;text-decoration:underline}
+.gf-links{display:flex;flex-wrap:wrap;gap:8px 22px;max-width:560px}
+.gf-links a{padding:6px 0;display:inline-block;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;font-weight:600;min-height:36px}
+.gf-note{width:100%;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.88rem;color:rgba(255,255,255,.55);max-width:60rem}
+/* Standard form helpers shared by the law form (lf-) and note/sent lines on dark sections */
+.lf-form{background:#fff;color:#1A1A2E;border-radius:16px;padding:clamp(22px,4vw,34px);margin-top:34px;text-align:left;box-shadow:0 4px 24px rgba(10,15,30,.18)}
+.lf-form h3{margin:0 0 8px;font-size:1.25rem;color:#0A0F1E}
+.lf-form .lf-intro{margin:0 0 20px;color:#4A4A5A;font-size:.98rem}
+.lf-grid{display:grid;gap:16px}
+@media (min-width:760px){.lf-grid{grid-template-columns:1fr 1fr}}
+.lf-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.lf-field--full{grid-column:1/-1}
+.lf-field label{font-weight:600;font-size:.92rem;color:#1A1A2E}
+.lf-field input,.lf-field select,.lf-field textarea{width:100%;max-width:100%;min-height:48px;padding:12px 14px;background:#fff;border:1px solid #C9C9D4;border-radius:8px;color:#1A1A2E;font:inherit;font-size:1rem}
+.lf-field textarea{min-height:110px;resize:vertical}
+.lf-field input:focus,.lf-field select:focus,.lf-field textarea:focus{outline:2px solid #3BA89A;outline-offset:1px;border-color:#3BA89A}
+.lf-submit{margin-top:22px;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 30px;border-radius:999px;border:1.5px solid #2F877C;background:#2F877C;color:#fff;font:inherit;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;width:100%}
+.lf-note{margin-top:14px;font-size:.88rem;color:#4A4A5A;overflow-wrap:anywhere}
+.lf-sent{margin-top:14px;font-weight:700;font-size:.92rem;color:#1F6B62}
+.audit-form .form-note{margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.65);overflow-wrap:anywhere}
+form :is(input,select,textarea,button){max-width:100%}
+</style>
 </head>
 <body>
-<nav class="site-nav" aria-label="Primary navigation" id="site-nav">
-<div class="nav-inner">
-<a class="brand" href="index.html" aria-label="Prime AI Consultants home">
-<svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#0A0F1E" stroke-width="17"/><path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#0A0F1E" stroke-width="17"/><path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#0A0F1E" stroke-width="17"/><circle cx="50" cy="50" r="11" fill="#1F6B62"/></svg>
-<span class="brand-text"><span class="brand-name">Prime AI</span><span class="brand-sub">CONSULTANTS</span></span>
-</a>
-<span class="practice-tag">Manufacturing</span>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="#diagnostics">Diagnostics</a></li>
-<li><a href="#methodology">Methodology</a></li>
-<li><a href="#services">Services</a></li>
-<li class="nav-has-dropdown">
-<button type="button" class="nav-dropdown-toggle" id="applications-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="applications-menu">Applications <span class="nav-caret" aria-hidden="true">▾</span></button>
-<ul class="nav-dropdown" id="applications-menu" aria-labelledby="applications-toggle">
-<li><a href="#applications" class="nav-dropdown-overview">Applications overview</a></li>
-<li><span class="nav-dropdown-label">AI Applications</span></li>
-<li><a href="#mes">AI for MES</a></li>
-<li><a href="#erp">AI for ERP</a></li>
-<li><a href="#crm">AI for CRM</a></li>
-</ul>
-</li>
-<li><a href="#insights">Insights</a></li>
-<li><a href="#about">About</a></li><li><a href="manufacturing-industries.html">Industries</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<div class="nav-cta">
-<a class="btn btn-primary btn-uppercase" href="#contact">Discuss your environment</a>
-<button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span class="bars" aria-hidden="true"></span></button>
-</div>
-</div>
-<ul class="mobile-menu" id="mobile-menu">
-<li><a href="index.html">Home</a></li>
-<li><a href="#diagnostics">Diagnostics</a></li>
-<li><a href="#methodology">Methodology</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#applications">Applications</a></li>
-<li class="mobile-sub"><a href="#mes">AI for MES</a></li>
-<li class="mobile-sub"><a href="#erp">AI for ERP</a></li>
-<li class="mobile-sub"><a href="#crm">AI for CRM</a></li>
-<li><a href="#insights">Insights</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<nav class="gn-nav" aria-label="Primary navigation" id="gn-nav">
+      <div class="gn-inner">
+        <a class="gn-brand" href="index.html" aria-label="Prime AI Consultants home">
+          <svg class="gn-brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <circle cx="50" cy="50" r="11" fill="#1F6B62" />
+          </svg>
+          <span class="gn-brand-text"><span class="gn-brand-name">Prime AI</span><span class="gn-brand-sub">CONSULTANTS</span></span>
+        </a>
+        <ul class="gn-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#diagnostics">Diagnostics</a></li>
+          <li><a href="index.html#methodology">Methodology</a></li>
+          <li class="gn-item" id="gn-industries-item">
+            <a href="index.html#industries" class="gn-industries-control gn-active" id="gn-industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="gn-industries-submenu">Industries <span class="gn-chev" aria-hidden="true">▾</span></a>
+            <ul class="gn-submenu" id="gn-industries-submenu" aria-label="Industries">
+              <li><a href="index.html#industries">Industries overview</a></li>
+              <li><a href="manufacturing.html">Services for Manufacturers</a></li>
+              <li><a href="law.html">Services for Legal Professionals</a></li>
+              <li><a href="local-businesses.html">Services for Local Businesses</a></li>
+              <li><a href="manufacturing-industries.html">Manufacturing Industries</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="gn-toggle" id="gn-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="gn-mobile-menu">
+          <span class="gn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+      <ul class="gn-mobile-menu" id="gn-mobile-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#diagnostics">Diagnostics</a></li>
+        <li><a href="index.html#methodology">Methodology</a></li>
+        <li class="gn-mobile-industries-row">
+          <a href="index.html#industries" id="gn-mobile-industries-link">Industries</a>
+          <button type="button" class="gn-mobile-industries-toggle" id="gn-mobile-industries-toggle" aria-expanded="true" aria-controls="gn-mobile-menu" aria-label="Toggle Industries submenu"><span class="gn-chev" aria-hidden="true">▾</span></button>
+        </li>
+        <li class="gn-sub"><a href="index.html#industries">Industries overview</a></li>
+        <li class="gn-sub"><a href="manufacturing.html">Services for Manufacturers</a></li>
+        <li class="gn-sub"><a href="law.html">Services for Legal Professionals</a></li>
+        <li class="gn-sub"><a href="local-businesses.html">Services for Local Businesses</a></li>
+        <li class="gn-sub"><a href="manufacturing-industries.html">Manufacturing Industries</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="tel:+16617795568">Call 661-779-5568</a></li>
+      </ul>
+    </nav>
 <main id="top">
 <!-- HOME / HERO -->
 <section class="flow-hero" id="home">
@@ -549,13 +624,13 @@ section[id]{scroll-margin-top:110px}
 <div class="form-grid">
 <div><label for="cf-name">Name *</label><input id="cf-name" name="name" type="text" autocomplete="name" required /></div>
 <div><label for="cf-email">Email *</label><input id="cf-email" name="email" type="email" autocomplete="email" required /></div>
-<div><label for="cf-business">Business name</label><input id="cf-business" name="business" type="text" autocomplete="organization" /></div>
-<div><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" /></div>
-<div><label for="cf-industry">Industry</label><select id="cf-industry" name="industry"><option value="Manufacturing" selected>Manufacturing</option><option value="Law / Professional Firm">Law / Professional Firm</option><option value="Local Business">Local Business</option><option value="Other">Other</option></select></div>
-<div id="cf-other-wrap" hidden><label for="cf-industry-other">Industry, please specify</label><input id="cf-industry-other" name="industry_other" type="text" /></div>
-<div class="form-full"><label for="cf-message">How can we help?</label><textarea id="cf-message" name="message"></textarea></div>
+<div><label for="cf-business">Business name (optional)</label><input id="cf-business" name="business" type="text" autocomplete="organization" /></div>
+<div><label for="cf-phone">Phone (optional)</label><input id="cf-phone" name="phone" type="tel" autocomplete="tel" /></div>
+<div><label for="cf-industry">Industry (optional)</label><select id="cf-industry" name="industry"><option value="Manufacturing" selected>Manufacturing</option><option value="Law and Professional Firms">Law and Professional Firms</option><option value="Local Businesses">Local Businesses</option><option value="Other">Other</option></select></div>
+<div id="cf-other-wrap" data-other-wrap hidden><label for="cf-industry-other">Your industry (optional)</label><input id="cf-industry-other" name="industry_other" type="text" /></div>
+<div class="form-full"><label for="cf-message">How can we help? (optional)</label><textarea id="cf-message" name="message"></textarea></div>
 </div>
-<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send inquiry <span aria-hidden="true">↗</span></button><p class="form-note">Submitting opens your email app, addressed to Fernando@primeaiconsultants.com.</p></div>
+<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send by email</button><p class="form-note">Sending opens your email app with the message addressed to Fernando@primeaiconsultants.com.</p><p class="form-sent" id="cf-sent" hidden>Your email app should be open with your details filled in. Press send there to reach us.</p></div>
 </form>
 <div class="contact-grid">
 <div class="contact-cell"><p class="label">General email</p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a></div>
@@ -567,55 +642,46 @@ section[id]{scroll-margin-top:110px}
 </div>
 </div>
 </section>
+
+<section aria-label="Important note" style="max-width:1100px;margin:0 auto;padding:24px 20px 8px;">
+  <p style="font-size:0.85rem;line-height:1.6;color:#5a6472;margin:0;">This page is general information, not legal, regulatory, security, financial, or compliance advice. Decisions about access and what gets built stay with your legal, privacy, security, and executive teams. Prime claims no partnership, certification, or endorsement from any vendor named here, and founder experience is professional background only. Please do not send confidential or regulated information through this site. Submitting a note does not create a client relationship. Scope, deliverables, ownership, and limits are defined in a written agreement signed by both parties.</p>
+</section>
 </main>
-<footer class="site">
-<div class="container"><div class="footer-in">
-<div>
-<a class="footer-brand" href="#home"><svg class="brand-mark" viewBox="0 0 100 100" aria-hidden="true" width="40" height="40"><path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#FFFFFF" stroke-width="17"/><path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#FFFFFF" stroke-width="17"/><circle cx="50" cy="50" r="11" fill="#3BA89A"/></svg><span class="brand-text"><span class="brand-name">Prime AI</span><span class="brand-sub">CONSULTANTS</span></span></a>
-<p>Manufacturing practice. We help organizations document the systems, business rules, and operational knowledge behind AI and analytics initiatives before implementation begins.</p>
-<p style="margin-top:8px"><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a> · Santa Clarita, California</p>
-</div>
-<nav class="footer-links" aria-label="Footer">
-<a href="index.html">Home</a><a href="#diagnostics">Diagnostics</a><a href="#methodology">Methodology</a><a href="#services">Services</a><a href="#applications">Applications overview</a><a href="#mes">AI for MES</a><a href="#erp">AI for ERP</a><a href="#crm">AI for CRM</a><a href="#insights">Insights</a><a href="#about">About</a><a href="#contact">Contact</a>
-<a href="manufacturing-industries.html">Manufacturing Industries</a><a href="law.html">Law</a><a href="local-businesses.html">Local Businesses</a></nav>
-<p class="footer-note">This page is general information, not legal, regulatory, security, financial, or compliance advice. Decisions about access and what gets built stay with your legal, privacy, security, and executive teams. Prime claims no partnership, certification, or endorsement from any vendor named here, and founder experience is professional background only. Please do not send confidential or regulated information through this site. Submitting a note does not create a client relationship. Scope, deliverables, ownership, and limits are defined in a written agreement signed by both parties. © 2026 Prime AI Consultants LLC. All rights reserved.</p>
-</div></div>
-</footer>
+
+<footer class="gf-footer">
+      <div class="gf-in">
+        <div class="gf-brand-block">
+          <a class="gf-brand" href="index.html" aria-label="Prime AI Consultants home">
+            <svg class="gf-brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <circle cx="50" cy="50" r="11" fill="#3BA89A" />
+            </svg>
+            <span class="gf-brand-text"><span class="gf-brand-name">Prime AI</span><span class="gf-brand-sub">CONSULTANTS</span></span>
+          </a>
+          <p>Prime AI Consultants · Santa Clarita, California</p>
+          <p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a></p>
+        </div>
+        <nav class="gf-links" aria-label="Prime AI Consultants pages">
+          <a href="index.html">Home</a>
+          <a href="index.html#diagnostics">Diagnostics</a>
+          <a href="index.html#methodology">Methodology</a>
+          <a href="index.html#industries">Industries Overview</a>
+          <a href="manufacturing.html">Services for Manufacturers</a>
+          <a href="law.html">Services for Legal Professionals</a>
+          <a href="local-businesses.html">Services for Local Businesses</a>
+          <a href="manufacturing-industries.html">Manufacturing Industries</a>
+          <a href="index.html#about">About Us</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+        <p class="gf-note">© 2026 Prime AI Consultants LLC. All rights reserved.</p>
+      </div>
+    </footer>
 <script>
 (function(){
-var nav=document.getElementById('site-nav');var toggle=document.getElementById('nav-toggle');
-if(nav&&toggle){toggle.addEventListener('click',function(){var open=nav.classList.toggle('is-nav-open');toggle.setAttribute('aria-expanded',open?'true':'false');toggle.setAttribute('aria-label',open?'Close menu':'Open menu');});
-nav.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('is-nav-open');toggle.setAttribute('aria-expanded','false');});});}
-var dd=document.querySelector('.nav-has-dropdown');var ddToggle=document.getElementById('applications-toggle');
-function closeDropdown(){if(dd){dd.classList.remove('is-open');}if(ddToggle){ddToggle.setAttribute('aria-expanded','false');}}
-if(dd&&ddToggle){ddToggle.addEventListener('click',function(e){e.stopPropagation();var open=dd.classList.toggle('is-open');ddToggle.setAttribute('aria-expanded',open?'true':'false');});
-dd.querySelectorAll('.nav-dropdown a').forEach(function(a){a.addEventListener('click',function(){closeDropdown();});});
-document.addEventListener('click',function(e){if(!dd.contains(e.target)){closeDropdown();}});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDropdown();}});}
-/* Nav active state: follows the link clicked and the section in view, never stuck on Diagnostics. */
-var sectionToNav={home:'home',problem:'home',work:'home',diagnostics:'diagnostics',services:'services',methodology:'methodology',applications:'applications',mes:'applications',erp:'applications',crm:'applications',insights:'insights',about:'about',contact:'contact'};
-var spySections=['home','problem','work','diagnostics','services','methodology','applications','insights','about','contact'];
-var currentNavKey='__init__';var currentSubId='__init__';
-function setActiveNav(navKey,subId){
-if(navKey===currentNavKey&&subId===currentSubId)return;currentNavKey=navKey;currentSubId=subId;
-document.querySelectorAll('.nav-links>li>a').forEach(function(a){var on=a.getAttribute('href')==='#'+navKey||(navKey==='home'&&a.getAttribute('href')==='index.html');a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
-if(ddToggle){var onApp=navKey==='applications';ddToggle.classList.toggle('active',onApp);if(onApp){ddToggle.setAttribute('aria-current','true');}else{ddToggle.removeAttribute('aria-current');}}
-document.querySelectorAll('.nav-dropdown a').forEach(function(a){var on=a.getAttribute('href')==='#'+subId&&subId!=='applications';a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
-document.querySelectorAll('.mobile-menu a').forEach(function(a){var h=a.getAttribute('href');var on=h==='#'+subId||h==='#'+navKey;a.classList.toggle('active',on);if(on){a.setAttribute('aria-current','true');}else{a.removeAttribute('aria-current');}});
-}
-function setActiveForSection(sectionId){if(!(sectionId in sectionToNav))return;setActiveNav(sectionToNav[sectionId],sectionId);}
-if(nav){nav.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){var id=a.getAttribute('href').slice(1);setActiveForSection(id);});});}
-function updateActiveOnScroll(){
-var offset=(nav?nav.offsetHeight:72)+32;var pos=window.scrollY+offset;var currentId='home';
-for(var i=0;i<spySections.length;i++){var el=document.getElementById(spySections[i]);if(el&&el.getBoundingClientRect().top+window.scrollY<=pos){currentId=spySections[i];}}
-if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4){currentId='contact';}
-setActiveForSection(currentId);
-}
-var spyTicking=false;
-window.addEventListener('scroll',function(){if(!spyTicking){spyTicking=true;window.requestAnimationFrame(function(){updateActiveOnScroll();spyTicking=false;});}},{passive:true});
-window.addEventListener('resize',updateActiveOnScroll);
-window.addEventListener('hashchange',function(){var id=window.location.hash.slice(1);if(id)setActiveForSection(id);});
-(function initActive(){var id=window.location.hash?window.location.hash.slice(1):'';if(id&&(id in sectionToNav)){setActiveForSection(id);}else{currentNavKey='__init__';currentSubId='__init__';updateActiveOnScroll();}})();
 function setupTabs(){var btns=[['tab-mes','panel-mes'],['tab-erp','panel-erp'],['tab-crm','panel-crm']];
 var hashToTab={'mes':'tab-mes','erp':'tab-erp','crm':'tab-crm'};var tabToHash={'tab-mes':'mes','tab-erp':'erp','tab-crm':'crm'};
 function activate(id){btns.forEach(function(pair){var b=document.getElementById(pair[0]);var p=document.getElementById(pair[1]);if(!b||!p)return;var on=pair[0]===id;b.setAttribute('aria-selected',on?'true':'false');p.classList.toggle('active',on);});}
@@ -637,7 +703,112 @@ if(v('cf-business')){lines.push('Business name: '+v('cf-business'));}
 if(v('cf-phone')){lines.push('Phone: '+v('cf-phone'));}
 lines.push('Industry: '+industry);
 if(v('cf-message')){lines.push('','Message:',v('cf-message'));}
-window.location.href='mailto:Fernando@primeaiconsultants.com?subject='+encodeURIComponent('Manufacturing inquiry from '+v('cf-name'))+'&body='+encodeURIComponent(lines.join('\n'));});}
+var cfLink=document.createElement('a');cfLink.href='mailto:Fernando@primeaiconsultants.com?subject='+encodeURIComponent('Manufacturing inquiry from '+v('cf-name'))+'&body='+encodeURIComponent(lines.join('\n'));document.body.appendChild(cfLink);cfLink.click();cfLink.remove();var cfSent=document.getElementById('cf-sent');if(cfSent){cfSent.hidden=false;cfSent.setAttribute('tabindex','-1');window.setTimeout(function(){cfSent.scrollIntoView({behavior:'smooth',block:'nearest'});cfSent.focus({preventScroll:true});},50);}});}
+})();
+</script>
+<script id="global-site-chrome-js">
+/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard mailto form. */
+(function () {
+  var nav = document.getElementById("gn-nav");
+  var toggle = document.getElementById("gn-toggle");
+  if (nav && toggle) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("gn-nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.querySelectorAll(".gn-mobile-menu a, .gn-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("gn-nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+  }
+  var indItem = document.getElementById("gn-industries-item");
+  var indToggle = document.getElementById("gn-industries-toggle");
+  if (indItem && indToggle) {
+    var closeInd = function () {
+      indItem.classList.remove("gn-open");
+      indToggle.setAttribute("aria-expanded", "false");
+    };
+    indToggle.addEventListener("click", function (event) {
+      if (!indItem.classList.contains("gn-open")) {
+        event.preventDefault();
+        event.stopPropagation();
+        indItem.classList.add("gn-open");
+        indToggle.setAttribute("aria-expanded", "true");
+      } else {
+        closeInd();
+      }
+    });
+    indItem.addEventListener("mouseenter", function () { indToggle.setAttribute("aria-expanded", "true"); });
+    indItem.addEventListener("mouseleave", function () {
+      indToggle.setAttribute("aria-expanded", indItem.classList.contains("gn-open") ? "true" : "false");
+    });
+    indItem.querySelectorAll(".gn-submenu a").forEach(function (link) { link.addEventListener("click", closeInd); });
+    document.addEventListener("click", function (event) { if (!indItem.contains(event.target)) { closeInd(); } });
+    document.addEventListener("keydown", function (event) { if (event.key === "Escape") { closeInd(); } });
+  }
+  var mobileMenu = document.getElementById("gn-mobile-menu");
+  var mobileIndToggle = document.getElementById("gn-mobile-industries-toggle");
+  if (mobileMenu && mobileIndToggle) {
+    mobileIndToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      var collapsed = mobileMenu.classList.toggle("gn-industries-collapsed");
+      mobileIndToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
+  }
+  /* Industry "Other" write-in: one delegated toggle for every form on the page. */
+  document.addEventListener("change", function (event) {
+    var sel = event.target;
+    if (!sel || sel.tagName !== "SELECT" || !sel.form) { return; }
+    var wrap = sel.form.querySelector("[data-other-wrap]");
+    if (!wrap) { return; }
+    var isOther = sel.value === "Other";
+    wrap.hidden = !isOther;
+    wrap.style.display = isOther ? "" : "none";
+    wrap.classList.toggle("show", isOther);
+    if (isOther) {
+      var field = wrap.querySelector("input, textarea");
+      if (field) { field.focus(); }
+    }
+  });
+  /* Standard form pattern for forms marked data-gform (law, local businesses). */
+  document.querySelectorAll("form[data-gform]").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var get = function (name) {
+        var field = form.querySelector('[name="' + name + '"]');
+        return field ? field.value.trim() : "";
+      };
+      var industry = get("industry");
+      if (industry === "Other") { industry = get("industry_other") || "Other"; }
+      var lines = ["Name: " + get("name"), "Email: " + get("email")];
+      if (get("business_name")) { lines.push("Business name: " + get("business_name")); }
+      if (get("phone")) { lines.push("Phone: " + get("phone")); }
+      if (industry) { lines.push("Industry: " + industry); }
+      if (get("message")) { lines.push("", "Message:", get("message")); }
+      var subject = "First step request";
+      if (get("business_name")) { subject += " from " + get("business_name"); }
+      var mailLink = document.createElement("a");
+      mailLink.href = "mailto:Fernando@primeaiconsultants.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(lines.join("\n"));
+      document.body.appendChild(mailLink);
+      mailLink.click();
+      mailLink.remove();
+      var sent = form.querySelector("[data-gform-sent]");
+      if (sent) {
+        sent.hidden = false;
+        sent.setAttribute("tabindex", "-1");
+        window.setTimeout(function () {
+          sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          sent.focus({ preventScroll: true });
+        }, 50);
+      }
+    });
+  });
 })();
 </script>
 </body>
