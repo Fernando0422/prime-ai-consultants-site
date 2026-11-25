@@ -399,15 +399,22 @@ form :is(input,select,textarea,button){max-width:100%}
 </div>
 </section>
 
+<style>
+#services .card{padding:30px 28px;display:flex;flex-direction:column}
+#services .card-kicker{font-size:.82rem;font-weight:700;letter-spacing:.22em;color:var(--teal-text,#1F6B62);margin-bottom:14px}
+#services .card h3{font-size:1.22rem;line-height:1.3;min-height:2.6em;margin-bottom:10px}
+#services .card p{line-height:1.6}
+#services .cards{margin-top:2.75rem}
+@media (max-width:900px){#services .card h3{min-height:0}}
+</style>
 <!-- SERVICES -->
 <section class="flow-section flow-section--mist" id="services">
 <div class="container">
-<div class="sec-head"><p class="eyebrow">Services</p><h2>Understand first, then build only <em>what is written down.</em></h2><p>We help you understand a messy operational system before you put AI or advanced analytics on top of it. That includes MES, ERP, and CRM, and the machining and production cells those systems describe, including aerospace and defense work where traceability matters. Every engagement is scoped around one system, one question, one decision, and written responsibilities on both sides.</p></div>
-<div class="prose" style="max-width:72rem;width:100%"><p style="text-wrap:balance">We work in stages, not as a bundled package you have to buy all at once. Some teams need discovery before they can define a pilot. Others arrive with a documented environment and a narrower question about what to build. After a first conversation, we recommend only the stage that fits. We will not sell you the rest simply because it happens to be on the menu.</p></div>
+<div class="sec-head"><p class="eyebrow">Services</p><h2>Understand first, then build only <em>what is written down.</em></h2><p>We help you understand a messy operational system before you put AI or advanced analytics on top of it: MES, ERP, and CRM, and the machining and production cells those systems describe, including aerospace and defense work where traceability matters. Every engagement is scoped around one system, one question, and one decision, with written responsibilities on both sides, and we work in stages. Some teams need discovery before they can define a pilot; others arrive with a documented environment and a narrower question. After a first conversation, we recommend only the stage that fits.</p></div>
 <div class="cards" style="margin-top:2.5rem">
-<article class="card"><h3>Infrastructure, not demos</h3><p>The work is the documentation, the approved views, the clear paths for checking answers, and materials your engineers can keep using after we leave. Not a demonstration that looks good once and then fades.</p></article>
-<article class="card"><h3>Built to stay usable without us</h3><p>The dictionaries, maps, and views are delivered under the ownership terms in the agreement, in forms your team can keep using. You should never need to stay locked into a platform to keep using materials built for your operation.</p></article>
-<article class="card"><h3>Correct answers before open access</h3><p>The first milestone is not unrestricted access to query the database. It is answering real operational questions with logic that is written down and approved by the people responsible for it.</p></article>
+<article class="card"><p class="card-kicker">01</p><h3>Infrastructure, not demos</h3><p>The deliverable is documentation, approved views, and clear paths for checking answers, in materials your engineers can keep using after we leave. Not a demonstration that looks good once and then fades.</p></article>
+<article class="card"><p class="card-kicker">02</p><h3>Built to stay usable without us</h3><p>Dictionaries, maps, and views are delivered under the ownership terms in the agreement, in forms your team can keep using. You never need to stay locked into a platform to keep using materials built for your operation.</p></article>
+<article class="card"><p class="card-kicker">03</p><h3>Correct answers before open access</h3><p>The first milestone is not unrestricted access to query the database. It is answering real operational questions with logic that is written down and approved by the people responsible for it.</p></article>
 </div>
 <div class="sec-head" style="margin-top:clamp(3.5rem,7vw,5rem)"><p class="eyebrow">Working principles</p><h2>How we <em>work</em></h2></div>
 <ul class="pills" style="max-width:56rem;margin:0 auto"><li>Vendor neutral. We don’t sell someone else’s stack.</li><li>Read only discovery where feasible</li><li>Assumptions labeled, not buried</li><li>Access only with client approval</li><li>Humans still validate meaning</li><li>Clear written scope</li><li>Editable client specific outputs you keep</li></ul>
