@@ -227,6 +227,7 @@
       .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px 32px; }
       @media (min-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
       @media (min-width: 1080px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+       @media (min-width: 760px) { .steps.steps--four { grid-template-columns: repeat(2, 1fr); } }
       .step-num { display: block; font-family: var(--font-display); font-size: 2.9rem; font-weight: 700; line-height: 1; color: var(--color-teal-text); letter-spacing: -0.03em; margin-bottom: 14px; }
       .step h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 8px; }
       .step p { color: var(--color-text-body); font-size: 0.99rem; }
@@ -582,13 +583,14 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         <div class="container">
           <div class="sec-head">
             <p class="eyebrow">How we work</p>
-            <h2>Audit. Consult. <em>Custom solutions.</em></h2>
+            <h2>Audit. Consult. <em>Custom solutions. Hand over.</em></h2>
             <p>Each step earns the next one. We do not sell you the last step first.</p>
           </div>
-          <ol class="steps">
+          <ol class="steps steps--four">
             <li class="step"><span class="step-num" aria-hidden="true">01</span><h3>Audit <span class="tag tag-free">Free</span></h3><p>We map how customers find you today, score it, and show you the gaps in plain language on one short call.</p></li>
             <li class="step"><span class="step-num" aria-hidden="true">02</span><h3>Consult</h3><p>We sit down together and agree on the exact problems worth fixing, and in what order, before anything gets built. Not every business needs a rebuild, and not every problem needs AI. If nothing is worth fixing, we will tell you that instead.</p></li>
             <li class="step"><span class="step-num" aria-hidden="true">03</span><h3>Custom solutions</h3><p>We build the fix that fits your business, in the order we agreed in the consult. That can be a website, a system that connects the tools you already use, or a small tool built for one job in your day. You get a written quote before any work starts, and you own what we build.</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">04</span><h3>Teach and hand over</h3><p>We train the people who will use what we built, in person and in plain language, and leave written guidance behind, so it keeps working on an ordinary day without us in the room. If it only works while we are there, it is not finished.</p></li>
           </ol>
 
           <div class="solutions">
@@ -635,7 +637,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <p><span class="foundation-line">We're a consultancy, not a software vendor.</span> <span class="foundation-line">You hire us to find where your business loses money and to fix those specific problems.</span> <span class="foundation-line">Six commitments come with that.</span></p>
           </div>
           <div class="principles">
-            <div class="principle"><h3>You own everything</h3><p>The site, the content, and the profiles are yours. If we stopped working together, it all stays with you.</p></div>
+            <div class="principle"><h3>You own everything</h3><p>The site, the content, and the profiles are yours. If we stopped working together, it all stays with you. And we teach you to run it, so ownership is real and not just paperwork.</p></div>
             <div class="principle"><h3>Additive, never a replacement</h3><p>What already works stays in place and stays the source of truth. New work connects to it and logs back into it.</p></div>
             <div class="principle"><h3>Your number stays your number</h3><p>Nothing ports your main line on day one. Any call help starts after hours or in shadow mode, with a kill switch.</p></div>
             <div class="principle"><h3>Broker approval first</h3><p>For realtors, we check your brokerage rules first, and we do not assume a page under your brokerage is allowed. Your name, your license number, and your broker stay on anything we build, and nothing goes live without approval.</p></div>
@@ -662,6 +664,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             <details class="faq-item"><summary>How much does the work cost?</summary><div class="a"><p>Pricing comes after the first conversation, because the right price depends on what your business actually needs. The audit itself is free.</p><p>Everything after the audit, whether that is a website rebuild, a Google profile cleanup, reviews brought into one place, or a custom tool built for your business, is priced after we understand the problem and talk through your budget with you. We work with the business to find a scope that fits what it can spend, rather than selling a fixed package from a price list. You will always get a clear written quote before any paid work starts, and you can say no to that quote and keep the audit findings either way.</p></div></details>
             <details class="faq-item"><summary>What happens after the free audit?</summary><div class="a"><p>After the free audit, the next step is a consult, not a sales pitch for the biggest package. In the consult you and we agree on the exact problems worth fixing, the order that makes the most sense for calls and revenue, and what can wait.</p><p>Only then do we build custom solutions in that agreed order. That might start with correcting your Google profile and phone number everywhere, move to a website you own with pages for your real services and service areas, and later add reviews in one place, faster replies to new leads, or personal tools for quoting, intake, and follow up. Each step earns the next one. You approve the scope and the written quote before work begins, and the work is done in the order you approved.</p></div></details>
             <details class="faq-item"><summary>Do I own my website and profiles if we work together?</summary><div class="a"><p>Yes. You own everything we build for your business. That includes your website, your content, your photos, and your business profiles.</p><p>We build and connect those assets in your name, for your business, and they stay with you even if you stop working with us later. This matters for local businesses because a site you rent or a profile someone else controls can disappear when a contract ends. With us the goal is the opposite. The systems, tools, and pages created for you become part of what your business owns, so the calls, reviews, and search visibility they bring in keep working for you over time.</p></div></details>
+            <details class="faq-item"><summary>Will you teach us, or just do it for us?</summary><div class="a"><p>Both, and the teaching is not an extra. We build the fix with you, train whoever will use it, and leave plain language guidance behind, so it keeps working on an ordinary day without us in the room.</p><p>Some work you may still want us to handle, and that is your choice. Nothing we build should need us there to keep working.</p></div></details>
             <details class="faq-item"><summary>Do you only work in Santa Clarita?</summary><div class="a"><p>No. The Santa Clarita Valley is home for us, and it is where most in person work starts, including Santa Clarita, Valencia, Castaic, Canyon Country, Newhall, and Saugus. We also serve local businesses across the San Fernando Valley, Los Angeles, and Southern California.</p><p>The common thread is not the city. It is the kind of business. If your customers live within driving distance, search on Google or ask AI tools who to call, and choose based on trust, reviews, and how easy you are to reach, this work is built for you. We're local and in person where it matters. We can meet at your shop, your office, a job site, or over coffee, and talk through the audit and the plan face to face, not only through a dashboard or a screen.</p></div></details>
           </div>
         </div>
