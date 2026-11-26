@@ -512,7 +512,7 @@ form :is(input,select,textarea,button){max-width:100%}
 <p>Tell us the system involved, the question you are trying to answer, and what is getting in the way, in a short note, and we will tell you honestly whether a focused diagnostic makes sense and if we are the right fit.</p>
 <div class="contact-actions"><a class="btn btn-primary btn-uppercase" href="mailto:Fernando@primeaiconsultants.com">Email Fernando <span aria-hidden="true">↗</span></a><a class="btn btn-outline-light btn-uppercase" href="tel:+16617795568">Call 661-779-5568</a></div>
 <p class="contact-meta">We read every inquiry ourselves. There are no queue bots.</p>
-<form class="contact-form" id="manufacturer-contact-form">
+<form class="contact-form" id="manufacturer-contact-form" action="https://formspree.io/f/xzeroowb" method="POST"><input type="hidden" name="_subject" value="Manufacturing inquiry from primeaiconsultants.com" /><input type="hidden" name="_replyto" value="" /><input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
 <div class="form-grid">
 <div><label for="cf-name">Name *</label><input id="cf-name" name="name" type="text" autocomplete="name" required /></div>
 <div><label for="cf-email">Email *</label><input id="cf-email" name="email" type="email" autocomplete="email" required /></div>
@@ -522,7 +522,7 @@ form :is(input,select,textarea,button){max-width:100%}
 <div id="cf-other-wrap" data-other-wrap hidden><label for="cf-industry-other">Your industry (optional)</label><input id="cf-industry-other" name="industry_other" type="text" /></div>
 <div class="form-full"><label for="cf-message">How can we help? (optional)</label><textarea id="cf-message" name="message"></textarea></div>
 </div>
-<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send by email</button><p class="form-note">Sending opens your email app with the message addressed to Fernando@primeaiconsultants.com.</p><p class="form-sent" id="cf-sent" hidden>Your email app should be open with your details filled in. Press send there to reach us.</p></div>
+<div class="form-actions"><button class="btn btn-primary btn-uppercase" type="submit">Send message</button><p class="form-note">This form sends straight to our inbox at Fernando@primeaiconsultants.com. No email app needed.</p><p class="form-sent" id="cf-sent" hidden>Thank you, your message is on its way. We will reply to the email address you gave us.</p></div>
 </form>
 <div class="contact-grid">
 <div class="contact-cell"><p class="label">General email</p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a></div>
@@ -582,18 +582,18 @@ if(cfForm){var cfInd=document.getElementById('cf-industry');var cfOtherWrap=docu
 function cfToggleOther(){var isOther=cfInd.value==='Other';cfOtherWrap.hidden=!isOther;if(!isOther&&cfOtherInput){cfOtherInput.value='';}}
 cfInd.addEventListener('change',cfToggleOther);cfToggleOther();
 cfForm.addEventListener('submit',function(e){e.preventDefault();
-function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
-var industry=cfInd.value==='Other'?('Other: '+(v('cf-industry-other')||'not specified')):cfInd.value;
-var lines=['Name: '+v('cf-name'),'Email: '+v('cf-email')];
-if(v('cf-business')){lines.push('Business name: '+v('cf-business'));}
-if(v('cf-phone')){lines.push('Phone: '+v('cf-phone'));}
-lines.push('Industry: '+industry);
-if(v('cf-message')){lines.push('','Message:',v('cf-message'));}
-var cfLink=document.createElement('a');cfLink.href='mailto:Fernando@primeaiconsultants.com?subject='+encodeURIComponent('Manufacturing inquiry from '+v('cf-name'))+'&body='+encodeURIComponent(lines.join('\n'));document.body.appendChild(cfLink);cfLink.click();cfLink.remove();var cfSent=document.getElementById('cf-sent');if(cfSent){cfSent.hidden=false;cfSent.setAttribute('tabindex','-1');window.setTimeout(function(){cfSent.scrollIntoView({behavior:'smooth',block:'nearest'});cfSent.focus({preventScroll:true});},50);}});}
+var fd=new FormData(cfForm);
+var em=cfForm.querySelector('[name="email"]');if(em){fd.set('_replyto',em.value.trim());}
+var ind=cfForm.querySelector('[name="industry"]');var oth=cfForm.querySelector('[name="industry_other"]');
+if(ind&&oth&&ind.value==='Other'&&oth.value.trim()){fd.set('industry',oth.value.trim());}
+if(oth){fd.delete('industry_other');}
+var btn=cfForm.querySelector('[type="submit"]');if(btn){btn.disabled=true;}
+var showSent=function(ok){var cfSent=document.getElementById('cf-sent');if(!cfSent){return;}cfSent.textContent=ok?' Thank you, your message is on its way. We will reply to the email address you gave us. ':' Something went wrong sending that. Please email Fernando@primeaiconsultants.com or call 661-779-5568. ';cfSent.hidden=false;cfSent.setAttribute('tabindex','-1');window.setTimeout(function(){cfSent.scrollIntoView({behavior:'smooth',block:'nearest'});cfSent.focus({preventScroll:true});},50);};
+fetch(cfForm.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(r){if(!r.ok){throw new Error('send failed');}showSent(true);cfForm.reset();}).catch(function(){showSent(false);}).then(function(){if(btn){btn.disabled=false;}});});}
 })();
 </script>
 <script id="global-site-chrome-js">
-/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard mailto form. */
+/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard form handler. */
 (function () {
   var nav = document.getElementById("gn-nav");
   var toggle = document.getElementById("gn-toggle");
@@ -660,39 +660,31 @@ var cfLink=document.createElement('a');cfLink.href='mailto:Fernando@primeaiconsu
       if (field) { field.focus(); }
     }
   });
-  /* Standard form pattern for forms marked data-gform (law, local businesses). */
+  /* Standard form pattern for forms marked data-gform: submits to Formspree. */
   document.querySelectorAll("form[data-gform]").forEach(function (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      var get = function (name) {
-        var field = form.querySelector('[name="' + name + '"]');
-        return field ? field.value.trim() : "";
-      };
-      var industry = get("industry");
-      if (industry === "Other") { industry = get("industry_other") || "Other"; }
-      var lines = ["Name: " + get("name"), "Email: " + get("email")];
-      if (get("business_name")) { lines.push("Business name: " + get("business_name")); }
-      if (get("phone")) { lines.push("Phone: " + get("phone")); }
-      if (industry) { lines.push("Industry: " + industry); }
-      if (get("message")) { lines.push("", "Message:", get("message")); }
-      var subject = "First step request";
-      if (get("business_name")) { subject += " from " + get("business_name"); }
-      var mailLink = document.createElement("a");
-      mailLink.href = "mailto:Fernando@primeaiconsultants.com"
-        + "?subject=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(lines.join("\n"));
-      document.body.appendChild(mailLink);
-      mailLink.click();
-      mailLink.remove();
-      var sent = form.querySelector("[data-gform-sent]");
-      if (sent) {
+      var fd = new FormData(form);
+      var emailField = form.querySelector('[name="email"]');
+      if (emailField) { fd.set("_replyto", emailField.value.trim()); }
+      var indField = form.querySelector('[name="industry"]');
+      var otherField = form.querySelector('[name="industry_other"]');
+      if (indField && otherField && indField.value === "Other" && otherField.value.trim()) { fd.set("industry", otherField.value.trim()); }
+      if (otherField) { fd.delete("industry_other"); }
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; }
+      var showSent = function (ok) {
+        var sent = form.querySelector("[data-gform-sent]");
+        if (!sent) { return; }
+        sent.textContent = ok ? "Thank you, your message is on its way. We will reply to the email address you gave us." : "Something went wrong sending that. Please email Fernando@primeaiconsultants.com or call 661-779-5568.";
         sent.hidden = false;
         sent.setAttribute("tabindex", "-1");
-        window.setTimeout(function () {
-          sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          sent.focus({ preventScroll: true });
-        }, 50);
-      }
+        window.setTimeout(function () { sent.scrollIntoView({ behavior: "smooth", block: "nearest" }); sent.focus({ preventScroll: true }); }, 50);
+      };
+      fetch(form.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+        .then(function (r) { if (!r.ok) { throw new Error("send failed"); } showSent(true); form.reset(); })
+        .catch(function () { showSent(false); })
+        .then(function () { if (btn) { btn.disabled = false; } });
     });
   });
 })();

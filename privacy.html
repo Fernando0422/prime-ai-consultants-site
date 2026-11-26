@@ -210,7 +210,7 @@ form :is(input,select,textarea,button){max-width:100%}
         </ul>
         <p>We use Vercel Web Analytics and Vercel Speed Insights to understand how the website is used and how quickly pages load. Both are provided by Vercel, our hosting provider, and are designed to work without cookies and without cross-site tracking. We use them to measure aggregate, non-identifying information such as page views, the pages visited, referring sources, approximate geographic region, device and browser categories, and page performance measurements such as load timing. This information is reported to us in aggregate. We do not use it to identify individual visitors, and we do not combine it with information you submit through the contact form.</p>
         <p>Vercel processes this information on our behalf as our hosting provider. Vercel's own privacy documentation describes how it handles data for these services. We do not use Google Analytics or any comparable third-party advertising or behavioral analytics product on this website. Fonts and other static assets may be delivered through third-party content networks (currently Google Fonts), which may receive technical request data such as IP address when pages load.</p>
-        <p>The public contact form prepares a draft message addressed to our business inbox and opens it in the email option you choose (Gmail, Outlook, or your email app). Submitting the form does not send data to a third-party form processor on our servers. The email service you choose processes and transmits the message you send, subject to that service's practices.</p>
+        <p>The public contact form is processed by Formspree, a form service that transmits your submission to our business inbox. Formspree processes the information you enter for that purpose, subject to its own privacy practices. We receive your submission by email and handle it as described in this policy.</p>
 
         <h2>3. How we use information</h2>
         <p>We may use information to:</p>
@@ -313,7 +313,7 @@ form :is(input,select,textarea,button){max-width:100%}
 
   <script src="assets/site.min.js?v=mailto2" defer></script>
 <script id="global-site-chrome-js">
-/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard mailto form. */
+/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard form handler. */
 (function () {
   var nav = document.getElementById("gn-nav");
   var toggle = document.getElementById("gn-toggle");
@@ -380,39 +380,31 @@ form :is(input,select,textarea,button){max-width:100%}
       if (field) { field.focus(); }
     }
   });
-  /* Standard form pattern for forms marked data-gform (law, local businesses). */
+  /* Standard form pattern for forms marked data-gform: submits to Formspree. */
   document.querySelectorAll("form[data-gform]").forEach(function (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      var get = function (name) {
-        var field = form.querySelector('[name="' + name + '"]');
-        return field ? field.value.trim() : "";
-      };
-      var industry = get("industry");
-      if (industry === "Other") { industry = get("industry_other") || "Other"; }
-      var lines = ["Name: " + get("name"), "Email: " + get("email")];
-      if (get("business_name")) { lines.push("Business name: " + get("business_name")); }
-      if (get("phone")) { lines.push("Phone: " + get("phone")); }
-      if (industry) { lines.push("Industry: " + industry); }
-      if (get("message")) { lines.push("", "Message:", get("message")); }
-      var subject = "First step request";
-      if (get("business_name")) { subject += " from " + get("business_name"); }
-      var mailLink = document.createElement("a");
-      mailLink.href = "mailto:Fernando@primeaiconsultants.com"
-        + "?subject=" + encodeURIComponent(subject)
-        + "&body=" + encodeURIComponent(lines.join("\n"));
-      document.body.appendChild(mailLink);
-      mailLink.click();
-      mailLink.remove();
-      var sent = form.querySelector("[data-gform-sent]");
-      if (sent) {
+      var fd = new FormData(form);
+      var emailField = form.querySelector('[name="email"]');
+      if (emailField) { fd.set("_replyto", emailField.value.trim()); }
+      var indField = form.querySelector('[name="industry"]');
+      var otherField = form.querySelector('[name="industry_other"]');
+      if (indField && otherField && indField.value === "Other" && otherField.value.trim()) { fd.set("industry", otherField.value.trim()); }
+      if (otherField) { fd.delete("industry_other"); }
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; }
+      var showSent = function (ok) {
+        var sent = form.querySelector("[data-gform-sent]");
+        if (!sent) { return; }
+        sent.textContent = ok ? "Thank you, your message is on its way. We will reply to the email address you gave us." : "Something went wrong sending that. Please email Fernando@primeaiconsultants.com or call 661-779-5568.";
         sent.hidden = false;
         sent.setAttribute("tabindex", "-1");
-        window.setTimeout(function () {
-          sent.scrollIntoView({ behavior: "smooth", block: "nearest" });
-          sent.focus({ preventScroll: true });
-        }, 50);
-      }
+        window.setTimeout(function () { sent.scrollIntoView({ behavior: "smooth", block: "nearest" }); sent.focus({ preventScroll: true }); }, 50);
+      };
+      fetch(form.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+        .then(function (r) { if (!r.ok) { throw new Error("send failed"); } showSent(true); form.reset(); })
+        .catch(function () { showSent(false); })
+        .then(function () { if (btn) { btn.disabled = false; } });
     });
   });
 })();
