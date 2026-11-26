@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>document.documentElement.classList.add("js");</script>
+  <!-- Vercel Web Analytics + Speed Insights -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <title>What Is Operational Context, and Why Does AI Need It Before a Pilot? | Prime AI Consultants</title>
+  <meta name="description" content="Operational context is the written record of how a plant actually runs: definitions, decision owners, and validation. AI needs it before a pilot." />
+  <meta name="theme-color" content="#F3F2EE" />
+  <link rel="canonical" href="https://www.primeaiconsultants.com/blog/operational-context" />
+  <meta property="og:title" content="What Is Operational Context, and Why Does AI Need It Before a Pilot? | Prime AI Consultants" />
+  <meta property="og:description" content="Operational context is the written record of how a plant actually runs: definitions, decision owners, and validation. AI needs it before a pilot." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.primeaiconsultants.com/blog/operational-context" />
+  <meta property="og:image" content="https://www.primeaiconsultants.com/assets/operational-context-hero.jpg" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "What is operational context, and why does AI need it before a pilot?",
+      "description": "Operational context is the written record of how a plant actually runs: definitions, decision owners, and validation. AI needs it before a pilot.",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Fernando Rojas",
+          "url": "https://www.fernandorojasstudio.com/",
+          "jobTitle": "Cofounder, Prime AI Consultants"
+        },
+        {
+          "@type": "Person",
+          "name": "Antonio Rojas",
+          "jobTitle": "Cofounder, Prime AI Consultants"
+        }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://www.primeaiconsultants.com/#organization",
+        "name": "Prime AI Consultants",
+        "url": "https://www.primeaiconsultants.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.primeaiconsultants.com/assets/prime-ai-logo-nav.svg"
+        }
+      },
+      "datePublished": "2026-11-26",
+      "dateModified": "2026-11-26",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.primeaiconsultants.com/blog/operational-context"
+      },
+      "image": "https://www.primeaiconsultants.com/assets/operational-context-hero.jpg"
+    }
+    </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.min.css?v=mailto1" />
+  <link rel="stylesheet" href="/assets/enhancements.min.css?v=heroctr2" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="/assets/logo/app-icon.svg" />
+<style id="global-site-chrome">
+/* Global site chrome (2026-11-23 go-live unification; header/footer values aligned to the homepage 2026-11-23): one header and footer on every page.
+   Classes are gn- / gf- prefixed so they do not collide with per-page styles. Header values mirror the homepage
+   .site-nav / .nav-inner / .brand / .nav-links / .submenu / .nav-toggle / .mobile-menu rules exactly, with the
+   homepage variables resolved to literals (--color-nav #F1F1F1, --color-dark #0A0F1E, --color-teal-text #1F6B62,
+   --font-display "Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif, --radius-sm 6px, --radius-md 10px,
+   --shadow-md 0 4px 24px rgba(10,15,30,0.08), --color-text-body #4A4A5A). Footer values were already identical to
+   the homepage footer's effective gf rules and are unchanged. */
+[hidden]{display:none!important}
+.gn-nav{position:sticky;top:0;z-index:50;background:#F1F1F1;color:#0A0F1E;border-bottom:1px solid rgba(10,15,30,.08);font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+.gn-inner{max-width:1440px;margin:0 auto;min-height:88px;padding:12px clamp(16px,2.2vw,36px);display:flex;align-items:center;gap:clamp(10px,1.2vw,20px)}
+.gn-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:#0A0F1E;flex:0 0 auto;min-width:0}
+.gn-brand-mark{width:46px;height:46px;flex:0 0 auto}
+.gn-brand-text{display:flex;flex-direction:column;line-height:1}
+.gn-brand-name{font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:800;font-size:1.55rem;letter-spacing:-0.03em;color:#0A0F1E;white-space:nowrap}
+.gn-brand-sub{font-size:.58rem;font-weight:700;letter-spacing:.42em;color:#0A0F1E;margin-top:4px}
+.gn-links{display:none;align-items:center;justify-content:center;flex:1 1 auto;list-style:none;margin:0;padding:0}
+.gn-links>li{position:relative;display:inline-flex;align-items:center}
+.gn-links>li>a{display:inline-flex;align-items:center;min-height:42px;padding:0 clamp(8px,.85vw,14px);border-radius:999px;text-decoration:none;color:rgba(10,15,30,.72);font-size:.92rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.gn-links>li>a:hover{color:#0A0F1E;background:rgba(10,15,30,.06)}
+.gn-links>li>a.gn-active{color:#1F6B62;background:rgba(59,168,154,.14);font-weight:700}
+.gn-links>li>a.gn-active:hover{color:#1F6B62;background:rgba(59,168,154,.14)}
+.gn-industries-control{gap:6px}
+.gn-chev{font-size:.7rem;line-height:1;transition:transform 200ms ease}
+.gn-item.gn-open .gn-chev{transform:rotate(180deg)}
+.gn-item::after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:340px;max-width:calc(100vw - 32px);top:100%;height:24px;background:transparent}
+.gn-submenu{display:block;position:absolute;top:calc(100% - 2px);left:50%;transform:translateX(-50%);min-width:300px;max-width:calc(100vw - 32px);list-style:none;margin:0;padding:8px;background:#fff;border:1px solid rgba(10,15,30,.1);border-radius:10px;box-shadow:0 4px 24px rgba(10,15,30,.08);z-index:60;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 160ms ease,visibility 0s linear 200ms}
+.gn-submenu::before{content:"";position:absolute;top:-24px;left:0;right:0;height:24px;background:transparent}
+.gn-item.gn-open .gn-submenu,.gn-submenu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}
+@media (hover:hover) and (min-width:1180px){.gn-item:hover .gn-submenu,.gn-item:focus-within .gn-submenu{opacity:1;visibility:visible;pointer-events:auto;transition:opacity 160ms ease,visibility 0s}}
+.gn-item:hover>.gn-industries-control,.gn-item:focus-within>.gn-industries-control,.gn-item.gn-open>.gn-industries-control{color:#0A0F1E;background:rgba(10,15,30,.06)}
+.gn-item:hover>.gn-industries-control.gn-active,.gn-item:focus-within>.gn-industries-control.gn-active,.gn-item.gn-open>.gn-industries-control.gn-active{color:#1F6B62;background:rgba(59,168,154,.14)}
+.gn-submenu li a{display:flex;align-items:center;min-height:44px;width:100%;padding:9px 14px;border-radius:6px;text-decoration:none;color:rgba(10,15,30,.72);font-size:.96rem;font-weight:600;letter-spacing:0;text-transform:none;white-space:normal}
+.gn-submenu li a:hover{color:#0A0F1E;background:rgba(59,168,154,.1)}
+.gn-toggle{display:inline-flex;width:44px;height:44px;flex:0 0 auto;margin-left:auto;align-items:center;justify-content:center;color:#0A0F1E;background:none;border:none;border-radius:6px;cursor:pointer}
+.gn-toggle:hover{background:rgba(10,15,30,.06)}
+.gn-bars,.gn-bars::before,.gn-bars::after{display:block;width:22px;height:2px;background:currentColor;transition:transform 200ms ease,opacity 200ms ease}
+.gn-bars{position:relative}
+.gn-bars::before,.gn-bars::after{content:"";position:absolute;left:0}
+.gn-bars::before{top:-7px}
+.gn-bars::after{top:7px}
+.gn-nav.gn-nav-open .gn-bars{background:transparent}
+.gn-nav.gn-nav-open .gn-bars::before{top:0;transform:rotate(45deg)}
+.gn-nav.gn-nav-open .gn-bars::after{top:0;transform:rotate(-45deg)}
+.gn-mobile-menu{display:none;list-style:none;margin:0;padding:10px clamp(16px,2.2vw,36px) 20px;border-top:1px solid rgba(10,15,30,.08);background:#F1F1F1}
+.gn-nav.gn-nav-open .gn-mobile-menu{display:block}
+.gn-mobile-menu li a{display:flex;align-items:center;min-height:48px;padding:10px 4px;color:#0A0F1E;text-decoration:none;font-weight:600;font-size:1rem;border-bottom:1px solid rgba(10,15,30,.07)}
+.gn-mobile-menu li:last-child a{border-bottom:none}
+.gn-mobile-menu .gn-sub a{padding-left:22px;font-size:.95rem;font-weight:500;color:#4A4A5A}
+.gn-mobile-industries-row{display:flex;align-items:center}
+.gn-mobile-industries-row a{flex:1 1 auto}
+.gn-mobile-industries-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:48px;flex:0 0 auto;padding:0;color:#0A0F1E;background:none;border:none;border-bottom:1px solid rgba(10,15,30,.07);cursor:pointer}
+.gn-mobile-industries-toggle:hover{background:rgba(10,15,30,.06)}
+.gn-mobile-industries-toggle .gn-chev{font-size:.8rem;line-height:1;transition:transform 200ms ease;transform:rotate(180deg)}
+.gn-mobile-menu.gn-industries-collapsed .gn-mobile-industries-toggle .gn-chev{transform:rotate(0deg)}
+.gn-mobile-menu.gn-industries-collapsed .gn-sub{display:none}
+@media (min-width:1180px){.gn-links{display:flex}.gn-toggle{display:none}.gn-mobile-menu{display:none!important}}
+@media (max-width:560px){.gn-inner{min-height:72px}.gn-brand-mark{width:38px;height:38px}.gn-brand-name{font-size:1.25rem}.gn-brand-sub{font-size:.5rem}}
+.gf-footer{background:#0A0F1E;color:rgba(255,255,255,.78);border-top:1px solid rgba(255,255,255,.12);padding:44px 0 52px;font-family:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif}
+.gf-in{max-width:1240px;margin:0 auto;padding:0 clamp(1.25rem,4vw,2.5rem);display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:flex-start}
+.gf-brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:#fff;margin-bottom:10px;min-width:0}
+.gf-brand-mark{width:38px;height:38px;flex-shrink:0}
+.gf-brand-text{display:flex;flex-direction:column;line-height:1.05}
+.gf-brand-name{font-size:1.3rem;font-weight:700;color:#fff;white-space:nowrap}
+.gf-brand-sub{font-size:.68rem;font-weight:600;letter-spacing:.32em;color:rgba(255,255,255,.75)}
+.gf-footer p,.gf-footer a{font-size:.92rem;color:rgba(255,255,255,.72)}
+.gf-footer a{text-decoration:none;overflow-wrap:anywhere}
+.gf-footer a:hover{color:#fff;text-decoration:underline}
+.gf-links{display:flex;flex-wrap:wrap;gap:8px 22px;max-width:560px}
+.gf-links a{padding:6px 0;display:inline-block;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;font-weight:600;min-height:36px}
+.gf-note{width:100%;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:.88rem;color:rgba(255,255,255,.55);max-width:60rem}
+/* Standard form helpers shared by the law form (lf-) and note/sent lines on dark sections */
+.lf-form{background:#fff;color:#1A1A2E;border-radius:16px;padding:clamp(22px,4vw,34px);margin-top:34px;text-align:left;box-shadow:0 4px 24px rgba(10,15,30,.18)}
+.lf-form h3{margin:0 0 8px;font-size:1.25rem;color:#0A0F1E}
+.lf-form .lf-intro{margin:0 0 20px;color:#4A4A5A;font-size:.98rem}
+.lf-grid{display:grid;gap:16px}
+@media (min-width:760px){.lf-grid{grid-template-columns:1fr 1fr}}
+.lf-field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.lf-field--full{grid-column:1/-1}
+.lf-field label{font-weight:600;font-size:.92rem;color:#1A1A2E}
+.lf-field input,.lf-field select,.lf-field textarea{width:100%;max-width:100%;min-height:48px;padding:12px 14px;background:#fff;border:1px solid #C9C9D4;border-radius:8px;color:#1A1A2E;font:inherit;font-size:1rem}
+.lf-field textarea{min-height:110px;resize:vertical}
+.lf-field input:focus,.lf-field select:focus,.lf-field textarea:focus{outline:2px solid #3BA89A;outline-offset:1px;border-color:#3BA89A}
+.lf-submit{margin-top:22px;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 30px;border-radius:999px;border:1.5px solid #2F877C;background:#2F877C;color:#fff;font:inherit;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;width:100%}
+.lf-note{margin-top:14px;font-size:.88rem;color:#4A4A5A;overflow-wrap:anywhere}
+.lf-sent{margin-top:14px;font-weight:700;font-size:.92rem;color:#1F6B62}
+.audit-form .form-note{margin-top:14px;font-size:.88rem;color:rgba(255,255,255,.65);overflow-wrap:anywhere}
+form :is(input,select,textarea,button){max-width:100%}
+
+      /* Balanced wrapping for centered intro and note text: no single hanging words */
+      .sec-head p, .diag-note, .diag-line, .overview-cta-line { text-wrap: balance; }
+    </style>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "zjk8hedq6d");
+</script>
+<style>
+      /* Blog pages (2026-11-26): article and listing styles in the site palette.
+         Operational context post: wider reading column (56rem, about 896px) per Fernando's request. */
+      .byline { margin-top: 18px; font-size: 0.98rem; color: #4A4A5A; }
+      .byline a { font-weight: 600; }
+      .post-date { margin-top: 4px; font-size: 0.9rem; color: #4A4A5A; }
+      .post-meta { margin-top: 4px; font-size: 0.9rem; color: #4A4A5A; }
+      .blog-article { max-width: 56rem; }
+      .blog-article > p { color: #4A4A5A; margin: 0 0 1.15rem; }
+      .blog-article > h2 { font-size: 1.55rem; line-height: 1.3; margin: 2.4rem 0 0.85rem; }
+      .blog-article > h2:first-of-type { margin-top: 0.6rem; }
+      .blog-article sup { font-size: 0.72em; color: #1F6B62; }
+      .post-faq h3 { font-size: 1.12rem; line-height: 1.4; margin: 1.5rem 0 0.5rem; color: #0A0F1E; }
+      .post-faq p { color: #4A4A5A; margin: 0 0 1.15rem; }
+      .bio-block { display: flex; gap: 18px; align-items: flex-start; margin-top: 1.5rem; padding: clamp(20px, 3.5vw, 28px); background: #F7F7F4; border: 1px solid #E0E0E8; border-radius: 16px; }
+      .bio-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
+      .bio-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #0A0F1E; margin: 0 0 6px; }
+      .bio-text p { color: #4A4A5A; margin: 0; }
+      .article-figure { margin: 0 0 1.6rem; }
+      .article-figure img { width: 100%; height: auto; display: block; border-radius: 16px; }
+      .photo-credit { margin-top: 8px; font-size: 0.82rem; color: #4A4A5A; }
+      .direct-answer { background: #F7F7F4; border: 1px solid #E0E0E8; border-left: 4px solid #1F6B62; border-radius: 16px; padding: clamp(20px, 3.5vw, 28px); margin: 0 0 1.8rem; }
+      .direct-answer .da-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1F6B62; margin: 0 0 8px; }
+      .direct-answer p { color: #4A4A5A; margin: 0 0 1rem; }
+      .direct-answer p:last-child { margin-bottom: 0; }
+      .direct-answer .da-who { font-size: 0.95rem; }
+      .example-callout { background: #EFF6F4; border: 1px solid #CFE3DE; border-radius: 16px; padding: clamp(20px, 3.5vw, 28px); margin: 0 0 1.15rem; }
+      .example-callout h3 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #1F6B62; margin: 0 0 10px; }
+      .example-callout p { color: #4A4A5A; margin: 0; }
+      .pull-quote { margin: 2rem 0; padding: 0.4rem 0 0.4rem 1.4rem; border-left: 4px solid #3BA89A; font-size: 1.45rem; line-height: 1.4; font-style: italic; font-weight: 600; color: #1F6B62; }
+      .oc-steps { display: grid; gap: 16px; margin: 0 0 1.15rem; }
+      @media (min-width: 760px) { .oc-steps { grid-template-columns: 1fr 1fr; } }
+      .oc-step { background: #fff; border: 1px solid #E0E0E8; border-radius: 16px; padding: clamp(20px, 3.5vw, 26px); }
+      .oc-step .oc-step-num { font-family: "IBM Plex Mono", monospace; font-size: 0.9rem; font-weight: 500; color: #1F6B62; display: block; margin-bottom: 8px; }
+      .oc-step h3 { font-size: 1.15rem; margin: 0 0 8px; color: #0A0F1E; }
+      .oc-step p { color: #4A4A5A; margin: 0; }
+      .oc-checklist { list-style: none; counter-reset: oc-item; margin: 0 0 1.15rem; padding: 0; display: grid; gap: 12px; }
+      .oc-checklist li { counter-increment: oc-item; position: relative; background: #F7F7F4; border: 1px solid #E0E0E8; border-radius: 12px; padding: 16px 18px 16px 64px; color: #4A4A5A; }
+      .oc-checklist li::before { content: counter(oc-item, decimal-leading-zero); position: absolute; left: 18px; top: 16px; font-family: "IBM Plex Mono", monospace; font-weight: 500; color: #1F6B62; }
+      .oc-checklist strong { color: #0A0F1E; }
+      .refs { margin: 0 0 1.15rem; padding-left: 1.4rem; color: #4A4A5A; font-size: 0.95rem; }
+      .refs li { margin-bottom: 0.9rem; }
+      .refs-note { color: #4A4A5A; font-size: 0.95rem; margin: 0 0 1.15rem; }
+      .cta-diag { margin-top: 3rem; background: #0A0F1E; color: #fff; border-radius: 16px; padding: clamp(24px, 4vw, 36px); text-align: left; }
+      .cta-diag .cta-kicker { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #3BA89A; margin: 0 0 10px; }
+      .cta-diag h2 { font-size: 1.6rem; line-height: 1.3; margin: 0 0 10px; color: #fff; }
+      .cta-diag p { color: rgba(255,255,255,.82); margin: 0 0 1.2rem; }
+      .cta-diag-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 13px 30px; border-radius: 999px; border: 1.5px solid #2F877C; background: #2F877C; color: #fff; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; text-decoration: none; }
+      .cta-diag-btn:hover { background: #1F6B62; border-color: #1F6B62; }
+      @media (max-width: 560px) { .bio-block { flex-direction: column; } }
+    </style>
+</head>
+<body class="page-route page-site page-interior">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="gn-nav" aria-label="Primary navigation" id="gn-nav">
+      <div class="gn-inner">
+        <a class="gn-brand" href="/" aria-label="Prime AI Consultants home">
+          <svg class="gn-brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#0A0F1E" stroke-width="17" />
+            <circle cx="50" cy="50" r="11" fill="#1F6B62" />
+          </svg>
+          <span class="gn-brand-text"><span class="gn-brand-name">Prime AI</span><span class="gn-brand-sub">CONSULTANTS</span></span>
+        </a>
+        <ul class="gn-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#diagnostics">Diagnostics</a></li>
+          <li><a href="/#methodology">Methodology</a></li>
+          <li class="gn-item" id="gn-industries-item">
+            <a href="/#industries" class="gn-industries-control" id="gn-industries-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="gn-industries-submenu">Industries <span class="gn-chev" aria-hidden="true">▾</span></a>
+            <ul class="gn-submenu" id="gn-industries-submenu" aria-label="Industries">
+              <li><a href="/#industries">Industries overview</a></li>
+              <li><a href="/manufacturing">Services for Manufacturers</a></li>
+              <li><a href="/law">Services for Legal Professionals</a></li>
+              <li><a href="/local-businesses">Services for Local Businesses</a></li>
+              <li><a href="/manufacturing-industries">Manufacturing background</a></li>
+            </ul>
+          </li>
+          <li><a href="/#about">About Us</a></li>
+          <li><a href="/blog" class="gn-active" aria-current="page">Blog</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <button type="button" class="gn-toggle" id="gn-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="gn-mobile-menu">
+          <span class="gn-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+      <ul class="gn-mobile-menu" id="gn-mobile-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#diagnostics">Diagnostics</a></li>
+        <li><a href="/#methodology">Methodology</a></li>
+        <li class="gn-mobile-industries-row">
+          <a href="/#industries" id="gn-mobile-industries-link">Industries</a>
+          <button type="button" class="gn-mobile-industries-toggle" id="gn-mobile-industries-toggle" aria-expanded="true" aria-controls="gn-mobile-menu" aria-label="Toggle Industries submenu"><span class="gn-chev" aria-hidden="true">▾</span></button>
+        </li>
+        <li class="gn-sub"><a href="/#industries">Industries overview</a></li>
+        <li class="gn-sub"><a href="/manufacturing">Services for Manufacturers</a></li>
+        <li class="gn-sub"><a href="/law">Services for Legal Professionals</a></li>
+        <li class="gn-sub"><a href="/local-businesses">Services for Local Businesses</a></li>
+        <li class="gn-sub"><a href="/manufacturing-industries">Manufacturing background</a></li>
+        <li><a href="/#about">About Us</a></li>
+        <li><a href="/blog" class="gn-active" aria-current="page">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="tel:+16617795568">Call 661-779-5568</a></li>
+      </ul>
+    </nav>
+<main id="main" tabindex="-1">
+    <section class="page-hero page-hero--short">
+      <div class="container page-hero-inner">
+        <span class="eyebrow hero-eyebrow">Blog</span>
+        <h1 class="h-h1">What is operational context, and why does AI need it before a pilot?</h1>
+        <p class="byline">By <a href="https://www.fernandorojasstudio.com/">Fernando Rojas</a> and Antonio Rojas, Cofounders of Prime AI Consultants</p>
+        <p class="post-date">November 26, 2026</p>
+        <p class="post-meta">General Manufacturing Operations · 8 min read</p>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container blog-article">
+        <figure class="article-figure">
+          <img src="/assets/operational-context-hero.jpg" alt="Industrial machinery inside a modern manufacturing plant" width="1600" height="1067" />
+          <figcaption class="photo-credit">Photo by Anna Shvets on Pexels</figcaption>
+        </figure>
+
+        <div class="direct-answer">
+          <p class="da-label">Direct answer</p>
+          <p>Operational context is the written record of how your plant actually runs: how a term like scrap or yield is defined, which system owns a decision, who validates the answer, and what the floor does when the plan changes. AI needs that record before a pilot, because without it a model learns your reports rather than your operation, and gives confident answers built on definitions your own teams do not share.</p>
+          <p class="da-who">Who this is for: VP Operations, VP Manufacturing, or CTO at a one to five plant manufacturer considering a first AI pilot across MES, ERP, and floor systems.</p>
+        </div>
+
+        <h2>The problem shows up in one word</h2>
+        <p>Ask three people on the same floor what the scrap rate was yesterday and you can get three correct answers that do not agree, because each is counting something slightly different while using the same word. The disagreement is rarely carelessness: it is what happens when a definition lives in habit instead of in a shared record everyone can point to and challenge.</p>
+        <p>Wang and Strong made the research version of this point long ago: data quality cannot be judged on accuracy alone. Fitness for use, including whether data is represented consistently and in context, is what determines whether a decision maker can rely on it.<sup>[1]</sup> A number can be clean in a system and still be unusable for a decision if the people using it mean different things by it.</p>
+
+        <div class="example-callout">
+          <h3>Illustrative example: composite, not a named client</h3>
+          <p>Take Line 4, a production line at a two plant injection molder. The team asks for a model that predicts scrap rate by shift so supervisors can act earlier. On paper the data looks ready. Scrap is recorded in three places: at the press when a part is rejected, at inspection when a lot is sampled, and at end of shift when the supervisor closes the count. Startup shots after a mold change are sometimes counted as scrap and sometimes logged separately. Regrind that goes back into the process is handled one way on days and another way on nights, and rework that is later accepted is sometimes removed from the scrap total and sometimes left in. None of this is hidden. Everyone on the floor knows their part of it. It has never been written down in one place, so a model trained on the combined history learns an average of three different operations and calls it one number.</p>
+        </div>
+        <p>That is the pattern Prime AI Consultants sees most often: the pilot does not fail because the model is weak, but because the operation underneath it was never described clearly enough to hold anyone, human or model, to the same definition.</p>
+
+        <figure class="article-figure">
+          <img src="/assets/operational-context-machine.jpg" alt="Industrial machine with red piping inside a factory" width="1600" height="1067" loading="lazy" />
+          <figcaption class="photo-credit">Photo by Magda Ehlers on Pexels</figcaption>
+        </figure>
+
+        <h2>Reports are not the operation</h2>
+        <p>Most plants already have more reporting than they can use, and an overnight export can disagree with the MES screen without either being broken. MES records what happened on the floor; finance records what can be billed, scrapped, or closed; a supervisor&rsquo;s spreadsheet often holds the exception logic that makes the day workable. Treat those sources as interchangeable, and an AI pilot inherits the argument instead of resolving it.</p>
+        <p>Christoph Gr&ouml;ger, enterprise architect for data analytics at Bosch, makes a related point in &ldquo;There is no AI without data,&rdquo; his 2021 article in Communications of the ACM: industrial AI depends on data that is integrated, contextualized, and understood across systems rather than simply collected.<sup>[2]</sup> The value is not in having more data. It is in knowing what the data refers to, where it came from, and which decision it is allowed to govern.</p>
+        <p>Manufacturing sites raise the stakes, because a yield or lot definition that shifts by team or by step can travel a long way before anyone notices, and the principle is the same in discrete and process plants. If the definition moves, every answer built on it moves with it.</p>
+
+        <blockquote class="pull-quote">If the definition moves, every answer built on it moves with it.</blockquote>
+
+        <h2>Discover, then Define</h2>
+        <p>Prime AI Consultants starts in two steps before any build is discussed. The order matters, because you cannot define what you have not first observed as it actually happens.</p>
+        <div class="oc-steps">
+          <div class="oc-step">
+            <span class="oc-step-num">01</span>
+            <h3>Discover</h3>
+            <p>Work with the people who run the floor to map how systems really behave today: where a number is created, where it changes hands, and where the workaround lives. The goal is an honest picture, not an ideal process diagram.</p>
+          </div>
+          <div class="oc-step">
+            <span class="oc-step-num">02</span>
+            <h3>Define</h3>
+            <p>Write that picture down in plain language for one system and one decision at a time: the definition, the owner, the source, and the exception. For one decision area, this is days to a few weeks of focused work, not a months long documentation project.</p>
+          </div>
+        </div>
+        <p>Only after that record exists does a pilot have something stable to learn from and be judged against. Governance keeps it current as tools, products, and people change. Activation is where a model is finally introduced, inside boundaries operations already understands.</p>
+
+        <h2>Trust is decided on the floor</h2>
+        <p>Even a technically sound pilot can lose the floor quickly if the first visible answers are wrong in ways operators recognize immediately. Dietvorst, Simmons, and Massey found that people who see an algorithm make a mistake become less willing to rely on it afterward, even when it performs well on average.<sup>[3]</sup> That finding comes from forecasting tasks, not manufacturing, so it should not be overstated. But it matches what plant leaders describe: once supervisors decide an answer cannot be trusted, they stop checking it, work around it, and the pilot loses its chance to improve.</p>
+        <p>Operational context protects against that early loss of trust, because validation can be specific: a named owner can say whether an answer is right for this definition, on this line, under these conditions.</p>
+
+        <figure class="article-figure">
+          <img src="/assets/operational-context-control-panel.jpg" alt="Factory worker operating an industrial machine from its control panel" width="1600" height="2400" loading="lazy" />
+          <figcaption class="photo-credit">Photo by Imtiaz Ahmed on Pexels</figcaption>
+        </figure>
+
+        <h2>The operational context checklist</h2>
+        <p>For one system and one decision, write these eight items down before a pilot is approved. If any item cannot be answered, that gap is the first work to do.</p>
+        <ol class="oc-checklist">
+          <li><strong>The decision.</strong> The single decision this pilot will support, stated in one sentence a supervisor would recognize.</li>
+          <li><strong>The definition.</strong> What the key term means for this decision, in plain words, including what is counted and what is not.</li>
+          <li><strong>The source of truth for this decision.</strong> Which system owns this decision. There is no single source of truth for a whole plant, only a source per decision.</li>
+          <li><strong>The handoffs.</strong> Where the information changes hands, changes format, or changes meaning between creation and use.</li>
+          <li><strong>The exceptions the floor already knows.</strong> Startup, changeover, rework, regrind, and the other cases that do not follow the standard path, written as the floor describes them.</li>
+          <li><strong>The owner and the validator.</strong> Who owns the decision today by role, and who will validate AI answers for that same decision.</li>
+          <li><strong>Reports that disagree, and why.</strong> Where two reports give different numbers for the same period, and the timing or definition rule that explains the difference.</li>
+          <li><strong>The validation set and the update rule.</strong> A small set of past cases with agreed answers to test against, plus who updates this record and how quickly when the floor, the product, or the system changes.</li>
+        </ol>
+
+        <h2>What not to do</h2>
+        <p>Do not start with a platform purchase and work backwards to find a problem it can solve.</p>
+        <p>Do not try to document the entire plant before starting. One system and one decision is enough to prove the approach.</p>
+        <p>Do not average away a disagreement between systems. Explain it, name which source governs which decision, and keep the gap visible.</p>
+        <p>Do not let a vendor validate its own answers for your operation. A vendor can test a model, only your operation can validate a decision.</p>
+        <p>Do not widen the pilot to satisfy every stakeholder at once. A scope that pleases everyone in the meeting is usually too wide to prove anything on the floor.</p>
+
+        <h2>Frequently asked questions</h2>
+        <div class="post-faq">
+          <h3>Do we need a data warehouse before we can do this?</h3>
+          <p>No. You need understood data for one scope, not a new platform for all of it. The checklist can be completed with the systems you already have, and it often shows that a warehouse is not the first investment to make.</p>
+          <h3>Do we need to document everything first?</h3>
+          <p>No. Start with one system and one decision that matters this quarter. A complete record for a narrow scope is more valuable than a partial record for the whole plant.</p>
+          <h3>Who should write the operational context down?</h3>
+          <p>The people who do the work, with Prime facilitating. IT is essential for systems knowledge, but definitions that only IT writes rarely match how the floor actually runs.</p>
+          <h3>How long does Discover and Define take?</h3>
+          <p>Days to a few weeks for one decision area, depending on how many shifts and systems are involved. The work is interviews, tracing real cases through systems, and agreeing definitions, not a long reporting project.</p>
+          <h3>What happens if we skip this and go straight to a pilot?</h3>
+          <p>The pilot may still produce answers, but no one will agree on whether they are right, because the definition and the validator were never settled. That is where most early pilots lose support.</p>
+        </div>
+
+        <h2>References</h2>
+        <p>Three primary sources, each tied to one claim in this article. Full texts were not relied on beyond abstracts and publisher records, and each DOI was verified against publisher and Crossref records before this draft.</p>
+        <ol class="refs">
+          <li>Wang, R. Y., &amp; Strong, D. M. (1996). Beyond accuracy: What data quality means to data consumers. Journal of Management Information Systems, 12(4), 5&ndash;33. Supports the distinction between data that is accurate in a system and data that is fit for a specific decision. <a href="https://doi.org/10.1080/07421222.1996.11518099">https://doi.org/10.1080/07421222.1996.11518099</a></li>
+          <li>Gr&ouml;ger, C. (2021). There is no AI without data. Communications of the ACM, 64(11), 98&ndash;108. Supports the point that industrial AI depends on integrated and contextualized data. This is one manufacturer perspective, not a multi firm study. <a href="https://doi.org/10.1145/3448247">https://doi.org/10.1145/3448247</a></li>
+          <li>Dietvorst, B. J., Simmons, J. P., &amp; Massey, C. (2015). Algorithm aversion: People erroneously avoid algorithms after seeing them err. Journal of Experimental Psychology: General, 144(1), 114&ndash;126. Supports the point about trust after an early visible error. The studies were forecasting tasks, not manufacturing pilots. <a href="https://doi.org/10.1037/xge0000033">https://doi.org/10.1037/xge0000033</a></li>
+        </ol>
+        <p class="refs-note">Note: the observation that MES and ERP disagree because of timing, scrap, and rework rules is presented as Prime AI Consultants field observation, not as a cited research claim, because no primary source that fit that specific point could be verified for this draft.</p>
+
+        <h2>About the authors</h2>
+        <div class="bio-block">
+          <img class="bio-photo" src="/assets/founder-fernando.png" alt="Fernando Rojas, cofounder of Prime AI Consultants" width="96" height="96" />
+          <div class="bio-text">
+            <p class="bio-name">Fernando Rojas, Co-founder, Prime AI Consultants</p>
+            <p>Works on strategy and client engagements, translating how an operation actually runs into a record that AI work can be built and judged against.</p>
+          </div>
+        </div>
+        <div class="bio-block">
+          <img class="bio-photo" src="/assets/founder-antonio.png" alt="Antonio Rojas, cofounder of Prime AI Consultants" width="96" height="96" />
+          <div class="bio-text">
+            <p class="bio-name">Antonio Rojas, Co-founder, Prime AI Consultants</p>
+            <p>Senior IT Executive with 30+ years of experience driving cross-border business growth (US/Mexico) through enterprise ERP, CRM, and MES implementations (SAP, Oracle, Infor, Salesforce). Proven leader in modernizing legacy environments via AI integration and end-to-end process automation to maximize workforce productivity and operational efficiency.</p>
+          </div>
+        </div>
+
+        <div class="cta-diag">
+          <p class="cta-kicker">Prime Diagnostics</p>
+          <h2>Not sure where your operation stands?</h2>
+          <p>Start with Prime Diagnostics. We map what your systems say, what your floor knows, and where they disagree, before any build is proposed.</p>
+          <p style="margin:0"><a class="cta-diag-btn" href="/#diagnostics">Learn more about Prime Diagnostics</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="gf-footer">
+      <div class="gf-in">
+        <div class="gf-brand-block">
+          <a class="gf-brand" href="/" aria-label="Prime AI Consultants home">
+            <svg class="gf-brand-mark" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+              <path d="M58.023 20.056 A31 31 0 0 1 79.944 58.023" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <path d="M71.920 71.920 A31 31 0 0 1 28.080 71.920" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <path d="M20.056 58.023 A31 31 0 0 1 41.977 20.056" fill="none" stroke="#FFFFFF" stroke-width="17" />
+              <circle cx="50" cy="50" r="11" fill="#3BA89A" />
+            </svg>
+            <span class="gf-brand-text"><span class="gf-brand-name">Prime AI</span><span class="gf-brand-sub">CONSULTANTS</span></span>
+          </a>
+          <p>Prime AI Consultants · Santa Clarita, California</p>
+          <p><a href="mailto:Fernando@primeaiconsultants.com">Fernando@primeaiconsultants.com</a> · <a href="tel:+16617795568">661-779-5568</a></p>
+        </div>
+        <nav class="gf-links" aria-label="Prime AI Consultants pages">
+          <a href="/">Home</a>
+          <a href="/#diagnostics">Diagnostics</a>
+          <a href="/#methodology">Methodology</a>
+          <a href="/#industries">Industries Overview</a>
+          <a href="/manufacturing">Services for Manufacturers</a>
+          <a href="/law">Services for Legal Professionals</a>
+          <a href="/local-businesses">Services for Local Businesses</a>
+          <a href="/manufacturing-industries">Manufacturing background</a>
+          <a href="/#about">About Us</a>
+          <a href="/blog">Blog</a>
+          <a href="/#contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+        <p class="gf-note">© 2026 Prime AI Consultants LLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <script src="/assets/site.min.js?v=mailto2" defer></script>
+<script id="global-site-chrome-js">
+/* Global site chrome (2026-11-23): mobile menu, Industries dropdown, Other write-in toggle, standard form handler. */
+(function () {
+  var nav = document.getElementById("gn-nav");
+  var toggle = document.getElementById("gn-toggle");
+  if (nav && toggle) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("gn-nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    });
+    nav.querySelectorAll(".gn-mobile-menu a, .gn-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("gn-nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+  }
+  var indItem = document.getElementById("gn-industries-item");
+  var indToggle = document.getElementById("gn-industries-toggle");
+  if (indItem && indToggle) {
+    var closeInd = function () {
+      indItem.classList.remove("gn-open");
+      indToggle.setAttribute("aria-expanded", "false");
+    };
+    indToggle.addEventListener("click", function (event) {
+      if (!indItem.classList.contains("gn-open")) {
+        event.preventDefault();
+        event.stopPropagation();
+        indItem.classList.add("gn-open");
+        indToggle.setAttribute("aria-expanded", "true");
+      } else {
+        closeInd();
+      }
+    });
+    indItem.addEventListener("mouseenter", function () { indToggle.setAttribute("aria-expanded", "true"); });
+    indItem.addEventListener("mouseleave", function () {
+      indToggle.setAttribute("aria-expanded", indItem.classList.contains("gn-open") ? "true" : "false");
+    });
+    indItem.querySelectorAll(".gn-submenu a").forEach(function (link) { link.addEventListener("click", closeInd); });
+    document.addEventListener("click", function (event) { if (!indItem.contains(event.target)) { closeInd(); } });
+    document.addEventListener("keydown", function (event) { if (event.key === "Escape") { closeInd(); } });
+  }
+  var mobileMenu = document.getElementById("gn-mobile-menu");
+  var mobileIndToggle = document.getElementById("gn-mobile-industries-toggle");
+  if (mobileMenu && mobileIndToggle) {
+    mobileIndToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      var collapsed = mobileMenu.classList.toggle("gn-industries-collapsed");
+      mobileIndToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    });
+  }
+  /* Industry "Other" write-in: one delegated toggle for every form on the page. */
+  document.addEventListener("change", function (event) {
+    var sel = event.target;
+    if (!sel || sel.tagName !== "SELECT" || !sel.form) { return; }
+    var wrap = sel.form.querySelector("[data-other-wrap]");
+    if (!wrap) { return; }
+    var isOther = sel.value === "Other";
+    wrap.hidden = !isOther;
+    wrap.style.display = isOther ? "" : "none";
+    wrap.classList.toggle("show", isOther);
+    if (isOther) {
+      var field = wrap.querySelector("input, textarea");
+      if (field) { field.focus(); }
+    }
+  });
+  /* Standard form pattern for forms marked data-gform: submits to Formspree. */
+  document.querySelectorAll("form[data-gform]").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var fd = new FormData(form);
+      var emailField = form.querySelector('[name="email"]');
+      if (emailField) { fd.set("_replyto", emailField.value.trim()); }
+      var indField = form.querySelector('[name="industry"]');
+      var otherField = form.querySelector('[name="industry_other"]');
+      if (indField && otherField && indField.value === "Other" && otherField.value.trim()) { fd.set("industry", otherField.value.trim()); }
+      if (otherField) { fd.delete("industry_other"); }
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; }
+      var showSent = function (ok) {
+        var sent = form.querySelector("[data-gform-sent]");
+        if (!sent) { return; }
+        sent.textContent = ok ? "Thank you, your message is on its way. We will reply to the email address you gave us." : "Something went wrong sending that. Please email Fernando@primeaiconsultants.com or call 661-779-5568.";
+        sent.hidden = false;
+        sent.setAttribute("tabindex", "-1");
+        window.setTimeout(function () { sent.scrollIntoView({ behavior: "smooth", block: "nearest" }); sent.focus({ preventScroll: true }); }, 50);
+      };
+      fetch(form.action, { method: "POST", body: fd, headers: { "Accept": "application/json" } })
+        .then(function (r) { if (!r.ok) { throw new Error("send failed"); } showSent(true); form.reset(); })
+        .catch(function () { showSent(false); })
+        .then(function () { if (btn) { btn.disabled = false; } });
+    });
+  });
+})();
+</script>
+</body>
+</html>
